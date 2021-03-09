@@ -60,9 +60,11 @@ namespace SistemaHospitalar.Views
             string MsgDeleçãoConta = "Deseja realmente excluir sua conta?\nTodos os dados da conta serão perdidos!";
             DalRecepionistas dalRecepionistas = new DalRecepionistas();
 
+            int Id = int.Parse(DalRecepionistas.Id);
+
             if (MessageBox.Show(MsgDeleçãoConta, "Deleção de Conta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                MessageBox.Show(dalRecepionistas.Deletar());
+                MessageBox.Show(dalRecepionistas.Deletar(Id));
                 Hide();
                 FormLogin formLogin = new FormLogin();
                 formLogin.ShowDialog();

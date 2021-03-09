@@ -116,7 +116,7 @@ namespace SistemaHospitalar.DAL
         }
 
         //Deleta um Doutor
-        public string Deletar()
+        public string Deletar(int Id)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@ID", Id);
@@ -173,7 +173,7 @@ namespace SistemaHospitalar.DAL
 
         public static DataTable MostrarDoutores()
         {
-            command.CommandText = "select Nome, Cpf, Turno, Genero, Celular, Especialidade from DOUTORES";
+            command.CommandText = "select * from DOUTORES";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

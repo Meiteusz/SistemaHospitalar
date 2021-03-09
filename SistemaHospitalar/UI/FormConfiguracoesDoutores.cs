@@ -41,9 +41,11 @@ namespace SistemaHospitalar.UI
             string msgDelecaoConta = "Deseja realmente excluir sua conta?\nTodos os dados da conta serão perdidos!";
             DalDoutores dalDoutores = new DalDoutores();
 
+            int Id = int.Parse(DalDoutores.Id);
+
             if (MessageBox.Show(msgDelecaoConta, "Deleção de Conta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                MessageBox.Show(dalDoutores.Deletar());
+                MessageBox.Show(dalDoutores.Deletar(Id));
                 FormLogin formLogin = new FormLogin();
                 Hide();
                 formLogin.ShowDialog();

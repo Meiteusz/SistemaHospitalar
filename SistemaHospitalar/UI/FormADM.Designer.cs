@@ -34,8 +34,7 @@ namespace SistemaHospitalar.UI
             this.dgvFuncionarios = new System.Windows.Forms.DataGridView();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.btnDeletarDoutor = new System.Windows.Forms.Button();
-            this.btnDeletarRecepcionista = new System.Windows.Forms.Button();
+            this.btnDeletarFuncionario = new System.Windows.Forms.Button();
             this.rbNome = new System.Windows.Forms.RadioButton();
             this.rbTurno = new System.Windows.Forms.RadioButton();
             this.rbEspecialidade = new System.Windows.Forms.RadioButton();
@@ -73,8 +72,9 @@ namespace SistemaHospitalar.UI
             this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionarios.Location = new System.Drawing.Point(25, 56);
             this.dgvFuncionarios.Name = "dgvFuncionarios";
-            this.dgvFuncionarios.Size = new System.Drawing.Size(579, 258);
+            this.dgvFuncionarios.Size = new System.Drawing.Size(579, 321);
             this.dgvFuncionarios.TabIndex = 2;
+            this.dgvFuncionarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionarios_CellClick);
             // 
             // txtPesquisa
             // 
@@ -94,23 +94,14 @@ namespace SistemaHospitalar.UI
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // btnDeletarDoutor
+            // btnDeletarFuncionario
             // 
-            this.btnDeletarDoutor.Location = new System.Drawing.Point(258, 378);
-            this.btnDeletarDoutor.Name = "btnDeletarDoutor";
-            this.btnDeletarDoutor.Size = new System.Drawing.Size(125, 60);
-            this.btnDeletarDoutor.TabIndex = 7;
-            this.btnDeletarDoutor.Text = "Deletar Doutor(a)";
-            this.btnDeletarDoutor.UseVisualStyleBackColor = true;
-            // 
-            // btnDeletarRecepcionista
-            // 
-            this.btnDeletarRecepcionista.Location = new System.Drawing.Point(258, 378);
-            this.btnDeletarRecepcionista.Name = "btnDeletarRecepcionista";
-            this.btnDeletarRecepcionista.Size = new System.Drawing.Size(125, 60);
-            this.btnDeletarRecepcionista.TabIndex = 8;
-            this.btnDeletarRecepcionista.Text = "Deletar Recepcionista";
-            this.btnDeletarRecepcionista.UseVisualStyleBackColor = true;
+            this.btnDeletarFuncionario.Location = new System.Drawing.Point(624, 378);
+            this.btnDeletarFuncionario.Name = "btnDeletarFuncionario";
+            this.btnDeletarFuncionario.Size = new System.Drawing.Size(154, 60);
+            this.btnDeletarFuncionario.TabIndex = 7;
+            this.btnDeletarFuncionario.UseVisualStyleBackColor = true;
+            this.btnDeletarFuncionario.Click += new System.EventHandler(this.btnDeletarFuncionario_Click);
             // 
             // rbNome
             // 
@@ -171,7 +162,7 @@ namespace SistemaHospitalar.UI
             // rbRecepcionista
             // 
             this.rbRecepcionista.AutoSize = true;
-            this.rbRecepcionista.Location = new System.Drawing.Point(219, 337);
+            this.rbRecepcionista.Location = new System.Drawing.Point(218, 400);
             this.rbRecepcionista.Name = "rbRecepcionista";
             this.rbRecepcionista.Size = new System.Drawing.Size(93, 17);
             this.rbRecepcionista.TabIndex = 14;
@@ -183,7 +174,7 @@ namespace SistemaHospitalar.UI
             // rbDoutor
             // 
             this.rbDoutor.AutoSize = true;
-            this.rbDoutor.Location = new System.Drawing.Point(351, 337);
+            this.rbDoutor.Location = new System.Drawing.Point(350, 400);
             this.rbDoutor.Name = "rbDoutor";
             this.rbDoutor.Size = new System.Drawing.Size(69, 17);
             this.rbDoutor.TabIndex = 15;
@@ -214,8 +205,7 @@ namespace SistemaHospitalar.UI
             this.Controls.Add(this.rbRecepcionista);
             this.Controls.Add(this.cmbEspecialidade);
             this.Controls.Add(this.cmbTurno);
-            this.Controls.Add(this.btnDeletarRecepcionista);
-            this.Controls.Add(this.btnDeletarDoutor);
+            this.Controls.Add(this.btnDeletarFuncionario);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvFuncionarios);
@@ -238,8 +228,7 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.DataGridView dgvFuncionarios;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.Button btnDeletarDoutor;
-        private System.Windows.Forms.Button btnDeletarRecepcionista;
+        private System.Windows.Forms.Button btnDeletarFuncionario;
         private System.Windows.Forms.RadioButton rbNome;
         private System.Windows.Forms.RadioButton rbTurno;
         private System.Windows.Forms.RadioButton rbEspecialidade;

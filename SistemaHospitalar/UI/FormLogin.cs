@@ -16,7 +16,7 @@ namespace SistemaHospitalar
 
             //LOGIN PARA TESTE
             txtEmail.Text = "amandaabreu@gmail.com";
-            txtSenha.Text = "321a";
+            txtSenha.Text = "321ab";
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

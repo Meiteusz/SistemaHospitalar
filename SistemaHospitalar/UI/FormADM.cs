@@ -21,6 +21,7 @@ namespace SistemaHospitalar.UI
 
         private void rbRecepcionista_CheckedChanged_1(object sender, EventArgs e)
         {
+            btnDeletarFuncionario.Text = "Deletar Recepcionista";
             rbEspecialidade.Visible = false;
             rbNome.Checked = true;
             dgvFuncionarios.DataSource = MostrarFuncionarios();
@@ -28,6 +29,7 @@ namespace SistemaHospitalar.UI
 
         private void rbDoutor_CheckedChanged_1(object sender, EventArgs e)
         {
+            btnDeletarFuncionario.Text = "Deletar Doutor(a)";
             rbEspecialidade.Visible = true;
             rbEspecialidade.Checked = true;
             dgvFuncionarios.DataSource = MostrarFuncionarios();
@@ -94,17 +96,9 @@ namespace SistemaHospitalar.UI
         private DataTable MostrarFuncionarios()
         {
             if (rbRecepcionista.Checked)
-            {
-                btnDeletarDoutor.Visible = false;
-                btnDeletarRecepcionista.Visible = true;
                 return DalRecepionistas.MostrarRecepcionistas();
-            }
             else
-            {
-                btnDeletarDoutor.Visible = true;
-                btnDeletarRecepcionista.Visible = false;
                 return DalDoutores.MostrarDoutores();
-            }
         }
 
         private void PopularDgvs()
@@ -123,6 +117,45 @@ namespace SistemaHospitalar.UI
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             PopularDgvs();
+        }
+
+        private int Id { get; set; }
+
+        private bool isLinhaSelecionada()
+        {
+            bool isSelecionada = true;
+            if (dgvFuncionarios.SelectedRows.Count != 1)
+                isSelecionada =  false;
+            return isSelecionada;
+        }
+
+        private void btnDeletarFuncionario_Click(object sender, EventArgs e)
+        {
+            if (isLinhaSelecionada())
+            {
+                // Fazer confirmação
+                if (rbRecepcionista.Checked)
+                {
+                    DalRecepionistas dalRecepionistas = new DalRecepionistas();
+                    dalRecepionistas.Deletar(Id);
+                    dgvFuncionarios.DataSource = MostrarFuncionarios();
+                }
+                else
+                {
+                    DalDoutores dalDoutores = new DalDoutores();
+                    dalDoutores.Deletar(Id);
+                    dgvFuncionarios.DataSource = MostrarFuncionarios();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um funcionario");
+            }
+        }
+
+        private void dgvFuncionarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Id = (int)dgvFuncionarios.SelectedRows[0].Cells[0].Value;
         }
     }
 }
