@@ -1,0 +1,31 @@
+﻿namespace SistemaHospitalar.Entities
+{
+    public enum Especialidades
+    {
+        Selecione,
+        Anestesiologia,
+        Cardiologia,
+        Clinica_Médica,
+        Dermatologia,
+        Endoscopia,
+        Gastroenterologia,
+        Geriatria,
+        Ginecologia,
+        Hematologia,
+        Infectologia,
+        Nefrologia,
+        Neurocirurgia,
+        Neurologia,
+        Nutrologia,
+        Oftalmologia,
+        Oncologia,
+        Ortopedia,
+        Otorrinolaringologia,
+        Patologia,
+        Pediatria,
+        Pneumologia,
+        Psiquiatria,
+        Reumatologia,
+        Urologia
+    }
+}

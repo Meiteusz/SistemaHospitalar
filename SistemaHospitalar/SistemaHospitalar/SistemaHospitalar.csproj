@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1920E35F-D00B-45E5-8BC4-C7A62839C9D0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaHospitalar</RootNamespace>
+    <AssemblyName>SistemaHospitalar</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\DoutoresBLL.cs" />
+    <Compile Include="BLL\LoginBLL.cs" />
+    <Compile Include="BLL\PacienteBLL.cs" />
+    <Compile Include="BLL\RecepcionistaBLL.cs" />
+    <Compile Include="DAL\Conexao.cs" />
+    <Compile Include="DAL\DalADM.cs" />
+    <Compile Include="DAL\DalComandos.cs" />
+    <Compile Include="DAL\DalDoutores.cs" />
+    <Compile Include="DAL\DalPacientes.cs" />
+    <Compile Include="DAL\DalRecepionistas.cs" />
+    <Compile Include="Entities\ADM.cs" />
+    <Compile Include="BLL\Validator.cs" />
+    <Compile Include="Entities\Doutores.cs" />
+    <Compile Include="Entities\Especialidades.cs" />
+    <Compile Include="Entities\Genero.cs" />
+    <Compile Include="Entities\Gravidade.cs" />
+    <Compile Include="Entities\Paciente.cs" />
+    <Compile Include="Entities\Recepcionista.cs" />
+    <Compile Include="Entities\Turno.cs" />
+    <Compile Include="Entities\Usuarios.cs" />
+    <Compile Include="Entities\Visitante.cs" />
+    <Compile Include="Common\Environments.cs" />
+    <Compile Include="UI\FormADM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormADM.Designer.cs">
+      <DependentUpon>FormADM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormConfiguracoesDoutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormConfiguracoesDoutores.Designer.cs">
+      <DependentUpon>FormConfiguracoesDoutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormConsultas.Designer.cs">
+      <DependentUpon>FormConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormEntradaDoutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormEntradaDoutores.Designer.cs">
+      <DependentUpon>FormEntradaDoutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormLoginADM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormLoginADM.Designer.cs">
+      <DependentUpon>FormLoginADM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormCadastroRecepcionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormCadastroRecepcionista.Designer.cs">
+      <DependentUpon>FormCadastroRecepcionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormCadastroPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormCadastroPaciente.Designer.cs">
+      <DependentUpon>FormCadastroPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormConfiguracoesRecepcionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormConfiguracoesRecepcionista.Designer.cs">
+      <DependentUpon>FormConfiguracoesRecepcionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormCadastroDoutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormCadastroDoutor.Designer.cs">
+      <DependentUpon>FormCadastroDoutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormInicio.Designer.cs">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FormEntradaRecepcionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormEntradaRecepcionista.Designer.cs">
+      <DependentUpon>FormEntradaRecepcionista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormPacientes.Designer.cs">
+      <DependentUpon>FormPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormVisitante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormVisitante.Designer.cs">
+      <DependentUpon>FormVisitante.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\FormADM.resx">
+      <DependentUpon>FormADM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormCadastroDoutor.resx">
+      <DependentUpon>FormCadastroDoutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormConfiguracoesDoutores.resx">
+      <DependentUpon>FormConfiguracoesDoutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormConfiguracoesRecepcionista.resx">
+      <DependentUpon>FormConfiguracoesRecepcionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormConsultas.resx">
+      <DependentUpon>FormConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormEntradaDoutores.resx">
+      <DependentUpon>FormEntradaDoutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormLoginADM.resx">
+      <DependentUpon>FormLoginADM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormCadastroRecepcionista.resx">
+      <DependentUpon>FormCadastroRecepcionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormCadastroPaciente.resx">
+      <DependentUpon>FormCadastroPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormInicio.resx">
+      <DependentUpon>FormInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\FormEntradaRecepcionista.resx">
+      <DependentUpon>FormEntradaRecepcionista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormPacientes.resx">
+      <DependentUpon>FormPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormVisitante.resx">
+      <DependentUpon>FormVisitante.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\symbol-check-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon-min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon-min1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings-icon-min.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People-Doctor-Male-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People-Doctor-Male-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receptionist-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance-cross-hospital-icon-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor-hospital-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor-hospital-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor-hospital-icon %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance-cross-hospital-icon-111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance-cross-hospital-icon-112.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
