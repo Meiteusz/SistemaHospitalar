@@ -15,6 +15,7 @@ namespace SistemaHospitalar.UI
         public FormConsultas()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }
