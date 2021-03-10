@@ -72,6 +72,7 @@ namespace SistemaHospitalar.UI
             this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionarios.Location = new System.Drawing.Point(25, 56);
             this.dgvFuncionarios.Name = "dgvFuncionarios";
+            this.dgvFuncionarios.ReadOnly = true;
             this.dgvFuncionarios.Size = new System.Drawing.Size(579, 321);
             this.dgvFuncionarios.TabIndex = 2;
             this.dgvFuncionarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionarios_CellClick);
@@ -96,7 +97,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnDeletarFuncionario
             // 
-            this.btnDeletarFuncionario.Location = new System.Drawing.Point(624, 378);
+            this.btnDeletarFuncionario.Location = new System.Drawing.Point(624, 317);
             this.btnDeletarFuncionario.Name = "btnDeletarFuncionario";
             this.btnDeletarFuncionario.Size = new System.Drawing.Size(154, 60);
             this.btnDeletarFuncionario.TabIndex = 7;

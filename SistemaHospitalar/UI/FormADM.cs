@@ -125,15 +125,15 @@ namespace SistemaHospitalar.UI
         {
             bool isSelecionada = true;
             if (dgvFuncionarios.SelectedRows.Count != 1)
-                isSelecionada =  false;
+                isSelecionada = false;
             return isSelecionada;
         }
 
-        private void btnDeletarFuncionario_Click(object sender, EventArgs e)
+        private void DeletarFuncionario()
         {
-            if (isLinhaSelecionada())
+            if (MessageBox.Show("Deseja realmente deletar a conta deste(a) funcionionário?", "Deletar Funcionário(a)", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                // Fazer confirmação
                 if (rbRecepcionista.Checked)
                 {
                     DalRecepionistas dalRecepionistas = new DalRecepionistas();
@@ -146,6 +146,14 @@ namespace SistemaHospitalar.UI
                     dalDoutores.Deletar(Id);
                     dgvFuncionarios.DataSource = MostrarFuncionarios();
                 }
+            }
+        }
+
+        private void btnDeletarFuncionario_Click(object sender, EventArgs e)
+        {
+            if (isLinhaSelecionada())
+            {
+                DeletarFuncionario();
             }
             else
             {
