@@ -46,5 +46,13 @@ namespace SistemaHospitalar
             formConsultas.ShowDialog();
             Close();
         }
+
+        private void btnConvenios_Click(object sender, System.EventArgs e)
+        {
+            FormConvenios formConvenios = new FormConvenios();
+            Hide();
+            formConvenios.ShowDialog();
+            Close();
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace SistemaHospitalar.DAL
         public static DataTable dt;
         public static SqlDataAdapter adapter;
 
-        protected string MostrarTipoErro(SqlException ex)
+        public string MostrarTipoErro(SqlException ex)
         {
             string erro = "";
             if (ex.Number == 2627)
@@ -19,6 +19,11 @@ namespace SistemaHospitalar.DAL
             else
                 erro = " Erro com o banco de dados " + ex.Message;
             return erro;
+        }
+
+        public string MostrarErro(SqlException ex)
+        {
+            return "Erro com o Banco de Dados " + ex.Message;
         }
     }
 }

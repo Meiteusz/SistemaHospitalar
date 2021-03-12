@@ -53,11 +53,13 @@
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\DalADM.cs" />
     <Compile Include="DAL\DalComandos.cs" />
+    <Compile Include="DAL\DalConvenios.cs" />
     <Compile Include="DAL\DalDoutores.cs" />
     <Compile Include="DAL\DalPacientes.cs" />
     <Compile Include="DAL\DalRecepionistas.cs" />
     <Compile Include="Entities\ADM.cs" />
     <Compile Include="BLL\Validator.cs" />
+    <Compile Include="Entities\Convenios.cs" />
     <Compile Include="Entities\Doutores.cs" />
     <Compile Include="Entities\Especialidades.cs" />
     <Compile Include="Entities\Genero.cs" />
@@ -85,6 +87,12 @@
     </Compile>
     <Compile Include="UI\FormConsultas.Designer.cs">
       <DependentUpon>FormConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormConvenios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormConvenios.Designer.cs">
+      <DependentUpon>FormConvenios.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormEntradaDoutores.cs">
       <SubType>Form</SubType>
@@ -168,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormConsultas.resx">
       <DependentUpon>FormConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormConvenios.resx">
+      <DependentUpon>FormConvenios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormEntradaDoutores.resx">
       <DependentUpon>FormEntradaDoutores.cs</DependentUpon>
