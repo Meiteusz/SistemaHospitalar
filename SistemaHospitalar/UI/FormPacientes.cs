@@ -13,8 +13,6 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
-            rbNome.Checked = true;
-            cmbGravidade.DataSource = Enum.GetValues(typeof(Gravidade));
         }
 
         private void btnCadastroDePaciente_Click(object sender, EventArgs e)
@@ -30,7 +28,7 @@ namespace SistemaHospitalar.UI
             if (txtPesquisaNome.Text.Equals(""))
                     dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
             else
-                dgvPacientes.DataSource = DalPacientes.PesquisarPaciente(txtPesquisaNome.Text, (Gravidade)cmbGravidade.SelectedIndex);
+                dgvPacientes.DataSource = DalPacientes.PesquisarPaciente(txtPesquisaNome.Text);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -44,15 +42,7 @@ namespace SistemaHospitalar.UI
         private void rbNome_CheckedChanged(object sender, EventArgs e)
         {
             txtPesquisaNome.Visible = true;
-            cmbGravidade.Visible = false;
             txtPesquisaNome.Text = "";
-        }
-
-        private void rbGravidade_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisaNome.Visible = false;
-            cmbGravidade.Visible = true;
-            txtPesquisaNome.Text = " ";
         }
 
         private int Id { get; set; }

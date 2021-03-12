@@ -102,7 +102,7 @@ namespace SistemaHospitalar.DAL
                 }
                 catch (SqlException ex)
                 {
-                    return "Erro com o Banco de Dados " + ex.Message;
+                    return MostrarTipoErro(ex);
                 }
                 finally
                 {

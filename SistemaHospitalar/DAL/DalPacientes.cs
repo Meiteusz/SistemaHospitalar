@@ -17,15 +17,10 @@ namespace SistemaHospitalar.Models
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@nome", paciente.Nome);
                 command.Parameters.AddWithValue("@cpf", paciente.Cpf);
-                command.Parameters.AddWithValue("@celular_1", paciente.Celular);
+                command.Parameters.AddWithValue("@celular", paciente.Celular);
                 command.Parameters.AddWithValue("@genero", paciente.Genero);
-                command.Parameters.AddWithValue("@gravidade", paciente.Gravidade);
-                command.Parameters.AddWithValue("@dataEntrada", paciente.DataEntrada);
-                command.Parameters.AddWithValue("@dataSaida", paciente.DataSaida);
-                command.Parameters.AddWithValue("@celular_2", paciente.Celular2);
-                command.Parameters.AddWithValue("@templano", paciente.isPlano);
-                command.CommandText = "insert into PACIENTES (NOME, CPF, CELULAR_1, GENERO, GRAVIDADE, DATAENTRADA, DATASAIDA, TEMPLANO ,CELULAR_2) values (@nome, @cpf, @celular_1," +
-                    " @genero, @gravidade, @dataEntrada, @dataSaida, @templano ,@celular_2)";
+
+                command.CommandText = "insert into PACIENTES (NOME, CPF, CELULAR, GENERO) values (@nome, @cpf, @celular," + " @genero)";
                 try
                 {
                     command.Connection = conexao.Conectar();
@@ -34,7 +29,7 @@ namespace SistemaHospitalar.Models
                 }
                 catch (SqlException ex)
                 {
-                    return "Erro com o banco de dados" + ex.Message;
+                    return MostrarTipoErro(ex);
                 }
                 finally
                 {
@@ -77,12 +72,11 @@ namespace SistemaHospitalar.Models
             return dt;
         }
 
-        public static DataTable PesquisarPaciente(string p_nome, Gravidade p_gravidade)
+        public static DataTable PesquisarPaciente(string p_nome)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@nome", p_nome);
-            command.Parameters.AddWithValue("@gravidade", p_gravidade);
-            command.CommandText = "select * from PACIENTES where Nome = @nome or Gravidade = @gravidade";
+            command.CommandText = "select * from PACIENTES where Nome = @nome";
 
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();

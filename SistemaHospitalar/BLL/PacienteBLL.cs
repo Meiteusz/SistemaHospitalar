@@ -8,8 +8,7 @@ namespace SistemaHospitalar.BLL
 
         public string ValidarPaciente(Paciente paciente)
         {
-            Status = ValidarNome(paciente.Nome) + ValidarCpf(paciente.Cpf) + ValidarCelular(paciente.Celular) + ValidarCelular2(paciente.Celular2) +
-                     ValidarGenero(paciente.Genero) + ValidarGravidade(paciente.Gravidade);
+            Status = ValidarNome(paciente.Nome) + ValidarCpf(paciente.Cpf) + ValidarCelular(paciente.Celular) + ValidarGenero(paciente.Genero);
             return Status;
         }
     }

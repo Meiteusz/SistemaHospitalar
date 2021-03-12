@@ -11,6 +11,14 @@ namespace SistemaHospitalar.DAL
         public static DataTable dt;
         public static SqlDataAdapter adapter;
 
-        public static string msgErroBD = "Erro com o Banco de Dados";
+        protected string MostrarTipoErro(SqlException ex)
+        {
+            string erro = "";
+            if (ex.Number == 2627)
+                erro = "Já existe este CPF cadastrado!";
+            else
+                erro = " Erro com o banco de dados " + ex.Message;
+            return erro;
+        }
     }
 }

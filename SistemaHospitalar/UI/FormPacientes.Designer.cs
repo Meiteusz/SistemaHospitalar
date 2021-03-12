@@ -34,14 +34,9 @@ namespace SistemaHospitalar.UI
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
-            this.rbNome = new System.Windows.Forms.RadioButton();
-            this.rbGravidade = new System.Windows.Forms.RadioButton();
-            this.cmbGravidade = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnMensagemPaciente = new System.Windows.Forms.Button();
             this.btnDeletarPaciente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCadastroDePaciente
@@ -98,51 +93,6 @@ namespace SistemaHospitalar.UI
             this.txtPesquisaNome.Size = new System.Drawing.Size(281, 26);
             this.txtPesquisaNome.TabIndex = 7;
             // 
-            // rbNome
-            // 
-            this.rbNome.AutoSize = true;
-            this.rbNome.Location = new System.Drawing.Point(2, 24);
-            this.rbNome.Name = "rbNome";
-            this.rbNome.Size = new System.Drawing.Size(53, 17);
-            this.rbNome.TabIndex = 9;
-            this.rbNome.TabStop = true;
-            this.rbNome.Text = "Nome";
-            this.rbNome.UseVisualStyleBackColor = true;
-            this.rbNome.CheckedChanged += new System.EventHandler(this.rbNome_CheckedChanged);
-            // 
-            // rbGravidade
-            // 
-            this.rbGravidade.AutoSize = true;
-            this.rbGravidade.Location = new System.Drawing.Point(100, 24);
-            this.rbGravidade.Name = "rbGravidade";
-            this.rbGravidade.Size = new System.Drawing.Size(74, 17);
-            this.rbGravidade.TabIndex = 10;
-            this.rbGravidade.TabStop = true;
-            this.rbGravidade.Text = "Gravidade";
-            this.rbGravidade.UseVisualStyleBackColor = true;
-            this.rbGravidade.CheckedChanged += new System.EventHandler(this.rbGravidade_CheckedChanged);
-            // 
-            // cmbGravidade
-            // 
-            this.cmbGravidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGravidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbGravidade.FormattingEnabled = true;
-            this.cmbGravidade.Location = new System.Drawing.Point(12, 18);
-            this.cmbGravidade.Name = "cmbGravidade";
-            this.cmbGravidade.Size = new System.Drawing.Size(281, 26);
-            this.cmbGravidade.TabIndex = 11;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbGravidade);
-            this.groupBox1.Controls.Add(this.rbNome);
-            this.groupBox1.Location = new System.Drawing.Point(318, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(179, 46);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tipo de Filtro";
-            // 
             // btnMensagemPaciente
             // 
             this.btnMensagemPaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -175,8 +125,6 @@ namespace SistemaHospitalar.UI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDeletarPaciente);
             this.Controls.Add(this.btnMensagemPaciente);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cmbGravidade);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisaNome);
             this.Controls.Add(this.btnVoltar);
@@ -185,8 +133,6 @@ namespace SistemaHospitalar.UI
             this.Name = "FormPacientes";
             this.Text = "FormPacientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,10 +145,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisaNome;
-        private System.Windows.Forms.RadioButton rbNome;
-        private System.Windows.Forms.RadioButton rbGravidade;
-        private System.Windows.Forms.ComboBox cmbGravidade;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnMensagemPaciente;
         private System.Windows.Forms.Button btnDeletarPaciente;
     }

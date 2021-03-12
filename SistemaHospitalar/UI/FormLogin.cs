@@ -15,7 +15,7 @@ namespace SistemaHospitalar
             StartPosition = FormStartPosition.CenterScreen;
 
             //LOGIN PARA TESTE
-            txtEmail.Text = "amandaabreu@gmail.com";
+            txtEmail.Text = "rosanabnu@gmail.com";
             txtSenha.Text = "321ab";
         }
 
