@@ -30,5 +30,14 @@ namespace SistemaHospitalar.UI
         {
 
         }
+
+        private int ID { get; set; }
+        private string Nome { get; set; }
+
+        private void dgvConvenios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ID = (int)dgvConvenios.SelectedRows[0].Cells[0].Value;
+            Nome = dgvConvenios.SelectedRows[0].Cells[1].Value.ToString();
+        }
     }
 }

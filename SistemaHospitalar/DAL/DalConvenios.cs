@@ -38,8 +38,5 @@ namespace SistemaHospitalar.DAL
             adapter.Fill(dt);
             return dt;
         }
-
-        private int ID { get; set; }
-        private string Nome { get; set; }
     }
 }

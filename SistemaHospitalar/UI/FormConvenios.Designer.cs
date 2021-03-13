@@ -86,6 +86,7 @@ namespace SistemaHospitalar.UI
             this.dgvConvenios.Name = "dgvConvenios";
             this.dgvConvenios.Size = new System.Drawing.Size(347, 284);
             this.dgvConvenios.TabIndex = 6;
+            this.dgvConvenios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConvenios_CellClick);
             // 
             // txtDescontoConvenio
             // 
