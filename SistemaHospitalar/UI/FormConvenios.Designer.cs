@@ -75,9 +75,9 @@ namespace SistemaHospitalar.UI
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(469, 171);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 25);
+            this.label2.Size = new System.Drawing.Size(128, 25);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Desconto";
+            this.label2.Text = "Desconto   %";
             // 
             // dgvConvenios
             // 

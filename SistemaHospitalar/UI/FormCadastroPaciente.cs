@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.Entities;
+﻿using SistemaHospitalar.DAL;
+using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using System;
@@ -15,6 +16,7 @@ namespace SistemaHospitalar.Views
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             cmbGeneroPaciente.DataSource = Enum.GetValues(typeof(Genero));
+            cmbConvenios.DataSource = DalConvenios.MostrarNomeConvenios();
 
             IEnumerable<Gravidade> values = Enum.GetValues(typeof(Gravidade)).Cast<Gravidade>();
             List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));

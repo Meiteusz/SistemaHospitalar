@@ -1,6 +1,5 @@
 ﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.DAL;
-using SistemaHospitalar.Entities;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -20,7 +19,7 @@ namespace SistemaHospitalar.Models
                 command.Parameters.AddWithValue("@celular", paciente.Celular);
                 command.Parameters.AddWithValue("@genero", paciente.Genero);
 
-                command.CommandText = "insert into PACIENTES (NOME, CPF, CELULAR, GENERO) values (@nome, @cpf, @celular," + " @genero)";
+                command.CommandText = "insert into PACIENTES (NOME, CPF, CELULAR, GENERO) values (@nome, @cpf, @celular, @genero)";
                 try
                 {
                     command.Connection = conexao.Conectar();

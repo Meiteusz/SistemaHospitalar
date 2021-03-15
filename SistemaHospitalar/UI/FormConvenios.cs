@@ -16,9 +16,10 @@ namespace SistemaHospitalar.UI
         private void btnCadastrarConvenio_Click(object sender, System.EventArgs e)
         {
             DalConvenios dalConvenios = new DalConvenios();
-            Convenios convenios = new Convenios(txtNomeConvenio.Text, float.Parse(txtDescontoConvenio.Text));
+            Convenios convenios = new Convenios(txtNomeConvenio.Text, float.Parse(txtDescontoConvenio.Text) / 100);
 
             MessageBox.Show(dalConvenios.CadastrarConvenio(convenios));
+            dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
         }
 
         private void btnDeletarConvenio_Click(object sender, System.EventArgs e)
