@@ -1,4 +1,5 @@
 ﻿using SistemaHospitalar.Entities;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -40,29 +41,19 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
-        //List<string> convenios = new List<string>();
-
-        public static List<string> MostrarNomeConvenios()
+        public static ArrayList MostrarNomeConvenios()
         {
-            command.CommandText = "select NOME from CONVENIOS";
-            SqlDataReader reader;
-            List<string> convenios = new List<string>();
-            command.Connection = conexao.Conectar();
-            reader = command.ExecuteReader();
-            while (reader.Read())
+            ArrayList convenios = new ArrayList();
+            adapter = new SqlDataAdapter("select NOME from CONVENIOS", conexao.Conectar());
+            dt = new DataTable();
+            adapter.Fill(dt);
+
+            foreach (DataRow item in dt.Rows)
             {
-                string c = reader.GetString(1);
-                convenios.Add(c);
+                convenios.Add(item["NOME"].ToString());
             }
             conexao.Desconectar();
             return convenios;
-
-
-            //command.CommandText = "select NOME from CONVENIOS";
-            //adapter = new SqlDataAdapter(command);
-            //dt = new DataTable();
-            //adapter.Fill(dt);
-            //return dt;
         }
     }
 }

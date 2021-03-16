@@ -4,6 +4,7 @@ using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -39,7 +40,6 @@ namespace SistemaHospitalar.Views
             mtbCelularPaciente.Text = "";
             func(Controls);
         }
-
 
         private void mtbCpfPaciente_Click(object sender, EventArgs e)
         {
