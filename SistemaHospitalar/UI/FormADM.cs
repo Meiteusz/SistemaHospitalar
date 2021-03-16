@@ -152,13 +152,9 @@ namespace SistemaHospitalar.UI
         private void btnDeletarFuncionario_Click(object sender, EventArgs e)
         {
             if (isLinhaSelecionada())
-            {
                 DeletarFuncionario();
-            }
             else
-            {
                 MessageBox.Show("Selecione um funcionario");
-            }
         }
 
         private void dgvFuncionarios_CellClick(object sender, DataGridViewCellEventArgs e)
