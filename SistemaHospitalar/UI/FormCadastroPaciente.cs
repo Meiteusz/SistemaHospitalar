@@ -23,7 +23,7 @@ namespace SistemaHospitalar.Views
             List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
         }
 
-        private void ClearTextBoxes()
+        private void LimparTextBox()
         {
             Action<Control.ControlCollection> func = null;
 
@@ -36,6 +36,7 @@ namespace SistemaHospitalar.Views
                         func(control.Controls);
             };
             cmbGeneroPaciente.SelectedIndex = 0;
+            cmbConvenios.SelectedItem = "Nenhum";
             mtbCpfPaciente.Text = "";
             mtbCelularPaciente.Text = "";
             func(Controls);
@@ -62,7 +63,7 @@ namespace SistemaHospitalar.Views
         //Limpa todas as TextBox
         private void btnApagar_Click(object sender, System.EventArgs e)
         {
-            ClearTextBoxes();
+            LimparTextBox();
         }
 
 
@@ -70,7 +71,10 @@ namespace SistemaHospitalar.Views
         private void btnCadastrarPaciente_Click(object sender, EventArgs e)
         {
             DalPacientes dalPacientes = new DalPacientes();
-            Paciente paciente = new Paciente(txtNomePaciente.Text, mtbCpfPaciente.Text, mtbCelularPaciente.Text, (Genero)cmbGeneroPaciente.SelectedIndex);
+
+            int idConvenio = dalPacientes.DetectarConvenio(cmbConvenios.Text);
+
+            Paciente paciente = new Paciente(txtNomePaciente.Text, mtbCpfPaciente.Text, mtbCelularPaciente.Text, (Genero)cmbGeneroPaciente.SelectedIndex, idConvenio);
             MessageBox.Show(dalPacientes.Cadastrar(paciente));
         }
 

@@ -43,11 +43,6 @@ namespace SistemaHospitalar.UI
             }
         }
 
-        private void btnAtualizarConvenio_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
         private void dgvConvenios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ID = (int)dgvConvenios.SelectedRows[0].Cells[0].Value;

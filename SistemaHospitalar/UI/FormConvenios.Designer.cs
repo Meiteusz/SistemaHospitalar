@@ -35,7 +35,6 @@ namespace SistemaHospitalar.UI
             this.label2 = new System.Windows.Forms.Label();
             this.dgvConvenios = new System.Windows.Forms.DataGridView();
             this.txtDescontoConvenio = new System.Windows.Forms.TextBox();
-            this.btnAtualizarConvenio = new System.Windows.Forms.Button();
             this.btnDeletarConvenio = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvenios)).BeginInit();
@@ -97,21 +96,10 @@ namespace SistemaHospitalar.UI
             this.txtDescontoConvenio.Size = new System.Drawing.Size(278, 30);
             this.txtDescontoConvenio.TabIndex = 7;
             // 
-            // btnAtualizarConvenio
-            // 
-            this.btnAtualizarConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarConvenio.Location = new System.Drawing.Point(57, 388);
-            this.btnAtualizarConvenio.Name = "btnAtualizarConvenio";
-            this.btnAtualizarConvenio.Size = new System.Drawing.Size(130, 50);
-            this.btnAtualizarConvenio.TabIndex = 8;
-            this.btnAtualizarConvenio.Text = "Atualizar Convenio";
-            this.btnAtualizarConvenio.UseVisualStyleBackColor = true;
-            this.btnAtualizarConvenio.Click += new System.EventHandler(this.btnAtualizarConvenio_Click);
-            // 
             // btnDeletarConvenio
             // 
             this.btnDeletarConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletarConvenio.Location = new System.Drawing.Point(274, 388);
+            this.btnDeletarConvenio.Location = new System.Drawing.Point(168, 388);
             this.btnDeletarConvenio.Name = "btnDeletarConvenio";
             this.btnDeletarConvenio.Size = new System.Drawing.Size(130, 50);
             this.btnDeletarConvenio.TabIndex = 9;
@@ -137,7 +125,6 @@ namespace SistemaHospitalar.UI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnDeletarConvenio);
-            this.Controls.Add(this.btnAtualizarConvenio);
             this.Controls.Add(this.txtDescontoConvenio);
             this.Controls.Add(this.dgvConvenios);
             this.Controls.Add(this.label2);
@@ -160,7 +147,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvConvenios;
         private System.Windows.Forms.TextBox txtDescontoConvenio;
-        private System.Windows.Forms.Button btnAtualizarConvenio;
         private System.Windows.Forms.Button btnDeletarConvenio;
         private System.Windows.Forms.Button btnVoltar;
     }

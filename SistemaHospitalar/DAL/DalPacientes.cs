@@ -18,8 +18,9 @@ namespace SistemaHospitalar.Models
                 command.Parameters.AddWithValue("@cpf", paciente.Cpf);
                 command.Parameters.AddWithValue("@celular", paciente.Celular);
                 command.Parameters.AddWithValue("@genero", paciente.Genero);
+                command.Parameters.AddWithValue("@convenio", paciente.Convenio);
 
-                command.CommandText = "insert into PACIENTES (NOME, CPF, CELULAR, GENERO) values (@nome, @cpf, @celular, @genero)";
+                command.CommandText = "insert into PACIENTES values (@nome, @cpf, @celular, @genero, @convenio)";
                 try
                 {
                     command.Connection = conexao.Conectar();
@@ -62,9 +63,31 @@ namespace SistemaHospitalar.Models
             }
         }
 
+        private int Id { get; set; }
+        
+        //Pega o ID do Convenio selecionado para cadastrar no Paciente
+        public int DetectarConvenio(string p_nomeConvenio)
+        {
+            SqlCommand command = new SqlCommand("select * from CONVENIOS where nome = @nome", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@nome", p_nomeConvenio);
+            SqlDataReader reader = command.ExecuteReader();
+            
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Id = (int)reader["ID"];
+                }
+            }
+            conexao.Desconectar();
+            return Id;
+        }
+
         public static DataTable MostrarPacientesDGV()
         {
-            command.CommandText = "select * from PACIENTES";
+            command.CommandText = "select PACIENTES.ID, PACIENTES.NOME, PACIENTES.CPF, PACIENTES.CELULAR, PACIENTES.GENERO, CONVENIOS.NOME as CONVENIO " +
+                "from PACIENTES inner join CONVENIOS ON CONVENIOS.ID = PACIENTES.CONVENIOID; ";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
