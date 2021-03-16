@@ -4,7 +4,6 @@ using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 

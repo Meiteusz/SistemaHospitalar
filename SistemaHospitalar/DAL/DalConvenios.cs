@@ -8,6 +8,17 @@ namespace SistemaHospitalar.DAL
 {
     class DalConvenios : DalComandos
     {
+        public override string MostrarTipoErro(SqlException ex)
+        {
+            string erro = "";
+            if (ex.Number == 2627)
+                erro = "Já existe um Convênio com este nome Cadastrado!";
+            else
+                erro = " Erro com o banco de dados " + ex.Message;
+            return erro;
+        }
+
+
         public string CadastrarConvenio(Convenios convenios)
         {
             command.Parameters.Clear();
@@ -24,13 +35,14 @@ namespace SistemaHospitalar.DAL
             }
             catch (SqlException ex)
             {
-                return MostrarErro(ex);
+                return MostrarTipoErro(ex);
             }
             finally
             {
                 conexao.Desconectar();
             }
         }
+
 
         public static DataTable MostrarConveniosDGV()
         {
@@ -40,6 +52,7 @@ namespace SistemaHospitalar.DAL
             adapter.Fill(dt);
             return dt;
         }
+
 
         public static ArrayList MostrarNomeConvenios()
         {
