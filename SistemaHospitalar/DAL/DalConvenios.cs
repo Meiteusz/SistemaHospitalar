@@ -1,6 +1,5 @@
 ﻿using SistemaHospitalar.Entities;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -36,6 +35,29 @@ namespace SistemaHospitalar.DAL
             catch (SqlException ex)
             {
                 return MostrarTipoErro(ex);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+
+
+        public string DeletarConvenio(int id)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", id);
+            command.CommandText = "delete CONVENIOS where id = @id";
+
+            try
+            {
+                conexao.Conectar();
+                command.ExecuteNonQuery();
+                return "Convenio deletado com sucesso!";
+            }
+            catch (SqlException ex)
+            {
+                return MostrarErro(ex);
             }
             finally
             {

@@ -13,6 +13,9 @@ namespace SistemaHospitalar.UI
             dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
         }
 
+        private int ID { get; set; }
+        private string Nome { get; set; }
+
         private void btnCadastrarConvenio_Click(object sender, System.EventArgs e)
         {
             DalConvenios dalConvenios = new DalConvenios();
@@ -24,7 +27,20 @@ namespace SistemaHospitalar.UI
 
         private void btnDeletarConvenio_Click(object sender, System.EventArgs e)
         {
-
+            if (dgvConvenios.SelectedRows.Count != 1 || Nome.Equals("Nenhum"))
+            {
+                MessageBox.Show("Escolha um Convênio para deletar!");
+            }
+            else
+            {
+                if (MessageBox.Show("Deseja realmente deletar o Convênio " + Nome + "?", "Deletar Convênio", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    DalConvenios dalConvenios = new DalConvenios();
+                    MessageBox.Show(dalConvenios.DeletarConvenio(ID));
+                    dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
+                }
+            }
         }
 
         private void btnAtualizarConvenio_Click(object sender, System.EventArgs e)
@@ -32,13 +48,18 @@ namespace SistemaHospitalar.UI
 
         }
 
-        private int ID { get; set; }
-        private string Nome { get; set; }
-
         private void dgvConvenios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             ID = (int)dgvConvenios.SelectedRows[0].Cells[0].Value;
             Nome = dgvConvenios.SelectedRows[0].Cells[1].Value.ToString();
+        }
+
+        private void btnVoltar_Click(object sender, System.EventArgs e)
+        {
+            FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
+            Hide();
+            formEntradaRecepcionista.ShowDialog();
+            Close();
         }
     }
 }
