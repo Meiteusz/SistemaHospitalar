@@ -90,10 +90,10 @@ namespace SistemaHospitalar.DAL
                 command.Parameters.AddWithValue("@cpf", doutor.Cpf);
                 command.Parameters.AddWithValue("@turno", doutor.Turno);
                 command.Parameters.AddWithValue("@genero", doutor.Genero);
-                command.Parameters.AddWithValue("@especialidade", doutor.Especialidade);
                 command.Parameters.AddWithValue("@celular", doutor.Celular);
+                command.Parameters.AddWithValue("@especialidade", doutor.Especialidade);
 
-                command.CommandText = "insert into DOUTORES values(@nome, @email, @senha, @cpf, @turno, @genero, @especialidade, @celular)";
+                command.CommandText = "insert into DOUTORES values(@nome, @email, @senha, @cpf, @turno, @genero, @celular, @especialidade)";
                 try
                 {
                     command.Connection = conexao.Conectar();

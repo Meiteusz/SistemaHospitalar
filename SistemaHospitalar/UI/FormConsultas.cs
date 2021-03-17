@@ -9,5 +9,10 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
+
+        private void btnCadastrarConsulta_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

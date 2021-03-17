@@ -19,5 +19,13 @@ namespace SistemaHospitalar.UI
             formConfiguracoesDoutores.ShowDialog();
             Close();
         }
+
+        private void btnValores_Click(object sender, System.EventArgs e)
+        {
+            FormValores formValores = new FormValores();
+            Hide();
+            formValores.ShowDialog();
+            Close();
+        }
     }
 }
