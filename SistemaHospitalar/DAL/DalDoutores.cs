@@ -193,5 +193,33 @@ namespace SistemaHospitalar.DAL
             adapter.Fill(dt);
             return dt;
         }
+
+        public static DataTable PesquisarEspecialidade(Especialidades p_especialidade)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@especialidade", p_especialidade);
+            command.CommandText = "select ID, NOME, ESPECIALIDADE from DOUTORES where ESPECIALIDADE = @especialidade";
+
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        private static string ValorConsulta { get; set; }
+        public static string PegarValorConsulta(int p_doutorId)
+        {
+            SqlCommand command = new SqlCommand("select VALORCONSULTA from VALORES where doutorid = @doutorid", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@doutorId", p_doutorId);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ValorConsulta = reader["VALORCONSULTA"].ToString();
+            }
+            conexao.Desconectar();
+            return ValorConsulta;
+        }
     }
 }

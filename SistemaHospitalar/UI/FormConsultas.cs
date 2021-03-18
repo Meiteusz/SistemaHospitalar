@@ -12,7 +12,10 @@ namespace SistemaHospitalar.UI
 
         private void btnCadastrarConsulta_Click(object sender, System.EventArgs e)
         {
-
+            FormAgendarConsulta formCadastroConsulta = new FormAgendarConsulta();
+            Hide();
+            formCadastroConsulta.ShowDialog();
+            Close();
         }
     }
 }

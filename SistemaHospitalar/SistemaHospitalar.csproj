@@ -53,6 +53,7 @@
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\DalADM.cs" />
     <Compile Include="DAL\DalComandos.cs" />
+    <Compile Include="DAL\DalConsultas.cs" />
     <Compile Include="DAL\DalConvenios.cs" />
     <Compile Include="DAL\DalDoutores.cs" />
     <Compile Include="DAL\DalPacientes.cs" />
@@ -60,9 +61,11 @@
     <Compile Include="DAL\DalValores.cs" />
     <Compile Include="Entities\ADM.cs" />
     <Compile Include="BLL\Validator.cs" />
+    <Compile Include="Entities\Consulta.cs" />
     <Compile Include="Entities\Convenios.cs" />
     <Compile Include="Entities\Doutores.cs" />
     <Compile Include="Entities\Especialidades.cs" />
+    <Compile Include="Entities\Estado_Consulta.cs" />
     <Compile Include="Entities\Genero.cs" />
     <Compile Include="Entities\Gravidade.cs" />
     <Compile Include="Entities\Paciente.cs" />
@@ -78,11 +81,11 @@
     <Compile Include="UI\FormADM.Designer.cs">
       <DependentUpon>FormADM.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormCadastroConsulta.cs">
+    <Compile Include="UI\FormAgendarConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormCadastroConsulta.Designer.cs">
-      <DependentUpon>FormCadastroConsulta.cs</DependentUpon>
+    <Compile Include="UI\FormAgendarConsulta.Designer.cs">
+      <DependentUpon>FormAgendarConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormConfiguracoesDoutores.cs">
       <SubType>Form</SubType>
@@ -178,6 +181,9 @@
     </Compile>
     <EmbeddedResource Include="UI\FormADM.resx">
       <DependentUpon>FormADM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormAgendarConsulta.resx">
+      <DependentUpon>FormAgendarConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormCadastroDoutor.resx">
       <DependentUpon>FormCadastroDoutor.cs</DependentUpon>

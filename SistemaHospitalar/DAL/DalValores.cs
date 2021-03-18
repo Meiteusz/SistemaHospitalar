@@ -55,6 +55,9 @@ namespace SistemaHospitalar.DAL
 
         private static bool isValorExiste { get; set; }
 
+        public static string ValorConsulta { get; set; }
+        public static string ValorExame { get; set; }
+
         public static bool isValorDefinido(int id)
         {
             isValorExiste = false;
@@ -66,6 +69,11 @@ namespace SistemaHospitalar.DAL
 
             if (reader.HasRows)
             {
+                while (reader.Read())
+                {
+                    ValorConsulta = reader["VALORCONSULTA"].ToString();
+                    ValorExame = reader["VALOREXAME"].ToString();
+                }
                 isValorExiste = true;
             }
             conexao.Desconectar();

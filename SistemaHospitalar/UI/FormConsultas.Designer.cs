@@ -29,25 +29,25 @@ namespace SistemaHospitalar.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCadastrarConsulta = new System.Windows.Forms.Button();
+            this.btnAgendarConsulta = new System.Windows.Forms.Button();
             this.dgvConsultas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCadastrarConsulta
+            // btnAgendarConsulta
             // 
-            this.btnCadastrarConsulta.Location = new System.Drawing.Point(536, 56);
-            this.btnCadastrarConsulta.Name = "btnCadastrarConsulta";
-            this.btnCadastrarConsulta.Size = new System.Drawing.Size(222, 67);
-            this.btnCadastrarConsulta.TabIndex = 0;
-            this.btnCadastrarConsulta.Text = "Cadastrar Consulta";
-            this.btnCadastrarConsulta.UseVisualStyleBackColor = true;
-            this.btnCadastrarConsulta.Click += new System.EventHandler(this.btnCadastrarConsulta_Click);
+            this.btnAgendarConsulta.Location = new System.Drawing.Point(546, 56);
+            this.btnAgendarConsulta.Name = "btnAgendarConsulta";
+            this.btnAgendarConsulta.Size = new System.Drawing.Size(222, 67);
+            this.btnAgendarConsulta.TabIndex = 0;
+            this.btnAgendarConsulta.Text = "Agendar Consulta";
+            this.btnAgendarConsulta.UseVisualStyleBackColor = true;
+            this.btnAgendarConsulta.Click += new System.EventHandler(this.btnCadastrarConsulta_Click);
             // 
             // dgvConsultas
             // 
             this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultas.Location = new System.Drawing.Point(12, 56);
+            this.dgvConsultas.Location = new System.Drawing.Point(25, 56);
             this.dgvConsultas.Name = "dgvConsultas";
             this.dgvConsultas.Size = new System.Drawing.Size(480, 318);
             this.dgvConsultas.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace SistemaHospitalar.UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvConsultas);
-            this.Controls.Add(this.btnCadastrarConsulta);
+            this.Controls.Add(this.btnAgendarConsulta);
             this.Name = "FormConsultas";
             this.Text = "FormConsultas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
@@ -68,7 +68,7 @@ namespace SistemaHospitalar.UI
 
         #endregion
 
-        private System.Windows.Forms.Button btnCadastrarConsulta;
+        private System.Windows.Forms.Button btnAgendarConsulta;
         private System.Windows.Forms.DataGridView dgvConsultas;
     }
 }

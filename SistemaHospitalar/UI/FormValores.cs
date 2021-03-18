@@ -11,6 +11,8 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             VerificarValorExistente();
+            txtValorConsulta.Value = decimal.Parse(DalValores.ValorConsulta);
+            txtValorExame.Value = decimal.Parse(DalValores.ValorExame);
         }
 
         private void VerificarValorExistente()
@@ -20,6 +22,7 @@ namespace SistemaHospitalar.UI
                 btnCadastrarValor.Text = "Atualizar Valores";
             }
         }
+
 
         // O doutor(a) poderá cadastrar os valores apenas uma vez, depois só atualiza-lo
         private void btnCadastrarValor_Click(object sender, System.EventArgs e)
@@ -36,6 +39,7 @@ namespace SistemaHospitalar.UI
                 MessageBox.Show(dalValores.CadastrarValor(valor));
             }
         }
+
 
         private void btnVoltar_Click(object sender, System.EventArgs e)
         {

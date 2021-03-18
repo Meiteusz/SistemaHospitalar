@@ -1,5 +1,6 @@
 ﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.DAL;
+using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -63,8 +64,9 @@ namespace SistemaHospitalar.Models
             }
         }
 
-        private int Id { get; set; }
-        
+        public static int Id { get; set; }
+        public static string Nome { get; set; }
+
         //Pega o ID do Convenio selecionado para cadastrar no Paciente
         public int DetectarConvenio(string p_nomeConvenio)
         {
@@ -94,6 +96,21 @@ namespace SistemaHospitalar.Models
             return dt;
         }
 
+        public static ArrayList MostrarCPFPacientes()
+        {
+            ArrayList pacientes = new ArrayList();
+            adapter = new SqlDataAdapter("select CPF from PACIENTES", conexao.Conectar());
+            dt = new DataTable();
+            adapter.Fill(dt);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                pacientes.Add(item["CPF"].ToString());
+            }
+            conexao.Desconectar();
+            return pacientes;
+        }
+
         public static DataTable PesquisarPaciente(string p_nome)
         {
             command.Parameters.Clear();
@@ -104,6 +121,22 @@ namespace SistemaHospitalar.Models
             dt = new DataTable();
             adapter.Fill(dt);
             return dt;
+        }
+
+        public static string IdentificarPaciente(string p_CpfPaciente)
+        {
+            SqlCommand command = new SqlCommand("select * from PACIENTES where CPF = @cpf", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@cpf", p_CpfPaciente);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Nome = reader["NOME"].ToString();
+                Id = (int)reader["ID"];
+            }
+            conexao.Desconectar();
+            return Nome;
         }
     }
 }
