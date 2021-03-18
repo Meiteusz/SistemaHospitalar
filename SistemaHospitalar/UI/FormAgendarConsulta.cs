@@ -47,7 +47,7 @@ namespace SistemaHospitalar.UI
 
         private void btnAgendarConsulta_Click(object sender, EventArgs e)
         {
-            Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, DateTime.Now, ValorConsulta, DateTime.Now);
+            Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorConsulta);
             DalConsultas dalConsultas = new DalConsultas();
             MessageBox.Show(dalConsultas.CadastrarConsulta(consulta));
         }

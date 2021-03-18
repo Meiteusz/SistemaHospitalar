@@ -13,8 +13,7 @@ namespace SistemaHospitalar.DAL
             command.Parameters.AddWithValue("@doutor", consulta.Doutor);
             command.Parameters.AddWithValue("@dataConsulta", consulta.DataConsulta);
             command.Parameters.AddWithValue("@preco", consulta.Preco);
-            command.Parameters.AddWithValue("@horarioConsulta", consulta.HorarioConsulta);
-            command.CommandText = "insert into CONSULTAS values(@estado, @paciente, @doutor, @dataConsulta, @preco, @horarioConsulta)";
+            command.CommandText = "insert into CONSULTAS values(@estado, @paciente, @doutor, @dataConsulta, @preco)";
 
             try
             {

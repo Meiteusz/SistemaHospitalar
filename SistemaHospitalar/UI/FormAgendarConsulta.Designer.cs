@@ -31,18 +31,16 @@ namespace SistemaHospitalar.UI
         {
             this.cmbCpfPacientes = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.MtbDataConsulta = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.MtbHorarioConsulta = new System.Windows.Forms.MaskedTextBox();
             this.txtNomeDoutor = new System.Windows.Forms.TextBox();
             this.dgvDoutores = new System.Windows.Forms.DataGridView();
             this.cmbEspecialidade = new System.Windows.Forms.ComboBox();
             this.btnCadastrarConsulta = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblNomePaciente = new System.Windows.Forms.Label();
+            this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoutores)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +48,7 @@ namespace SistemaHospitalar.UI
             // cmbCpfPacientes
             // 
             this.cmbCpfPacientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCpfPacientes.Location = new System.Drawing.Point(53, 45);
+            this.cmbCpfPacientes.Location = new System.Drawing.Point(45, 45);
             this.cmbCpfPacientes.Name = "cmbCpfPacientes";
             this.cmbCpfPacientes.Size = new System.Drawing.Size(270, 28);
             this.cmbCpfPacientes.TabIndex = 0;
@@ -60,33 +58,21 @@ namespace SistemaHospitalar.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(49, 22);
+            this.label1.Location = new System.Drawing.Point(41, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Paciente (CPF)";
             // 
-            // MtbDataConsulta
-            // 
-            this.MtbDataConsulta.Culture = new System.Globalization.CultureInfo("pt-BR");
-            this.MtbDataConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MtbDataConsulta.Location = new System.Drawing.Point(99, 202);
-            this.MtbDataConsulta.Mask = "0000/00/00";
-            this.MtbDataConsulta.Name = "MtbDataConsulta";
-            this.MtbDataConsulta.Size = new System.Drawing.Size(90, 27);
-            this.MtbDataConsulta.TabIndex = 2;
-            this.MtbDataConsulta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MtbDataConsulta.ValidatingType = typeof(System.DateTime);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 205);
+            this.label2.Location = new System.Drawing.Point(41, 177);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.Size = new System.Drawing.Size(133, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Data";
+            this.label2.Text = "Data da Consulta";
             // 
             // label3
             // 
@@ -97,18 +83,6 @@ namespace SistemaHospitalar.UI
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Doutor(a)";
-            // 
-            // MtbHorarioConsulta
-            // 
-            this.MtbHorarioConsulta.Culture = new System.Globalization.CultureInfo("pt-BR");
-            this.MtbHorarioConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MtbHorarioConsulta.Location = new System.Drawing.Point(257, 202);
-            this.MtbHorarioConsulta.Mask = "00:00";
-            this.MtbHorarioConsulta.Name = "MtbHorarioConsulta";
-            this.MtbHorarioConsulta.Size = new System.Drawing.Size(66, 27);
-            this.MtbHorarioConsulta.TabIndex = 6;
-            this.MtbHorarioConsulta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MtbHorarioConsulta.ValidatingType = typeof(System.DateTime);
             // 
             // txtNomeDoutor
             // 
@@ -150,16 +124,6 @@ namespace SistemaHospitalar.UI
             this.btnCadastrarConsulta.UseVisualStyleBackColor = true;
             this.btnCadastrarConsulta.Click += new System.EventHandler(this.btnAgendarConsulta_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(207, 205);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Hora";
-            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Location = new System.Drawing.Point(272, 54);
@@ -173,12 +137,10 @@ namespace SistemaHospitalar.UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dtpDataConsulta);
             this.groupBox1.Controls.Add(this.lblNomePaciente);
             this.groupBox1.Controls.Add(this.cmbCpfPacientes);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.MtbHorarioConsulta);
-            this.groupBox1.Controls.Add(this.MtbDataConsulta);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(404, 88);
             this.groupBox1.Name = "groupBox1";
@@ -194,6 +156,19 @@ namespace SistemaHospitalar.UI
             this.lblNomePaciente.Name = "lblNomePaciente";
             this.lblNomePaciente.Size = new System.Drawing.Size(0, 20);
             this.lblNomePaciente.TabIndex = 13;
+            // 
+            // dtpDataConsulta
+            // 
+            this.dtpDataConsulta.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.dtpDataConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDataConsulta.Location = new System.Drawing.Point(45, 200);
+            this.dtpDataConsulta.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
+            this.dtpDataConsulta.MinDate = new System.DateTime(2021, 3, 18, 16, 54, 53, 0);
+            this.dtpDataConsulta.Name = "dtpDataConsulta";
+            this.dtpDataConsulta.Size = new System.Drawing.Size(170, 27);
+            this.dtpDataConsulta.TabIndex = 15;
+            this.dtpDataConsulta.Value = new System.DateTime(2021, 3, 18, 17, 2, 37, 0);
             // 
             // FormAgendarConsulta
             // 
@@ -222,17 +197,15 @@ namespace SistemaHospitalar.UI
 
         private System.Windows.Forms.ComboBox cmbCpfPacientes;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox MtbDataConsulta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox MtbHorarioConsulta;
         private System.Windows.Forms.TextBox txtNomeDoutor;
         private System.Windows.Forms.DataGridView dgvDoutores;
         private System.Windows.Forms.ComboBox cmbEspecialidade;
         private System.Windows.Forms.Button btnCadastrarConsulta;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblNomePaciente;
+        private System.Windows.Forms.DateTimePicker dtpDataConsulta;
     }
 }
