@@ -29,14 +29,12 @@ namespace SistemaHospitalar
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnConfiguracoes = new System.Windows.Forms.Button();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnConvenios = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVisitas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConfiguracoes
@@ -54,7 +52,7 @@ namespace SistemaHospitalar
             // btnPacientes
             // 
             this.btnPacientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPacientes.Location = new System.Drawing.Point(60, 201);
+            this.btnPacientes.Location = new System.Drawing.Point(60, 178);
             this.btnPacientes.Name = "btnPacientes";
             this.btnPacientes.Size = new System.Drawing.Size(144, 85);
             this.btnPacientes.TabIndex = 2;
@@ -67,21 +65,15 @@ namespace SistemaHospitalar
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblNome.Location = new System.Drawing.Point(189, 19);
+            this.lblNome.Location = new System.Drawing.Point(191, 28);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(0, 39);
             this.lblNome.TabIndex = 3;
             // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // btnConsultas
             // 
             this.btnConsultas.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultas.Location = new System.Drawing.Point(240, 201);
+            this.btnConsultas.Location = new System.Drawing.Point(240, 178);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Size = new System.Drawing.Size(144, 85);
             this.btnConsultas.TabIndex = 4;
@@ -92,7 +84,7 @@ namespace SistemaHospitalar
             // btnConvenios
             // 
             this.btnConvenios.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvenios.Location = new System.Drawing.Point(418, 201);
+            this.btnConvenios.Location = new System.Drawing.Point(418, 178);
             this.btnConvenios.Name = "btnConvenios";
             this.btnConvenios.Size = new System.Drawing.Size(144, 85);
             this.btnConvenios.TabIndex = 5;
@@ -100,22 +92,22 @@ namespace SistemaHospitalar
             this.btnConvenios.UseVisualStyleBackColor = true;
             this.btnConvenios.Click += new System.EventHandler(this.btnConvenios_Click);
             // 
-            // button2
+            // btnVisitas
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(602, 201);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 85);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Visitas";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnVisitas.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisitas.Location = new System.Drawing.Point(602, 178);
+            this.btnVisitas.Name = "btnVisitas";
+            this.btnVisitas.Size = new System.Drawing.Size(144, 85);
+            this.btnVisitas.TabIndex = 6;
+            this.btnVisitas.Text = "Visitas";
+            this.btnVisitas.UseVisualStyleBackColor = true;
             // 
             // FormEntradaRecepcionista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnVisitas);
             this.Controls.Add(this.btnConvenios);
             this.Controls.Add(this.btnConsultas);
             this.Controls.Add(this.lblNome);
@@ -132,9 +124,8 @@ namespace SistemaHospitalar
         private System.Windows.Forms.Button btnConfiguracoes;
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnConvenios;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVisitas;
     }
 }

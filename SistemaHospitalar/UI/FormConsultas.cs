@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using SistemaHospitalar.DAL;
+using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
 {
@@ -8,6 +9,7 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            dgvConsultas.DataSource = DalConsultas.MostrarConsultas();
         }
 
         private void btnCadastrarConsulta_Click(object sender, System.EventArgs e)
@@ -15,6 +17,14 @@ namespace SistemaHospitalar.UI
             FormAgendarConsulta formCadastroConsulta = new FormAgendarConsulta();
             Hide();
             formCadastroConsulta.ShowDialog();
+            Close();
+        }
+
+        private void btnVoltar_Click(object sender, System.EventArgs e)
+        {
+            FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
+            Hide();
+            formEntradaRecepcionista.ShowDialog();
             Close();
         }
     }

@@ -1,4 +1,5 @@
 ﻿using SistemaHospitalar.Entities;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace SistemaHospitalar.DAL
@@ -29,6 +30,17 @@ namespace SistemaHospitalar.DAL
             {
                 conexao.Desconectar();
             }
+        }
+
+        public static DataTable MostrarConsultas()
+        {
+            command.CommandText = "select CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
+                "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta " +
+                "from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID";
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
         }
     }
 }

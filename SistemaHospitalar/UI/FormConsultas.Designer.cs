@@ -31,12 +31,13 @@ namespace SistemaHospitalar.UI
         {
             this.btnAgendarConsulta = new System.Windows.Forms.Button();
             this.dgvConsultas = new System.Windows.Forms.DataGridView();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgendarConsulta
             // 
-            this.btnAgendarConsulta.Location = new System.Drawing.Point(546, 56);
+            this.btnAgendarConsulta.Location = new System.Drawing.Point(549, 103);
             this.btnAgendarConsulta.Name = "btnAgendarConsulta";
             this.btnAgendarConsulta.Size = new System.Drawing.Size(222, 67);
             this.btnAgendarConsulta.TabIndex = 0;
@@ -47,16 +48,27 @@ namespace SistemaHospitalar.UI
             // dgvConsultas
             // 
             this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultas.Location = new System.Drawing.Point(25, 56);
+            this.dgvConsultas.Location = new System.Drawing.Point(28, 103);
             this.dgvConsultas.Name = "dgvConsultas";
             this.dgvConsultas.Size = new System.Drawing.Size(480, 318);
             this.dgvConsultas.TabIndex = 1;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(28, 12);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(99, 48);
+            this.btnVoltar.TabIndex = 2;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // FormConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.dgvConsultas);
             this.Controls.Add(this.btnAgendarConsulta);
             this.Name = "FormConsultas";
@@ -70,5 +82,6 @@ namespace SistemaHospitalar.UI
 
         private System.Windows.Forms.Button btnAgendarConsulta;
         private System.Windows.Forms.DataGridView dgvConsultas;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

@@ -32,6 +32,7 @@ namespace SistemaHospitalar.UI
             this.btnConfiguracoes = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnValores = new System.Windows.Forms.Button();
+            this.lblEspecialidadeDoutor = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnConfiguracoes
@@ -68,11 +69,22 @@ namespace SistemaHospitalar.UI
             this.btnValores.UseVisualStyleBackColor = false;
             this.btnValores.Click += new System.EventHandler(this.btnValores_Click);
             // 
+            // lblEspecialidadeDoutor
+            // 
+            this.lblEspecialidadeDoutor.AutoSize = true;
+            this.lblEspecialidadeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspecialidadeDoutor.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblEspecialidadeDoutor.Location = new System.Drawing.Point(12, 416);
+            this.lblEspecialidadeDoutor.Name = "lblEspecialidadeDoutor";
+            this.lblEspecialidadeDoutor.Size = new System.Drawing.Size(0, 25);
+            this.lblEspecialidadeDoutor.TabIndex = 4;
+            // 
             // FormEntradaDoutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblEspecialidadeDoutor);
             this.Controls.Add(this.btnValores);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnConfiguracoes);
@@ -88,5 +100,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnConfiguracoes;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnValores;
+        private System.Windows.Forms.Label lblEspecialidadeDoutor;
     }
 }

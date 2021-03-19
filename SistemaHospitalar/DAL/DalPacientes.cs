@@ -89,7 +89,7 @@ namespace SistemaHospitalar.Models
         public static DataTable MostrarPacientesDGV()
         {
             command.CommandText = "select PACIENTES.ID, PACIENTES.NOME, PACIENTES.CPF, PACIENTES.CELULAR, PACIENTES.GENERO, CONVENIOS.NOME as CONVENIO " +
-                "from PACIENTES inner join CONVENIOS ON CONVENIOS.ID = PACIENTES.CONVENIOID; ";
+                "from PACIENTES inner join CONVENIOS ON CONVENIOS.ID = PACIENTES.CONVENIOID";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

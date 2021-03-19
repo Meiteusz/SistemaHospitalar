@@ -23,14 +23,6 @@ namespace SistemaHospitalar.UI
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
-        private void txtNomeDoutor_Click(object sender, EventArgs e)
-        {
-            txtNomeDoutor.Enabled = false;
-            cmbEspecialidade.Visible = true;
-            dgvDoutores.Visible = true;
-            btnPesquisar.Visible = true;
-        }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             dgvDoutores.DataSource = DalDoutores.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);
@@ -55,6 +47,14 @@ namespace SistemaHospitalar.UI
         private void cmbCpfPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblNomePaciente.Text = "Nome: " + DalPacientes.IdentificarPaciente(cmbCpfPacientes.Text);
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormConsultas formConsultas = new FormConsultas();
+            Hide();
+            formConsultas.ShowDialog();
+            Close();
         }
     }
 }

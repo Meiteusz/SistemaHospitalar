@@ -10,6 +10,7 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             lblNome.Text = "Bem vindo: " + DalDoutores.Nome;
+            lblEspecialidadeDoutor.Text = "Especialidade: " + DalDoutores.Especialidade;
         }
 
         private void btnConfiguracoes_Click(object sender, System.EventArgs e)
