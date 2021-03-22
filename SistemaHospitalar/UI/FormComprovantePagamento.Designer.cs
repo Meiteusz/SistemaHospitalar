@@ -63,17 +63,17 @@ namespace SistemaHospitalar.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 34);
+            this.label1.Location = new System.Drawing.Point(3, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(299, 31);
+            this.label1.Size = new System.Drawing.Size(380, 31);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Extrato de pagamento";
+            this.label1.Text = "Comprovante de pagamento";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(110, 76);
+            this.label2.Location = new System.Drawing.Point(110, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 31);
             this.label2.TabIndex = 2;
@@ -144,7 +144,7 @@ namespace SistemaHospitalar.UI
             // 
             this.lblDataConsulta.AutoSize = true;
             this.lblDataConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataConsulta.Location = new System.Drawing.Point(56, 31);
+            this.lblDataConsulta.Location = new System.Drawing.Point(67, 31);
             this.lblDataConsulta.Name = "lblDataConsulta";
             this.lblDataConsulta.Size = new System.Drawing.Size(51, 20);
             this.lblDataConsulta.TabIndex = 3;
