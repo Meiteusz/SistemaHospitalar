@@ -2,7 +2,7 @@
 
 namespace SistemaHospitalar.Entities
 {
-    class Consulta
+    public class Consulta
     {
         public int Id { get; set; }
         public string Estado { get; set; }

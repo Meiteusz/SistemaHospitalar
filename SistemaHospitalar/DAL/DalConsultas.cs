@@ -32,9 +32,31 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-        public static DataTable MostrarConsultas()
+        public string DeletarConsulta(int p_id)
         {
-            command.CommandText = "select CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", p_id);
+            command.CommandText = "delete CONSULTAS where id = @id";
+            
+            try
+            {
+                command.Connection = conexao.Conectar();
+                command.ExecuteNonQuery();
+                return "Consulta deletada com sucesso!";
+            }
+            catch (SqlException ex)
+            {
+                return MostrarErro(ex);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+
+        public static DataTable MostrarConsultasDGV()
+        {
+            command.CommandText = "select CONSULTAS.ID, CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
                 "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta " +
                 "from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID";
             adapter = new SqlDataAdapter(command);

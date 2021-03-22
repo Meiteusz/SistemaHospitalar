@@ -2,7 +2,6 @@
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -24,20 +23,30 @@ namespace SistemaHospitalar.UI
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
+
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             dgvDoutores.DataSource = DalDoutores.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);
         }
 
+
         private int DoutorId { get; set; }
+        private string DoutorNome { get; set; }
+        private string EspecialidadeDoutor { get; set; }
         private float ValorConsulta { get; set; }
 
         private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DoutorId = (int)dgvDoutores.SelectedRows[0].Cells[0].Value;
-            txtNomeDoutor.Text = dgvDoutores.SelectedRows[0].Cells[1].Value.ToString();
+            DoutorNome = dgvDoutores.SelectedRows[0].Cells[1].Value.ToString();
+            txtNomeDoutor.Text = DoutorNome;
+
+            Enum.TryParse(dgvDoutores.SelectedRows[0].Cells[2].Value.ToString(), out Especialidades especialidadeConvertida);
+            EspecialidadeDoutor = especialidadeConvertida.ToString();
+
             ValorConsulta = float.Parse(DalDoutores.PegarValorConsulta(DoutorId));
         }
+
 
         private void btnAgendarConsulta_Click(object sender, EventArgs e)
         {
@@ -57,16 +66,20 @@ namespace SistemaHospitalar.UI
 
                 FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
                 Hide();
+                formComprovantePagamento.MostrarDadosConsultas(DalPacientes.IdentificarPaciente(cmbCpfPacientes.Text), cmbCpfPacientes.Text, dtpDataConsulta.Value.ToString("dd/MM/yyyy hh:mm"),
+                    DoutorNome, EspecialidadeDoutor, ValorConsulta.ToString()); ;
                 formComprovantePagamento.ShowDialog();
                 Close();
             }
 
         }
 
+
         private void cmbCpfPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblNomePaciente.Text = "Nome: " + DalPacientes.IdentificarPaciente(cmbCpfPacientes.Text);
         }
+
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {

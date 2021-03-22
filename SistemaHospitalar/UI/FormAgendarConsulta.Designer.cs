@@ -115,6 +115,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnCadastrarConsulta
             // 
+            this.btnCadastrarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarConsulta.Location = new System.Drawing.Point(531, 381);
             this.btnCadastrarConsulta.Name = "btnCadastrarConsulta";
             this.btnCadastrarConsulta.Size = new System.Drawing.Size(138, 54);
@@ -163,14 +164,14 @@ namespace SistemaHospitalar.UI
             // 
             this.lblNomePaciente.AutoSize = true;
             this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(85, 130);
+            this.lblNomePaciente.Location = new System.Drawing.Point(81, 130);
             this.lblNomePaciente.Name = "lblNomePaciente";
             this.lblNomePaciente.Size = new System.Drawing.Size(0, 20);
             this.lblNomePaciente.TabIndex = 13;
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btnVoltar.Location = new System.Drawing.Point(26, 12);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(94, 37);
             this.btnVoltar.TabIndex = 15;

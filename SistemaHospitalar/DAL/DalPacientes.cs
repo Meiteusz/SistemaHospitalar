@@ -111,6 +111,7 @@ namespace SistemaHospitalar.Models
             return pacientes;
         }
 
+        //Procura o Paciente pelo nome
         public static DataTable PesquisarPaciente(string p_nome)
         {
             command.Parameters.Clear();
@@ -123,6 +124,7 @@ namespace SistemaHospitalar.Models
             return dt;
         }
 
+        //Pega um Paciente pelo CPF
         public static string IdentificarPaciente(string p_CpfPaciente)
         {
             SqlCommand command = new SqlCommand("select * from PACIENTES where CPF = @cpf", conexao.Conectar());
