@@ -87,6 +87,12 @@
     <Compile Include="UI\FormAgendarConsulta.Designer.cs">
       <DependentUpon>FormAgendarConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormComprovantePagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormComprovantePagamento.Designer.cs">
+      <DependentUpon>FormComprovantePagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormConfiguracoesDoutores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormCadastroDoutor.resx">
       <DependentUpon>FormCadastroDoutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormComprovantePagamento.resx">
+      <DependentUpon>FormComprovantePagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormConfiguracoesDoutores.resx">
       <DependentUpon>FormConfiguracoesDoutores.cs</DependentUpon>

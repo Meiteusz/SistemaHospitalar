@@ -47,3 +47,4 @@ D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHo
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormConvenios.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormValores.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormAgendarConsulta.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormComprovantePagamento.resources

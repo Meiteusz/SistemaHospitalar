@@ -2,6 +2,7 @@
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -30,6 +31,7 @@ namespace SistemaHospitalar.UI
 
         private int DoutorId { get; set; }
         private float ValorConsulta { get; set; }
+
         private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DoutorId = (int)dgvDoutores.SelectedRows[0].Cells[0].Value;
@@ -39,9 +41,26 @@ namespace SistemaHospitalar.UI
 
         private void btnAgendarConsulta_Click(object sender, EventArgs e)
         {
-            Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorConsulta);
-            DalConsultas dalConsultas = new DalConsultas();
-            MessageBox.Show(dalConsultas.CadastrarConsulta(consulta));
+            if (txtNomeDoutor.Text.Equals(""))
+            {
+                MessageBox.Show("Selecione o doutor que irá fazer a consulta!");
+            }
+            else if (dtpDataConsulta.Value <= DateTime.Now)
+            {
+                MessageBox.Show("Data inválida");
+            }
+            else
+            {
+                Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorConsulta);
+                DalConsultas dalConsultas = new DalConsultas();
+                MessageBox.Show(dalConsultas.CadastrarConsulta(consulta));
+
+                FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
+                Hide();
+                formComprovantePagamento.ShowDialog();
+                Close();
+            }
+
         }
 
         private void cmbCpfPacientes_SelectedIndexChanged(object sender, EventArgs e)
