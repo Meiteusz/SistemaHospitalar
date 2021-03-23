@@ -25,5 +25,6 @@ namespace SistemaHospitalar.DAL
         {
             return "Erro com o Banco de Dados " + ex.Message;
         }
+
     }
 }

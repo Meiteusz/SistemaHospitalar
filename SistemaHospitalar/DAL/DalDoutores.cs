@@ -21,8 +21,10 @@ namespace SistemaHospitalar.DAL
         public static string Turno { get; set; }
         public static string Celular { get; set; }
         public static string Especialidade { get; set; }
+        public static string ValorConsulta { get; set; }
+        public static string ValorExame { get; set; }
 
-        public string NomeDoutor { get; set; }
+        public static string NomeDoutor { get; set; }
 
         //Verifica se o login é existente
         public bool isLoginValido(Doutores doutor)
@@ -40,25 +42,7 @@ namespace SistemaHospitalar.DAL
 
                 if (reader.HasRows)
                 {
-                    while (reader.Read())
-                    {
-                        Id = reader["ID"].ToString();
-                        Nome = reader["NOME"].ToString();
-                        Email = reader["EMAIL"].ToString();
-                        Senha = reader["SENHA"].ToString();
-                        Turno = reader["TURNO"].ToString();
-                        Celular = reader["CELULAR"].ToString();
-                        Especialidade = reader["ESPECIALIDADE"].ToString();
-
-                        Enum.TryParse(Turno, out Turno turnoConvertido);  //Faz o Parse para string
-                        Turno = turnoConvertido.ToString();               //Devolve o valor convertido para o "Turno"
-
-                        Enum.TryParse(Especialidade, out Especialidades especialidadeConvertida);
-                        Especialidade = especialidadeConvertida.ToString();
-
-                        NomeDoutor = Nome;
-                        break; //Só para ter certeza que irá sair do while
-                    }
+                    PegarDadosDoutor(doutor.Email, doutor.Senha, reader);
                     isLoginExistente = true;
                 }
                 else
@@ -79,21 +63,23 @@ namespace SistemaHospitalar.DAL
         }
 
         //Cadastra um Doutor
-        public string Cadastrar(Doutores doutor, string confSenha)
+        public string CadastrarDoutor(Doutores p_doutor, string p_confSenha)
         {
-            if (doutoresBLL.ValidarDoutor(doutor, confSenha).Equals(""))
+            if (doutoresBLL.ValidarDoutor(p_doutor, p_confSenha).Equals(""))
             {
                 command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nome", doutor.Nome);
-                command.Parameters.AddWithValue("@email", doutor.Email);
-                command.Parameters.AddWithValue("@senha", doutor.Senha);
-                command.Parameters.AddWithValue("@cpf", doutor.Cpf);
-                command.Parameters.AddWithValue("@turno", doutor.Turno);
-                command.Parameters.AddWithValue("@genero", doutor.Genero);
-                command.Parameters.AddWithValue("@celular", doutor.Celular);
-                command.Parameters.AddWithValue("@especialidade", doutor.Especialidade);
+                command.Parameters.AddWithValue("@nome", p_doutor.Nome);
+                command.Parameters.AddWithValue("@email", p_doutor.Email);
+                command.Parameters.AddWithValue("@senha", p_doutor.Senha);
+                command.Parameters.AddWithValue("@cpf", p_doutor.Cpf);
+                command.Parameters.AddWithValue("@turno", p_doutor.Turno);
+                command.Parameters.AddWithValue("@genero", p_doutor.Genero);
+                command.Parameters.AddWithValue("@celular", p_doutor.Celular);
+                command.Parameters.AddWithValue("@especialidade", p_doutor.Especialidade);
+                command.Parameters.AddWithValue("@valorConsulta", p_doutor.ValorConsulta);
+                command.Parameters.AddWithValue("@valorExame", p_doutor.ValorExame);
 
-                command.CommandText = "insert into DOUTORES values(@nome, @email, @senha, @cpf, @turno, @genero, @celular, @especialidade)";
+                command.CommandText = "insert into DOUTORES values(@nome, @email, @senha, @cpf, @turno, @genero, @celular, @especialidade, @valorConsulta, @valorExame)";
                 try
                 {
                     command.Connection = conexao.Conectar();
@@ -116,10 +102,10 @@ namespace SistemaHospitalar.DAL
         }
 
         //Deleta um Doutor
-        public string Deletar(int Id)
+        public string DeletarDoutor(int p_Id)
         {
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@ID", Id);
+            command.Parameters.AddWithValue("@ID", p_Id);
             command.CommandText = "delete from DOUTORES where id = @ID";
             try
             {
@@ -138,17 +124,17 @@ namespace SistemaHospitalar.DAL
         }
 
         //Atualiza as informações de um Doutor
-        public string AtualizarInformacoes(Doutores doutores, string confSenha)
+        public string AtualizarInformacoes(Doutores p_doutores, string p_confSenha)
         {
-            if (doutoresBLL.ValidarAlteracoesDoutor(doutores, confSenha).Equals(""))
+            if (doutoresBLL.ValidarAlteracoesDoutor(p_doutores, p_confSenha).Equals(""))
             {
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@ID", Id);
-                command.Parameters.AddWithValue("@NOME", doutores.Nome);
-                command.Parameters.AddWithValue("@EMAIL", doutores.Email);
-                command.Parameters.AddWithValue("@CELULAR", doutores.Celular);
-                command.Parameters.AddWithValue("@TURNO", doutores.Turno);
-                command.Parameters.AddWithValue("@SENHA", doutores.Senha);
+                command.Parameters.AddWithValue("@NOME", p_doutores.Nome);
+                command.Parameters.AddWithValue("@EMAIL", p_doutores.Email);
+                command.Parameters.AddWithValue("@CELULAR", p_doutores.Celular);
+                command.Parameters.AddWithValue("@TURNO", p_doutores.Turno);
+                command.Parameters.AddWithValue("@SENHA", p_doutores.Senha);
                 command.CommandText = "update DOUTORES set NOME = @NOME, EMAIL = @EMAIL, CELULAR = @CELULAR, TURNO = @TURNO, SENHA = @SENHA where ID = @ID  ";
                 try
                 {
@@ -171,6 +157,96 @@ namespace SistemaHospitalar.DAL
             }
         }
 
+        //Atualiza os valores dos Doutores (consulta e exame)
+        public string AtualizarValores(float p_valorConsulta, float p_valorExame)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@ID", Id);
+            command.Parameters.AddWithValue("@VALORCONSULTA", p_valorConsulta);
+            command.Parameters.AddWithValue("@VALOREXAME", p_valorExame);
+            command.CommandText = "update DOUTORES set VALORCONSULTA = @VALORCONSULTA, VALOREXAME = @VALOREXAME where ID = @ID  ";
+            try
+            {
+                command.Connection = conexao.Conectar();
+                command.ExecuteNonQuery();
+                return "Valores alteradas com sucesso";
+            }
+            catch (SqlException ex)
+            {
+                return "Erro com o banco de dados" + ex.Message;
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+
+        //Pega todos os dados do doutor(a)
+        public void PegarDadosDoutor(string p_email, string p_senha, SqlDataReader p_reader)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@email", p_email);
+            command.Parameters.AddWithValue("@senha", p_senha);
+            command.CommandText = "select * from DOUTORES where email = @email and senha = @senha";
+
+            while (p_reader.Read())
+            {
+                Id = p_reader["ID"].ToString();
+                Nome = p_reader["NOME"].ToString();
+                Email = p_reader["EMAIL"].ToString();
+                Senha = p_reader["SENHA"].ToString();
+                Turno = p_reader["TURNO"].ToString();
+                Celular = p_reader["CELULAR"].ToString();
+                Especialidade = p_reader["ESPECIALIDADE"].ToString();
+                ValorConsulta = p_reader["VALORCONSULTA"].ToString();
+                ValorExame = p_reader["VALOREXAME"].ToString();
+
+                Enum.TryParse(Turno, out Turno turnoConvertido);  //Faz o Parse para string
+                Turno = turnoConvertido.ToString();               //Devolve o valor convertido para o "Turno"
+
+                Enum.TryParse(Especialidade, out Especialidades especialidadeConvertida);
+                Especialidade = especialidadeConvertida.ToString();
+
+                NomeDoutor = Nome;
+            }
+        }
+
+        //Pega os valores (consulta e exame) do doutor(a)
+        public void PegarValoresDoutor(string p_email, string p_senha)
+        {
+            SqlCommand command = new SqlCommand("select * from DOUTORES where email = @email and senha = @senha", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@email", p_email);
+            command.Parameters.AddWithValue("@senha", p_senha);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ValorConsulta = reader["VALORCONSULTA"].ToString();
+                ValorExame = reader["VALOREXAME"].ToString();
+            }
+            conexao.Desconectar();
+        }
+
+        public static string PegarValorConsulta(int Id)
+        {
+            string ValorConsulta = "";
+            SqlCommand command = new SqlCommand("select VALORCONSULTA from DOUTORES where id = @id", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", Id);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ValorConsulta = reader["VALORCONSULTA"].ToString();
+            }
+            conexao.Desconectar();
+            return ValorConsulta;
+        }
+
+
+
+        //PESQUISAS
         public static DataTable MostrarDoutores()
         {
             command.CommandText = "select * from DOUTORES";
@@ -183,8 +259,8 @@ namespace SistemaHospitalar.DAL
         public static DataTable PesquisarDoutor(string p_nome, Turno p_turno, Especialidades p_especialidade)
         {
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@nome",p_nome);
-            command.Parameters.AddWithValue("@turno",p_turno);
+            command.Parameters.AddWithValue("@nome", p_nome);
+            command.Parameters.AddWithValue("@turno", p_turno);
             command.Parameters.AddWithValue("@especialidade", p_especialidade);
             command.CommandText = "select * from DOUTORES where Nome = @nome or Turno = @turno or Especialidade = @especialidade";
 
@@ -206,20 +282,5 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
-        private static string ValorConsulta { get; set; }
-        public static string PegarValorConsulta(int p_doutorId)
-        {
-            SqlCommand command = new SqlCommand("select VALORCONSULTA from VALORES where doutorid = @doutorid", conexao.Conectar());
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@doutorId", p_doutorId);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ValorConsulta = reader["VALORCONSULTA"].ToString();
-            }
-            conexao.Desconectar();
-            return ValorConsulta;
-        }
     }
 }

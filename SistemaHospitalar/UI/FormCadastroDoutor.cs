@@ -68,14 +68,16 @@ namespace SistemaHospitalar.Views
             txtMaskedCelularDoutor.SelectionStart = txtMaskedCelularDoutor.SelectionLength = 0;
         }
 
+
         private void btnCadastrarDoutor_Click(object sender, EventArgs e)
         {
             DalDoutores daldoutor = new DalDoutores();
             Doutores doutor = new Doutores(txtNomeDoutor.Text, txtEmailDoutor.Text, txtSenhaDoutor.Text, txtMaskedCpfDoutor.Text, (Turno)cmbTurnoDoutor.SelectedIndex,
-                                            (Genero)cmbGeneroDoutor.SelectedIndex, (Especialidades)cmbEspecialidadeDoutor.SelectedIndex, txtMaskedCelularDoutor.Text);
+           (Genero)cmbGeneroDoutor.SelectedIndex, (Especialidades)cmbEspecialidadeDoutor.SelectedIndex, txtMaskedCelularDoutor.Text, (float)txtValorConsulta.Value, (float)txtValorExame.Value);
 
-            MessageBox.Show(daldoutor.Cadastrar(doutor, txtRepitaSenhaDoutor.Text));
+            MessageBox.Show(daldoutor.CadastrarDoutor(doutor, txtRepitaSenhaDoutor.Text));
         }
+
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {

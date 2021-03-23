@@ -40,8 +40,9 @@ namespace SistemaHospitalar.UI
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
-            this.lblNomePaciente = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.lblNomePaciente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoutores)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -136,8 +137,9 @@ namespace SistemaHospitalar.UI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpDataConsulta);
             this.groupBox1.Controls.Add(this.lblNomePaciente);
+            this.groupBox1.Controls.Add(this.dtpDataConsulta);
+            this.groupBox1.Controls.Add(this.lblNome);
             this.groupBox1.Controls.Add(this.cmbCpfPacientes);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
@@ -160,14 +162,15 @@ namespace SistemaHospitalar.UI
             this.dtpDataConsulta.TabIndex = 15;
             this.dtpDataConsulta.Value = new System.DateTime(2021, 3, 18, 17, 41, 55, 0);
             // 
-            // lblNomePaciente
+            // lblNome
             // 
-            this.lblNomePaciente.AutoSize = true;
-            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(81, 130);
-            this.lblNomePaciente.Name = "lblNomePaciente";
-            this.lblNomePaciente.Size = new System.Drawing.Size(0, 20);
-            this.lblNomePaciente.TabIndex = 13;
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(79, 130);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(55, 20);
+            this.lblNome.TabIndex = 13;
+            this.lblNome.Text = "Nome:";
             // 
             // btnVoltar
             // 
@@ -178,6 +181,15 @@ namespace SistemaHospitalar.UI
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // lblNomePaciente
+            // 
+            this.lblNomePaciente.AutoSize = true;
+            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePaciente.Location = new System.Drawing.Point(138, 130);
+            this.lblNomePaciente.Name = "lblNomePaciente";
+            this.lblNomePaciente.Size = new System.Drawing.Size(0, 20);
+            this.lblNomePaciente.TabIndex = 16;
             // 
             // FormAgendarConsulta
             // 
@@ -215,8 +227,9 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnCadastrarConsulta;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblNomePaciente;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.DateTimePicker dtpDataConsulta;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Label lblNomePaciente;
     }
 }

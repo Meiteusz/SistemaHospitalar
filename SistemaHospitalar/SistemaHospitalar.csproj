@@ -58,7 +58,6 @@
     <Compile Include="DAL\DalDoutores.cs" />
     <Compile Include="DAL\DalPacientes.cs" />
     <Compile Include="DAL\DalRecepionistas.cs" />
-    <Compile Include="DAL\DalValores.cs" />
     <Compile Include="Entities\ADM.cs" />
     <Compile Include="BLL\Validator.cs" />
     <Compile Include="Entities\Consulta.cs" />
@@ -72,7 +71,6 @@
     <Compile Include="Entities\Recepcionista.cs" />
     <Compile Include="Entities\Turno.cs" />
     <Compile Include="Entities\Usuarios.cs" />
-    <Compile Include="Entities\Valores.cs" />
     <Compile Include="Entities\Visitante.cs" />
     <Compile Include="Common\Environments.cs" />
     <Compile Include="UI\FormADM.cs">

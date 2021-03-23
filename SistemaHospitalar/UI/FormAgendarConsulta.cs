@@ -62,14 +62,9 @@ namespace SistemaHospitalar.UI
             {
                 Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorConsulta);
                 DalConsultas dalConsultas = new DalConsultas();
-                MessageBox.Show(dalConsultas.CadastrarConsulta(consulta));
 
-                FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
-                Hide();
-                formComprovantePagamento.MostrarDadosConsultas(DalPacientes.IdentificarPaciente(cmbCpfPacientes.Text), cmbCpfPacientes.Text, dtpDataConsulta.Value.ToString("dd/MM/yyyy hh:mm"),
-                    DoutorNome, EspecialidadeDoutor, ValorConsulta.ToString()); ;
-                formComprovantePagamento.ShowDialog();
-                Close();
+                MessageBox.Show(dalConsultas.AgendarConsulta(consulta));
+                AbrirComprovanteDePagamento();
             }
 
         }
@@ -77,7 +72,7 @@ namespace SistemaHospitalar.UI
 
         private void cmbCpfPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblNomePaciente.Text = "Nome: " + DalPacientes.IdentificarPaciente(cmbCpfPacientes.Text);
+            lblNomePaciente.Text = DalPacientes.IdentificarPaciente(cmbCpfPacientes.Text);
         }
 
 
@@ -86,6 +81,19 @@ namespace SistemaHospitalar.UI
             FormConsultas formConsultas = new FormConsultas();
             Hide();
             formConsultas.ShowDialog();
+            Close();
+        }
+
+
+        private void AbrirComprovanteDePagamento()
+        {
+            FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
+            Hide();
+
+            formComprovantePagamento.MostrarDadosConsultas(lblNomePaciente.Text, cmbCpfPacientes.Text, 
+                dtpDataConsulta.Value.ToString("dd/MM/yyyy hh:mm tt"), DoutorNome, EspecialidadeDoutor, ValorConsulta.ToString());
+            
+            formComprovantePagamento.ShowDialog();
             Close();
         }
     }

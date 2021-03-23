@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.DAL;
-using SistemaHospitalar.Entities;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -10,34 +9,15 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            VerificarValorExistente();
-            txtValorConsulta.Value = decimal.Parse(DalValores.ValorConsulta);
-            txtValorExame.Value = decimal.Parse(DalValores.ValorExame);
+            txtValorConsulta.Value = decimal.Parse(DalDoutores.ValorConsulta);
+            txtValorExame.Value = decimal.Parse(DalDoutores.ValorExame);
         }
 
-        private void VerificarValorExistente()
+        private void btnAtualizarValores_Click(object sender, System.EventArgs e)
         {
-            if (DalValores.isValorDefinido(int.Parse(DalDoutores.Id)))
-            {
-                btnCadastrarValor.Text = "Atualizar Valores";
-            }
-        }
-
-
-        // O doutor(a) poderá cadastrar os valores apenas uma vez, depois só atualiza-lo
-        private void btnCadastrarValor_Click(object sender, System.EventArgs e)
-        {
-            Valores valor = new Valores((float)txtValorConsulta.Value, (float)txtValorExame.Value, int.Parse(DalDoutores.Id));
-            DalValores dalValores = new DalValores();
-
-            if (btnCadastrarValor.Text.Equals("Atualizar Valores"))
-            {
-                MessageBox.Show(dalValores.AtualizarValor(valor));
-            }
-            else
-            {
-                MessageBox.Show(dalValores.CadastrarValor(valor));
-            }
+            DalDoutores dalDoutores = new DalDoutores();
+            MessageBox.Show(dalDoutores.AtualizarValores((float)txtValorConsulta.Value, (float)txtValorExame.Value));
+            dalDoutores.PegarValoresDoutor(DalDoutores.Email, DalDoutores.Senha);
         }
 
 

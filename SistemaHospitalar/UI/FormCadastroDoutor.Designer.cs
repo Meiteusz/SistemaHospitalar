@@ -51,13 +51,29 @@ namespace SistemaHospitalar.Views
             this.cmbEspecialidadeDoutor = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtValorExame = new System.Windows.Forms.NumericUpDown();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtValorConsulta = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValorExame)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValorConsulta)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMaskedCelularDoutor
             // 
             this.txtMaskedCelularDoutor.BeepOnError = true;
             this.txtMaskedCelularDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaskedCelularDoutor.Location = new System.Drawing.Point(422, 387);
+            this.txtMaskedCelularDoutor.Location = new System.Drawing.Point(32, 142);
             this.txtMaskedCelularDoutor.Mask = "(00) 00000-0000";
             this.txtMaskedCelularDoutor.Name = "txtMaskedCelularDoutor";
             this.txtMaskedCelularDoutor.Size = new System.Drawing.Size(336, 30);
@@ -66,10 +82,10 @@ namespace SistemaHospitalar.Views
             // 
             // btnApagar
             // 
-            this.btnApagar.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApagar.Location = new System.Drawing.Point(41, 404);
+            this.btnApagar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApagar.Location = new System.Drawing.Point(471, 577);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(160, 65);
+            this.btnApagar.Size = new System.Drawing.Size(130, 55);
             this.btnApagar.TabIndex = 48;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
@@ -79,7 +95,7 @@ namespace SistemaHospitalar.Views
             // 
             this.cbMostrarSenha.AutoSize = true;
             this.cbMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMostrarSenha.Location = new System.Drawing.Point(253, 278);
+            this.cbMostrarSenha.Location = new System.Drawing.Point(243, 159);
             this.cbMostrarSenha.Name = "cbMostrarSenha";
             this.cbMostrarSenha.Size = new System.Drawing.Size(133, 24);
             this.cbMostrarSenha.TabIndex = 47;
@@ -91,7 +107,7 @@ namespace SistemaHospitalar.Views
             // 
             this.txtMaskedCpfDoutor.BeepOnError = true;
             this.txtMaskedCpfDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaskedCpfDoutor.Location = new System.Drawing.Point(422, 113);
+            this.txtMaskedCpfDoutor.Location = new System.Drawing.Point(33, 140);
             this.txtMaskedCpfDoutor.Mask = "000.000.000-00";
             this.txtMaskedCpfDoutor.Name = "txtMaskedCpfDoutor";
             this.txtMaskedCpfDoutor.Size = new System.Drawing.Size(336, 30);
@@ -101,90 +117,90 @@ namespace SistemaHospitalar.Views
             // cmbGeneroDoutor
             // 
             this.cmbGeneroDoutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGeneroDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGeneroDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGeneroDoutor.FormattingEnabled = true;
-            this.cmbGeneroDoutor.Location = new System.Drawing.Point(422, 246);
+            this.cmbGeneroDoutor.Location = new System.Drawing.Point(32, 58);
             this.cmbGeneroDoutor.Name = "cmbGeneroDoutor";
-            this.cmbGeneroDoutor.Size = new System.Drawing.Size(336, 33);
+            this.cmbGeneroDoutor.Size = new System.Drawing.Size(336, 28);
             this.cmbGeneroDoutor.TabIndex = 45;
             // 
             // cmbTurnoDoutor
             // 
             this.cmbTurnoDoutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTurnoDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTurnoDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTurnoDoutor.FormattingEnabled = true;
             this.cmbTurnoDoutor.Items.AddRange(new object[] {
             "Selecione"});
-            this.cmbTurnoDoutor.Location = new System.Drawing.Point(422, 175);
+            this.cmbTurnoDoutor.Location = new System.Drawing.Point(33, 226);
             this.cmbTurnoDoutor.Name = "cmbTurnoDoutor";
-            this.cmbTurnoDoutor.Size = new System.Drawing.Size(336, 33);
+            this.cmbTurnoDoutor.Size = new System.Drawing.Size(336, 28);
             this.cmbTurnoDoutor.TabIndex = 44;
             // 
             // btnCadastrarDoutor
             // 
-            this.btnCadastrarDoutor.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarDoutor.Location = new System.Drawing.Point(218, 404);
+            this.btnCadastrarDoutor.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarDoutor.Location = new System.Drawing.Point(803, 578);
             this.btnCadastrarDoutor.Name = "btnCadastrarDoutor";
-            this.btnCadastrarDoutor.Size = new System.Drawing.Size(160, 65);
+            this.btnCadastrarDoutor.Size = new System.Drawing.Size(130, 55);
             this.btnCadastrarDoutor.TabIndex = 43;
-            this.btnCadastrarDoutor.Text = "Cadastrar Recepcionista";
+            this.btnCadastrarDoutor.Text = "Cadastrar Doutor(a)";
             this.btnCadastrarDoutor.UseVisualStyleBackColor = true;
             this.btnCadastrarDoutor.Click += new System.EventHandler(this.btnCadastrarDoutor_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(423, 359);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(31, 117);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 25);
+            this.label5.Size = new System.Drawing.Size(67, 22);
             this.label5.TabIndex = 42;
             this.label5.Text = "Celular";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(423, 214);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(28, 33);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 25);
+            this.label6.Size = new System.Drawing.Size(70, 22);
             this.label6.TabIndex = 41;
             this.label6.Text = "Genero";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(423, 146);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(29, 201);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 25);
+            this.label7.Size = new System.Drawing.Size(58, 22);
             this.label7.TabIndex = 40;
             this.label7.Text = "Turno";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(423, 78);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(29, 115);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 25);
+            this.label8.Size = new System.Drawing.Size(46, 22);
             this.label8.TabIndex = 39;
             this.label8.Text = "CPF";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 282);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(32, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 25);
+            this.label4.Size = new System.Drawing.Size(134, 22);
             this.label4.TabIndex = 38;
             this.label4.Text = "Repita a Senha";
             // 
             // txtRepitaSenhaDoutor
             // 
             this.txtRepitaSenhaDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRepitaSenhaDoutor.Location = new System.Drawing.Point(41, 310);
+            this.txtRepitaSenhaDoutor.Location = new System.Drawing.Point(31, 191);
             this.txtRepitaSenhaDoutor.Name = "txtRepitaSenhaDoutor";
             this.txtRepitaSenhaDoutor.Size = new System.Drawing.Size(336, 30);
             this.txtRepitaSenhaDoutor.TabIndex = 37;
@@ -193,17 +209,17 @@ namespace SistemaHospitalar.Views
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 214);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 25);
+            this.label3.Size = new System.Drawing.Size(62, 22);
             this.label3.TabIndex = 36;
             this.label3.Text = "Senha";
             // 
             // txtEmailDoutor
             // 
             this.txtEmailDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailDoutor.Location = new System.Drawing.Point(41, 174);
+            this.txtEmailDoutor.Location = new System.Drawing.Point(31, 55);
             this.txtEmailDoutor.Name = "txtEmailDoutor";
             this.txtEmailDoutor.Size = new System.Drawing.Size(336, 30);
             this.txtEmailDoutor.TabIndex = 35;
@@ -211,17 +227,17 @@ namespace SistemaHospitalar.Views
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(42, 146);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(32, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 25);
+            this.label2.Size = new System.Drawing.Size(54, 22);
             this.label2.TabIndex = 34;
             this.label2.Text = "Email";
             // 
             // txtSenhaDoutor
             // 
             this.txtSenhaDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenhaDoutor.Location = new System.Drawing.Point(41, 242);
+            this.txtSenhaDoutor.Location = new System.Drawing.Point(31, 123);
             this.txtSenhaDoutor.Name = "txtSenhaDoutor";
             this.txtSenhaDoutor.Size = new System.Drawing.Size(336, 30);
             this.txtSenhaDoutor.TabIndex = 33;
@@ -230,17 +246,17 @@ namespace SistemaHospitalar.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 78);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(30, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 25);
+            this.label1.Size = new System.Drawing.Size(57, 22);
             this.label1.TabIndex = 32;
             this.label1.Text = "Nome";
             // 
             // txtNomeDoutor
             // 
             this.txtNomeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeDoutor.Location = new System.Drawing.Point(41, 106);
+            this.txtNomeDoutor.Location = new System.Drawing.Point(33, 54);
             this.txtNomeDoutor.Name = "txtNomeDoutor";
             this.txtNomeDoutor.Size = new System.Drawing.Size(336, 30);
             this.txtNomeDoutor.TabIndex = 31;
@@ -248,20 +264,20 @@ namespace SistemaHospitalar.Views
             // cmbEspecialidadeDoutor
             // 
             this.cmbEspecialidadeDoutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEspecialidadeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbEspecialidadeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEspecialidadeDoutor.FormattingEnabled = true;
-            this.cmbEspecialidadeDoutor.Location = new System.Drawing.Point(422, 320);
+            this.cmbEspecialidadeDoutor.Location = new System.Drawing.Point(33, 317);
             this.cmbEspecialidadeDoutor.Name = "cmbEspecialidadeDoutor";
-            this.cmbEspecialidadeDoutor.Size = new System.Drawing.Size(336, 33);
+            this.cmbEspecialidadeDoutor.Size = new System.Drawing.Size(336, 28);
             this.cmbEspecialidadeDoutor.TabIndex = 52;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(423, 288);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(29, 292);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 25);
+            this.label10.Size = new System.Drawing.Size(122, 22);
             this.label10.TabIndex = 50;
             this.label10.Text = "Especialidade";
             // 
@@ -276,37 +292,160 @@ namespace SistemaHospitalar.Views
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cmbEspecialidadeDoutor);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.cmbTurnoDoutor);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtMaskedCpfDoutor);
+            this.groupBox1.Controls.Add(this.txtNomeDoutor);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(30, 62);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(405, 366);
+            this.groupBox1.TabIndex = 54;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Informações Profissionais";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txtSenhaDoutor);
+            this.groupBox2.Controls.Add(this.txtEmailDoutor);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtRepitaSenhaDoutor);
+            this.groupBox2.Controls.Add(this.cbMostrarSenha);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Location = new System.Drawing.Point(493, 62);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(405, 255);
+            this.groupBox2.TabIndex = 55;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Informações de Login";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtMaskedCelularDoutor);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.cmbGeneroDoutor);
+            this.groupBox3.Location = new System.Drawing.Point(30, 447);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(405, 185);
+            this.groupBox3.TabIndex = 56;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Outros";
+            // 
+            // txtValorExame
+            // 
+            this.txtValorExame.DecimalPlaces = 2;
+            this.txtValorExame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorExame.Location = new System.Drawing.Point(262, 110);
+            this.txtValorExame.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.txtValorExame.Name = "txtValorExame";
+            this.txtValorExame.Size = new System.Drawing.Size(62, 26);
+            this.txtValorExame.TabIndex = 58;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtValorExame);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.txtValorConsulta);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Location = new System.Drawing.Point(493, 337);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(405, 196);
+            this.groupBox4.TabIndex = 57;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Valores";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(231, 112);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 22);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "R$";
+            // 
+            // txtValorConsulta
+            // 
+            this.txtValorConsulta.DecimalPlaces = 2;
+            this.txtValorConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorConsulta.Location = new System.Drawing.Point(262, 70);
+            this.txtValorConsulta.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.txtValorConsulta.Name = "txtValorConsulta";
+            this.txtValorConsulta.Size = new System.Drawing.Size(62, 26);
+            this.txtValorConsulta.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(231, 70);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 22);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "R$";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(101, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(115, 22);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "Valor exame:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(100, 70);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(129, 22);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Valor consulta:";
+            // 
             // FormCadastroDoutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 499);
+            this.ClientSize = new System.Drawing.Size(945, 644);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.cmbEspecialidadeDoutor);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtMaskedCelularDoutor);
             this.Controls.Add(this.btnApagar);
-            this.Controls.Add(this.cbMostrarSenha);
-            this.Controls.Add(this.txtMaskedCpfDoutor);
-            this.Controls.Add(this.cmbGeneroDoutor);
-            this.Controls.Add(this.cmbTurnoDoutor);
             this.Controls.Add(this.btnCadastrarDoutor);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtRepitaSenhaDoutor);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtEmailDoutor);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSenhaDoutor);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtNomeDoutor);
             this.Name = "FormCadastroDoutor";
             this.Text = "FormDoutor";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValorExame)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtValorConsulta)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -334,5 +473,15 @@ namespace SistemaHospitalar.Views
         private System.Windows.Forms.ComboBox cmbEspecialidadeDoutor;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.NumericUpDown txtValorExame;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.NumericUpDown txtValorConsulta;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

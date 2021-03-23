@@ -15,8 +15,14 @@ namespace SistemaHospitalar
             StartPosition = FormStartPosition.CenterScreen;
 
             //LOGIN PARA TESTE
-            txtEmail.Text = "rosanabnu@gmail.com";
-            txtSenha.Text = "321ab";
+
+            //*Recepcionista*
+            //txtEmail.Text = "rosanabnu@gmail.com";
+            //txtSenha.Text = "321ab";
+
+            //*Doutor*
+            txtEmail.Text = "brunalupa@gmail.com";
+            txtSenha.Text = "741as";
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -36,7 +42,7 @@ namespace SistemaHospitalar
                 if (dalDoutores.isLoginValido(doutores))
                 {
                     Hide();
-                    MessageBox.Show("Logado com sucesso!\nDoutor: " + dalDoutores.NomeDoutor, "Logando no Sistema Doutor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Logado com sucesso!\nDoutor: " + DalDoutores.NomeDoutor, "Logando no Sistema Doutor", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     FormEntradaDoutores entradaDoutor = new FormEntradaDoutores();
                     entradaDoutor.ShowDialog();
                     Close();

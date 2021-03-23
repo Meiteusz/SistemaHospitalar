@@ -6,7 +6,7 @@ namespace SistemaHospitalar.DAL
 {
     class DalConsultas : DalComandos
     {
-        public string CadastrarConsulta(Consulta consulta)
+        public string AgendarConsulta(Consulta consulta)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@estado", consulta.Estado);

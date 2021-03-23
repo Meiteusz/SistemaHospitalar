@@ -143,7 +143,7 @@ namespace SistemaHospitalar.UI
                 else
                 {
                     DalDoutores dalDoutores = new DalDoutores();
-                    dalDoutores.Deletar(Id);
+                    dalDoutores.DeletarDoutor(Id);
                     dgvFuncionarios.DataSource = MostrarFuncionarios();
                 }
             }

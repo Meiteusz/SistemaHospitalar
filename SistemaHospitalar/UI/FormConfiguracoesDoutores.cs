@@ -45,7 +45,7 @@ namespace SistemaHospitalar.UI
 
             if (MessageBox.Show(msgDelecaoConta, "Deleção de Conta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                MessageBox.Show(dalDoutores.Deletar(Id));
+                MessageBox.Show(dalDoutores.DeletarDoutor(Id));
                 FormLogin formLogin = new FormLogin();
                 Hide();
                 formLogin.ShowDialog();

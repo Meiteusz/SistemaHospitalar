@@ -1,5 +1,4 @@
-﻿using SistemaHospitalar.Entities;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI

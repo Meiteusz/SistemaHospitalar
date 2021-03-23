@@ -29,13 +29,13 @@ namespace SistemaHospitalar.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCadastrarValor = new System.Windows.Forms.Button();
+            this.btnAtualizarValores = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtValorConsulta = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtValorExame = new System.Windows.Forms.NumericUpDown();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -43,16 +43,16 @@ namespace SistemaHospitalar.UI
             ((System.ComponentModel.ISupportInitialize)(this.txtValorExame)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnCadastrarValor
+            // btnAtualizarValores
             // 
-            this.btnCadastrarValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarValor.Location = new System.Drawing.Point(125, 207);
-            this.btnCadastrarValor.Name = "btnCadastrarValor";
-            this.btnCadastrarValor.Size = new System.Drawing.Size(136, 52);
-            this.btnCadastrarValor.TabIndex = 2;
-            this.btnCadastrarValor.Text = "Cadastrar Valores";
-            this.btnCadastrarValor.UseVisualStyleBackColor = true;
-            this.btnCadastrarValor.Click += new System.EventHandler(this.btnCadastrarValor_Click);
+            this.btnAtualizarValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarValores.Location = new System.Drawing.Point(125, 207);
+            this.btnAtualizarValores.Name = "btnAtualizarValores";
+            this.btnAtualizarValores.Size = new System.Drawing.Size(136, 52);
+            this.btnAtualizarValores.TabIndex = 2;
+            this.btnAtualizarValores.Text = "Atualizar Valores";
+            this.btnAtualizarValores.UseVisualStyleBackColor = true;
+            this.btnAtualizarValores.Click += new System.EventHandler(this.btnAtualizarValores_Click);
             // 
             // label1
             // 
@@ -97,16 +97,6 @@ namespace SistemaHospitalar.UI
             this.label3.TabIndex = 5;
             this.label3.Text = "R$";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(134, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "R$";
-            // 
             // txtValorConsulta
             // 
             this.txtValorConsulta.DecimalPlaces = 2;
@@ -120,6 +110,16 @@ namespace SistemaHospitalar.UI
             this.txtValorConsulta.Name = "txtValorConsulta";
             this.txtValorConsulta.Size = new System.Drawing.Size(62, 24);
             this.txtValorConsulta.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(134, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "R$";
             // 
             // txtValorExame
             // 
@@ -154,7 +154,7 @@ namespace SistemaHospitalar.UI
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.txtValorExame);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnCadastrarValor);
+            this.Controls.Add(this.btnAtualizarValores);
             this.Name = "FormValores";
             this.Text = "FormValores";
             this.groupBox1.ResumeLayout(false);
@@ -166,7 +166,7 @@ namespace SistemaHospitalar.UI
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCadastrarValor;
+        private System.Windows.Forms.Button btnAtualizarValores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
