@@ -37,7 +37,7 @@ namespace SistemaHospitalar.DAL
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@id", p_id);
             command.CommandText = "delete CONSULTAS where id = @id";
-            
+
             try
             {
                 command.Connection = conexao.Conectar();
@@ -54,11 +54,20 @@ namespace SistemaHospitalar.DAL
             }
         }
 
+        public static float ValorDesconto { get; set; }
+        public static float ValorConsulta { get; set; }
+
+        //Pega o valor da consulta e desconto com o desconto do convênio
+        public static void ValorConsultaConvenio(int p_idPaciente)
+        {
+            ValorDesconto = float.Parse(DalConvenios.IndentificarConvenio(p_idPaciente));
+        }
+
         public static DataTable MostrarConsultasDGV()
         {
             command.CommandText = "select CONSULTAS.ID, CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
-                "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta " +
-                "from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID";
+                "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta, CONVENIOS.NOME as Convênio_Nome " +
+                "from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID inner join CONVENIOS on CONVENIOS.ID = CONVENIOID";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

@@ -17,12 +17,14 @@ namespace SistemaHospitalar
             //LOGIN PARA TESTE
 
             //*Recepcionista*
-            //txtEmail.Text = "rosanabnu@gmail.com";
-            //txtSenha.Text = "321ab";
+            txtEmail.Text = "rosanabnu@gmail.com";
+            txtSenha.Text = "321ab";
+            rbRecepcionista.Checked = true;
 
             //*Doutor*
-            txtEmail.Text = "brunalupa@gmail.com";
-            txtSenha.Text = "741as";
+            //txtEmail.Text = "brunalupa@gmail.com";
+            //txtSenha.Text = "741as";
+            //rbDoutor.Checked = true;
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

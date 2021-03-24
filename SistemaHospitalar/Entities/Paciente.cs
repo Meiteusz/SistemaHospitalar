@@ -18,6 +18,5 @@ namespace SistemaHospitalar.Models
 
 
         public int Convenio { get; set; }
-        //public bool isPlano { get; set; }
     }
 }

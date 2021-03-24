@@ -65,6 +65,21 @@ namespace SistemaHospitalar.DAL
             }
         }
 
+        public static string IndentificarConvenio(int p_id)
+        {
+            string valorDesconto = "";
+            SqlCommand command = new SqlCommand("select DESCONTO from CONVENIOS where ID = @id", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", p_id);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                valorDesconto = reader["DESCONTO"].ToString();
+            }
+            conexao.Desconectar();
+            return valorDesconto;
+        }
 
         public static DataTable MostrarConveniosDGV()
         {

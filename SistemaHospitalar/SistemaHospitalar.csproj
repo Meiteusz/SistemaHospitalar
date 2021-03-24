@@ -72,7 +72,6 @@
     <Compile Include="Entities\Turno.cs" />
     <Compile Include="Entities\Usuarios.cs" />
     <Compile Include="Entities\Visitante.cs" />
-    <Compile Include="Common\Environments.cs" />
     <Compile Include="UI\FormADM.cs">
       <SubType>Form</SubType>
     </Compile>

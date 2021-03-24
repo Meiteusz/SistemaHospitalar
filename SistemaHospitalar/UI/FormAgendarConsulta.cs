@@ -60,6 +60,8 @@ namespace SistemaHospitalar.UI
             }
             else
             {
+                DalConsultas.ValorConsultaConvenio(DalPacientes.Id);
+                ValorConsulta -= DalConsultas.ValorDesconto;
                 Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorConsulta);
                 DalConsultas dalConsultas = new DalConsultas();
 
