@@ -33,9 +33,9 @@ namespace SistemaHospitalar.UI
         private int DoutorId { get; set; }
         private string DoutorNome { get; set; }
         private string EspecialidadeDoutor { get; set; }
-        private float ValorConsultaFinal { get; set; }
-        
         private float ValorConsulta { get; set; }
+
+        private float ValorFinal { get; set; }
         private float ValorDesconto { get; set; }
 
         private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -48,6 +48,7 @@ namespace SistemaHospitalar.UI
             EspecialidadeDoutor = especialidadeConvertida.ToString();
 
             ValorConsulta = float.Parse(DalDoutores.PegarValorConsulta(DoutorId));
+            ValorFinal = ValorConsulta;
         }
 
 
@@ -63,11 +64,10 @@ namespace SistemaHospitalar.UI
             }
             else
             {
-                ValorConsulta = ValorConsultaFinal;
-                ValorDesconto = ValorConsultaFinal * float.Parse(DalConsultas.ValorDescontoConvenio(DalPacientes.Id)); //Desconto com respectivo convênio do Paciente
+                ValorDesconto = ValorConsulta * float.Parse(DalConsultas.ValorDescontoConvenio(DalPacientes.Id));
+                ValorFinal -= ValorDesconto; //Desconto com respectivo convênio do Paciente
 
-                ValorConsultaFinal -= ValorDesconto;
-                Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorConsultaFinal);
+                Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorFinal);
                 DalConsultas dalConsultas = new DalConsultas();
 
                 MessageBox.Show(dalConsultas.AgendarConsulta(consulta));
@@ -92,21 +92,24 @@ namespace SistemaHospitalar.UI
         }
 
 
+        private float DescontoConvenio { get; set; }
+        private string PegarNomeConvenio()
+        {
+            string NomeConvenio = "";
+            NomeConvenio = DalConvenios.IndentificarNomeConvenio(DalConvenios.IndentificarConvenio(DalPacientes.Id));
+            DescontoConvenio = float.Parse(DalConvenios.DescontoConvenio) * 100;
+            return NomeConvenio;
+        }
+
         private void AbrirComprovanteDePagamento()
         {
-
             FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
-            //if ()
-            //{
-
-            //}
             Hide();
-
             formComprovantePagamento.MostrarDadosConsultas(lblNomePaciente.Text, cmbCpfPacientes.Text, dtpDataConsulta.Value.ToString("dd/MM/yyyy hh:mm tt"),
-                DoutorNome, EspecialidadeDoutor, ValorConsultaFinal.ToString(), "a", "b", ValorConsulta.ToString(), ValorDesconto.ToString(), ValorConsultaFinal.ToString());
+                DoutorNome, EspecialidadeDoutor, ValorFinal.ToString(), PegarNomeConvenio(), DescontoConvenio.ToString() + "%", ValorConsulta.ToString(), ValorDesconto.ToString(), ValorFinal.ToString());
 
             formComprovantePagamento.ShowDialog();
-            //Close();
+            Close();
         }
     }
 }

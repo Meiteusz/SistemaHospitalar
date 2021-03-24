@@ -12,7 +12,7 @@ namespace SistemaHospitalar.UI
         }
 
         public void MostrarDadosConsultas(string pacienteNome, string pacienteCPF, string dataConsulta, string NomeDoutor, string especialidadeDoutor, string valorFinalConsulta,
-            string TemConvenio, string NomeConvenio, string ValorConsulta, string ValorDesconto, string ValorFinal)
+            string NomeConvenio, string DescontoConvenio, string ValorConsulta, string ValorDesconto, string ValorFinal)
         {
             lblNomePaciente.Text = pacienteNome;
             lblCpfPaciente.Text = pacienteCPF;
@@ -20,8 +20,8 @@ namespace SistemaHospitalar.UI
             lblNomeDoutor.Text = NomeDoutor;
             lblEspecialidadeDoutor.Text = especialidadeDoutor;
             lblValorFinalConsulta.Text = "R$ " + valorFinalConsulta + ",00";
-            lblSimNao.Text = TemConvenio;
             lblNomeConvenio.Text = NomeConvenio;
+            lblDesconto.Text = DescontoConvenio;
             lblValorConsulta.Text = ValorConsulta;
             lblValorDesconto.Text = ValorDesconto;
             lblValorFinal.Text = ValorFinal;

@@ -43,10 +43,10 @@ namespace SistemaHospitalar.DAL
         }
 
 
-        public string DeletarConvenio(int id)
+        public string DeletarConvenio(int p_id)
         {
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.AddWithValue("@id", p_id);
             command.CommandText = "delete CONVENIOS where id = @id";
 
             try
@@ -65,7 +65,6 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
         public static int IndentificarConvenio(int p_pacienteId)
         {
             int IdConvenio = 0;
@@ -80,6 +79,24 @@ namespace SistemaHospitalar.DAL
             }
             conexao.Desconectar();
             return IdConvenio;
+        }
+
+        public static string DescontoConvenio { get; set; }
+        public static string IndentificarNomeConvenio(int p_convenioId)
+        {
+            string NomeConvenio = "";
+            SqlCommand command = new SqlCommand("select NOME, DESCONTO from CONVENIOS where ID = @id", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", p_convenioId);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                NomeConvenio = reader["NOME"].ToString();
+                DescontoConvenio = reader["DESCONTO"].ToString();
+            }
+            conexao.Desconectar();
+            return NomeConvenio;
         }
 
         public static DataTable MostrarConveniosDGV()

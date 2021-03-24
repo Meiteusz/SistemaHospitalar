@@ -44,17 +44,16 @@ namespace SistemaHospitalar.UI
             this.lblNomeDoutor = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblNomeConvenio = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblValorConsulta = new System.Windows.Forms.Label();
-            this.lblValorDesconto = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.lblValorFinal = new System.Windows.Forms.Label();
-            this.lblSimNao = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblValorDesconto = new System.Windows.Forms.Label();
+            this.lblValorConsulta = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblDesconto = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -101,7 +100,7 @@ namespace SistemaHospitalar.UI
             // 
             this.lblNomePaciente.AutoSize = true;
             this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(52, 27);
+            this.lblNomePaciente.Location = new System.Drawing.Point(41, 27);
             this.lblNomePaciente.Name = "lblNomePaciente";
             this.lblNomePaciente.Size = new System.Drawing.Size(51, 20);
             this.lblNomePaciente.TabIndex = 3;
@@ -111,7 +110,7 @@ namespace SistemaHospitalar.UI
             // 
             this.lblCpfPaciente.AutoSize = true;
             this.lblCpfPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpfPaciente.Location = new System.Drawing.Point(52, 50);
+            this.lblCpfPaciente.Location = new System.Drawing.Point(29, 47);
             this.lblCpfPaciente.Name = "lblCpfPaciente";
             this.lblCpfPaciente.Size = new System.Drawing.Size(51, 20);
             this.lblCpfPaciente.TabIndex = 4;
@@ -162,7 +161,7 @@ namespace SistemaHospitalar.UI
             // 
             this.lblDataConsulta.AutoSize = true;
             this.lblDataConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataConsulta.Location = new System.Drawing.Point(67, 31);
+            this.lblDataConsulta.Location = new System.Drawing.Point(87, 31);
             this.lblDataConsulta.Name = "lblDataConsulta";
             this.lblDataConsulta.Size = new System.Drawing.Size(51, 20);
             this.lblDataConsulta.TabIndex = 3;
@@ -201,9 +200,8 @@ namespace SistemaHospitalar.UI
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.lblSimNao);
+            this.groupBox5.Controls.Add(this.lblDesconto);
             this.groupBox5.Controls.Add(this.lblNomeConvenio);
-            this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Location = new System.Drawing.Point(195, 151);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(165, 89);
@@ -215,21 +213,11 @@ namespace SistemaHospitalar.UI
             // 
             this.lblNomeConvenio.AutoSize = true;
             this.lblNomeConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeConvenio.Location = new System.Drawing.Point(25, 56);
+            this.lblNomeConvenio.Location = new System.Drawing.Point(46, 24);
             this.lblNomeConvenio.Name = "lblNomeConvenio";
-            this.lblNomeConvenio.Size = new System.Drawing.Size(117, 20);
+            this.lblNomeConvenio.Size = new System.Drawing.Size(75, 20);
             this.lblNomeConvenio.TabIndex = 4;
-            this.lblNomeConvenio.Text = "NomeConvenio";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Convênio:";
+            this.lblNomeConvenio.Text = "Convenio";
             // 
             // groupBox6
             // 
@@ -247,65 +235,15 @@ namespace SistemaHospitalar.UI
             this.groupBox6.TabIndex = 10;
             this.groupBox6.TabStop = false;
             // 
-            // label3
+            // lblValorFinal
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Valor da Consulta:";
-            // 
-            // lblValorConsulta
-            // 
-            this.lblValorConsulta.AutoSize = true;
-            this.lblValorConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorConsulta.Location = new System.Drawing.Point(218, 20);
-            this.lblValorConsulta.Name = "lblValorConsulta";
-            this.lblValorConsulta.Size = new System.Drawing.Size(26, 17);
-            this.lblValorConsulta.TabIndex = 6;
-            this.lblValorConsulta.Text = "VC";
-            // 
-            // lblValorDesconto
-            // 
-            this.lblValorDesconto.AutoSize = true;
-            this.lblValorDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorDesconto.Location = new System.Drawing.Point(218, 42);
-            this.lblValorDesconto.Name = "lblValorDesconto";
-            this.lblValorDesconto.Size = new System.Drawing.Size(27, 17);
-            this.lblValorDesconto.TabIndex = 7;
-            this.lblValorDesconto.Text = "VD";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(31, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 17);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Valor do Desconto:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(207, 59);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 17);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "--------";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(84, 86);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 17);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Valor final:";
+            this.lblValorFinal.AutoSize = true;
+            this.lblValorFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorFinal.Location = new System.Drawing.Point(218, 79);
+            this.lblValorFinal.Name = "lblValorFinal";
+            this.lblValorFinal.Size = new System.Drawing.Size(25, 17);
+            this.lblValorFinal.TabIndex = 12;
+            this.lblValorFinal.Text = "VF";
             // 
             // label11
             // 
@@ -317,25 +255,75 @@ namespace SistemaHospitalar.UI
             this.label11.TabIndex = 11;
             this.label11.Text = "-";
             // 
-            // lblValorFinal
+            // label10
             // 
-            this.lblValorFinal.AutoSize = true;
-            this.lblValorFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorFinal.Location = new System.Drawing.Point(218, 86);
-            this.lblValorFinal.Name = "lblValorFinal";
-            this.lblValorFinal.Size = new System.Drawing.Size(25, 17);
-            this.lblValorFinal.TabIndex = 12;
-            this.lblValorFinal.Text = "VF";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(84, 79);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 17);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Valor final:";
             // 
-            // lblSimNao
+            // label9
             // 
-            this.lblSimNao.AutoSize = true;
-            this.lblSimNao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSimNao.Location = new System.Drawing.Point(106, 20);
-            this.lblSimNao.Name = "lblSimNao";
-            this.lblSimNao.Size = new System.Drawing.Size(30, 20);
-            this.lblSimNao.TabIndex = 5;
-            this.lblSimNao.Text = "s/n";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(207, 59);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(48, 17);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "--------";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(31, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(129, 17);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Valor do Desconto:";
+            // 
+            // lblValorDesconto
+            // 
+            this.lblValorDesconto.AutoSize = true;
+            this.lblValorDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorDesconto.Location = new System.Drawing.Point(225, 42);
+            this.lblValorDesconto.Name = "lblValorDesconto";
+            this.lblValorDesconto.Size = new System.Drawing.Size(27, 17);
+            this.lblValorDesconto.TabIndex = 7;
+            this.lblValorDesconto.Text = "VD";
+            // 
+            // lblValorConsulta
+            // 
+            this.lblValorConsulta.AutoSize = true;
+            this.lblValorConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorConsulta.Location = new System.Drawing.Point(218, 20);
+            this.lblValorConsulta.Name = "lblValorConsulta";
+            this.lblValorConsulta.Size = new System.Drawing.Size(26, 17);
+            this.lblValorConsulta.TabIndex = 6;
+            this.lblValorConsulta.Text = "VC";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(31, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Valor da Consulta:";
+            // 
+            // lblDesconto
+            // 
+            this.lblDesconto.AutoSize = true;
+            this.lblDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesconto.Location = new System.Drawing.Point(63, 50);
+            this.lblDesconto.Name = "lblDesconto";
+            this.lblDesconto.Size = new System.Drawing.Size(41, 20);
+            this.lblDesconto.TabIndex = 5;
+            this.lblDesconto.Text = "00%";
             // 
             // FormComprovantePagamento
             // 
@@ -388,8 +376,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Label lblNomeDoutor;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label lblNomeConvenio;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblSimNao;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label lblValorFinal;
         private System.Windows.Forms.Label label11;
@@ -399,5 +385,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Label lblValorDesconto;
         private System.Windows.Forms.Label lblValorConsulta;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDesconto;
     }
 }
