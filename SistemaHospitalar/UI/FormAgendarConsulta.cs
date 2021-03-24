@@ -33,7 +33,10 @@ namespace SistemaHospitalar.UI
         private int DoutorId { get; set; }
         private string DoutorNome { get; set; }
         private string EspecialidadeDoutor { get; set; }
+        private float ValorConsultaFinal { get; set; }
+        
         private float ValorConsulta { get; set; }
+        private float ValorDesconto { get; set; }
 
         private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -60,9 +63,11 @@ namespace SistemaHospitalar.UI
             }
             else
             {
-                DalConsultas.ValorConsultaConvenio(DalPacientes.Id);
-                ValorConsulta -= DalConsultas.ValorDesconto;
-                Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorConsulta);
+                ValorConsulta = ValorConsultaFinal;
+                ValorDesconto = ValorConsultaFinal * float.Parse(DalConsultas.ValorDescontoConvenio(DalPacientes.Id)); //Desconto com respectivo convênio do Paciente
+
+                ValorConsultaFinal -= ValorDesconto;
+                Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorConsultaFinal);
                 DalConsultas dalConsultas = new DalConsultas();
 
                 MessageBox.Show(dalConsultas.AgendarConsulta(consulta));
@@ -89,14 +94,19 @@ namespace SistemaHospitalar.UI
 
         private void AbrirComprovanteDePagamento()
         {
+
             FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
+            //if ()
+            //{
+
+            //}
             Hide();
 
-            formComprovantePagamento.MostrarDadosConsultas(lblNomePaciente.Text, cmbCpfPacientes.Text, 
-                dtpDataConsulta.Value.ToString("dd/MM/yyyy hh:mm tt"), DoutorNome, EspecialidadeDoutor, ValorConsulta.ToString());
-            
+            formComprovantePagamento.MostrarDadosConsultas(lblNomePaciente.Text, cmbCpfPacientes.Text, dtpDataConsulta.Value.ToString("dd/MM/yyyy hh:mm tt"),
+                DoutorNome, EspecialidadeDoutor, ValorConsultaFinal.ToString(), "a", "b", ValorConsulta.ToString(), ValorDesconto.ToString(), ValorConsultaFinal.ToString());
+
             formComprovantePagamento.ShowDialog();
-            Close();
+            //Close();
         }
     }
 }

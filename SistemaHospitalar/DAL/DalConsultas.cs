@@ -54,13 +54,24 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-        public static float ValorDesconto { get; set; }
-        public static float ValorConsulta { get; set; }
 
-        //Pega o valor da consulta e desconto com o desconto do convênio
-        public static void ValorConsultaConvenio(int p_idPaciente)
+        //Pega o valor do desconto de acordo com o convênio do paciente
+        public static string ValorDescontoConvenio(int p_idPaciente)
         {
-            ValorDesconto = float.Parse(DalConvenios.IndentificarConvenio(p_idPaciente));
+            int idConvenio = DalConvenios.IndentificarConvenio(p_idPaciente);
+            string valorDesconto = "";
+
+            SqlCommand command = new SqlCommand("select DESCONTO from CONVENIOS where ID = @id", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", idConvenio);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                valorDesconto = reader["DESCONTO"].ToString();
+            }
+            conexao.Desconectar();
+            return valorDesconto;
         }
 
         public static DataTable MostrarConsultasDGV()

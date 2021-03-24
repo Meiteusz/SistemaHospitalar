@@ -11,14 +11,20 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-        public void MostrarDadosConsultas(string pacienteNome, string pacienteCPF, string dataConsulta, string NomeDoutor, string especialidadeDoutor, string valorConsulta)
+        public void MostrarDadosConsultas(string pacienteNome, string pacienteCPF, string dataConsulta, string NomeDoutor, string especialidadeDoutor, string valorFinalConsulta,
+            string TemConvenio, string NomeConvenio, string ValorConsulta, string ValorDesconto, string ValorFinal)
         {
             lblNomePaciente.Text = pacienteNome;
             lblCpfPaciente.Text = pacienteCPF;
             lblDataConsulta.Text = dataConsulta;
             lblNomeDoutor.Text = NomeDoutor;
             lblEspecialidadeDoutor.Text = especialidadeDoutor;
-            lblValorConsulta.Text = "R$ " + valorConsulta + ",00";
+            lblValorFinalConsulta.Text = "R$ " + valorFinalConsulta + ",00";
+            lblSimNao.Text = TemConvenio;
+            lblNomeConvenio.Text = NomeConvenio;
+            lblValorConsulta.Text = ValorConsulta;
+            lblValorDesconto.Text = ValorDesconto;
+            lblValorFinal.Text = ValorFinal;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
