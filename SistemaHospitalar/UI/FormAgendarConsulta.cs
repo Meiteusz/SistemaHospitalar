@@ -33,8 +33,8 @@ namespace SistemaHospitalar.UI
         private int DoutorId { get; set; }
         private string DoutorNome { get; set; }
         private string EspecialidadeDoutor { get; set; }
-        private float ValorConsulta { get; set; }
 
+        private float ValorConsulta { get; set; }
         private float ValorFinal { get; set; }
         private float ValorDesconto { get; set; }
 
