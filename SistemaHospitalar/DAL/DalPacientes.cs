@@ -140,5 +140,21 @@ namespace SistemaHospitalar.Models
             conexao.Desconectar();
             return Nome;
         }
+
+        public static string PegarCpfPaciente(int p_idPaciente)
+        {
+            string cpfPaciente = "";
+            SqlCommand command = new SqlCommand("select * from PACIENTES where ID = @id", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", p_idPaciente);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                cpfPaciente = reader["CPF"].ToString();
+            }
+            conexao.Desconectar();
+            return cpfPaciente;
+        }
     }
 }

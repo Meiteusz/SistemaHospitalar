@@ -23,7 +23,7 @@ namespace SistemaHospitalar
 
             //*Doutor*
             //txtEmail.Text = "brunalupa@gmail.com";
-            //txtSenha.Text = "741as";
+            //txtSenha.Text = "321ab";
             //rbDoutor.Checked = true;
         }
 

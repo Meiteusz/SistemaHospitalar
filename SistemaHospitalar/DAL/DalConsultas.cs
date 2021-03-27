@@ -6,6 +6,10 @@ namespace SistemaHospitalar.DAL
 {
     class DalConsultas : DalComandos
     {
+        public static int Id { get; set; }
+        public static string DataConsulta { get; set; }
+        public static string NomePaciente { get; set; }
+
         public string AgendarConsulta(Consulta consulta)
         {
             command.Parameters.Clear();
@@ -54,7 +58,6 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
         //Pega o valor do desconto de acordo com o convênio do paciente
         public static string ValorDescontoConvenio(int p_idPaciente)
         {
@@ -79,6 +82,17 @@ namespace SistemaHospitalar.DAL
             command.CommandText = "select CONSULTAS.ID, CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
                 "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta, CONVENIOS.NOME as Convênio_Nome " +
                 "from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID inner join CONVENIOS on CONVENIOS.ID = CONVENIOID";
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable MostrarConsultasHoje()
+        {
+            command.CommandText = "select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, FORMAT(CONSULTAS.DATACONSULTA, " +
+                "'dd/MM/yyyy HH:mm') as DataHorarioConsulta from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on " +
+                "DOUTORES.ID = DOUTORID inner join CONVENIOS on CONVENIOS.ID = CONVENIOID WHERE CONVERT(DATE, CONSULTAS.DATACONSULTA) = Convert(date, getdate())";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

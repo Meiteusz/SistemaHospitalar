@@ -33,6 +33,7 @@ namespace SistemaHospitalar.UI
             this.lblNome = new System.Windows.Forms.Label();
             this.btnValores = new System.Windows.Forms.Button();
             this.lblEspecialidadeDoutor = new System.Windows.Forms.Label();
+            this.btnConsultas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConfiguracoes
@@ -61,7 +62,7 @@ namespace SistemaHospitalar.UI
             // 
             this.btnValores.BackColor = System.Drawing.Color.Transparent;
             this.btnValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValores.Location = new System.Drawing.Point(652, 96);
+            this.btnValores.Location = new System.Drawing.Point(652, 95);
             this.btnValores.Name = "btnValores";
             this.btnValores.Size = new System.Drawing.Size(136, 65);
             this.btnValores.TabIndex = 3;
@@ -79,11 +80,24 @@ namespace SistemaHospitalar.UI
             this.lblEspecialidadeDoutor.Size = new System.Drawing.Size(0, 25);
             this.lblEspecialidadeDoutor.TabIndex = 4;
             // 
+            // btnConsultas
+            // 
+            this.btnConsultas.BackColor = System.Drawing.Color.Transparent;
+            this.btnConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultas.Location = new System.Drawing.Point(35, 216);
+            this.btnConsultas.Name = "btnConsultas";
+            this.btnConsultas.Size = new System.Drawing.Size(136, 76);
+            this.btnConsultas.TabIndex = 5;
+            this.btnConsultas.Text = "Consultas";
+            this.btnConsultas.UseVisualStyleBackColor = false;
+            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
+            // 
             // FormEntradaDoutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnConsultas);
             this.Controls.Add(this.lblEspecialidadeDoutor);
             this.Controls.Add(this.btnValores);
             this.Controls.Add(this.lblNome);
@@ -101,5 +115,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnValores;
         private System.Windows.Forms.Label lblEspecialidadeDoutor;
+        private System.Windows.Forms.Button btnConsultas;
     }
 }

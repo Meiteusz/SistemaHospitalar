@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaHospitalar.UI
 {
-    partial class FormADM
+    partial class FormFuncionarios
     {
         /// <summary>
         /// Required designer variable.
@@ -196,7 +196,7 @@ namespace SistemaHospitalar.UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Filtro";
             // 
-            // FormADM
+            // FormFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,8 +212,8 @@ namespace SistemaHospitalar.UI
             this.Controls.Add(this.dgvFuncionarios);
             this.Controls.Add(this.btnCadastrarDoutor);
             this.Controls.Add(this.btnCadastrarRecepcionista);
-            this.Name = "FormADM";
-            this.Text = "FormADM";
+            this.Name = "FormFuncionarios";
+            this.Text = "FormFuncionarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

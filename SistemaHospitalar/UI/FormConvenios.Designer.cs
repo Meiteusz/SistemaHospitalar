@@ -36,7 +36,6 @@ namespace SistemaHospitalar.UI
             this.dgvConvenios = new System.Windows.Forms.DataGridView();
             this.txtDescontoConvenio = new System.Windows.Forms.TextBox();
             this.btnDeletarConvenio = new System.Windows.Forms.Button();
-            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvenios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,23 +106,11 @@ namespace SistemaHospitalar.UI
             this.btnDeletarConvenio.UseVisualStyleBackColor = true;
             this.btnDeletarConvenio.Click += new System.EventHandler(this.btnDeletarConvenio_Click);
             // 
-            // btnVoltar
-            // 
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 38);
-            this.btnVoltar.TabIndex = 55;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
             // FormConvenios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnDeletarConvenio);
             this.Controls.Add(this.txtDescontoConvenio);
             this.Controls.Add(this.dgvConvenios);
@@ -148,6 +135,5 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.DataGridView dgvConvenios;
         private System.Windows.Forms.TextBox txtDescontoConvenio;
         private System.Windows.Forms.Button btnDeletarConvenio;
-        private System.Windows.Forms.Button btnVoltar;
     }
 }

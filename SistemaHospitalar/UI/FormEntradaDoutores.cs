@@ -28,5 +28,13 @@ namespace SistemaHospitalar.UI
             formValores.ShowDialog();
             Close();
         }
+
+        private void btnConsultas_Click(object sender, System.EventArgs e)
+        {
+            FormViewConsultas formViewConsultas = new FormViewConsultas();
+            Hide();
+            formViewConsultas.ShowDialog();
+            Close();
+        }
     }
 }

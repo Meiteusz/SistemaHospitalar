@@ -29,10 +29,12 @@ namespace SistemaHospitalar.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button btnReagendarConsulta;
             this.btnAgendarConsulta = new System.Windows.Forms.Button();
             this.dgvConsultas = new System.Windows.Forms.DataGridView();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnDeletarConsulta = new System.Windows.Forms.Button();
+            btnReagendarConsulta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +79,25 @@ namespace SistemaHospitalar.UI
             this.btnDeletarConsulta.UseVisualStyleBackColor = true;
             this.btnDeletarConsulta.Click += new System.EventHandler(this.btnDeletarConsulta_Click);
             // 
+            // btnReagendarConsulta
+            // 
+            btnReagendarConsulta.BackColor = System.Drawing.Color.Aquamarine;
+            btnReagendarConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnReagendarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnReagendarConsulta.Location = new System.Drawing.Point(574, 366);
+            btnReagendarConsulta.Name = "btnReagendarConsulta";
+            btnReagendarConsulta.Size = new System.Drawing.Size(175, 55);
+            btnReagendarConsulta.TabIndex = 4;
+            btnReagendarConsulta.Text = "Reagendar Consulta";
+            btnReagendarConsulta.UseVisualStyleBackColor = false;
+            btnReagendarConsulta.Click += new System.EventHandler(this.btnReagendarConsulta_Click);
+            // 
             // FormConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(btnReagendarConsulta);
             this.Controls.Add(this.btnDeletarConsulta);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.dgvConsultas);

@@ -57,13 +57,5 @@ namespace SistemaHospitalar.UI
             ID = (int)dgvConvenios.SelectedRows[0].Cells[0].Value;
             Nome = dgvConvenios.SelectedRows[0].Cells[1].Value.ToString();
         }
-
-        private void btnVoltar_Click(object sender, System.EventArgs e)
-        {
-            FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
-            Hide();
-            formEntradaRecepcionista.ShowDialog();
-            Close();
-        }
     }
 }

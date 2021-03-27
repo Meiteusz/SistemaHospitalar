@@ -72,11 +72,11 @@
     <Compile Include="Entities\Turno.cs" />
     <Compile Include="Entities\Usuarios.cs" />
     <Compile Include="Entities\Visitante.cs" />
-    <Compile Include="UI\FormADM.cs">
+    <Compile Include="UI\FormFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormADM.Designer.cs">
-      <DependentUpon>FormADM.cs</DependentUpon>
+    <Compile Include="UI\FormFuncionarios.Designer.cs">
+      <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormAgendarConsulta.cs">
       <SubType>Form</SubType>
@@ -107,6 +107,12 @@
     </Compile>
     <Compile Include="UI\FormConvenios.Designer.cs">
       <DependentUpon>FormConvenios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormEntradaADM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormEntradaADM.Designer.cs">
+      <DependentUpon>FormEntradaADM.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormEntradaDoutores.cs">
       <SubType>Form</SubType>
@@ -170,11 +176,23 @@
     <Compile Include="UI\FormPacientes.Designer.cs">
       <DependentUpon>FormPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormReagendamentoConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormReagendamentoConsulta.Designer.cs">
+      <DependentUpon>FormReagendamentoConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormValores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\FormValores.Designer.cs">
       <DependentUpon>FormValores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormViewConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormViewConsultas.Designer.cs">
+      <DependentUpon>FormViewConsultas.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormVisitante.cs">
       <SubType>Form</SubType>
@@ -182,8 +200,8 @@
     <Compile Include="UI\FormVisitante.Designer.cs">
       <DependentUpon>FormVisitante.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UI\FormADM.resx">
-      <DependentUpon>FormADM.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormFuncionarios.resx">
+      <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormAgendarConsulta.resx">
       <DependentUpon>FormAgendarConsulta.cs</DependentUpon>
@@ -205,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormConvenios.resx">
       <DependentUpon>FormConvenios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormEntradaADM.resx">
+      <DependentUpon>FormEntradaADM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormEntradaDoutores.resx">
       <DependentUpon>FormEntradaDoutores.cs</DependentUpon>
@@ -240,8 +261,14 @@
     <EmbeddedResource Include="UI\FormPacientes.resx">
       <DependentUpon>FormPacientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormReagendamentoConsulta.resx">
+      <DependentUpon>FormReagendamentoConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormValores.resx">
       <DependentUpon>FormValores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormViewConsultas.resx">
+      <DependentUpon>FormViewConsultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormVisitante.resx">
       <DependentUpon>FormVisitante.cs</DependentUpon>

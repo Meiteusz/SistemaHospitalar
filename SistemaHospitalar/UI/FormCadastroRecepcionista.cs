@@ -83,7 +83,7 @@ namespace SistemaHospitalar.Views
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            FormADM formADM = new FormADM();
+            FormFuncionarios formADM = new FormFuncionarios();
             Hide();
             formADM.ShowDialog();
             Close();

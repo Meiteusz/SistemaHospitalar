@@ -11,6 +11,8 @@ namespace SistemaHospitalar.Views
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+
+
             txtUsuario.Text = "admin";
             txtSenha.Text = "admin";
         }
@@ -22,9 +24,9 @@ namespace SistemaHospitalar.Views
             
             if (dalAdm.isAcessoValido(adm))
             {
-                FormADM formADM = new FormADM();
+                FormEntradaADM formEntradaADM = new FormEntradaADM();
                 Hide();
-                formADM.ShowDialog();
+                formEntradaADM.ShowDialog();
                 Close();
             }
             else

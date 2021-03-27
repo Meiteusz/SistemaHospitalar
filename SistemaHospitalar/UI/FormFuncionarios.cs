@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
 {
-    public partial class FormADM : Form
+    public partial class FormFuncionarios : Form
     {
-        public FormADM()
+        public FormFuncionarios()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
