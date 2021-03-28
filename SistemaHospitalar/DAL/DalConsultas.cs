@@ -98,5 +98,39 @@ namespace SistemaHospitalar.DAL
             adapter.Fill(dt);
             return dt;
         }
+
+        //Pegar Cpf do paciente pelo id
+        public static string PegarCpfPaciente(int p_idPacientes)
+        {
+            string cpfPaciente = "";
+            SqlCommand command = new SqlCommand("select CPF from PACIENTES where ID = @id", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", p_idPacientes);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                cpfPaciente = reader["CPF"].ToString();
+            }
+            conexao.Desconectar();
+            return cpfPaciente;
+        }
+
+        //Pegar consulta pelo ID
+        public static int PegarIdConsulta(int p_idConsulta)
+        {
+            int consultaId = 0;
+            SqlCommand command = new SqlCommand("select PACIENTEID from CONSULTAS where ID = @id", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", p_idConsulta);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                consultaId = (int)reader["PACIENTEID"];
+            }
+            conexao.Desconectar();
+            return consultaId;
+        }
     }
 }

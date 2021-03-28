@@ -14,7 +14,7 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
             dtpDataConsulta.Value = DateTime.Parse(DalConsultas.DataConsulta, CultureInfo.CreateSpecificCulture("fr-FR"));
             lblNomePaciente.Text = DalConsultas.NomePaciente;
-            lblCpfPaciente.Text = DalPacientes.PegarCpfPaciente(DalConsultas.Id);
+            lblCpfPaciente.Text = DalConsultas.PegarCpfPaciente(DalConsultas.PegarIdConsulta(DalConsultas.Id));
         }
 
         private void btnReagendar_Click(object sender, EventArgs e)
