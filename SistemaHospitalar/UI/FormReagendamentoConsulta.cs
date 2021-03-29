@@ -19,6 +19,9 @@ namespace SistemaHospitalar.UI
 
         private void btnReagendar_Click(object sender, EventArgs e)
         {
+            DalConsultas dalConsultas = new DalConsultas();
+            MessageBox.Show(dalConsultas.ReagendarConsulta(dtpDataConsulta.Value, DalConsultas.Id));
+
             FormConsultas formConsultas = new FormConsultas();
             Hide();
             formConsultas.ShowDialog();

@@ -1,4 +1,5 @@
 ﻿using SistemaHospitalar.Entities;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -57,6 +58,31 @@ namespace SistemaHospitalar.DAL
                 conexao.Desconectar();
             }
         }
+
+        public string ReagendarConsulta(DateTime p_dataConsulta, int p_id)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@dataConsulta", p_dataConsulta);
+            command.Parameters.AddWithValue("@id", p_id);
+            command.CommandText = "update CONSULTAS set DATACONSULTA = @dataConsulta where Id = @id";
+
+            try
+            {
+                command.Connection = conexao.Conectar();
+                command.ExecuteNonQuery();
+                return "Consulta reagendada com sucesso";
+            }
+            catch (SqlException ex)
+            {
+                return MostrarErro(ex);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+        }
+
+        // FAZER VERIFICAÇAO PARA NAO AGENDAR/REAGENDAR CONSULTAS NO MSM DIA/HORARIO
 
         //Pega o valor do desconto de acordo com o convênio do paciente
         public static string ValorDescontoConvenio(int p_idPaciente)
