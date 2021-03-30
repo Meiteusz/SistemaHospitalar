@@ -11,8 +11,6 @@ namespace SistemaHospitalar.DAL
         public static string DataConsulta { get; set; }
         public static string NomePaciente { get; set; }
 
-        public static int IdDoutor { get; set; }
-
         public string AgendarConsulta(Consulta consulta)
         {
             command.Parameters.Clear();
@@ -180,6 +178,40 @@ namespace SistemaHospitalar.DAL
             }
             conexao.Desconectar();
             return consultaId;
+        }
+
+
+        // ID PACIENTE E ID DOUTOR PELO ID DA CONSULTA
+        public static int PegarIdPaciente(int p_IdConsulta)
+        {
+            int IdPaciente = 0;
+            SqlCommand command = new SqlCommand("select PACIENTEID from CONSULTAS where ID = @idConsulta", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@idConsulta", p_IdConsulta);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                IdPaciente = (int)reader["PACIENTEID"];
+            }
+            conexao.Desconectar();
+            return IdPaciente;
+        }
+
+        public static int PegarIdDoutor(int p_IdConsulta)
+        {
+            int IdDoutor = 0;
+            SqlCommand command = new SqlCommand("select DOUTORID from CONSULTAS where ID = @idConsulta", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@idConsulta", p_IdConsulta);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                IdDoutor = (int)reader["DOUTORID"];
+            }
+            conexao.Desconectar();
+            return IdDoutor;
         }
     }
 }

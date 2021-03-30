@@ -245,7 +245,6 @@ namespace SistemaHospitalar.DAL
         }
 
 
-
         //PESQUISAS
         public static DataTable MostrarDoutores()
         {
