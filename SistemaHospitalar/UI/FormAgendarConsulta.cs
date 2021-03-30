@@ -29,7 +29,6 @@ namespace SistemaHospitalar.UI
             dgvDoutores.DataSource = DalDoutores.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);
         }
 
-
         private int DoutorId { get; set; }
         private string DoutorNome { get; set; }
         private string EspecialidadeDoutor { get; set; }
@@ -54,26 +53,28 @@ namespace SistemaHospitalar.UI
 
         private void btnAgendarConsulta_Click(object sender, EventArgs e)
         {
-            if (txtNomeDoutor.Text.Equals(""))
+            if (ValidarCamposConsulta().Equals(""))
             {
-                MessageBox.Show("Selecione o doutor que irá fazer a consulta!");
-            }
-            else if (dtpDataConsulta.Value <= DateTime.Now)
-            {
-                MessageBox.Show("Data inválida");
+                if (DalConsultas.isDataConsultaValido(dtpDataConsulta.Value, DalPacientes.Id, DoutorId))
+                {
+                    ValorDesconto = ValorConsulta * float.Parse(DalConsultas.ValorDescontoConvenio(DalPacientes.Id));
+                    ValorFinal -= ValorDesconto; //Desconto com respectivo convênio do Paciente
+
+                    Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorFinal);
+                    DalConsultas dalConsultas = new DalConsultas();
+
+                    MessageBox.Show(dalConsultas.AgendarConsulta(consulta));
+                    AbrirComprovanteDePagamento();
+                }
+                else
+                {
+                    MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!");
+                }
             }
             else
             {
-                ValorDesconto = ValorConsulta * float.Parse(DalConsultas.ValorDescontoConvenio(DalPacientes.Id));
-                ValorFinal -= ValorDesconto; //Desconto com respectivo convênio do Paciente
-
-                Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorFinal);
-                DalConsultas dalConsultas = new DalConsultas();
-
-                MessageBox.Show(dalConsultas.AgendarConsulta(consulta));
-                AbrirComprovanteDePagamento();
+                MessageBox.Show(ValidarCamposConsulta());
             }
-
         }
 
 
@@ -91,6 +92,20 @@ namespace SistemaHospitalar.UI
             Close();
         }
 
+
+        private string ValidarCamposConsulta()
+        {
+            string msg = "";
+            if (txtNomeDoutor.Text.Equals(""))
+            {
+                msg = "Selecione o doutor que irá fazer a consulta!";
+            }
+            else if (dtpDataConsulta.Value <= DateTime.Now)
+            {
+                msg = "Data inválida";
+            }
+            return msg;
+        }
 
         private float DescontoConvenio { get; set; }
         private string PegarNomeConvenio()

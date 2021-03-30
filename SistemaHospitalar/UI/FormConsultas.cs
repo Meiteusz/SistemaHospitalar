@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.DAL;
-using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -51,6 +50,8 @@ namespace SistemaHospitalar.UI
             DalConsultas.Id = (int)dgvConsultas.SelectedRows[0].Cells[0].Value;
             DalConsultas.DataConsulta = dgvConsultas.SelectedRows[0].Cells[4].Value.ToString();
             DalConsultas.NomePaciente = dgvConsultas.SelectedRows[0].Cells[2].Value.ToString();
+            
+            //DalConsultas.IdDoutor = dgvConsultas.SelectedRows[0].Cells[3].Value;
         }
 
         private void btnReagendarConsulta_Click(object sender, System.EventArgs e)

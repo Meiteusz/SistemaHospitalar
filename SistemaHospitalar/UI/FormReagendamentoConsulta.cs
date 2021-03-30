@@ -15,17 +15,26 @@ namespace SistemaHospitalar.UI
             dtpDataConsulta.Value = DateTime.Parse(DalConsultas.DataConsulta, CultureInfo.CreateSpecificCulture("fr-FR"));
             lblNomePaciente.Text = DalConsultas.NomePaciente;
             lblCpfPaciente.Text = DalConsultas.PegarCpfPaciente(DalConsultas.PegarIdConsulta(DalConsultas.Id));
+
+            MessageBox.Show(DalConsultas.IdDoutor.ToString());
         }
 
         private void btnReagendar_Click(object sender, EventArgs e)
         {
-            DalConsultas dalConsultas = new DalConsultas();
-            MessageBox.Show(dalConsultas.ReagendarConsulta(dtpDataConsulta.Value, DalConsultas.Id));
+            //if (DalConsultas.isDataConsultaValido(dtpDataConsulta.Value, DalPacientes.Id, DalConsultas.IdDoutor))
+            //{
+            //    DalConsultas dalConsultas = new DalConsultas();
+            //    MessageBox.Show(dalConsultas.ReagendarConsulta(dtpDataConsulta.Value, DalConsultas.Id));
 
-            FormConsultas formConsultas = new FormConsultas();
-            Hide();
-            formConsultas.ShowDialog();
-            Close();
+            //    FormConsultas formConsultas = new FormConsultas();
+            //    Hide();
+            //    formConsultas.ShowDialog();
+            //    Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!");
+            //}
         }
     }
 }

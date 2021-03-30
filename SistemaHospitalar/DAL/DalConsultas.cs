@@ -11,6 +11,8 @@ namespace SistemaHospitalar.DAL
         public static string DataConsulta { get; set; }
         public static string NomePaciente { get; set; }
 
+        public static int IdDoutor { get; set; }
+
         public string AgendarConsulta(Consulta consulta)
         {
             command.Parameters.Clear();
@@ -82,7 +84,28 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-        // FAZER VERIFICAÇAO PARA NAO AGENDAR/REAGENDAR CONSULTAS NO MSM DIA/HORARIO
+        // Verifica se há alguma consulta ja cadastrada na data/hora que foi informada
+        public static bool isDataConsultaValido(DateTime p_dataConsulta, int p_idPaciente, int p_idDoutor)
+        {
+            bool isValido = true;
+
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@dataConsulta", p_dataConsulta);
+            command.Parameters.AddWithValue("@idPaciente", p_idPaciente);
+            command.Parameters.AddWithValue("@idDoutor", p_idDoutor);
+            command.CommandText = "select PACIENTEID, DOUTORID, DATACONSULTA from CONSULTAS where DATACONSULTA = @dataConsulta AND " +
+                "(PACIENTEID = @idPaciente OR DOUTORID = @idDoutor)";
+
+            command.Connection = conexao.Conectar();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                isValido = false;
+            }
+            conexao.Desconectar();
+            return isValido;
+        }
 
         //Pega o valor do desconto de acordo com o convênio do paciente
         public static string ValorDescontoConvenio(int p_idPaciente)
