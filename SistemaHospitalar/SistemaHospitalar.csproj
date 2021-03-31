@@ -72,6 +72,12 @@
     <Compile Include="Entities\Turno.cs" />
     <Compile Include="Entities\Usuarios.cs" />
     <Compile Include="Entities\Visitante.cs" />
+    <Compile Include="UI\FormDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormDiagnostico.Designer.cs">
+      <DependentUpon>FormDiagnostico.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,11 +194,11 @@
     <Compile Include="UI\FormValores.Designer.cs">
       <DependentUpon>FormValores.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormViewConsultas.cs">
+    <Compile Include="UI\FormConsultasDoutor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormViewConsultas.Designer.cs">
-      <DependentUpon>FormViewConsultas.cs</DependentUpon>
+    <Compile Include="UI\FormConsultasDoutor.Designer.cs">
+      <DependentUpon>FormConsultasDoutor.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormVisitante.cs">
       <SubType>Form</SubType>
@@ -200,6 +206,9 @@
     <Compile Include="UI\FormVisitante.Designer.cs">
       <DependentUpon>FormVisitante.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\FormDiagnostico.resx">
+      <DependentUpon>FormDiagnostico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormFuncionarios.resx">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,8 +276,8 @@
     <EmbeddedResource Include="UI\FormValores.resx">
       <DependentUpon>FormValores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormViewConsultas.resx">
-      <DependentUpon>FormViewConsultas.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormConsultasDoutor.resx">
+      <DependentUpon>FormConsultasDoutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormVisitante.resx">
       <DependentUpon>FormVisitante.cs</DependentUpon>

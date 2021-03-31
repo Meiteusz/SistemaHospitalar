@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaHospitalar.UI
 {
-    partial class FormViewConsultas
+    partial class FormConsultasDoutor
     {
         /// <summary>
         /// Required designer variable.
@@ -35,6 +35,7 @@ namespace SistemaHospitalar.UI
             this.rbTodas = new System.Windows.Forms.RadioButton();
             this.rbDataHoje = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnFazerDiagnostico = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +47,7 @@ namespace SistemaHospitalar.UI
             this.dgvConsultas.Name = "dgvConsultas";
             this.dgvConsultas.Size = new System.Drawing.Size(449, 246);
             this.dgvConsultas.TabIndex = 0;
+            this.dgvConsultas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellClick);
             // 
             // txtPesquisa
             // 
@@ -99,16 +101,27 @@ namespace SistemaHospitalar.UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mostrar Consultas:";
             // 
-            // FormViewConsultas
+            // btnFazerDiagnostico
+            // 
+            this.btnFazerDiagnostico.Location = new System.Drawing.Point(575, 163);
+            this.btnFazerDiagnostico.Name = "btnFazerDiagnostico";
+            this.btnFazerDiagnostico.Size = new System.Drawing.Size(184, 97);
+            this.btnFazerDiagnostico.TabIndex = 6;
+            this.btnFazerDiagnostico.Text = "Fazer Diagnóstico";
+            this.btnFazerDiagnostico.UseVisualStyleBackColor = true;
+            this.btnFazerDiagnostico.Click += new System.EventHandler(this.btnFazerDiagnostico_Click);
+            // 
+            // FormConsultasDoutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnFazerDiagnostico);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvConsultas);
-            this.Name = "FormViewConsultas";
+            this.Name = "FormConsultasDoutor";
             this.Text = "FormViewConsultas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -126,5 +139,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.RadioButton rbTodas;
         private System.Windows.Forms.RadioButton rbDataHoje;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnFazerDiagnostico;
     }
 }

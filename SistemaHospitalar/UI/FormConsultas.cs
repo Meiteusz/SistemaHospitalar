@@ -9,7 +9,17 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            rbTodas.Checked = true; ;
+        }
+
+        private void rbTodas_CheckedChanged_1(object sender, System.EventArgs e)
+        {
             dgvConsultas.DataSource = DalConsultas.MostrarConsultasDGV();
+        }
+
+        private void rbDataHoje_CheckedChanged_1(object sender, System.EventArgs e)
+        {
+            dgvConsultas.DataSource = DalConsultas.MostrarConsultasHoje();
         }
 
         private void btnAgendarConsulta_Click(object sender, System.EventArgs e)

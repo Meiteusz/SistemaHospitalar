@@ -1,11 +1,12 @@
 ﻿using SistemaHospitalar.DAL;
+using SistemaHospitalar.Models;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
 {
-    public partial class FormViewConsultas : Form
+    public partial class FormConsultasDoutor : Form
     {
-        public FormViewConsultas()
+        public FormConsultasDoutor()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -21,6 +22,19 @@ namespace SistemaHospitalar.UI
         private void rbDataHoje_CheckedChanged(object sender, System.EventArgs e)
         {
             dgvConsultas.DataSource = DalConsultas.MostrarConsultasHoje();
+        }
+
+        private void btnFazerDiagnostico_Click(object sender, System.EventArgs e)
+        {
+            FormDiagnostico formDiagnostico = new FormDiagnostico();
+            Hide();
+            formDiagnostico.ShowDialog();
+            Close();
+        }
+
+        private void dgvConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DalConsultas.NomePaciente = dgvConsultas.SelectedRows[0].Cells[5].Value.ToString();
         }
     }
 }
