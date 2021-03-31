@@ -33,8 +33,8 @@ namespace SistemaHospitalar.UI
             this.btnReagendar = new System.Windows.Forms.Button();
             this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblNomePaciente = new System.Windows.Forms.Label();
             this.lblCpfPaciente = new System.Windows.Forms.Label();
+            this.lblNomePaciente = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,11 +66,11 @@ namespace SistemaHospitalar.UI
             this.dtpDataConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataConsulta.Location = new System.Drawing.Point(126, 99);
             this.dtpDataConsulta.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
-            this.dtpDataConsulta.MinDate = new System.DateTime(2021, 3, 18, 16, 54, 0, 0);
+            this.dtpDataConsulta.MinDate = new System.DateTime(2021, 3, 31, 0, 0, 0, 0);
             this.dtpDataConsulta.Name = "dtpDataConsulta";
             this.dtpDataConsulta.Size = new System.Drawing.Size(239, 27);
             this.dtpDataConsulta.TabIndex = 16;
-            this.dtpDataConsulta.Value = new System.DateTime(2021, 3, 18, 17, 41, 55, 0);
+            this.dtpDataConsulta.Value = new System.DateTime(2021, 3, 31, 0, 0, 0, 0);
             // 
             // groupBox1
             // 
@@ -84,16 +84,6 @@ namespace SistemaHospitalar.UI
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
-            // lblNomePaciente
-            // 
-            this.lblNomePaciente.AutoSize = true;
-            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(184, 30);
-            this.lblNomePaciente.Name = "lblNomePaciente";
-            this.lblNomePaciente.Size = new System.Drawing.Size(117, 20);
-            this.lblNomePaciente.TabIndex = 17;
-            this.lblNomePaciente.Text = "Nome Paciente";
-            // 
             // lblCpfPaciente
             // 
             this.lblCpfPaciente.AutoSize = true;
@@ -103,6 +93,16 @@ namespace SistemaHospitalar.UI
             this.lblCpfPaciente.Size = new System.Drawing.Size(121, 20);
             this.lblCpfPaciente.TabIndex = 18;
             this.lblCpfPaciente.Text = "000.000.000-00";
+            // 
+            // lblNomePaciente
+            // 
+            this.lblNomePaciente.AutoSize = true;
+            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePaciente.Location = new System.Drawing.Point(184, 30);
+            this.lblNomePaciente.Name = "lblNomePaciente";
+            this.lblNomePaciente.Size = new System.Drawing.Size(117, 20);
+            this.lblNomePaciente.TabIndex = 17;
+            this.lblNomePaciente.Text = "Nome Paciente";
             // 
             // FormReagendamentoConsulta
             // 

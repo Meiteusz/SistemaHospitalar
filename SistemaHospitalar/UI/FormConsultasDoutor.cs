@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.DAL;
-using SistemaHospitalar.Models;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -10,31 +9,35 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            dgvConsultas.DataSource = DalConsultas.MostrarConsultasHoje();
-            rbTodas.Checked = true;
-        }
-
-        private void rbTodas_CheckedChanged(object sender, System.EventArgs e)
-        {
-            dgvConsultas.DataSource = DalConsultas.MostrarConsultasDGV();
-        }
-
-        private void rbDataHoje_CheckedChanged(object sender, System.EventArgs e)
-        {
-            dgvConsultas.DataSource = DalConsultas.MostrarConsultasHoje();
+            dgvConsultas.DataSource = DalConsultas.MostrarConsultasParaDoutor(int.Parse(DalDoutores.Id));
         }
 
         private void btnFazerDiagnostico_Click(object sender, System.EventArgs e)
         {
-            FormDiagnostico formDiagnostico = new FormDiagnostico();
-            Hide();
-            formDiagnostico.ShowDialog();
-            Close();
+            if (dgvConsultas.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Selecione a consulta para fazer o Diagnóstico!");
+            }
+            else
+            {
+                FormDiagnostico formDiagnostico = new FormDiagnostico();
+                Hide();
+                formDiagnostico.ShowDialog();
+                Close();
+            }
         }
 
         private void dgvConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DalConsultas.NomePaciente = dgvConsultas.SelectedRows[0].Cells[5].Value.ToString();
+            DalConsultas.NomePaciente = dgvConsultas.SelectedRows[0].Cells[1].Value.ToString();
+        }
+
+        private void btnVoltar_Click(object sender, System.EventArgs e)
+        {
+            FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();
+            Hide();
+            formEntradaDoutores.ShowDialog();
+            Close();
         }
     }
 }

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +78,12 @@
     </Compile>
     <Compile Include="UI\FormDiagnostico.Designer.cs">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormEscolhaDeVisualizacaoDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormEscolhaDeVisualizacaoDiagnostico.Designer.cs">
+      <DependentUpon>FormEscolhaDeVisualizacaoDiagnostico.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormFuncionarios.cs">
       <SubType>Form</SubType>
@@ -208,6 +215,9 @@
     </Compile>
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormEscolhaDeVisualizacaoDiagnostico.resx">
+      <DependentUpon>FormEscolhaDeVisualizacaoDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormFuncionarios.resx">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>

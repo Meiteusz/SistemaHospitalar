@@ -14,7 +14,7 @@ namespace SistemaHospitalar.UI
 
         private void rbTodas_CheckedChanged_1(object sender, System.EventArgs e)
         {
-            dgvConsultas.DataSource = DalConsultas.MostrarConsultasDGV();
+            dgvConsultas.DataSource = DalConsultas.MostrarConsultas();
         }
 
         private void rbDataHoje_CheckedChanged_1(object sender, System.EventArgs e)
@@ -42,7 +42,7 @@ namespace SistemaHospitalar.UI
                 if (MessageBox.Show("Deseja realmente deletar esta Consulta?", "Deleção de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     MessageBox.Show(dalConsultas.DeletarConsulta(DalConsultas.Id));
-                    dgvConsultas.DataSource = DalConsultas.MostrarConsultasDGV();
+                    dgvConsultas.DataSource = DalConsultas.MostrarConsultas();
                 }
             }
         }

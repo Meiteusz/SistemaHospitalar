@@ -18,7 +18,7 @@ namespace SistemaHospitalar.UI
 
         private void btnReagendar_Click(object sender, EventArgs e)
         {
-            if (DalConsultas.isDataConsultaValido(dtpDataConsulta.Value, DalConsultas.PegarIdPaciente(DalConsultas.Id), DalConsultas.PegarIdDoutor(DalConsultas.Id)))
+            if (DalConsultas.isDataConsultaValido(dtpDataConsulta.Value, DalConsultas.PegarIdPaciente(DalConsultas.Id), DalConsultas.PegarIdDoutor(DalConsultas.Id)) && dtpDataConsulta.Value >= DateTime.Now)
             {
                 DalConsultas dalConsultas = new DalConsultas();
                 MessageBox.Show(dalConsultas.ReagendarConsulta(dtpDataConsulta.Value, DalConsultas.Id));
@@ -30,7 +30,7 @@ namespace SistemaHospitalar.UI
             }
             else
             {
-                MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!");
+                MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!\nVerifique tambem se a data é válida!");
             }
         }
     }

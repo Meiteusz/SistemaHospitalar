@@ -124,7 +124,7 @@ namespace SistemaHospitalar.DAL
             return valorDesconto;
         }
 
-        public static DataTable MostrarConsultasDGV()
+        public static DataTable MostrarConsultas()
         {
             command.CommandText = "select CONSULTAS.ID, CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
                 "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta, CONVENIOS.NOME as Convênio_Nome " +
@@ -137,9 +137,26 @@ namespace SistemaHospitalar.DAL
 
         public static DataTable MostrarConsultasHoje()
         {
-            command.CommandText = "select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, FORMAT(CONSULTAS.DATACONSULTA, " +
-                "'dd/MM/yyyy HH:mm') as DataHorarioConsulta from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on " +
-                "DOUTORES.ID = DOUTORID inner join CONVENIOS on CONVENIOS.ID = CONVENIOID WHERE CONVERT(DATE, CONSULTAS.DATACONSULTA) = Convert(date, getdate())";
+            command.CommandText = "select CONSULTAS.ID, CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
+                "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta, CONVENIOS.NOME as " +
+                "Convênio_Nome from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID inner join " +
+                "CONVENIOS on CONVENIOS.ID = CONVENIOID where CONVERT(DATE, CONSULTAS.DATACONSULTA) = Convert(date, getdate())";
+            
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public static DataTable MostrarConsultasParaDoutor(int p_IdDoutor)
+        {
+            SqlCommand command = new SqlCommand("select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') " +
+                "as DataHorarioConsulta from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on " +
+                "DOUTORES.ID = DOUTORID inner join CONVENIOS on CONVENIOS.ID = CONVENIOID WHERE DOUTORID = @IdDoutor and CONVERT(DATE, CONSULTAS.DATACONSULTA) = " +
+                "Convert(date, getdate())", conexao.Conectar());
+
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@IdDoutor", p_IdDoutor);
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
