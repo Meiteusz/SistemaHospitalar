@@ -49,9 +49,10 @@ namespace SistemaHospitalar.UI
             // 
             // btnCadastrarRecepcionista
             // 
-            this.btnCadastrarRecepcionista.Location = new System.Drawing.Point(624, 55);
+            this.btnCadastrarRecepcionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarRecepcionista.Location = new System.Drawing.Point(119, 574);
             this.btnCadastrarRecepcionista.Name = "btnCadastrarRecepcionista";
-            this.btnCadastrarRecepcionista.Size = new System.Drawing.Size(154, 69);
+            this.btnCadastrarRecepcionista.Size = new System.Drawing.Size(181, 76);
             this.btnCadastrarRecepcionista.TabIndex = 0;
             this.btnCadastrarRecepcionista.Text = "Cadastrar Recepcionista";
             this.btnCadastrarRecepcionista.UseVisualStyleBackColor = true;
@@ -59,9 +60,10 @@ namespace SistemaHospitalar.UI
             // 
             // btnCadastrarDoutor
             // 
-            this.btnCadastrarDoutor.Location = new System.Drawing.Point(624, 145);
+            this.btnCadastrarDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarDoutor.Location = new System.Drawing.Point(368, 574);
             this.btnCadastrarDoutor.Name = "btnCadastrarDoutor";
-            this.btnCadastrarDoutor.Size = new System.Drawing.Size(154, 69);
+            this.btnCadastrarDoutor.Size = new System.Drawing.Size(181, 76);
             this.btnCadastrarDoutor.TabIndex = 1;
             this.btnCadastrarDoutor.Text = "Cadastrar Doutor(a)";
             this.btnCadastrarDoutor.UseVisualStyleBackColor = true;
@@ -70,26 +72,26 @@ namespace SistemaHospitalar.UI
             // dgvFuncionarios
             // 
             this.dgvFuncionarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFuncionarios.Location = new System.Drawing.Point(25, 56);
+            this.dgvFuncionarios.Location = new System.Drawing.Point(25, 118);
             this.dgvFuncionarios.Name = "dgvFuncionarios";
             this.dgvFuncionarios.ReadOnly = true;
-            this.dgvFuncionarios.Size = new System.Drawing.Size(579, 321);
+            this.dgvFuncionarios.Size = new System.Drawing.Size(844, 338);
             this.dgvFuncionarios.TabIndex = 2;
             this.dgvFuncionarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionarios_CellClick);
             // 
             // txtPesquisa
             // 
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.Location = new System.Drawing.Point(25, 19);
+            this.txtPesquisa.Location = new System.Drawing.Point(25, 79);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(209, 26);
             this.txtPesquisa.TabIndex = 5;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(537, 12);
+            this.btnPesquisar.Location = new System.Drawing.Point(784, 69);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(67, 38);
+            this.btnPesquisar.Size = new System.Drawing.Size(85, 43);
             this.btnPesquisar.TabIndex = 6;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -97,9 +99,10 @@ namespace SistemaHospitalar.UI
             // 
             // btnDeletarFuncionario
             // 
-            this.btnDeletarFuncionario.Location = new System.Drawing.Point(624, 317);
+            this.btnDeletarFuncionario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletarFuncionario.Location = new System.Drawing.Point(616, 574);
             this.btnDeletarFuncionario.Name = "btnDeletarFuncionario";
-            this.btnDeletarFuncionario.Size = new System.Drawing.Size(154, 60);
+            this.btnDeletarFuncionario.Size = new System.Drawing.Size(181, 76);
             this.btnDeletarFuncionario.TabIndex = 7;
             this.btnDeletarFuncionario.UseVisualStyleBackColor = true;
             this.btnDeletarFuncionario.Click += new System.EventHandler(this.btnDeletarFuncionario_Click);
@@ -107,9 +110,10 @@ namespace SistemaHospitalar.UI
             // rbNome
             // 
             this.rbNome.AutoSize = true;
+            this.rbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbNome.Location = new System.Drawing.Point(24, 19);
             this.rbNome.Name = "rbNome";
-            this.rbNome.Size = new System.Drawing.Size(53, 17);
+            this.rbNome.Size = new System.Drawing.Size(63, 21);
             this.rbNome.TabIndex = 9;
             this.rbNome.TabStop = true;
             this.rbNome.Text = "Nome";
@@ -119,9 +123,10 @@ namespace SistemaHospitalar.UI
             // rbTurno
             // 
             this.rbTurno.AutoSize = true;
+            this.rbTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbTurno.Location = new System.Drawing.Point(112, 19);
             this.rbTurno.Name = "rbTurno";
-            this.rbTurno.Size = new System.Drawing.Size(53, 17);
+            this.rbTurno.Size = new System.Drawing.Size(64, 21);
             this.rbTurno.TabIndex = 10;
             this.rbTurno.TabStop = true;
             this.rbTurno.Text = "Turno";
@@ -131,9 +136,10 @@ namespace SistemaHospitalar.UI
             // rbEspecialidade
             // 
             this.rbEspecialidade.AutoSize = true;
+            this.rbEspecialidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbEspecialidade.Location = new System.Drawing.Point(195, 21);
             this.rbEspecialidade.Name = "rbEspecialidade";
-            this.rbEspecialidade.Size = new System.Drawing.Size(91, 17);
+            this.rbEspecialidade.Size = new System.Drawing.Size(114, 21);
             this.rbEspecialidade.TabIndex = 11;
             this.rbEspecialidade.TabStop = true;
             this.rbEspecialidade.Text = "Especialidade";
@@ -145,7 +151,7 @@ namespace SistemaHospitalar.UI
             this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.Location = new System.Drawing.Point(25, 19);
+            this.cmbTurno.Location = new System.Drawing.Point(25, 79);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(209, 26);
             this.cmbTurno.TabIndex = 12;
@@ -155,15 +161,15 @@ namespace SistemaHospitalar.UI
             this.cmbEspecialidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEspecialidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEspecialidade.FormattingEnabled = true;
-            this.cmbEspecialidade.Location = new System.Drawing.Point(25, 19);
+            this.cmbEspecialidade.Location = new System.Drawing.Point(25, 79);
             this.cmbEspecialidade.Name = "cmbEspecialidade";
-            this.cmbEspecialidade.Size = new System.Drawing.Size(209, 26);
+            this.cmbEspecialidade.Size = new System.Drawing.Size(253, 26);
             this.cmbEspecialidade.TabIndex = 13;
             // 
             // rbRecepcionista
             // 
             this.rbRecepcionista.AutoSize = true;
-            this.rbRecepcionista.Location = new System.Drawing.Point(218, 400);
+            this.rbRecepcionista.Location = new System.Drawing.Point(348, 505);
             this.rbRecepcionista.Name = "rbRecepcionista";
             this.rbRecepcionista.Size = new System.Drawing.Size(93, 17);
             this.rbRecepcionista.TabIndex = 14;
@@ -175,7 +181,7 @@ namespace SistemaHospitalar.UI
             // rbDoutor
             // 
             this.rbDoutor.AutoSize = true;
-            this.rbDoutor.Location = new System.Drawing.Point(350, 400);
+            this.rbDoutor.Location = new System.Drawing.Point(480, 505);
             this.rbDoutor.Name = "rbDoutor";
             this.rbDoutor.Size = new System.Drawing.Size(69, 17);
             this.rbDoutor.TabIndex = 15;
@@ -189,9 +195,9 @@ namespace SistemaHospitalar.UI
             this.groupBox1.Controls.Add(this.rbEspecialidade);
             this.groupBox1.Controls.Add(this.rbNome);
             this.groupBox1.Controls.Add(this.rbTurno);
-            this.groupBox1.Location = new System.Drawing.Point(238, 7);
+            this.groupBox1.Location = new System.Drawing.Point(329, 65);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(296, 44);
+            this.groupBox1.Size = new System.Drawing.Size(377, 47);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo de Filtro";
@@ -200,7 +206,7 @@ namespace SistemaHospitalar.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1249, 695);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rbDoutor);
             this.Controls.Add(this.rbRecepcionista);

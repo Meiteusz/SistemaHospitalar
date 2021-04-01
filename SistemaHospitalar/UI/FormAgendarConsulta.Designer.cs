@@ -39,10 +39,11 @@ namespace SistemaHospitalar.UI
             this.btnCadastrarConsulta = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblNomePaciente = new System.Windows.Forms.Label();
             this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.lblNomePaciente = new System.Windows.Forms.Label();
+            this.btnMostrarAgendarDoutor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoutores)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +81,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(29, 397);
+            this.label3.Location = new System.Drawing.Point(22, 397);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 5;
@@ -90,9 +91,9 @@ namespace SistemaHospitalar.UI
             // 
             this.txtNomeDoutor.Enabled = false;
             this.txtNomeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeDoutor.Location = new System.Drawing.Point(109, 394);
+            this.txtNomeDoutor.Location = new System.Drawing.Point(95, 394);
             this.txtNomeDoutor.Name = "txtNomeDoutor";
-            this.txtNomeDoutor.Size = new System.Drawing.Size(224, 27);
+            this.txtNomeDoutor.Size = new System.Drawing.Size(274, 27);
             this.txtNomeDoutor.TabIndex = 8;
             // 
             // dgvDoutores
@@ -149,6 +150,15 @@ namespace SistemaHospitalar.UI
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
+            // lblNomePaciente
+            // 
+            this.lblNomePaciente.AutoSize = true;
+            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePaciente.Location = new System.Drawing.Point(138, 130);
+            this.lblNomePaciente.Name = "lblNomePaciente";
+            this.lblNomePaciente.Size = new System.Drawing.Size(0, 20);
+            this.lblNomePaciente.TabIndex = 16;
+            // 
             // dtpDataConsulta
             // 
             this.dtpDataConsulta.CustomFormat = "dd/MM/yyyy hh:mm tt";
@@ -182,20 +192,23 @@ namespace SistemaHospitalar.UI
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // lblNomePaciente
+            // btnMostrarAgendarDoutor
             // 
-            this.lblNomePaciente.AutoSize = true;
-            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(138, 130);
-            this.lblNomePaciente.Name = "lblNomePaciente";
-            this.lblNomePaciente.Size = new System.Drawing.Size(0, 20);
-            this.lblNomePaciente.TabIndex = 16;
+            this.btnMostrarAgendarDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarAgendarDoutor.Location = new System.Drawing.Point(122, 436);
+            this.btnMostrarAgendarDoutor.Name = "btnMostrarAgendarDoutor";
+            this.btnMostrarAgendarDoutor.Size = new System.Drawing.Size(149, 61);
+            this.btnMostrarAgendarDoutor.TabIndex = 16;
+            this.btnMostrarAgendarDoutor.Text = "Mostrar agenda do doutor(a) selecionado(a)";
+            this.btnMostrarAgendarDoutor.UseVisualStyleBackColor = true;
+            this.btnMostrarAgendarDoutor.Click += new System.EventHandler(this.btnMostrarAgendarDoutor_Click);
             // 
             // FormAgendarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 509);
+            this.Controls.Add(this.btnMostrarAgendarDoutor);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnPesquisar);
@@ -231,5 +244,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.DateTimePicker dtpDataConsulta;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label lblNomePaciente;
+        private System.Windows.Forms.Button btnMostrarAgendarDoutor;
     }
 }

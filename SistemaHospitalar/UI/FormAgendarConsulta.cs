@@ -29,7 +29,7 @@ namespace SistemaHospitalar.UI
             dgvDoutores.DataSource = DalDoutores.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);
         }
 
-        private int DoutorId { get; set; }
+        public static int DoutorId { get; set; }
         private string DoutorNome { get; set; }
         private string EspecialidadeDoutor { get; set; }
 
@@ -39,6 +39,7 @@ namespace SistemaHospitalar.UI
 
         private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // CURRENTROW E CURRENTCELL (MUDAR)
             DoutorId = (int)dgvDoutores.SelectedRows[0].Cells[0].Value;
             DoutorNome = dgvDoutores.SelectedRows[0].Cells[1].Value.ToString();
             txtNomeDoutor.Text = DoutorNome;
@@ -125,6 +126,12 @@ namespace SistemaHospitalar.UI
 
             formComprovantePagamento.ShowDialog();
             Close();
+        }
+
+        private void btnMostrarAgendarDoutor_Click(object sender, EventArgs e)
+        {
+            FormAgendaDoutor formAgendaDoutor = new FormAgendaDoutor();
+            formAgendaDoutor.ShowDialog();
         }
     }
 }

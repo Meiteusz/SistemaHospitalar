@@ -163,6 +163,18 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
+        public static DataTable MostrarAgendarDoutor(int p_IdDoutor)
+        {
+            SqlCommand command = new SqlCommand("select DATACONSULTA FROM CONSULTAS WHERE DOUTORID = @p_IdDoutor", conexao.Conectar());
+
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@IdDoutor", p_IdDoutor);
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
         //Pegar Cpf do paciente pelo id
         public static string PegarCpfPaciente(int p_idPacientes)
         {

@@ -42,15 +42,15 @@ namespace SistemaHospitalar.UI
             // txtNomeConvenio
             // 
             this.txtNomeConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeConvenio.Location = new System.Drawing.Point(473, 134);
+            this.txtNomeConvenio.Location = new System.Drawing.Point(460, 111);
             this.txtNomeConvenio.Name = "txtNomeConvenio";
             this.txtNomeConvenio.Size = new System.Drawing.Size(278, 30);
             this.txtNomeConvenio.TabIndex = 0;
             // 
             // btnCadastrarConvenio
             // 
-            this.btnCadastrarConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarConvenio.Location = new System.Drawing.Point(530, 298);
+            this.btnCadastrarConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarConvenio.Location = new System.Drawing.Point(525, 366);
             this.btnCadastrarConvenio.Name = "btnCadastrarConvenio";
             this.btnCadastrarConvenio.Size = new System.Drawing.Size(161, 61);
             this.btnCadastrarConvenio.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(469, 106);
+            this.label1.Location = new System.Drawing.Point(456, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 3;
@@ -72,7 +72,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(469, 198);
+            this.label2.Location = new System.Drawing.Point(456, 175);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 25);
             this.label2.TabIndex = 4;
@@ -81,7 +81,7 @@ namespace SistemaHospitalar.UI
             // dgvConvenios
             // 
             this.dgvConvenios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConvenios.Location = new System.Drawing.Point(57, 75);
+            this.dgvConvenios.Location = new System.Drawing.Point(50, 32);
             this.dgvConvenios.Name = "dgvConvenios";
             this.dgvConvenios.Size = new System.Drawing.Size(347, 284);
             this.dgvConvenios.TabIndex = 6;
@@ -90,17 +90,17 @@ namespace SistemaHospitalar.UI
             // txtDescontoConvenio
             // 
             this.txtDescontoConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescontoConvenio.Location = new System.Drawing.Point(473, 239);
+            this.txtDescontoConvenio.Location = new System.Drawing.Point(460, 216);
             this.txtDescontoConvenio.Name = "txtDescontoConvenio";
             this.txtDescontoConvenio.Size = new System.Drawing.Size(278, 30);
             this.txtDescontoConvenio.TabIndex = 7;
             // 
             // btnDeletarConvenio
             // 
-            this.btnDeletarConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletarConvenio.Location = new System.Drawing.Point(168, 388);
+            this.btnDeletarConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletarConvenio.Location = new System.Drawing.Point(152, 366);
             this.btnDeletarConvenio.Name = "btnDeletarConvenio";
-            this.btnDeletarConvenio.Size = new System.Drawing.Size(130, 50);
+            this.btnDeletarConvenio.Size = new System.Drawing.Size(161, 61);
             this.btnDeletarConvenio.TabIndex = 9;
             this.btnDeletarConvenio.Text = "Deletar Convênio";
             this.btnDeletarConvenio.UseVisualStyleBackColor = true;

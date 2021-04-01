@@ -4,6 +4,7 @@ using SistemaHospitalar.Models;
 using SistemaHospitalar.Views;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -17,6 +18,9 @@ namespace SistemaHospitalar.UI
             rbRecepcionista.Checked = true;
             cmbTurno.DataSource = Enum.GetValues(typeof(Turno));
             cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
+            dgvFuncionarios.Columns["Email"].Width = 180;
+            dgvFuncionarios.Columns["Turno"].Width = 70;
+            dgvFuncionarios.Columns["Genero"].Width = 70;
         }
 
         private void rbRecepcionista_CheckedChanged_1(object sender, EventArgs e)
@@ -25,6 +29,8 @@ namespace SistemaHospitalar.UI
             rbEspecialidade.Visible = false;
             rbNome.Checked = true;
             dgvFuncionarios.DataSource = MostrarFuncionarios();
+            //44
+            dgvFuncionarios.Size = new Size(863, 338);
         }
 
         private void rbDoutor_CheckedChanged_1(object sender, EventArgs e)
@@ -33,6 +39,7 @@ namespace SistemaHospitalar.UI
             rbEspecialidade.Visible = true;
             rbEspecialidade.Checked = true;
             dgvFuncionarios.DataSource = MostrarFuncionarios();
+            dgvFuncionarios.Size = new Size(1163, 338);
         }
 
         private void btnCadastrarRecepcionista_Click(object sender, EventArgs e)

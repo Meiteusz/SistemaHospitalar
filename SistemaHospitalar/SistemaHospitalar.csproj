@@ -73,6 +73,12 @@
     <Compile Include="Entities\Turno.cs" />
     <Compile Include="Entities\Usuarios.cs" />
     <Compile Include="Entities\Visitante.cs" />
+    <Compile Include="UI\FormAgendaDoutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormAgendaDoutor.Designer.cs">
+      <DependentUpon>FormAgendaDoutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormDiagnostico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     <Compile Include="UI\FormVisitante.Designer.cs">
       <DependentUpon>FormVisitante.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\FormAgendaDoutor.resx">
+      <DependentUpon>FormAgendaDoutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
     </EmbeddedResource>

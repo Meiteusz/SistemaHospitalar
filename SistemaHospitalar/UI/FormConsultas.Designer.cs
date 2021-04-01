@@ -47,9 +47,9 @@ namespace SistemaHospitalar.UI
             btnReagendarConsulta.BackColor = System.Drawing.Color.Aquamarine;
             btnReagendarConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnReagendarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnReagendarConsulta.Location = new System.Drawing.Point(746, 486);
+            btnReagendarConsulta.Location = new System.Drawing.Point(503, 487);
             btnReagendarConsulta.Name = "btnReagendarConsulta";
-            btnReagendarConsulta.Size = new System.Drawing.Size(175, 55);
+            btnReagendarConsulta.Size = new System.Drawing.Size(161, 57);
             btnReagendarConsulta.TabIndex = 4;
             btnReagendarConsulta.Text = "Reagendar Consulta";
             btnReagendarConsulta.UseVisualStyleBackColor = false;
@@ -58,9 +58,9 @@ namespace SistemaHospitalar.UI
             // btnAgendarConsulta
             // 
             this.btnAgendarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendarConsulta.Location = new System.Drawing.Point(730, 100);
+            this.btnAgendarConsulta.Location = new System.Drawing.Point(305, 487);
             this.btnAgendarConsulta.Name = "btnAgendarConsulta";
-            this.btnAgendarConsulta.Size = new System.Drawing.Size(222, 67);
+            this.btnAgendarConsulta.Size = new System.Drawing.Size(161, 57);
             this.btnAgendarConsulta.TabIndex = 0;
             this.btnAgendarConsulta.Text = "Agendar Consulta";
             this.btnAgendarConsulta.UseVisualStyleBackColor = true;
@@ -69,17 +69,18 @@ namespace SistemaHospitalar.UI
             // dgvConsultas
             // 
             this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultas.Location = new System.Drawing.Point(28, 103);
+            this.dgvConsultas.Location = new System.Drawing.Point(110, 104);
             this.dgvConsultas.Name = "dgvConsultas";
-            this.dgvConsultas.Size = new System.Drawing.Size(650, 338);
+            this.dgvConsultas.Size = new System.Drawing.Size(743, 338);
             this.dgvConsultas.TabIndex = 1;
             this.dgvConsultas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellClick);
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(28, 12);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(110, 487);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(99, 36);
+            this.btnVoltar.Size = new System.Drawing.Size(161, 57);
             this.btnVoltar.TabIndex = 2;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -88,9 +89,9 @@ namespace SistemaHospitalar.UI
             // btnDeletarConsulta
             // 
             this.btnDeletarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletarConsulta.Location = new System.Drawing.Point(730, 192);
+            this.btnDeletarConsulta.Location = new System.Drawing.Point(692, 487);
             this.btnDeletarConsulta.Name = "btnDeletarConsulta";
-            this.btnDeletarConsulta.Size = new System.Drawing.Size(222, 67);
+            this.btnDeletarConsulta.Size = new System.Drawing.Size(161, 57);
             this.btnDeletarConsulta.TabIndex = 3;
             this.btnDeletarConsulta.Text = "Deletar Consulta";
             this.btnDeletarConsulta.UseVisualStyleBackColor = true;
@@ -100,9 +101,9 @@ namespace SistemaHospitalar.UI
             // 
             this.groupBox1.Controls.Add(this.rbTodas);
             this.groupBox1.Controls.Add(this.rbDataHoje);
-            this.groupBox1.Location = new System.Drawing.Point(28, 478);
+            this.groupBox1.Location = new System.Drawing.Point(113, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 63);
+            this.groupBox1.Size = new System.Drawing.Size(740, 63);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mostrar Consultas:";
@@ -110,7 +111,7 @@ namespace SistemaHospitalar.UI
             // rbTodas
             // 
             this.rbTodas.AutoSize = true;
-            this.rbTodas.Location = new System.Drawing.Point(103, 27);
+            this.rbTodas.Location = new System.Drawing.Point(119, 27);
             this.rbTodas.Name = "rbTodas";
             this.rbTodas.Size = new System.Drawing.Size(55, 17);
             this.rbTodas.TabIndex = 3;
@@ -122,7 +123,7 @@ namespace SistemaHospitalar.UI
             // rbDataHoje
             // 
             this.rbDataHoje.AutoSize = true;
-            this.rbDataHoje.Location = new System.Drawing.Point(225, 27);
+            this.rbDataHoje.Location = new System.Drawing.Point(241, 27);
             this.rbDataHoje.Name = "rbDataHoje";
             this.rbDataHoje.Size = new System.Drawing.Size(47, 17);
             this.rbDataHoje.TabIndex = 4;
