@@ -15,7 +15,7 @@ namespace SistemaHospitalar.UI
             cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
         }
 
-        private void FormCadastroConsulta_Load(object sender, System.EventArgs e)
+        private void FormCadastroConsulta_Load(object sender, EventArgs e)
         {
             cmbCpfPacientes.DisplayMember = "NOME";
             cmbCpfPacientes.DataSource = DalPacientes.MostrarCPFPacientes();
@@ -23,10 +23,22 @@ namespace SistemaHospitalar.UI
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
+        private void PesquisarDoutorDGV()
+        {
+            dgvDoutores.DataSource = DalDoutores.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);
+            dgvDoutores.Columns["Nome"].Width = 185;
+        }
+
+        private void MostrarAgendaDoutorDGV()
+        {
+            dgvDoutores.DataSource = DalConsultas.MostrarAgendarDoutor(DoutorId);
+            dgvDoutores.Columns["NomePaciente"].Width = 185;
+            dgvDoutores.Columns["DATACONSULTA"].Width = 200;
+        }
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            dgvDoutores.DataSource = DalDoutores.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);
+            PesquisarDoutorDGV();
         }
 
         public static int DoutorId { get; set; }
@@ -128,10 +140,25 @@ namespace SistemaHospitalar.UI
             Close();
         }
 
-        private void btnMostrarAgendarDoutor_Click(object sender, EventArgs e)
+        private void cbAgendaDoutor_CheckedChanged(object sender, EventArgs e)
         {
-            FormAgendaDoutor formAgendaDoutor = new FormAgendaDoutor();
-            formAgendaDoutor.ShowDialog();
+            if (cbAgendaDoutor.Checked)
+            {
+                if (dgvDoutores.SelectedRows.Count != 1)
+                {
+                    MessageBox.Show("Selecione um Doutor(a)");
+                    cbAgendaDoutor.Checked = false;
+                }
+                else
+                {
+                    MostrarAgendaDoutorDGV();
+
+                }
+            }
+            else
+            {
+                PesquisarDoutorDGV();
+            }
         }
     }
 }

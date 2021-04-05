@@ -148,11 +148,20 @@
   <data name="Settings-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Ok-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ok-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Settings-icon-min1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings-icon-min.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Settings-icon-min2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Settings-icon-min1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="unlock-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\unlock-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="People-Doctor-Male-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\People-Doctor-Male-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="back-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\back-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,19 +172,19 @@
   <data name="doctor-hospital-icon (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doctor-hospital-icon (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="People-Doctor-Male-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\People-Doctor-Male-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="padlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\padlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="unlock-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\unlock-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Settings-icon-min2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings-icon-min1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="People-Doctor-Male-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\People-Doctor-Male-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ok-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Ok-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="email1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\email1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

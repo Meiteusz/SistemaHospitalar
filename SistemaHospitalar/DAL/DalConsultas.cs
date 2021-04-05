@@ -165,7 +165,7 @@ namespace SistemaHospitalar.DAL
 
         public static DataTable MostrarAgendarDoutor(int p_IdDoutor)
         {
-            SqlCommand command = new SqlCommand("select DATACONSULTA FROM CONSULTAS WHERE DOUTORID = @p_IdDoutor", conexao.Conectar());
+            SqlCommand command = new SqlCommand("select PACIENTES.NOME as NomePaciente, FORMAT(CONSULTAS.DATACONSULTA , 'dd/MM/yyyy HH:mm') as DataConsulta FROM CONSULTAS inner join PACIENTES on PACIENTEID = PACIENTES.ID WHERE DOUTORID = @IdDoutor", conexao.Conectar());
 
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@IdDoutor", p_IdDoutor);
