@@ -18,20 +18,42 @@ namespace SistemaHospitalar.UI
 
         private void btnReagendar_Click(object sender, EventArgs e)
         {
-            if (DalConsultas.isDataConsultaValido(dtpDataConsulta.Value, DalConsultas.PegarIdPaciente(DalConsultas.Id), DalConsultas.PegarIdDoutor(DalConsultas.Id)) && dtpDataConsulta.Value >= DateTime.Now)
+            if (ValidarCampos().Equals(""))
             {
-                DalConsultas dalConsultas = new DalConsultas();
-                MessageBox.Show(dalConsultas.ReagendarConsulta(dtpDataConsulta.Value, DalConsultas.Id));
+                if (DalConsultas.isDataConsultaValido(dtpDataConsulta.Value, DalConsultas.PegarIdPaciente(DalConsultas.Id), DalConsultas.PegarIdDoutor(DalConsultas.Id)))
+                {
+                    DalConsultas dalConsultas = new DalConsultas();
+                    MessageBox.Show(dalConsultas.ReagendarConsulta(dtpDataConsulta.Value, DalConsultas.Id));
 
-                FormConsultas formConsultas = new FormConsultas();
-                Hide();
-                formConsultas.ShowDialog();
-                Close();
+                    FormConsultas formConsultas = new FormConsultas();
+                    Hide();
+                    formConsultas.ShowDialog();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!\nVerifique tambem se a data/horário é válida!");
+                }
             }
             else
             {
-                MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!\nVerifique tambem se a data é válida!");
+                MessageBox.Show(msgErro);
             }
+        }
+
+        private string msgErro = "";
+        private string ValidarCampos()
+        {
+            if (dtpDataConsulta.Value >= DateTime.Now || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Saturday) || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Sunday) 
+                || dtpDataConsulta.Value.Hour > 23 || dtpDataConsulta.Value.Hour < 7)
+            {
+                msgErro = "Data Inválida!";
+            }
+            else
+            {
+                msgErro = "";
+            }
+            return msgErro;
         }
     }
 }

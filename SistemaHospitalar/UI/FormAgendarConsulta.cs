@@ -113,9 +113,10 @@ namespace SistemaHospitalar.UI
             {
                 msg = "Selecione o doutor que irá fazer a consulta!";
             }
-            else if (dtpDataConsulta.Value <= DateTime.Now)
+            else if (dtpDataConsulta.Value <= DateTime.Now || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Saturday) ||
+                dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Sunday) || dtpDataConsulta.Value.Hour > 23 || dtpDataConsulta.Value.Hour < 7)
             {
-                msg = "Data inválida";
+                msg = "Data ou Horário inválidos!";
             }
             return msg;
         }

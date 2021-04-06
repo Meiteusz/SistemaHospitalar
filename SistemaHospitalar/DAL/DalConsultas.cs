@@ -91,7 +91,7 @@ namespace SistemaHospitalar.DAL
             command.Parameters.AddWithValue("@dataConsulta", p_dataConsulta);
             command.Parameters.AddWithValue("@idPaciente", p_idPaciente);
             command.Parameters.AddWithValue("@idDoutor", p_idDoutor);
-            command.CommandText = "select PACIENTEID, DOUTORID, DATACONSULTA from CONSULTAS where DATACONSULTA = @dataConsulta AND " +
+            command.CommandText = "select PACIENTEID, DOUTORID, FORMAT(DATACONSULTA , 'dd/MM/yyyy HH:mm') from CONSULTAS where DATACONSULTA = @dataConsulta AND " +
                 "(PACIENTEID = @idPaciente OR DOUTORID = @idDoutor)";
 
             command.Connection = conexao.Conectar();
