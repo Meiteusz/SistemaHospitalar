@@ -91,13 +91,5 @@ namespace SistemaHospitalar
                 txtSenha.UseSystemPasswordChar = true;
             }
         }
-
-        private void btnVisitante_Click(object sender, EventArgs e)
-        {
-            FormEntradaRecepcionista entrada = new FormEntradaRecepcionista();
-            Hide();
-            entrada.ShowDialog();
-            Close();
-        }
     }
 }
