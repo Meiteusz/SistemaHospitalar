@@ -13,6 +13,7 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
+            //dtpDataConsulta.Value = DateTime.Now;
         }
 
         private void FormCadastroConsulta_Load(object sender, EventArgs e)
@@ -114,7 +115,8 @@ namespace SistemaHospitalar.UI
                 msg = "Selecione o doutor que irá fazer a consulta!";
             }
             else if (dtpDataConsulta.Value <= DateTime.Now || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Saturday) ||
-                dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Sunday) || dtpDataConsulta.Value.Hour > 23 || dtpDataConsulta.Value.Hour < 7)
+                dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Sunday) || dtpDataConsulta.Value.Hour > 23 || dtpDataConsulta.Value.Hour < 7 || 
+                dtpDataConsulta.Value.Minute != 0 && dtpDataConsulta.Value.Minute != 30)
             {
                 msg = "Data ou Horário inválidos!";
             }

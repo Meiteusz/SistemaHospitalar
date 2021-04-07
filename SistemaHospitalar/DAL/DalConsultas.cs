@@ -86,13 +86,16 @@ namespace SistemaHospitalar.DAL
         public static bool isDataConsultaValido(DateTime p_dataConsulta, int p_idPaciente, int p_idDoutor)
         {
             bool isValido = true;
+            DateTime dataTermino = p_dataConsulta.AddMinutes(30);
 
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@dataConsulta", p_dataConsulta);
+            command.Parameters.AddWithValue("@dataTermino", dataTermino);
             command.Parameters.AddWithValue("@idPaciente", p_idPaciente);
             command.Parameters.AddWithValue("@idDoutor", p_idDoutor);
-            command.CommandText = "select PACIENTEID, DOUTORID, FORMAT(DATACONSULTA , 'dd/MM/yyyy HH:mm') from CONSULTAS where DATACONSULTA = @dataConsulta AND " +
-                "(PACIENTEID = @idPaciente OR DOUTORID = @idDoutor)";
+
+            command.CommandText = "select PACIENTEID, DOUTORID, FORMAT(DATACONSULTA , 'dd/MM/yyyy HH:mm') as DataConsulta from CONSULTAS where DATACONSULTA between " +
+                "CONVERT(datetime, @dataConsulta) and CONVERT(datetime, @dataTermino) AND (PACIENTEID = @idPaciente OR DOUTORID = @idDoutor)";
 
             command.Connection = conexao.Conectar();
             SqlDataReader reader = command.ExecuteReader();

@@ -44,7 +44,7 @@ namespace SistemaHospitalar.UI
         private string msgErro = "";
         private string ValidarCampos()
         {
-            if (dtpDataConsulta.Value >= DateTime.Now || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Saturday) || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Sunday) 
+            if (dtpDataConsulta.Value <= DateTime.Now || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Saturday) || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Sunday) 
                 || dtpDataConsulta.Value.Hour > 23 || dtpDataConsulta.Value.Hour < 7)
             {
                 msgErro = "Data Inválida!";
