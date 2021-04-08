@@ -19,6 +19,7 @@ namespace SistemaHospitalar.BLL
                      ValidarCpf(recepcionista.Cpf) + ValidarTurno(recepcionista.Turno) + ValidarGenero(recepcionista.Genero) + ValidarCelular(recepcionista.Celular);
             return Status;
         }
+
         public string ValidarAlteracoesRecepcionista(Recepcionista recepcionista, string confSenha)
         {
             Status = ValidarNome(recepcionista.Nome) + ValidarEmail(recepcionista.Email) + ValidarSenha(recepcionista.Senha) + ConferirSenha(recepcionista.Senha, confSenha) + 

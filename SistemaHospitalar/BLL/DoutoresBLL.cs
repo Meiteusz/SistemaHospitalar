@@ -6,6 +6,8 @@ namespace SistemaHospitalar.BLL
     {
         public string Status { get; private set; } = "";
 
+
+
         public string ValidarDoutor(Doutores doutores, string confSenha)
         {
             Status = ValidarNome(doutores.Nome) + ValidarEmail(doutores.Email) + ValidarSenha(doutores.Senha) + ConferirSenha(doutores.Senha, confSenha) +

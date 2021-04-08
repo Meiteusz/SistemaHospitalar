@@ -3,10 +3,9 @@
     public enum Gravidade
     {
         Selecione,
-        Não_Urgente,
-        Pouco_Urgente,
-        Urgente,
-        Muito_Urgente,
-        Emergencia
+        Baixo,
+        Medio,
+        Alto,
+        Muito_Alto
     }
 }
