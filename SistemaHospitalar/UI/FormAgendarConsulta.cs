@@ -13,7 +13,7 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
-            //dtpDataConsulta.Value = DateTime.Now;
+            dtpDataConsulta.Value = DateTime.Now;
         }
 
         private void FormCadastroConsulta_Load(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace SistemaHospitalar.UI
                     ValorDesconto = ValorConsulta * float.Parse(DalConsultas.ValorDescontoConvenio(DalPacientes.Id));
                     ValorFinal -= ValorDesconto; //Desconto com respectivo convênio do Paciente
 
-                    Consulta consulta = new Consulta(Estado_Consulta.Espera.ToString(), DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorFinal);
+                    Consulta consulta = new Consulta(DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorFinal);
                     DalConsultas dalConsultas = new DalConsultas();
 
                     MessageBox.Show(dalConsultas.AgendarConsulta(consulta));

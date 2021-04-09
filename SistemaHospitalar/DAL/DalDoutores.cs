@@ -1,6 +1,6 @@
-﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.Entities;
+﻿using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
+using SistemaHospitalar.Utilities;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -9,30 +9,22 @@ namespace SistemaHospitalar.DAL
 {
     class DalDoutores : DalComandos
     {
-        public string OutPut { get; set; }
-        public bool isLoginExistente { get; set; }
 
         public static string Id { get; set; }
-        public static string Nome { get; set; }
-        public static string Email { get; set; }
-        public static string Senha { get; set; }
-        public static string Turno { get; set; }
-        public static string Celular { get; set; }
-        public static string Especialidade { get; set; }
         public static string ValorConsulta { get; set; }
         public static string ValorExame { get; set; }
 
-        public static string NomeDoutor { get; set; }
-
         //Verifica se o login é existente
+        public string OutPut { get; private set; }
         public bool isLoginValido(Doutores doutor)
         {
-            OutPut = "";
-            isLoginExistente = false;
-
+            bool isLoginExistente = false;
+            command.Parameters.Clear();
             command.Parameters.AddWithValue("@email", doutor.Email);
             command.Parameters.AddWithValue("@senha", doutor.Senha);
+
             command.CommandText = "select * from DOUTORES where email = @email and senha = @senha";
+
             try
             {
                 command.Connection = conexao.Conectar();
@@ -40,18 +32,17 @@ namespace SistemaHospitalar.DAL
 
                 if (reader.HasRows)
                 {
-                    PegarDadosDoutor(doutor.Email, doutor.Senha, reader);
+                    GetDadosFuncionarioLogado(reader);
                     isLoginExistente = true;
                 }
                 else
                 {
                     OutPut = "Login não encontrado";
-                    command.Parameters.Clear();
                 }
             }
             catch (SqlException ex)
             {
-                OutPut = "Erro com o Banco de Dados" + ex.Message;
+                OutPut = MostrarTipoErro(ex);
             }
             finally
             {
@@ -61,6 +52,28 @@ namespace SistemaHospitalar.DAL
         }
 
 
+        //Pega todos os dados do doutor(a)
+        public override void GetDadosFuncionarioLogado(SqlDataReader p_reader)
+        {
+            Doutores doutor = new Doutores();
+
+            while (p_reader.Read())
+            {
+                Enum.TryParse(p_reader["TURNO"].ToString(), out Turno TurnoConvertido);
+                Enum.TryParse(p_reader["ESPECIALIDADE"].ToString(), out Especialidades EspecialidadeConvertida);
+
+                doutor.Id = (int)p_reader["ID"];
+                doutor.Nome = p_reader["NOME"].ToString();
+                doutor.Email = p_reader["EMAIL"].ToString();
+                doutor.Celular = p_reader["CELULAR"].ToString();
+                doutor.Turno = TurnoConvertido;
+                doutor.Senha = p_reader["SENHA"].ToString();
+                doutor.Especialidade = EspecialidadeConvertida;
+                doutor.ValorConsulta = Convert.ToSingle(p_reader["VALORCONSULTA"]);
+                doutor.ValorExame = Convert.ToSingle(p_reader["VALOREXAME"]);
+            }
+            FuncionarioLogado.SetFuncionarioLogado(doutor);
+        }
 
 
         //Cadastra um Doutor
@@ -138,7 +151,7 @@ namespace SistemaHospitalar.DAL
             {
                 command.Connection = conexao.Conectar();
                 command.ExecuteNonQuery();
-                return "Informações alteradas com sucesso";
+                return "Informações alteradas com sucesso\nLogue novamente para as alterações serem confirmadas!";
             }
             catch (SqlException ex)
             {
@@ -157,7 +170,7 @@ namespace SistemaHospitalar.DAL
         public string UpdateValores(float p_valorConsulta, float p_valorExame)
         {
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@ID", Id);
+            command.Parameters.AddWithValue("@ID", FuncionarioLogado.DoutorLogado.Id);
             command.Parameters.AddWithValue("@VALORCONSULTA", p_valorConsulta);
             command.Parameters.AddWithValue("@VALOREXAME", p_valorExame);
             command.CommandText = "update DOUTORES set VALORCONSULTA = @VALORCONSULTA, VALOREXAME = @VALOREXAME where ID = @ID  ";
@@ -165,7 +178,7 @@ namespace SistemaHospitalar.DAL
             {
                 command.Connection = conexao.Conectar();
                 command.ExecuteNonQuery();
-                return "Valores alteradas com sucesso";
+                return "Valores alteradas com sucesso\nLogue novamente para as alterações serem confirmadas!";
             }
             catch (SqlException ex)
             {
@@ -179,35 +192,6 @@ namespace SistemaHospitalar.DAL
 
 
 
-        //Pega todos os dados do doutor(a)
-        public void PegarDadosDoutor(string p_email, string p_senha, SqlDataReader p_reader)
-        {
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@email", p_email);
-            command.Parameters.AddWithValue("@senha", p_senha);
-            command.CommandText = "select * from DOUTORES where email = @email and senha = @senha";
-
-            while (p_reader.Read())
-            {
-                Id = p_reader["ID"].ToString();
-                Nome = p_reader["NOME"].ToString();
-                Email = p_reader["EMAIL"].ToString();
-                Senha = p_reader["SENHA"].ToString();
-                Turno = p_reader["TURNO"].ToString();
-                Celular = p_reader["CELULAR"].ToString();
-                Especialidade = p_reader["ESPECIALIDADE"].ToString();
-                ValorConsulta = p_reader["VALORCONSULTA"].ToString();
-                ValorExame = p_reader["VALOREXAME"].ToString();
-
-                Enum.TryParse(Turno, out Turno turnoConvertido);  //Faz o Parse para string
-                Turno = turnoConvertido.ToString();               //Devolve o valor convertido para o "Turno"
-
-                Enum.TryParse(Especialidade, out Especialidades especialidadeConvertida);
-                Especialidade = especialidadeConvertida.ToString();
-
-                NomeDoutor = Nome;
-            }
-        }
 
         //Pega os valores (consulta e exame) do doutor(a)
         public void PegarValoresDoutor(string p_email, string p_senha)

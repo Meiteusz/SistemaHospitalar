@@ -1,5 +1,7 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
 using SistemaHospitalar.UI;
+using SistemaHospitalar.Utilities;
 using SistemaHospitalar.Views;
 using System.Windows.Forms;
 
@@ -11,48 +13,37 @@ namespace SistemaHospitalar
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            //lblNome.Text = "Bem vindo " + DalRecepionistas.Nome;
+            lblNome.Text = "Bem vindo " + FuncionarioLogado.RecepcionistaLogada.Nome;
         }
 
-        private void btnConfiguracoes_Click(object sender, System.EventArgs e)
+        private void btnConfiguracoesRecepcionista_Click(object sender, System.EventArgs e)
         {
-            FormConfiguracoes formConfiguracoes = new FormConfiguracoes();
-            Hide();
-            formConfiguracoes.ShowDialog();
-            Close();
-        }
-
-        private void btnMedicos_Click(object sender, System.EventArgs e)
-        {
-            FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();
-            Hide();
-            formEntradaDoutores.ShowDialog();
-            Close();
+            FormConfiguracoesRecepcionista formConfiguracoesRecepcionista = new FormConfiguracoesRecepcionista();
+            Base.AbrirFormDesejado(this, formConfiguracoesRecepcionista);
         }
 
         private void btnPacientes_Click(object sender, System.EventArgs e)
         {
             FormPacientes formPacientes = new FormPacientes();
-            Hide();
-            formPacientes.ShowDialog();
-            Close();
-            FormCadastroPaciente formCadastroPaciente = new FormCadastroPaciente();
+            Base.AbrirFormDesejado(this, formPacientes);
         }
 
         private void btnConsultas_Click(object sender, System.EventArgs e)
         {
             FormConsultas formConsultas = new FormConsultas();
-            Hide();
-            formConsultas.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formConsultas);
         }
 
         private void btnConvenios_Click(object sender, System.EventArgs e)
         {
             FormConvenios formConvenios = new FormConvenios();
-            Hide();
-            formConvenios.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formConvenios);
+        }
+
+        private void btnEncerrarSessão_Click(object sender, System.EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            Base.AbrirFormDesejado(this, formLogin);
         }
     }
 }

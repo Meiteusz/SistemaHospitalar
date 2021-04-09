@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaHospitalar.Views
 {
-    partial class FormConfiguracoes
+    partial class FormConfiguracoesRecepcionista
     {
         /// <summary>
         /// Required designer variable.

@@ -1,14 +1,14 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.DAL;
 using SistemaHospitalar.Models;
+using SistemaHospitalar.Utilities;
 using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.Views
 {
-    public partial class FormConfiguracoes : Form
+    public partial class FormConfiguracoesRecepcionista : Form
     {
-        public FormConfiguracoes()
+        public FormConfiguracoesRecepcionista()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -41,21 +41,17 @@ namespace SistemaHospitalar.Views
 
         private void FormConfiguracoes_Load(object sender, EventArgs e)
         {
-            Recepcionista a = new Recepcionista();
-
-            a = recepcionistaBLL.PegarDadosRecepcionista(RecepcionistaBLL.Id);
-
-            txtNomeRecepcionista.Text = a.Nome;
-            txtEmailRecepcionista.Text = a.Email;
-            txtSenhaRecepcionista.Text = a.Senha;
-            cmbTurnoRecepcionista.Text = a.Turno.ToString();
-            txtMaskedCelularRecepcionista.Text = a.Celular;
+            txtNomeRecepcionista.Text = FuncionarioLogado.RecepcionistaLogada.Nome;
+            txtEmailRecepcionista.Text = FuncionarioLogado.RecepcionistaLogada.Email;
+            txtMaskedCelularRecepcionista.Text = FuncionarioLogado.RecepcionistaLogada.Celular;
+            cmbTurnoRecepcionista.Text = FuncionarioLogado.RecepcionistaLogada.Turno.ToString();
+            txtSenhaRecepcionista.Text = FuncionarioLogado.RecepcionistaLogada.Senha;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
-            Base.VoltarFormAnterior(this, formEntradaRecepcionista);
+            Base.AbrirFormDesejado(this, formEntradaRecepcionista);
         }
 
         //Atualiza as informações logada como Recepcionista

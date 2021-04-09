@@ -27,7 +27,6 @@ D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\bin\Debug\SistemaHo
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.csprojAssemblyReference.cache
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormCadastroDoutor.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormConfiguracoesDoutores.resources
-D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormConfiguracoes.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormConsultas.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormEntradaDoutores.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormLoginADM.resources
@@ -53,3 +52,4 @@ D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHo
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormDiagnostico.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormConsultasDoutor.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormEscolhaDeVisualizacaoDiagnostico.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormConfiguracoesRecepcionista.resources

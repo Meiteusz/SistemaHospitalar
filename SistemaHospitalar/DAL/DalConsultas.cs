@@ -14,12 +14,11 @@ namespace SistemaHospitalar.DAL
         public string AgendarConsulta(Consulta consulta)
         {
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@estado", consulta.Estado);
             command.Parameters.AddWithValue("@paciente", consulta.Paciente);
             command.Parameters.AddWithValue("@doutor", consulta.Doutor);
             command.Parameters.AddWithValue("@dataConsulta", consulta.DataConsulta);
             command.Parameters.AddWithValue("@preco", consulta.Preco);
-            command.CommandText = "insert into CONSULTAS values(@estado, @paciente, @doutor, @dataConsulta, @preco)";
+            command.CommandText = "insert into CONSULTAS values(@paciente, @doutor, @dataConsulta, @preco)";
 
             try
             {
@@ -127,7 +126,7 @@ namespace SistemaHospitalar.DAL
 
         public static DataTable MostrarConsultas()
         {
-            command.CommandText = "select CONSULTAS.ID, CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
+            command.CommandText = "select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
                 "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta, CONVENIOS.NOME as Convênio_Nome " +
                 "from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID inner join CONVENIOS on CONVENIOS.ID = CONVENIOID";
             adapter = new SqlDataAdapter(command);
@@ -138,7 +137,7 @@ namespace SistemaHospitalar.DAL
 
         public static DataTable MostrarConsultasHoje()
         {
-            command.CommandText = "select CONSULTAS.ID, CONSULTAS.ESTADO as Estado_Consulta, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
+            command.CommandText = "select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
                 "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta, CONVENIOS.NOME as " +
                 "Convênio_Nome from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID inner join " +
                 "CONVENIOS on CONVENIOS.ID = CONVENIOID where CONVERT(DATE, CONSULTAS.DATACONSULTA) = Convert(date, getdate())";

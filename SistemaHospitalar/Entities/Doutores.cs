@@ -2,7 +2,7 @@
 
 namespace SistemaHospitalar.Models
 {
-    class Doutores : Usuarios
+    public class Doutores : Usuarios
     {
         public Doutores(string p_nome, string p_email, string p_senha, string p_cpf, Turno p_turno, Genero p_genero, Especialidades p_especialidades, 
             string p_celular, float p_ValorConsulta, float p_ValorExame)

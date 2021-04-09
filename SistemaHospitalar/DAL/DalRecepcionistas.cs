@@ -1,27 +1,18 @@
-﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.Models;
-using SistemaHospitalar.UI;
-using System;
+﻿using SistemaHospitalar.Models;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace SistemaHospitalar.DAL
 {
-    class DalRecepionistas : DalComandos
+    class DalRecepcionistas : DalComandos
     {
-        // MELHORAR A CONSTRUÇÃO DO CÓDIGO 
-        public string OutPut { get; set; }
-
-        //public static string Id, Nome, Email, Turno, Senha, Celular; // MUDAR PARA USAR O OBJETO "RECEPCIONISTA"
-
-        //public static int Id { get; set; }
-
 
         //Loga um Recepcionista
+        public string OutPut { get; set; }
         public bool isLoginValido(Recepcionista recepcionista)
         {
             bool isLoginExistente = false;
-
+            command.Parameters.Clear();
             command.Parameters.AddWithValue("@email", recepcionista.Email);
             command.Parameters.AddWithValue("@senha", recepcionista.Senha);
 
@@ -34,22 +25,17 @@ namespace SistemaHospitalar.DAL
 
                 if (reader.HasRows)
                 {
-                    while (reader.Read())
-                    {
-                        RecepcionistaBLL.Id = (int)reader["ID"];
-                        recepcionista.Nome = reader["NOME"].ToString();
-                    }
                     isLoginExistente = true;
+                    GetDadosFuncionarioLogado(reader);
                 }
                 else
                 {
                     OutPut = "Login não encontrado";
-                    command.Parameters.Clear();
                 }
             }
             catch (SqlException ex)
             {
-                OutPut = "Erro com Banco de Dados" + ex.Message;
+                OutPut = MostrarTipoErro(ex);
             }
             finally
             {
@@ -58,32 +44,6 @@ namespace SistemaHospitalar.DAL
             return isLoginExistente;
         }
 
-
-        //Pega todos os dados do Recepcionista
-        public static Recepcionista PegarDadosRecepcionista(int p_id)
-        {
-            Recepcionista recepcionista = new Recepcionista();
-
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@Id", p_id);
-
-            command.CommandText = "select * from RECEPCIONISTAS where ID = @Id";
-
-            command.Connection = conexao.Conectar();
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                recepcionista.Nome = reader["NOME"].ToString();
-                recepcionista.Email = reader["EMAIL"].ToString();
-                recepcionista.Celular = reader["CELULAR"].ToString();
-                recepcionista.Senha = reader["SENHA"].ToString();
-
-                Enum.TryParse(reader["TURNO"].ToString(), out Turno turnoConvertido);  //Faz o Parse para string
-                recepcionista.Turno = turnoConvertido;                                     //Devolve o valor convertido para o "Turno"
-            }
-            return recepcionista;
-        }
 
         //Cadastra um Recepcionista
         public string Insert(Recepcionista p_recepcionista, string p_confSenha)
@@ -113,7 +73,6 @@ namespace SistemaHospitalar.DAL
                 conexao.Desconectar();
             }
         }
-
 
 
         //Deletar um Recepcionista

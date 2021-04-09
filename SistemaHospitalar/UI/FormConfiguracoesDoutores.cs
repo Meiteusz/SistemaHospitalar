@@ -1,6 +1,7 @@
 ﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.DAL;
 using SistemaHospitalar.Models;
+using SistemaHospitalar.Utilities;
 using System;
 using System.Windows.Forms;
 
@@ -19,11 +20,11 @@ namespace SistemaHospitalar.UI
 
         private void FormConfiguracoesDoutores_Load(object sender, System.EventArgs e)
         {
-            txtNomeDoutor.Text = DalDoutores.Nome;
-            txtEmailDoutor.Text = DalDoutores.Email;
-            txtMaskedCelularDoutor.Text = DalDoutores.Celular;
-            cmbTurnoDoutor.Text = DalDoutores.Turno;
-            txtSenhaDoutor.Text = DalDoutores.Senha;
+            txtNomeDoutor.Text = FuncionarioLogado.DoutorLogado.Nome;
+            txtEmailDoutor.Text = FuncionarioLogado.DoutorLogado.Email;
+            txtMaskedCelularDoutor.Text = FuncionarioLogado.DoutorLogado.Celular;
+            cmbTurnoDoutor.Text = FuncionarioLogado.DoutorLogado.Turno.ToString();
+            txtSenhaDoutor.Text = FuncionarioLogado.DoutorLogado.Senha;
         }
 
         private void btnAtualizarInformacoes_Click(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace SistemaHospitalar.UI
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();
-            Base.VoltarFormAnterior(this, formEntradaDoutores);
+            Base.AbrirFormDesejado(this, formEntradaDoutores);
         }
     }
 }

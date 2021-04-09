@@ -1,6 +1,6 @@
 ﻿namespace SistemaHospitalar.Models
 {
-    class Recepcionista : Usuarios
+    public class Recepcionista : Usuarios
     {
         public Recepcionista() { }
 

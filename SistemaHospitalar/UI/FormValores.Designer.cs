@@ -77,13 +77,14 @@ namespace SistemaHospitalar.UI
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtValorExame);
             this.groupBox1.Controls.Add(this.txtValorConsulta);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(74, 65);
+            this.groupBox1.Location = new System.Drawing.Point(51, 65);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(227, 120);
+            this.groupBox1.Size = new System.Drawing.Size(275, 120);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -108,7 +109,7 @@ namespace SistemaHospitalar.UI
             0,
             0});
             this.txtValorConsulta.Name = "txtValorConsulta";
-            this.txtValorConsulta.Size = new System.Drawing.Size(62, 24);
+            this.txtValorConsulta.Size = new System.Drawing.Size(93, 24);
             this.txtValorConsulta.TabIndex = 6;
             // 
             // label4
@@ -125,14 +126,14 @@ namespace SistemaHospitalar.UI
             // 
             this.txtValorExame.DecimalPlaces = 2;
             this.txtValorExame.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorExame.Location = new System.Drawing.Point(239, 140);
+            this.txtValorExame.Location = new System.Drawing.Point(165, 76);
             this.txtValorExame.Maximum = new decimal(new int[] {
             2000,
             0,
             0,
             0});
             this.txtValorExame.Name = "txtValorExame";
-            this.txtValorExame.Size = new System.Drawing.Size(62, 24);
+            this.txtValorExame.Size = new System.Drawing.Size(93, 24);
             this.txtValorExame.TabIndex = 7;
             // 
             // btnVoltar
@@ -152,7 +153,6 @@ namespace SistemaHospitalar.UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(378, 279);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.txtValorExame);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtualizarValores);
             this.Name = "FormValores";

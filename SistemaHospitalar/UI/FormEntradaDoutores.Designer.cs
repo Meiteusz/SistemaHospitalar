@@ -34,6 +34,7 @@ namespace SistemaHospitalar.UI
             this.btnValores = new System.Windows.Forms.Button();
             this.lblEspecialidadeDoutor = new System.Windows.Forms.Label();
             this.btnConsultas = new System.Windows.Forms.Button();
+            this.brnEncerrarSessão = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConfiguracoes
@@ -92,11 +93,24 @@ namespace SistemaHospitalar.UI
             this.btnConsultas.UseVisualStyleBackColor = false;
             this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
+            // brnEncerrarSessão
+            // 
+            this.brnEncerrarSessão.BackColor = System.Drawing.Color.Transparent;
+            this.brnEncerrarSessão.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnEncerrarSessão.Location = new System.Drawing.Point(652, 373);
+            this.brnEncerrarSessão.Name = "brnEncerrarSessão";
+            this.brnEncerrarSessão.Size = new System.Drawing.Size(136, 65);
+            this.brnEncerrarSessão.TabIndex = 6;
+            this.brnEncerrarSessão.Text = "Encerrar Sessão";
+            this.brnEncerrarSessão.UseVisualStyleBackColor = false;
+            this.brnEncerrarSessão.Click += new System.EventHandler(this.brnEncerrarSessão_Click);
+            // 
             // FormEntradaDoutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.brnEncerrarSessão);
             this.Controls.Add(this.btnConsultas);
             this.Controls.Add(this.lblEspecialidadeDoutor);
             this.Controls.Add(this.btnValores);
@@ -116,5 +130,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnValores;
         private System.Windows.Forms.Label lblEspecialidadeDoutor;
         private System.Windows.Forms.Button btnConsultas;
+        private System.Windows.Forms.Button brnEncerrarSessão;
     }
 }

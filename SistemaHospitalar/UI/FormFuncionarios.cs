@@ -113,7 +113,7 @@ namespace SistemaHospitalar.UI
         private DataTable MostrarFuncionarios()
         {
             if (rbRecepcionista.Checked)
-                return DalRecepionistas.MostrarRecepcionistas();
+                return DalRecepcionistas.MostrarRecepcionistas();
             else
                 return DalDoutores.MostrarDoutores();
         }
@@ -125,7 +125,7 @@ namespace SistemaHospitalar.UI
             else
             {
                 if (rbRecepcionista.Checked)
-                    dgvFuncionarios.DataSource = DalRecepionistas.PesquisarRecepcionistas(txtPesquisa.Text, (Turno)cmbTurno.SelectedIndex);
+                    dgvFuncionarios.DataSource = DalRecepcionistas.PesquisarRecepcionistas(txtPesquisa.Text, (Turno)cmbTurno.SelectedIndex);
                 else
                     dgvFuncionarios.DataSource = DalDoutores.PesquisarDoutor(txtPesquisa.Text, (Turno)cmbTurno.SelectedIndex, (Especialidades)cmbEspecialidade.SelectedIndex);
             }

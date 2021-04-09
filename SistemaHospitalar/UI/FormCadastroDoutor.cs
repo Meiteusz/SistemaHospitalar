@@ -88,7 +88,7 @@ namespace SistemaHospitalar.Views
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             FormFuncionarios formADM = new FormFuncionarios();
-            Base.VoltarFormAnterior(this, formADM);
+            Base.AbrirFormDesejado(this, formADM);
         }
     }
 }

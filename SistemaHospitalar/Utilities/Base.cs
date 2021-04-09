@@ -4,7 +4,7 @@ namespace SistemaHospitalar.BLL
 {
     public static class Base
     {
-        public static void VoltarFormAnterior(Form formAtual, Form formAnterior)
+        public static void AbrirFormDesejado(Form formAtual, Form formAnterior)
         {
             formAtual.Hide();
             formAnterior.ShowDialog();

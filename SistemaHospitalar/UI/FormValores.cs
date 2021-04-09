@@ -1,5 +1,6 @@
 ﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.DAL;
+using SistemaHospitalar.Utilities;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -10,22 +11,26 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            txtValorConsulta.Value = decimal.Parse(DalDoutores.ValorConsulta);
-            txtValorExame.Value = decimal.Parse(DalDoutores.ValorExame);
+            txtValorConsulta.Value = (decimal)FuncionarioLogado.DoutorLogado.ValorConsulta;
+            txtValorExame.Value = (decimal)FuncionarioLogado.DoutorLogado.ValorExame;
         }
+
+        DoutoresBLL doutoresBLL = new DoutoresBLL();
 
         private void btnAtualizarValores_Click(object sender, System.EventArgs e)
         {
-            DalDoutores dalDoutores = new DalDoutores();
-            MessageBox.Show(dalDoutores.UpdateValores((float)txtValorConsulta.Value, (float)txtValorExame.Value));
-            dalDoutores.PegarValoresDoutor(DalDoutores.Email, DalDoutores.Senha);
+            MessageBox.Show(doutoresBLL.AtualizarValores((float)txtValorConsulta.Value, (float)txtValorExame.Value));
+            
+            FormLogin formLogin = new FormLogin();
+            Base.AbrirFormDesejado(this, formLogin);
+            //dalDoutores.PegarValoresDoutor(DalDoutores.Email, DalDoutores.Senha);
         }
 
 
         private void btnVoltar_Click(object sender, System.EventArgs e)
         {
             FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();
-            Base.VoltarFormAnterior(this, formEntradaDoutores);
+            Base.AbrirFormDesejado(this, formEntradaDoutores);
         }
     }
 }

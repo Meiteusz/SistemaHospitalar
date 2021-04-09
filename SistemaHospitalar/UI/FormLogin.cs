@@ -1,7 +1,7 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.DAL;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
+using SistemaHospitalar.Utilities;
 using SistemaHospitalar.Views;
 using System;
 using System.Windows.Forms;
@@ -16,45 +16,40 @@ namespace SistemaHospitalar
             StartPosition = FormStartPosition.CenterScreen;
 
             //LOGIN PARA TESTE
-
-            //*Recepcionista*
-            txtEmail.Text = "rosanabnu@gmail.com";
-            txtSenha.Text = "321ab";
-            rbRecepcionista.Checked = true;
-
-            //*Doutor*
-            //txtEmail.Text = "brunalupa@gmail.com";
+            #region Login Recepcionista
+            //txtEmail.Text = "rosanabnu@gmail.com";
             //txtSenha.Text = "321ab";
-            //rbDoutor.Checked = true;
+            //rbRecepcionista.Checked = true;
+            #endregion
+
+            #region Login Doutor(a)
+            txtEmail.Text = "brunalupa@gmail.com";
+            txtSenha.Text = "321ab";
+            rbDoutor.Checked = true;
+            #endregion
         }
 
         RecepcionistaBLL recepcionistaBLL = new RecepcionistaBLL();
+        DoutoresBLL doutoresBLL = new DoutoresBLL();
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            DalRecepionistas dalRecepcionistas = new DalRecepionistas();
-            DalDoutores dalDoutores = new DalDoutores();
             Recepcionista recepionista = new Recepcionista(txtEmail.Text, txtSenha.Text);
-            Doutores doutores = new Doutores(txtEmail.Text, txtSenha.Text);
-
-            if (!rbRecepcionista.Checked && !rbDoutor.Checked)
-            {
-                MessageBox.Show("Escolha uma forma de Login");
-            }
+            Doutores doutor = new Doutores(txtEmail.Text, txtSenha.Text);
 
             if (rbDoutor.Checked)
             {
-                if (dalDoutores.isLoginValido(doutores))
+                if (doutoresBLL.LogarDoutor(doutor).Equals(string.Empty))
                 {
                     Hide();
-                    MessageBox.Show("Logado com sucesso!\nDoutor: " + DalDoutores.NomeDoutor, "Logando no Sistema Doutor", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FormEntradaDoutores entradaDoutor = new FormEntradaDoutores();
-                    entradaDoutor.ShowDialog();
+                    MessageBox.Show("Doutor(a) logado com sucesso!\n\t" + FuncionarioLogado.DoutorLogado.Nome);
+                    FormEntradaDoutores formEntradaDoutor = new FormEntradaDoutores();
+                    formEntradaDoutor.ShowDialog();
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show(dalDoutores.OutPut);
+                    MessageBox.Show(doutoresBLL.OutPut);
                 }
             }
             else if (rbRecepcionista.Checked)
@@ -62,9 +57,9 @@ namespace SistemaHospitalar
                 if (recepcionistaBLL.LogarRecepcionista(recepionista).Equals(string.Empty))
                 {
                     Hide();
-                    MessageBox.Show("Recepcionista logado com sucesso!\n" + recepionista.Nome);
-                    FormEntradaRecepcionista entradaRecepcionista = new FormEntradaRecepcionista();
-                    entradaRecepcionista.ShowDialog();
+                    MessageBox.Show("Recepcionista logado com sucesso!\n\t" + FuncionarioLogado.RecepcionistaLogada.Nome);
+                    FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
+                    formEntradaRecepcionista.ShowDialog();
                     Close();
                 }
                 else
@@ -72,27 +67,25 @@ namespace SistemaHospitalar
                     MessageBox.Show(recepcionistaBLL.OutPut);
                 }
             }
+            else
+            {
+                MessageBox.Show("Escolha uma forma de Login");
+            }
 
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void btnADM_Click(object sender, EventArgs e)
         {
             FormLoginADM loginADM = new FormLoginADM();
-            Hide();
-            loginADM.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, loginADM);
         }
 
         private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
             if (cbMostrarSenha.Checked)
-            {
                 txtSenha.UseSystemPasswordChar = false;
-            }
             else
-            {
                 txtSenha.UseSystemPasswordChar = true;
-            }
         }
     }
 }

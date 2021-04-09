@@ -7,6 +7,20 @@ namespace SistemaHospitalar.BLL
     {
         DalDoutores dalDoutores = new DalDoutores();
 
+        public string OutPut { get; private set; }
+        public string LogarDoutor(Doutores doutor)
+        {
+            if (dalDoutores.isLoginValido(doutor))
+            {
+                OutPut = string.Empty;
+            }
+            else
+            {
+                OutPut = dalDoutores.OutPut;
+            }
+            return OutPut;
+        }
+
         public string CadastrarDoutor(Doutores doutor, string confSenha)
         {
             MensagemErro = ValidarDoutor(doutor, confSenha);

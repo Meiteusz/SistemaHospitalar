@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\Base.cs" />
+    <Compile Include="Utilities\Base.cs" />
     <Compile Include="BLL\DoutoresBLL.cs" />
     <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="BLL\PacienteBLL.cs" />
@@ -59,14 +59,13 @@
     <Compile Include="DAL\DalConvenios.cs" />
     <Compile Include="DAL\DalDoutores.cs" />
     <Compile Include="DAL\DalPacientes.cs" />
-    <Compile Include="DAL\DalRecepionistas.cs" />
+    <Compile Include="DAL\DalRecepcionistas.cs" />
     <Compile Include="Entities\ADM.cs" />
     <Compile Include="BLL\Validator.cs" />
     <Compile Include="Entities\Consulta.cs" />
     <Compile Include="Entities\Convenios.cs" />
     <Compile Include="Entities\Doutores.cs" />
     <Compile Include="Entities\Especialidades.cs" />
-    <Compile Include="Entities\Estado_Consulta.cs" />
     <Compile Include="Entities\Genero.cs" />
     <Compile Include="Entities\Gravidade.cs" />
     <Compile Include="Entities\Paciente.cs" />
@@ -214,6 +213,7 @@
     <Compile Include="UI\FormVisitante.Designer.cs">
       <DependentUpon>FormVisitante.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\FuncionarioLogado.cs" />
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
     </EmbeddedResource>

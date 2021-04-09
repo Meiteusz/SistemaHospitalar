@@ -5,10 +5,9 @@ namespace SistemaHospitalar.BLL
 {
     class RecepcionistaBLL : Validator
     {
-        DalRecepionistas dalRecepionistas = new DalRecepionistas();
+        DalRecepcionistas dalRecepionistas = new DalRecepcionistas();
 
         public string OutPut { get; private set; }
-        public static int Id { get; set; }
         public string LogarRecepcionista(Recepcionista recepcionista)
         {
             if (dalRecepionistas.isLoginValido(recepcionista))
@@ -20,11 +19,6 @@ namespace SistemaHospitalar.BLL
                 OutPut = dalRecepionistas.OutPut;
             }
             return OutPut;
-        }
-
-        public Recepcionista PegarDadosRecepcionista(int idRecepcionista)
-        {
-            return DalRecepionistas.PegarDadosRecepcionista(idRecepcionista);
         }
 
         public string CadastrarRecepcionista(Recepcionista recepcionista, string confSenha)
@@ -59,9 +53,6 @@ namespace SistemaHospitalar.BLL
                 return MensagemErro;
             }
         }
-
-
-
 
 
 

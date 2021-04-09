@@ -342,14 +342,14 @@ namespace SistemaHospitalar.Views
             // 
             this.txtValorExame.DecimalPlaces = 2;
             this.txtValorExame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorExame.Location = new System.Drawing.Point(262, 110);
+            this.txtValorExame.Location = new System.Drawing.Point(245, 110);
             this.txtValorExame.Maximum = new decimal(new int[] {
             2000,
             0,
             0,
             0});
             this.txtValorExame.Name = "txtValorExame";
-            this.txtValorExame.Size = new System.Drawing.Size(62, 26);
+            this.txtValorExame.Size = new System.Drawing.Size(81, 26);
             this.txtValorExame.TabIndex = 58;
             // 
             // groupBox4
@@ -371,7 +371,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(231, 112);
+            this.label9.Location = new System.Drawing.Point(214, 112);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(33, 22);
             this.label9.TabIndex = 5;
@@ -381,21 +381,21 @@ namespace SistemaHospitalar.Views
             // 
             this.txtValorConsulta.DecimalPlaces = 2;
             this.txtValorConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorConsulta.Location = new System.Drawing.Point(262, 70);
+            this.txtValorConsulta.Location = new System.Drawing.Point(245, 70);
             this.txtValorConsulta.Maximum = new decimal(new int[] {
             500,
             0,
             0,
             0});
             this.txtValorConsulta.Name = "txtValorConsulta";
-            this.txtValorConsulta.Size = new System.Drawing.Size(62, 26);
+            this.txtValorConsulta.Size = new System.Drawing.Size(81, 26);
             this.txtValorConsulta.TabIndex = 6;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(231, 70);
+            this.label11.Location = new System.Drawing.Point(214, 70);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(33, 22);
             this.label11.TabIndex = 6;
@@ -405,7 +405,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(101, 110);
+            this.label12.Location = new System.Drawing.Point(84, 110);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(115, 22);
             this.label12.TabIndex = 4;
@@ -415,7 +415,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(100, 70);
+            this.label13.Location = new System.Drawing.Point(83, 70);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(129, 22);
             this.label13.TabIndex = 3;

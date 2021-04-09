@@ -29,24 +29,25 @@ namespace SistemaHospitalar
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConfiguracoes = new System.Windows.Forms.Button();
+            this.btnConfiguracoesRecepcionista = new System.Windows.Forms.Button();
             this.btnPacientes = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnVisitas = new System.Windows.Forms.Button();
+            this.btnEncerrarSessão = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnConfiguracoes
+            // btnConfiguracoesRecepcionista
             // 
-            this.btnConfiguracoes.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfiguracoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguracoes.Location = new System.Drawing.Point(652, 12);
-            this.btnConfiguracoes.Name = "btnConfiguracoes";
-            this.btnConfiguracoes.Size = new System.Drawing.Size(136, 65);
-            this.btnConfiguracoes.TabIndex = 0;
-            this.btnConfiguracoes.Text = "Configurações da Conta";
-            this.btnConfiguracoes.UseVisualStyleBackColor = false;
-            this.btnConfiguracoes.Click += new System.EventHandler(this.btnConfiguracoes_Click);
+            this.btnConfiguracoesRecepcionista.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfiguracoesRecepcionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracoesRecepcionista.Location = new System.Drawing.Point(652, 12);
+            this.btnConfiguracoesRecepcionista.Name = "btnConfiguracoesRecepcionista";
+            this.btnConfiguracoesRecepcionista.Size = new System.Drawing.Size(136, 65);
+            this.btnConfiguracoesRecepcionista.TabIndex = 0;
+            this.btnConfiguracoesRecepcionista.Text = "Configurações da Conta";
+            this.btnConfiguracoesRecepcionista.UseVisualStyleBackColor = false;
+            this.btnConfiguracoesRecepcionista.Click += new System.EventHandler(this.btnConfiguracoesRecepcionista_Click);
             // 
             // btnPacientes
             // 
@@ -90,16 +91,28 @@ namespace SistemaHospitalar
             this.btnVisitas.Text = "Visitas";
             this.btnVisitas.UseVisualStyleBackColor = true;
             // 
+            // btnEncerrarSessão
+            // 
+            this.btnEncerrarSessão.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncerrarSessão.Location = new System.Drawing.Point(666, 377);
+            this.btnEncerrarSessão.Name = "btnEncerrarSessão";
+            this.btnEncerrarSessão.Size = new System.Drawing.Size(122, 61);
+            this.btnEncerrarSessão.TabIndex = 7;
+            this.btnEncerrarSessão.Text = "Encerrar Sessão";
+            this.btnEncerrarSessão.UseVisualStyleBackColor = true;
+            this.btnEncerrarSessão.Click += new System.EventHandler(this.btnEncerrarSessão_Click);
+            // 
             // FormEntradaRecepcionista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEncerrarSessão);
             this.Controls.Add(this.btnVisitas);
             this.Controls.Add(this.btnConsultas);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnPacientes);
-            this.Controls.Add(this.btnConfiguracoes);
+            this.Controls.Add(this.btnConfiguracoesRecepcionista);
             this.Name = "FormEntradaRecepcionista";
             this.Text = "Entrada";
             this.ResumeLayout(false);
@@ -108,10 +121,11 @@ namespace SistemaHospitalar
         }
 
         #endregion
-        private System.Windows.Forms.Button btnConfiguracoes;
+        private System.Windows.Forms.Button btnConfiguracoesRecepcionista;
         private System.Windows.Forms.Button btnPacientes;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnVisitas;
+        private System.Windows.Forms.Button btnEncerrarSessão;
     }
 }

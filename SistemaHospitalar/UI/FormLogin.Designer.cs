@@ -38,7 +38,7 @@ namespace SistemaHospitalar
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rbRecepcionista = new System.Windows.Forms.RadioButton();
             this.rbDoutor = new System.Windows.Forms.RadioButton();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnADM = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -182,27 +182,27 @@ namespace SistemaHospitalar
             this.rbDoutor.TabStop = true;
             this.rbDoutor.UseVisualStyleBackColor = true;
             // 
-            // btnCadastrar
+            // btnADM
             // 
-            this.btnCadastrar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnADM.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCadastrar.BackColor = System.Drawing.Color.PowderBlue;
-            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.ForeColor = System.Drawing.Color.DarkCyan;
-            this.btnCadastrar.Image = global::SistemaHospitalar.Properties.Resources.unlock_icon;
-            this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastrar.Location = new System.Drawing.Point(0, 325);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(115, 50);
-            this.btnCadastrar.TabIndex = 4;
-            this.btnCadastrar.Text = "ADM";
-            this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.btnADM.BackColor = System.Drawing.Color.PowderBlue;
+            this.btnADM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnADM.FlatAppearance.BorderSize = 0;
+            this.btnADM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADM.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADM.ForeColor = System.Drawing.Color.DarkCyan;
+            this.btnADM.Image = global::SistemaHospitalar.Properties.Resources.unlock_icon;
+            this.btnADM.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnADM.Location = new System.Drawing.Point(0, 325);
+            this.btnADM.Name = "btnADM";
+            this.btnADM.Size = new System.Drawing.Size(115, 50);
+            this.btnADM.TabIndex = 4;
+            this.btnADM.Text = "ADM";
+            this.btnADM.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnADM.UseVisualStyleBackColor = false;
+            this.btnADM.Click += new System.EventHandler(this.btnADM_Click);
             // 
             // pictureBox1
             // 
@@ -219,7 +219,7 @@ namespace SistemaHospitalar
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(749, 378);
-            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.btnADM);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -239,7 +239,7 @@ namespace SistemaHospitalar
 
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnADM;
         private System.Windows.Forms.Button btnEntrar;
         private System.Windows.Forms.CheckBox cbMostrarSenha;
         private System.Windows.Forms.RadioButton rbDoutor;
