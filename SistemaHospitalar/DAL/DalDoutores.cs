@@ -9,8 +9,6 @@ namespace SistemaHospitalar.DAL
 {
     class DalDoutores : DalComandos
     {
-        DoutoresBLL doutoresBLL = new DoutoresBLL();
-
         public string OutPut { get; set; }
         public bool isLoginExistente { get; set; }
 
@@ -62,47 +60,47 @@ namespace SistemaHospitalar.DAL
             return isLoginExistente;
         }
 
-        //Cadastra um Doutor
-        public string CadastrarDoutor(Doutores p_doutor, string p_confSenha)
-        {
-            if (doutoresBLL.ValidarDoutor(p_doutor, p_confSenha).Equals(""))
-            {
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nome", p_doutor.Nome);
-                command.Parameters.AddWithValue("@email", p_doutor.Email);
-                command.Parameters.AddWithValue("@senha", p_doutor.Senha);
-                command.Parameters.AddWithValue("@cpf", p_doutor.Cpf);
-                command.Parameters.AddWithValue("@turno", p_doutor.Turno);
-                command.Parameters.AddWithValue("@genero", p_doutor.Genero);
-                command.Parameters.AddWithValue("@celular", p_doutor.Celular);
-                command.Parameters.AddWithValue("@especialidade", p_doutor.Especialidade);
-                command.Parameters.AddWithValue("@valorConsulta", p_doutor.ValorConsulta);
-                command.Parameters.AddWithValue("@valorExame", p_doutor.ValorExame);
 
-                command.CommandText = "insert into DOUTORES values(@nome, @email, @senha, @cpf, @turno, @genero, @celular, @especialidade, @valorConsulta, @valorExame)";
-                try
-                {
-                    command.Connection = conexao.Conectar();
-                    command.ExecuteNonQuery();
-                    return "Doutor(a) cadastrado com sucesso";
-                }
-                catch (SqlException ex)
-                {
-                    return MostrarTipoErro(ex);
-                }
-                finally
-                {
-                    conexao.Desconectar();
-                }
-            }
-            else
+
+
+        //Cadastra um Doutor
+        public string Insert(Doutores p_doutor, string p_confSenha)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@nome", p_doutor.Nome);
+            command.Parameters.AddWithValue("@email", p_doutor.Email);
+            command.Parameters.AddWithValue("@senha", p_doutor.Senha);
+            command.Parameters.AddWithValue("@cpf", p_doutor.Cpf);
+            command.Parameters.AddWithValue("@turno", p_doutor.Turno);
+            command.Parameters.AddWithValue("@genero", p_doutor.Genero);
+            command.Parameters.AddWithValue("@celular", p_doutor.Celular);
+            command.Parameters.AddWithValue("@especialidade", p_doutor.Especialidade);
+            command.Parameters.AddWithValue("@valorConsulta", p_doutor.ValorConsulta);
+            command.Parameters.AddWithValue("@valorExame", p_doutor.ValorExame);
+
+            command.CommandText = "insert into DOUTORES values(@nome, @email, @senha, @cpf, @turno, @genero, @celular, @especialidade, @valorConsulta, @valorExame)";
+
+            try
             {
-                return doutoresBLL.Status;
+                command.Connection = conexao.Conectar();
+                command.ExecuteNonQuery();
+                return "Doutor(a) cadastrado com sucesso";
+            }
+            catch (SqlException ex)
+            {
+                return MostrarTipoErro(ex);
+            }
+            finally
+            {
+                conexao.Desconectar();
             }
         }
 
+
+
+
         //Deleta um Doutor
-        public string DeletarDoutor(int p_Id)
+        public string Delete(int p_Id)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@ID", p_Id);
@@ -115,7 +113,7 @@ namespace SistemaHospitalar.DAL
             }
             catch (SqlException ex)
             {
-                return "Erro com o Banco de Dados " + ex.Message;
+                return MostrarTipoErro(ex);
             }
             finally
             {
@@ -123,42 +121,40 @@ namespace SistemaHospitalar.DAL
             }
         }
 
+
+
         //Atualiza as informações de um Doutor
-        public string AtualizarInformacoes(Doutores p_doutores, string p_confSenha)
+        public string Update(Doutores p_doutores, string p_confSenha)
         {
-            if (doutoresBLL.ValidarAlteracoesDoutor(p_doutores, p_confSenha).Equals(""))
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@ID", Id);
+            command.Parameters.AddWithValue("@NOME", p_doutores.Nome);
+            command.Parameters.AddWithValue("@EMAIL", p_doutores.Email);
+            command.Parameters.AddWithValue("@CELULAR", p_doutores.Celular);
+            command.Parameters.AddWithValue("@TURNO", p_doutores.Turno);
+            command.Parameters.AddWithValue("@SENHA", p_doutores.Senha);
+            command.CommandText = "update DOUTORES set NOME = @NOME, EMAIL = @EMAIL, CELULAR = @CELULAR, TURNO = @TURNO, SENHA = @SENHA where ID = @ID  ";
+            try
             {
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@ID", Id);
-                command.Parameters.AddWithValue("@NOME", p_doutores.Nome);
-                command.Parameters.AddWithValue("@EMAIL", p_doutores.Email);
-                command.Parameters.AddWithValue("@CELULAR", p_doutores.Celular);
-                command.Parameters.AddWithValue("@TURNO", p_doutores.Turno);
-                command.Parameters.AddWithValue("@SENHA", p_doutores.Senha);
-                command.CommandText = "update DOUTORES set NOME = @NOME, EMAIL = @EMAIL, CELULAR = @CELULAR, TURNO = @TURNO, SENHA = @SENHA where ID = @ID  ";
-                try
-                {
-                    command.Connection = conexao.Conectar();
-                    command.ExecuteNonQuery();
-                    return "Informações alteradas com sucesso";
-                }
-                catch (SqlException ex)
-                {
-                    return "Erro com o banco de dados" + ex.Message;
-                }
-                finally
-                {
-                    conexao.Desconectar();
-                }
+                command.Connection = conexao.Conectar();
+                command.ExecuteNonQuery();
+                return "Informações alteradas com sucesso";
             }
-            else
+            catch (SqlException ex)
             {
-                return doutoresBLL.Status;
+                return "Erro com o banco de dados" + ex.Message;
+            }
+            finally
+            {
+                conexao.Desconectar();
             }
         }
 
+
+
+
         //Atualiza os valores dos Doutores (consulta e exame)
-        public string AtualizarValores(float p_valorConsulta, float p_valorExame)
+        public string UpdateValores(float p_valorConsulta, float p_valorExame)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@ID", Id);
@@ -180,6 +176,8 @@ namespace SistemaHospitalar.DAL
                 conexao.Desconectar();
             }
         }
+
+
 
         //Pega todos os dados do doutor(a)
         public void PegarDadosDoutor(string p_email, string p_senha, SqlDataReader p_reader)

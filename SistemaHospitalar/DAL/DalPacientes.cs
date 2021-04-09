@@ -8,42 +8,35 @@ namespace SistemaHospitalar.Models
 {
     public class DalPacientes : DalComandos
     {
-        PacienteBLL pacienteBLL = new PacienteBLL();
-
-        public string Cadastrar(Paciente paciente)
+        public string Insert(Paciente p_paciente)
         {
-            if (pacienteBLL.ValidarPaciente(paciente).Equals(""))
-            {
-                command.Parameters.Clear();
-                command.Parameters.AddWithValue("@nome", paciente.Nome);
-                command.Parameters.AddWithValue("@cpf", paciente.Cpf);
-                command.Parameters.AddWithValue("@celular", paciente.Celular);
-                command.Parameters.AddWithValue("@genero", paciente.Genero);
-                command.Parameters.AddWithValue("@convenio", paciente.Convenio);
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@nome", p_paciente.Nome);
+            command.Parameters.AddWithValue("@cpf", p_paciente.Cpf);
+            command.Parameters.AddWithValue("@celular", p_paciente.Celular);
+            command.Parameters.AddWithValue("@genero", p_paciente.Genero);
+            command.Parameters.AddWithValue("@convenio", p_paciente.Convenio);
 
-                command.CommandText = "insert into PACIENTES values (@nome, @cpf, @celular, @genero, @convenio)";
-                try
-                {
-                    command.Connection = conexao.Conectar();
-                    command.ExecuteNonQuery();
-                    return "Paciente cadastrado com sucesso";
-                }
-                catch (SqlException ex)
-                {
-                    return MostrarTipoErro(ex);
-                }
-                finally
-                {
-                    conexao.Desconectar();
-                }
-            }
-            else
+            command.CommandText = "insert into PACIENTES values (@nome, @cpf, @celular, @genero, @convenio)";
+
+            try
             {
-                return pacienteBLL.Status;
+                command.Connection = conexao.Conectar();
+                command.ExecuteNonQuery();
+                return "Paciente cadastrado com sucesso";
             }
+            catch (SqlException ex)
+            {
+                return MostrarTipoErro(ex);
+            }
+            finally
+            {
+                conexao.Desconectar();
+            }
+
         }
 
-        public string Deletar(int Id)
+        public string Delete(int p_Id)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@id", Id);
@@ -67,6 +60,8 @@ namespace SistemaHospitalar.Models
         public static int Id { get; set; }
         public static string Nome { get; set; }
 
+
+
         //Pega o ID do Convenio selecionado para cadastrar no Paciente
         public int DetectarConvenio(string p_nomeConvenio)
         {
@@ -74,7 +69,7 @@ namespace SistemaHospitalar.Models
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@nome", p_nomeConvenio);
             SqlDataReader reader = command.ExecuteReader();
-            
+
             if (reader.HasRows)
             {
                 while (reader.Read())

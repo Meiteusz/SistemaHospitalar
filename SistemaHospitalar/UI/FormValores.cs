@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -16,7 +17,7 @@ namespace SistemaHospitalar.UI
         private void btnAtualizarValores_Click(object sender, System.EventArgs e)
         {
             DalDoutores dalDoutores = new DalDoutores();
-            MessageBox.Show(dalDoutores.AtualizarValores((float)txtValorConsulta.Value, (float)txtValorExame.Value));
+            MessageBox.Show(dalDoutores.UpdateValores((float)txtValorConsulta.Value, (float)txtValorExame.Value));
             dalDoutores.PegarValoresDoutor(DalDoutores.Email, DalDoutores.Senha);
         }
 
@@ -24,9 +25,7 @@ namespace SistemaHospitalar.UI
         private void btnVoltar_Click(object sender, System.EventArgs e)
         {
             FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();
-            Hide();
-            formEntradaDoutores.ShowDialog();
-            Close();
+            Base.VoltarFormAnterior(this, formEntradaDoutores);
         }
     }
 }

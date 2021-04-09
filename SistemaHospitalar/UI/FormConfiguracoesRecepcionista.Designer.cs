@@ -40,7 +40,6 @@ namespace SistemaHospitalar.Views
             this.txtSenhaRecepcionista = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtRepetirSenhaRecepcionista = new System.Windows.Forms.TextBox();
-            this.btnDeletarConta = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbTurnoRecepcionista = new System.Windows.Forms.ComboBox();
             this.txtMaskedCelularRecepcionista = new System.Windows.Forms.MaskedTextBox();
@@ -70,7 +69,7 @@ namespace SistemaHospitalar.Views
             // btnAtualizarInformacoes
             // 
             this.btnAtualizarInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarInformacoes.Location = new System.Drawing.Point(183, 391);
+            this.btnAtualizarInformacoes.Location = new System.Drawing.Point(294, 397);
             this.btnAtualizarInformacoes.Name = "btnAtualizarInformacoes";
             this.btnAtualizarInformacoes.Size = new System.Drawing.Size(200, 61);
             this.btnAtualizarInformacoes.TabIndex = 2;
@@ -154,17 +153,6 @@ namespace SistemaHospitalar.Views
             this.txtRepetirSenhaRecepcionista.TabIndex = 10;
             this.txtRepetirSenhaRecepcionista.UseSystemPasswordChar = true;
             // 
-            // btnDeletarConta
-            // 
-            this.btnDeletarConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletarConta.Location = new System.Drawing.Point(411, 391);
-            this.btnDeletarConta.Name = "btnDeletarConta";
-            this.btnDeletarConta.Size = new System.Drawing.Size(200, 61);
-            this.btnDeletarConta.TabIndex = 12;
-            this.btnDeletarConta.Text = "Deletar conta";
-            this.btnDeletarConta.UseVisualStyleBackColor = true;
-            this.btnDeletarConta.Click += new System.EventHandler(this.btnDeletarConta_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -228,7 +216,6 @@ namespace SistemaHospitalar.Views
             this.Controls.Add(this.txtMaskedCelularRecepcionista);
             this.Controls.Add(this.cmbTurnoRecepcionista);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnDeletarConta);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtRepetirSenhaRecepcionista);
             this.Controls.Add(this.label5);
@@ -261,7 +248,6 @@ namespace SistemaHospitalar.Views
         private System.Windows.Forms.TextBox txtSenhaRecepcionista;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtRepetirSenhaRecepcionista;
-        private System.Windows.Forms.Button btnDeletarConta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cmbTurnoRecepcionista;
         private System.Windows.Forms.MaskedTextBox txtMaskedCelularRecepcionista;

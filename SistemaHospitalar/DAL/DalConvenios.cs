@@ -57,7 +57,7 @@ namespace SistemaHospitalar.DAL
             }
             catch (SqlException ex)
             {
-                return MostrarErro(ex);
+                return MostrarTipoErro(ex);
             }
             finally
             {

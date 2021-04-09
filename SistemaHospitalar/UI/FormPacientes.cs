@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.Entities;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.Views;
 using System;
@@ -14,6 +15,8 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
             dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
         }
+
+        PacienteBLL pacienteBLL = new PacienteBLL();
 
         private void btnCadastroDePaciente_Click(object sender, EventArgs e)
         {
@@ -57,11 +60,10 @@ namespace SistemaHospitalar.UI
             else
             {
                 string msgDeleçaoPaciente = "Deseja realmente deletar o paciente " + Nome + "?";
-                DalPacientes dalPacientes = new DalPacientes();
                 
                 if (MessageBox.Show(msgDeleçaoPaciente, "Deleção de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    MessageBox.Show(dalPacientes.Deletar(Id));
+                    MessageBox.Show(pacienteBLL.DeletarPaciente(Id));
                     dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
                 }
             }

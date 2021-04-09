@@ -1,8 +1,10 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.Views
@@ -15,8 +17,13 @@ namespace SistemaHospitalar.Views
             StartPosition = FormStartPosition.CenterScreen;
             cmbTurnoDoutor.DataSource = Enum.GetValues(typeof(Turno));
             cmbGeneroDoutor.DataSource = Enum.GetValues(typeof(Genero));
-            cmbEspecialidadeDoutor.DataSource = Enum.GetValues(typeof(Especialidades));
+
+            IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
+            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
+            cmbEspecialidadeDoutor.DataSource = valuesWithSpaces;
         }
+
+        DoutoresBLL doutorBLL = new DoutoresBLL();
 
         //Limpa todas as TextBox
         private void ClearTextBoxes()
@@ -71,20 +78,17 @@ namespace SistemaHospitalar.Views
 
         private void btnCadastrarDoutor_Click(object sender, EventArgs e)
         {
-            DalDoutores daldoutor = new DalDoutores();
             Doutores doutor = new Doutores(txtNomeDoutor.Text, txtEmailDoutor.Text, txtSenhaDoutor.Text, txtMaskedCpfDoutor.Text, (Turno)cmbTurnoDoutor.SelectedIndex,
            (Genero)cmbGeneroDoutor.SelectedIndex, (Especialidades)cmbEspecialidadeDoutor.SelectedIndex, txtMaskedCelularDoutor.Text, (float)txtValorConsulta.Value, (float)txtValorExame.Value);
 
-            MessageBox.Show(daldoutor.CadastrarDoutor(doutor, txtRepitaSenhaDoutor.Text));
+            MessageBox.Show(doutorBLL.CadastrarDoutor(doutor, txtRepitaSenhaDoutor.Text));
         }
 
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             FormFuncionarios formADM = new FormFuncionarios();
-            Hide();
-            formADM.ShowDialog();
-            Close();
+            Base.VoltarFormAnterior(this, formADM);
         }
     }
 }

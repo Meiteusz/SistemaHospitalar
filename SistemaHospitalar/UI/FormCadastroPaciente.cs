@@ -1,10 +1,8 @@
-﻿using SistemaHospitalar.DAL;
-using SistemaHospitalar.Entities;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.Views
@@ -18,10 +16,9 @@ namespace SistemaHospitalar.Views
             cmbGeneroPaciente.DataSource = Enum.GetValues(typeof(Genero));
             cmbConvenios.DataSource = DalConvenios.MostrarNomeConvenios();
             cmbConvenios.SelectedItem = "Nenhum";
-
-            IEnumerable<Gravidade> values = Enum.GetValues(typeof(Gravidade)).Cast<Gravidade>();
-            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
         }
+
+        PacienteBLL pacienteBLL = new PacienteBLL();
 
         private void LimparTextBox()
         {
@@ -75,7 +72,7 @@ namespace SistemaHospitalar.Views
             int idConvenio = dalPacientes.DetectarConvenio(cmbConvenios.Text);
 
             Paciente paciente = new Paciente(txtNomePaciente.Text, mtbCpfPaciente.Text, mtbCelularPaciente.Text, (Genero)cmbGeneroPaciente.SelectedIndex, idConvenio);
-            MessageBox.Show(dalPacientes.Cadastrar(paciente));
+            MessageBox.Show(pacienteBLL.CadastrarPaciente(paciente));
         }
 
 

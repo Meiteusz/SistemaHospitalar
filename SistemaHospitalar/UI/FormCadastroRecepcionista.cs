@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using System;
@@ -15,6 +16,8 @@ namespace SistemaHospitalar.Views
             cmbTurnoRecepcionista.DataSource = Enum.GetValues(typeof(Turno));
             cmbGeneroRecepcionista.DataSource = Enum.GetValues(typeof(Genero));
         }
+
+        RecepcionistaBLL recepcionistaBLL = new RecepcionistaBLL();
 
         //Limpa todas as TextBox
         private void ClearTextBoxes()
@@ -77,16 +80,13 @@ namespace SistemaHospitalar.Views
             Recepcionista recepcionista = new Recepcionista(txtNomeRecepcionista.Text, MtbCpfRecepcionista.Text, MtbCelularRecepcionista.Text,
             (Turno)cmbTurnoRecepcionista.SelectedIndex, (Genero)cmbGeneroRecepcionista.SelectedIndex, txtEmailRecepcionista.Text, txtSenhaRecepcionista.Text);
 
-            DalRecepionistas dalRecepionistas = new DalRecepionistas();
-            MessageBox.Show(dalRecepionistas.Cadastrar(recepcionista, txtRepitaSenhaRecepcionista.Text));
+            MessageBox.Show(recepcionistaBLL.CadastrarRecepcionista(recepcionista, txtRepitaSenhaRecepcionista.Text));
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             FormFuncionarios formADM = new FormFuncionarios();
-            Hide();
-            formADM.ShowDialog();
-            Close();
+            Base.VoltarFormAnterior(this, formADM);
         }
     }
 }

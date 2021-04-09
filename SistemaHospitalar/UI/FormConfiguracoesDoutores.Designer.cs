@@ -33,7 +33,6 @@ namespace SistemaHospitalar.UI
             this.txtMaskedCelularDoutor = new System.Windows.Forms.MaskedTextBox();
             this.cmbTurnoDoutor = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnDeletarConta = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtRepetirSenhaDoutor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -87,17 +86,6 @@ namespace SistemaHospitalar.UI
             this.label7.Size = new System.Drawing.Size(50, 20);
             this.label7.TabIndex = 31;
             this.label7.Text = "Turno";
-            // 
-            // btnDeletarConta
-            // 
-            this.btnDeletarConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletarConta.Location = new System.Drawing.Point(420, 377);
-            this.btnDeletarConta.Name = "btnDeletarConta";
-            this.btnDeletarConta.Size = new System.Drawing.Size(200, 61);
-            this.btnDeletarConta.TabIndex = 30;
-            this.btnDeletarConta.Text = "Deletar conta";
-            this.btnDeletarConta.UseVisualStyleBackColor = true;
-            this.btnDeletarConta.Click += new System.EventHandler(this.btnDeletarConta_Click);
             // 
             // label6
             // 
@@ -178,7 +166,7 @@ namespace SistemaHospitalar.UI
             // btnAtualizarInformacoes
             // 
             this.btnAtualizarInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizarInformacoes.Location = new System.Drawing.Point(192, 377);
+            this.btnAtualizarInformacoes.Location = new System.Drawing.Point(307, 363);
             this.btnAtualizarInformacoes.Name = "btnAtualizarInformacoes";
             this.btnAtualizarInformacoes.Size = new System.Drawing.Size(200, 61);
             this.btnAtualizarInformacoes.TabIndex = 21;
@@ -226,7 +214,6 @@ namespace SistemaHospitalar.UI
             this.Controls.Add(this.txtMaskedCelularDoutor);
             this.Controls.Add(this.cmbTurnoDoutor);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnDeletarConta);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtRepetirSenhaDoutor);
             this.Controls.Add(this.label5);
@@ -253,7 +240,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.MaskedTextBox txtMaskedCelularDoutor;
         private System.Windows.Forms.ComboBox cmbTurnoDoutor;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnDeletarConta;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtRepetirSenhaDoutor;
         private System.Windows.Forms.Label label5;

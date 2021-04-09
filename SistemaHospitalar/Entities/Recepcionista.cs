@@ -2,6 +2,8 @@
 {
     class Recepcionista : Usuarios
     {
+        public Recepcionista() { }
+
         public Recepcionista(string p_nome, string p_cpf, string p_celular, Turno p_turno, Genero p_genero, string p_email, string p_senha)
         {
             Nome = p_nome;

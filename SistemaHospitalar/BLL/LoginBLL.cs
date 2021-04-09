@@ -15,8 +15,8 @@ namespace SistemaHospitalar.BLL
         //{
         //    if (dalRecepcionistas.isLoginValido(recepcionista))
         //    {
-        //        EntradaRecepcionista entradaRecepcionista = new EntradaRecepcionista();
-        //        entradaRecepcionista.ShowDialog();
+        //        FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
+        //        formEntradaRecepcionista.ShowDialog();
         //        OutPut = "Bem vindo, Recepcionista ";
         //    }
         //    else
@@ -29,8 +29,8 @@ namespace SistemaHospitalar.BLL
         //{
         //    if (dalDoutores.isLoginValido(doutor))
         //    {
-        //        EntradaDoutores entradaDoutor = new EntradaDoutores();
-        //        entradaDoutor.ShowDialog();
+        //        FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();
+        //        formEntradaDoutores.ShowDialog();
         //        OutPut = "Bem vindo, Doutor ";
         //    }
         //    else

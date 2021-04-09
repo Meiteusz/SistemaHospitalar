@@ -1,10 +1,13 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.Views;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -17,11 +20,18 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
             rbRecepcionista.Checked = true;
             cmbTurno.DataSource = Enum.GetValues(typeof(Turno));
-            cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
+
+            IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
+            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
+             cmbEspecialidade.DataSource = valuesWithSpaces;
+
             dgvFuncionarios.Columns["Email"].Width = 180;
             dgvFuncionarios.Columns["Turno"].Width = 70;
             dgvFuncionarios.Columns["Genero"].Width = 70;
         }
+
+        DoutoresBLL doutoresBLL = new DoutoresBLL();
+        RecepcionistaBLL recepcionistaBLL = new RecepcionistaBLL();
 
         private void rbRecepcionista_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -143,14 +153,12 @@ namespace SistemaHospitalar.UI
             {
                 if (rbRecepcionista.Checked)
                 {
-                    DalRecepionistas dalRecepionistas = new DalRecepionistas();
-                    dalRecepionistas.Deletar(Id);
+                    recepcionistaBLL.DeletarRecepcionista(Id);
                     dgvFuncionarios.DataSource = MostrarFuncionarios();
                 }
                 else
                 {
-                    DalDoutores dalDoutores = new DalDoutores();
-                    dalDoutores.DeletarDoutor(Id);
+                    doutoresBLL.DeletarDoutor(Id);
                     dgvFuncionarios.DataSource = MostrarFuncionarios();
                 }
             }

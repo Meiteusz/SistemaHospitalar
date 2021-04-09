@@ -17,6 +17,9 @@ namespace SistemaHospitalar.Models
 		static Regex regexCelular = new Regex(@"^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$");
 		static Match matchCelular;
 
+		public string MensagemErro { get; set; }
+		public string MsgAtualizarInformacoes = "Deseja realmente atualizar as informações da sua conta?";
+
 		//Valida o CPF
 		#region ValidatorCPF
 		public static bool IsCpf(string cpf)

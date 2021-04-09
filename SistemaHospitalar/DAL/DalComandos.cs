@@ -20,11 +20,5 @@ namespace SistemaHospitalar.DAL
                 erro = " Erro com o banco de dados " + ex.Message;
             return erro;
         }
-
-        public string MostrarErro(SqlException ex)
-        {
-            return "Erro com o Banco de Dados " + ex.Message;
-        }
-
     }
 }

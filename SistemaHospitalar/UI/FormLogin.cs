@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using SistemaHospitalar.Views;
@@ -26,6 +27,8 @@ namespace SistemaHospitalar
             //txtSenha.Text = "321ab";
             //rbDoutor.Checked = true;
         }
+
+        RecepcionistaBLL recepcionistaBLL = new RecepcionistaBLL();
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
@@ -56,17 +59,17 @@ namespace SistemaHospitalar
             }
             else if (rbRecepcionista.Checked)
             {
-                if (dalRecepcionistas.isLoginValido(recepionista))
+                if (recepcionistaBLL.LogarRecepcionista(recepionista).Equals(string.Empty))
                 {
                     Hide();
-                    MessageBox.Show("Logado com sucesso!\nRecepcionista: " + dalRecepcionistas.NomeRecepcionista, "Logando no Sistema Recepcionista", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Recepcionista logado com sucesso!\n" + recepionista.Nome);
                     FormEntradaRecepcionista entradaRecepcionista = new FormEntradaRecepcionista();
                     entradaRecepcionista.ShowDialog();
                     Close();
                 }
                 else
                 {
-                    MessageBox.Show(dalRecepcionistas.OutPut);
+                    MessageBox.Show(recepcionistaBLL.OutPut);
                 }
             }
 
@@ -93,4 +96,3 @@ namespace SistemaHospitalar
         }
     }
 }
-    

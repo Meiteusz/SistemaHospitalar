@@ -5,26 +5,76 @@ namespace SistemaHospitalar.BLL
 {
     class RecepcionistaBLL : Validator
     {
-        public string Status { get; private set; } = "";
+        DalRecepionistas dalRecepionistas = new DalRecepionistas();
 
-        public void LogarRecepcionista(string p_email, string p_senha)
+        public string OutPut { get; private set; }
+        public static int Id { get; set; }
+        public string LogarRecepcionista(Recepcionista recepcionista)
         {
-            DalRecepionistas dalRecepionistas = new DalRecepionistas();
-            Recepcionista recepionista = new Recepcionista(p_email, p_senha);
+            if (dalRecepionistas.isLoginValido(recepcionista))
+            {
+                OutPut = string.Empty;
+            }
+            else
+            {
+                OutPut = dalRecepionistas.OutPut;
+            }
+            return OutPut;
         }
+
+        public Recepcionista PegarDadosRecepcionista(int idRecepcionista)
+        {
+            return DalRecepionistas.PegarDadosRecepcionista(idRecepcionista);
+        }
+
+        public string CadastrarRecepcionista(Recepcionista recepcionista, string confSenha)
+        {
+            MensagemErro = ValidarRecepcionista(recepcionista, confSenha);
+
+            if (MensagemErro.Equals(string.Empty))
+            {
+                return dalRecepionistas.Insert(recepcionista, confSenha);
+            }
+            else
+            {
+                return MensagemErro;
+            }
+        }
+
+        public string DeletarRecepcionista(int idRecepcionista)
+        {
+            return dalRecepionistas.Delete(idRecepcionista);
+        }
+
+        public string AtualizarRecepcionista(Recepcionista recepcionista, string confSenha)
+        {
+            MensagemErro = ValidarAlteracoesRecepcionista(recepcionista, confSenha);
+
+            if (MensagemErro.Equals(string.Empty))
+            {
+                return dalRecepionistas.Update(recepcionista, confSenha);
+            }
+            else
+            {
+                return MensagemErro;
+            }
+        }
+
+
+
+
+
 
         public string ValidarRecepcionista(Recepcionista recepcionista, string confSenha)
         {
-            Status = ValidarNome(recepcionista.Nome) + ValidarEmail(recepcionista.Email) + ValidarSenha(recepcionista.Senha) + ConferirSenha(recepcionista.Senha, confSenha) +
+            return ValidarNome(recepcionista.Nome) + ValidarEmail(recepcionista.Email) + ValidarSenha(recepcionista.Senha) + ConferirSenha(recepcionista.Senha, confSenha) +
                      ValidarCpf(recepcionista.Cpf) + ValidarTurno(recepcionista.Turno) + ValidarGenero(recepcionista.Genero) + ValidarCelular(recepcionista.Celular);
-            return Status;
         }
 
         public string ValidarAlteracoesRecepcionista(Recepcionista recepcionista, string confSenha)
         {
-            Status = ValidarNome(recepcionista.Nome) + ValidarEmail(recepcionista.Email) + ValidarSenha(recepcionista.Senha) + ConferirSenha(recepcionista.Senha, confSenha) + 
+            return ValidarNome(recepcionista.Nome) + ValidarEmail(recepcionista.Email) + ValidarSenha(recepcionista.Senha) + ConferirSenha(recepcionista.Senha, confSenha) +
                      ValidarTurno(recepcionista.Turno) + ValidarCelular(recepcionista.Celular);
-            return Status;
         }
     }
 }

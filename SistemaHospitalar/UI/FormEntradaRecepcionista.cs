@@ -11,7 +11,7 @@ namespace SistemaHospitalar
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            lblNome.Text = "Bem vindo " + DalRecepionistas.Nome;
+            //lblNome.Text = "Bem vindo " + DalRecepionistas.Nome;
         }
 
         private void btnConfiguracoes_Click(object sender, System.EventArgs e)
