@@ -17,15 +17,15 @@ namespace SistemaHospitalar
 
             //LOGIN PARA TESTE
             #region Login Recepcionista
-            //txtEmail.Text = "rosanabnu@gmail.com";
-            //txtSenha.Text = "321ab";
-            //rbRecepcionista.Checked = true;
+            txtEmail.Text = "rosanabnu@gmail.com";
+            txtSenha.Text = "321ab";
+            rbRecepcionista.Checked = true;
             #endregion
 
             #region Login Doutor(a)
-            txtEmail.Text = "brunalupa@gmail.com";
-            txtSenha.Text = "321ab";
-            rbDoutor.Checked = true;
+            //txtEmail.Text = "brunalupa@gmail.com";
+            //txtSenha.Text = "321ab";
+            //rbDoutor.Checked = true;
             #endregion
         }
 

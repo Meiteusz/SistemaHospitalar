@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.DAL;
 using SistemaHospitalar.Utilities;
 using System.Windows.Forms;
 
@@ -20,10 +19,9 @@ namespace SistemaHospitalar.UI
         private void btnAtualizarValores_Click(object sender, System.EventArgs e)
         {
             MessageBox.Show(doutoresBLL.AtualizarValores((float)txtValorConsulta.Value, (float)txtValorExame.Value));
-            
+
             FormLogin formLogin = new FormLogin();
             Base.AbrirFormDesejado(this, formLogin);
-            //dalDoutores.PegarValoresDoutor(DalDoutores.Email, DalDoutores.Senha);
         }
 
 

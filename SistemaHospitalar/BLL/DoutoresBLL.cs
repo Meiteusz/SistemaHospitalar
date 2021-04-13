@@ -1,5 +1,7 @@
 ﻿using SistemaHospitalar.DAL;
+using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
+using System.Data;
 
 namespace SistemaHospitalar.BLL
 {
@@ -59,12 +61,21 @@ namespace SistemaHospitalar.BLL
             return dalDoutores.UpdateValores(valorConsulta, valorExame);
         }
 
+        public Doutores PegarDadosDoutorTEMP(Doutores doutores)
+        {
+            return 
+        }
 
+        public Doutores SetarDadosDoutorTEMP(Doutores doutores)
+        {
+            Doutores doutor = new Doutores();
+            doutor
+        }
 
-
-
-
-
+        public DataTable PesquisarEspecialidade(Especialidades especialidade)
+        {
+            return dalDoutores.GetEspecialidades(especialidade);
+        }
 
         public string ValidarDoutor(Doutores doutores, string confSenha)
         {

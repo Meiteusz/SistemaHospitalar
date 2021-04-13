@@ -17,5 +17,16 @@ namespace SistemaHospitalar.Entities
             DataConsulta = p_dataConsulta;
             Preco = p_preco;
         }
+
+        public string NomePaciente { get; set; } 
+
+        public Consulta(int p_Id, string p_NomePaciente, DateTime p_DataConsulta)
+        {
+            Id = p_Id;
+            NomePaciente = p_NomePaciente;
+            DataConsulta = p_DataConsulta;
+        }
+
+        public Consulta() { }
     }
 }

@@ -9,11 +9,6 @@ namespace SistemaHospitalar.DAL
 {
     class DalDoutores : DalComandos
     {
-
-        public static string Id { get; set; }
-        public static string ValorConsulta { get; set; }
-        public static string ValorExame { get; set; }
-
         //Verifica se o login é existente
         public string OutPut { get; private set; }
         public bool isLoginValido(Doutores doutor)
@@ -52,29 +47,6 @@ namespace SistemaHospitalar.DAL
         }
 
 
-        //Pega todos os dados do doutor(a)
-        public override void GetDadosFuncionarioLogado(SqlDataReader p_reader)
-        {
-            Doutores doutor = new Doutores();
-
-            while (p_reader.Read())
-            {
-                Enum.TryParse(p_reader["TURNO"].ToString(), out Turno TurnoConvertido);
-                Enum.TryParse(p_reader["ESPECIALIDADE"].ToString(), out Especialidades EspecialidadeConvertida);
-
-                doutor.Id = (int)p_reader["ID"];
-                doutor.Nome = p_reader["NOME"].ToString();
-                doutor.Email = p_reader["EMAIL"].ToString();
-                doutor.Celular = p_reader["CELULAR"].ToString();
-                doutor.Turno = TurnoConvertido;
-                doutor.Senha = p_reader["SENHA"].ToString();
-                doutor.Especialidade = EspecialidadeConvertida;
-                doutor.ValorConsulta = Convert.ToSingle(p_reader["VALORCONSULTA"]);
-                doutor.ValorExame = Convert.ToSingle(p_reader["VALOREXAME"]);
-            }
-            FuncionarioLogado.SetFuncionarioLogado(doutor);
-        }
-
 
         //Cadastra um Doutor
         public string Insert(Doutores p_doutor, string p_confSenha)
@@ -111,7 +83,6 @@ namespace SistemaHospitalar.DAL
 
 
 
-
         //Deleta um Doutor
         public string Delete(int p_Id)
         {
@@ -140,7 +111,7 @@ namespace SistemaHospitalar.DAL
         public string Update(Doutores p_doutores, string p_confSenha)
         {
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@ID", Id);
+            command.Parameters.AddWithValue("@ID", FuncionarioLogado.DoutorLogado.Id);
             command.Parameters.AddWithValue("@NOME", p_doutores.Nome);
             command.Parameters.AddWithValue("@EMAIL", p_doutores.Email);
             command.Parameters.AddWithValue("@CELULAR", p_doutores.Celular);
@@ -151,7 +122,7 @@ namespace SistemaHospitalar.DAL
             {
                 command.Connection = conexao.Conectar();
                 command.ExecuteNonQuery();
-                return "Informações alteradas com sucesso\nLogue novamente para as alterações serem confirmadas!";
+                return "Informações alteradas com sucesso";
             }
             catch (SqlException ex)
             {
@@ -162,8 +133,33 @@ namespace SistemaHospitalar.DAL
                 conexao.Desconectar();
             }
         }
+        
 
 
+
+
+        //Pega todos os dados do doutor(a)
+        public override void GetDadosFuncionarioLogado(SqlDataReader p_reader)
+        {
+            Doutores doutor = new Doutores();
+
+            while (p_reader.Read())
+            {
+                Enum.TryParse(p_reader["TURNO"].ToString(), out Turno TurnoConvertido);
+                Enum.TryParse(p_reader["ESPECIALIDADE"].ToString(), out Especialidades EspecialidadeConvertida);
+
+                doutor.Id = (int)p_reader["ID"];
+                doutor.Nome = p_reader["NOME"].ToString();
+                doutor.Email = p_reader["EMAIL"].ToString();
+                doutor.Celular = p_reader["CELULAR"].ToString();
+                doutor.Turno = TurnoConvertido;
+                doutor.Senha = p_reader["SENHA"].ToString();
+                doutor.Especialidade = EspecialidadeConvertida;
+                doutor.ValorConsulta = Convert.ToSingle(p_reader["VALORCONSULTA"]);
+                doutor.ValorExame = Convert.ToSingle(p_reader["VALOREXAME"]);
+            }
+            FuncionarioLogado.SetFuncionarioLogado(doutor);
+        }
 
 
         //Atualiza os valores dos Doutores (consulta e exame)
@@ -192,30 +188,13 @@ namespace SistemaHospitalar.DAL
 
 
 
-
-        //Pega os valores (consulta e exame) do doutor(a)
-        public void PegarValoresDoutor(string p_email, string p_senha)
-        {
-            SqlCommand command = new SqlCommand("select * from DOUTORES where email = @email and senha = @senha", conexao.Conectar());
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@email", p_email);
-            command.Parameters.AddWithValue("@senha", p_senha);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ValorConsulta = reader["VALORCONSULTA"].ToString();
-                ValorExame = reader["VALOREXAME"].ToString();
-            }
-            conexao.Desconectar();
-        }
-
-        public static string PegarValorConsulta(int Id)
+        //Pega o valor da consulta que o respectivo doutor(a) cobra
+        public static string PegarValorConsulta(int p_IdDoutor)
         {
             string ValorConsulta = "";
             SqlCommand command = new SqlCommand("select VALORCONSULTA from DOUTORES where id = @id", conexao.Conectar());
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@id", Id);
+            command.Parameters.AddWithValue("@id", p_IdDoutor);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
@@ -251,17 +230,16 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
-        public static DataTable PesquisarEspecialidade(Especialidades p_especialidade)
+        public DataTable GetEspecialidades(Especialidades p_especialidade)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@especialidade", p_especialidade);
-            command.CommandText = "select ID, NOME, ESPECIALIDADE from DOUTORES where ESPECIALIDADE = @especialidade";
+            command.CommandText = "select ID, NOME, ESPECIALIDADE, VALORCONSULTA from DOUTORES where ESPECIALIDADE = @especialidade";
 
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
             return dt;
         }
-
     }
 }

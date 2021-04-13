@@ -1,4 +1,5 @@
 ﻿using SistemaHospitalar.Models;
+using System.Collections;
 
 namespace SistemaHospitalar.BLL
 {
@@ -23,6 +24,26 @@ namespace SistemaHospitalar.BLL
         public string DeletarPaciente(int idPaciente)
         {
             return dalPacientes.Delete(idPaciente);
+        }
+
+        public int IndentificarConvenio(int idPaciente)
+        {
+            return dalPacientes.GetConvenioDoPaciente(idPaciente);
+        }
+
+        public int PegarConvenioPeloNome(string NomeConvenio)
+        {
+            return dalPacientes.GetIdConvenioPeloNome(NomeConvenio);
+        }
+
+        public string PegarPacientePeloCpf(string CpfPaciente)
+        {
+            return dalPacientes.GetPacientePeloCpf(CpfPaciente);
+        }
+
+        public ArrayList MostrarCpfPacientes()
+        {
+            return dalPacientes.GetCpfPacientes();
         }
 
 

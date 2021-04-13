@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.DAL;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using System;
@@ -14,11 +13,20 @@ namespace SistemaHospitalar.Views
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             cmbGeneroPaciente.DataSource = Enum.GetValues(typeof(Genero));
-            cmbConvenios.DataSource = DalConvenios.MostrarNomeConvenios();
+            cmbConvenios.DataSource = conveniosBLL.ListarConvenios();
             cmbConvenios.SelectedItem = "Nenhum";
         }
 
+        ConveniosBLL conveniosBLL = new ConveniosBLL();
         PacienteBLL pacienteBLL = new PacienteBLL();
+
+        private void btnCadastrarPaciente_Click(object sender, EventArgs e)
+        {
+            int idConvenio = pacienteBLL.PegarConvenioPeloNome(cmbConvenios.Text);
+
+            Paciente paciente = new Paciente(txtNomePaciente.Text, mtbCpfPaciente.Text, mtbCelularPaciente.Text, (Genero)cmbGeneroPaciente.SelectedIndex, idConvenio);
+            MessageBox.Show(pacienteBLL.CadastrarPaciente(paciente));
+        }
 
         private void LimparTextBox()
         {
@@ -38,7 +46,6 @@ namespace SistemaHospitalar.Views
             mtbCelularPaciente.Text = "";
             func(Controls);
         }
-
         private void mtbCpfPaciente_Click(object sender, EventArgs e)
         {
             if (mtbCpfPaciente.Text.Equals("   .   .   -"))
@@ -46,8 +53,6 @@ namespace SistemaHospitalar.Views
                 mtbCpfPaciente.SelectionStart = mtbCpfPaciente.SelectionLength = 0;
             }
         }
-
-
         private void mtbCelularPaciente_Click(object sender, EventArgs e)
         {
             if (mtbCelularPaciente.Text.Equals("(  )      -"))
@@ -55,33 +60,14 @@ namespace SistemaHospitalar.Views
                 mtbCelularPaciente.SelectionStart = mtbCelularPaciente.SelectionLength = 0;
             }
         }
-
-
-        //Limpa todas as TextBox
         private void btnApagar_Click(object sender, System.EventArgs e)
         {
             LimparTextBox();
         }
-
-
-        //Cadastra um Paciente
-        private void btnCadastrarPaciente_Click(object sender, EventArgs e)
-        {
-            DalPacientes dalPacientes = new DalPacientes();
-
-            int idConvenio = dalPacientes.DetectarConvenio(cmbConvenios.Text);
-
-            Paciente paciente = new Paciente(txtNomePaciente.Text, mtbCpfPaciente.Text, mtbCelularPaciente.Text, (Genero)cmbGeneroPaciente.SelectedIndex, idConvenio);
-            MessageBox.Show(pacienteBLL.CadastrarPaciente(paciente));
-        }
-
-
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             FormPacientes formPacientes = new FormPacientes();
-            Hide();
-            formPacientes.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formPacientes);
         }
     }
 }

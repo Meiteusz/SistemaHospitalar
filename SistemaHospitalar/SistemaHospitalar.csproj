@@ -47,9 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\ConsultaBLL.cs" />
+    <Compile Include="BLL\ConveniosBLL.cs" />
     <Compile Include="Utilities\Base.cs" />
     <Compile Include="BLL\DoutoresBLL.cs" />
-    <Compile Include="BLL\LoginBLL.cs" />
     <Compile Include="BLL\PacienteBLL.cs" />
     <Compile Include="BLL\RecepcionistaBLL.cs" />
     <Compile Include="DAL\Conexao.cs" />
@@ -78,12 +79,6 @@
     </Compile>
     <Compile Include="UI\FormDiagnostico.Designer.cs">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FormEscolhaDeVisualizacaoDiagnostico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FormEscolhaDeVisualizacaoDiagnostico.Designer.cs">
-      <DependentUpon>FormEscolhaDeVisualizacaoDiagnostico.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormFuncionarios.cs">
       <SubType>Form</SubType>
@@ -216,9 +211,6 @@
     <Compile Include="Utilities\FuncionarioLogado.cs" />
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormEscolhaDeVisualizacaoDiagnostico.resx">
-      <DependentUpon>FormEscolhaDeVisualizacaoDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormFuncionarios.resx">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>

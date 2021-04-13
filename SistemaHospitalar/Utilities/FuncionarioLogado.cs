@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.Models;
+﻿using SistemaHospitalar.Entities;
+using SistemaHospitalar.Models;
 
 namespace SistemaHospitalar.Utilities
 {
@@ -15,11 +16,24 @@ namespace SistemaHospitalar.Utilities
                 DoutorLogado = funcionario as Doutores;
         }
 
-        //public static Usuarios GetFuncionarioLogado()
-        //{
-        //    if (RecepcionistaLogada != null)
-        //        return RecepcionistaLogada;
-        //    return DoutorLogado;
-        //}
+
+
+        public static Consulta ConsultaSelecionada { get; private set; }
+        public static void SetConsultaSelecionada(Consulta consulta)
+        {
+            ConsultaSelecionada = consulta;
+        }
+
+        public static Convenios ConvenioSelecionado { get; private set; }
+        public static void SetConvenioSelecionado(Convenios convenio)
+        {
+            ConvenioSelecionado = convenio;
+        }
+
+        public static Paciente PacienteSelecionado { get; private set; }
+        public static void SetPacienteSelecionado(Paciente paciente)
+        {
+            PacienteSelecionado = paciente;
+        }
     }
 }

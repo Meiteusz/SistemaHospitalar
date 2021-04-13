@@ -6,7 +6,6 @@ namespace SistemaHospitalar.DAL
 {
     class DalRecepcionistas : DalComandos
     {
-
         //Loga um Recepcionista
         public string OutPut { get; set; }
         public bool isLoginValido(Recepcionista recepcionista)

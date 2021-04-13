@@ -1,4 +1,8 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
+using SistemaHospitalar.Entities;
+using SistemaHospitalar.Utilities;
+using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -25,9 +29,7 @@ namespace SistemaHospitalar.UI
         private void btnAgendarConsulta_Click(object sender, System.EventArgs e)
         {
             FormAgendarConsulta formCadastroConsulta = new FormAgendarConsulta();
-            Hide();
-            formCadastroConsulta.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formCadastroConsulta);
         }
 
         private void btnDeletarConsulta_Click(object sender, System.EventArgs e)
@@ -41,7 +43,7 @@ namespace SistemaHospitalar.UI
                 DalConsultas dalConsultas = new DalConsultas();
                 if (MessageBox.Show("Deseja realmente deletar esta Consulta?", "Deleção de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    MessageBox.Show(dalConsultas.DeletarConsulta(DalConsultas.Id));
+                    MessageBox.Show(dalConsultas.DeletarConsulta(FuncionarioLogado.ConsultaSelecionada.Id));
                     dgvConsultas.DataSource = DalConsultas.MostrarConsultas();
                 }
             }
@@ -50,16 +52,17 @@ namespace SistemaHospitalar.UI
         private void btnVoltar_Click(object sender, System.EventArgs e)
         {
             FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
-            Hide();
-            formEntradaRecepcionista.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formEntradaRecepcionista);
         }
 
         private void dgvConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DalConsultas.Id = (int)dgvConsultas.SelectedRows[0].Cells[0].Value;
-            DalConsultas.DataConsulta = dgvConsultas.SelectedRows[0].Cells[4].Value.ToString();
-            DalConsultas.NomePaciente = dgvConsultas.SelectedRows[0].Cells[2].Value.ToString();
+            int IdConsulta = (int)dgvConsultas.SelectedRows[0].Cells[0].Value;
+            DateTime DataConsulta = DateTime.ParseExact(dgvConsultas.SelectedRows[0].Cells[3].Value.ToString(), "dd/MM/yyyy HH:mm", null);
+            string NomePaciente = dgvConsultas.SelectedRows[0].Cells[1].Value.ToString();
+
+            Consulta consulta = new Consulta(IdConsulta, NomePaciente, DataConsulta);
+            FuncionarioLogado.SetConsultaSelecionada(consulta);
         }
 
         private void btnReagendarConsulta_Click(object sender, System.EventArgs e)
@@ -71,9 +74,7 @@ namespace SistemaHospitalar.UI
             else
             {
                 FormReagendamentoConsulta formReagendamentoConsulta = new FormReagendamentoConsulta();
-                Hide();
-                formReagendamentoConsulta.ShowDialog();
-                Close();
+                Base.AbrirFormDesejado(this, formReagendamentoConsulta);
             }
         }
     }

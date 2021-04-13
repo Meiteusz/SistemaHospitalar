@@ -1,4 +1,7 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
+using SistemaHospitalar.Entities;
+using SistemaHospitalar.Utilities;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -9,7 +12,7 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            dgvConsultas.DataSource = DalConsultas.MostrarConsultasParaDoutor(int.Parse(DalDoutores.Id));
+            dgvConsultas.DataSource = DalConsultas.MostrarConsultasParaDoutor(FuncionarioLogado.DoutorLogado.Id);
         }
 
         private void btnFazerDiagnostico_Click(object sender, System.EventArgs e)
@@ -21,15 +24,15 @@ namespace SistemaHospitalar.UI
             else
             {
                 FormDiagnostico formDiagnostico = new FormDiagnostico();
-                Hide();
-                formDiagnostico.ShowDialog();
-                Close();
+                Base.AbrirFormDesejado(this, formDiagnostico);
             }
         }
 
         private void dgvConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DalConsultas.NomePaciente = dgvConsultas.SelectedRows[0].Cells[1].Value.ToString();
+            Consulta consulta = new Consulta();
+            consulta.NomePaciente = dgvConsultas.CurrentRow.Cells[1].Value.ToString();
+            FuncionarioLogado.SetConsultaSelecionada(consulta);
         }
 
         private void btnVoltar_Click(object sender, System.EventArgs e)

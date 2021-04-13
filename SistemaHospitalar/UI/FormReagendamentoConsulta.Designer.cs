@@ -61,7 +61,7 @@ namespace SistemaHospitalar.UI
             // 
             // dtpDataConsulta
             // 
-            this.dtpDataConsulta.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dtpDataConsulta.CustomFormat = "dd/MM/yyyy HH:mm";
             this.dtpDataConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataConsulta.Location = new System.Drawing.Point(126, 99);

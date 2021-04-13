@@ -1,4 +1,4 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.Utilities;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -10,30 +10,25 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            txtNomePaciente.Text = DalConsultas.NomePaciente;
+            txtNomePaciente.Text = FuncionarioLogado.ConsultaSelecionada.NomePaciente;
         }
 
 
-
         Bitmap bmp;
-
         private void btnFazerDiagnostico_Click(object sender, System.EventArgs e)
         {
-            //FormEscolhaDeVisualizacaoDiagnostico formEscolhaDeVisualizacao = new FormEscolhaDeVisualizacaoDiagnostico();
-            //Hide();
-            //formEscolhaDeVisualizacao.ShowDialog();
-            //Close();
-
             Panel panel = new Panel();
-            this.Controls.Add(panel);
+            Controls.Add(panel);
             Graphics grp = panel.CreateGraphics();
-            Size formSize = this.ClientSize;
+            Size formSize = ClientSize;
             bmp = new Bitmap(formSize.Width, formSize.Height, grp);
             grp = Graphics.FromImage(bmp);
             Point panelLocation = PointToScreen(panel.Location);
             grp.CopyFromScreen(panelLocation.X, panelLocation.Y, 0, 0, formSize);
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.Width = 800;
+            printPreviewDialog1.Height = 550;
             printPreviewDialog1.ShowDialog();
         }
 

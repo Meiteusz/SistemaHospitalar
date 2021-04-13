@@ -101,6 +101,7 @@ namespace SistemaHospitalar.UI
             this.dgvDoutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoutores.Location = new System.Drawing.Point(26, 112);
             this.dgvDoutores.Name = "dgvDoutores";
+            this.dgvDoutores.ReadOnly = true;
             this.dgvDoutores.Size = new System.Drawing.Size(428, 331);
             this.dgvDoutores.TabIndex = 9;
             this.dgvDoutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoutores_CellClick);
@@ -161,7 +162,7 @@ namespace SistemaHospitalar.UI
             // 
             // dtpDataConsulta
             // 
-            this.dtpDataConsulta.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dtpDataConsulta.CustomFormat = "dd/MM/yyyy HH:mm tt";
             this.dtpDataConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataConsulta.Location = new System.Drawing.Point(74, 268);
@@ -170,7 +171,7 @@ namespace SistemaHospitalar.UI
             this.dtpDataConsulta.Name = "dtpDataConsulta";
             this.dtpDataConsulta.Size = new System.Drawing.Size(285, 27);
             this.dtpDataConsulta.TabIndex = 15;
-            this.dtpDataConsulta.Value = new System.DateTime(2021, 3, 18, 17, 41, 55, 0);
+            this.dtpDataConsulta.Value = new System.DateTime(2021, 3, 18, 17, 41, 0, 0);
             // 
             // lblNome
             // 

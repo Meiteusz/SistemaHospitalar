@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaHospitalar.BLL;
+using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -30,9 +31,7 @@ namespace SistemaHospitalar.UI
         private void btnOK_Click(object sender, EventArgs e)
         {
             FormConsultas formConsultas = new FormConsultas();
-            Hide();
-            formConsultas.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formConsultas);
         }
     }
 }

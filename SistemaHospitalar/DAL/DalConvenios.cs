@@ -1,4 +1,6 @@
 ﻿using SistemaHospitalar.Entities;
+using SistemaHospitalar.Utilities;
+using System;
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,23 +9,11 @@ namespace SistemaHospitalar.DAL
 {
     class DalConvenios : DalComandos
     {
-        public override string MostrarTipoErro(SqlException ex)
-        {
-            string erro = "";
-            if (ex.Number == 2627)
-                erro = "Já existe um Convênio com este nome Cadastrado!";
-            else
-                erro = " Erro com o banco de dados " + ex.Message;
-            return erro;
-        }
-
-
-        public string CadastrarConvenio(Convenios convenios)
+        public string Insert(Convenios convenios)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@nome", convenios.Nome);
             command.Parameters.AddWithValue("@desconto", convenios.Desconto);
-
             command.CommandText = "insert into CONVENIOS values(@nome, @desconto)";
 
             try
@@ -43,7 +33,7 @@ namespace SistemaHospitalar.DAL
         }
 
 
-        public string DeletarConvenio(int p_id)
+        public string Delete(int p_id)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@id", p_id);
@@ -65,39 +55,25 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-        public static int IndentificarConvenio(int p_pacienteId)
+
+        public void GetDadosConvenio(int p_IdConsulta)
         {
-            int IdConvenio = 0;
-            SqlCommand command = new SqlCommand("select CONVENIOID from PACIENTES where ID = @id", conexao.Conectar());
+            Convenios convenio = new Convenios();
+
+            SqlCommand command = new SqlCommand("select * from CONVENIOS where ID = @IdConsulta", conexao.Conectar());
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@id", p_pacienteId);
+            command.Parameters.AddWithValue("IdConsulta" , p_IdConsulta);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                IdConvenio = (int)reader["CONVENIOID"];
+                convenio.Nome = reader["NOME"].ToString();
+                convenio.Desconto = Convert.ToSingle(reader["DESCONTO"]);
             }
             conexao.Desconectar();
-            return IdConvenio;
+            FuncionarioLogado.SetConvenioSelecionado(convenio);
         }
 
-        public static string DescontoConvenio { get; set; }
-        public static string IndentificarNomeConvenio(int p_convenioId)
-        {
-            string NomeConvenio = "";
-            SqlCommand command = new SqlCommand("select NOME, DESCONTO from CONVENIOS where ID = @id", conexao.Conectar());
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@id", p_convenioId);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                NomeConvenio = reader["NOME"].ToString();
-                DescontoConvenio = reader["DESCONTO"].ToString();
-            }
-            conexao.Desconectar();
-            return NomeConvenio;
-        }
 
         public static DataTable MostrarConveniosDGV()
         {
@@ -108,8 +84,7 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
-
-        public static ArrayList MostrarNomeConvenios()
+        public ArrayList ListaConvenios()
         {
             ArrayList convenios = new ArrayList();
             adapter = new SqlDataAdapter("select NOME from CONVENIOS", conexao.Conectar());
@@ -122,6 +97,16 @@ namespace SistemaHospitalar.DAL
             }
             conexao.Desconectar();
             return convenios;
+        }
+
+        public override string MostrarTipoErro(SqlException ex)
+        {
+            string erro = "";
+            if (ex.Number == 2627)
+                erro = "Já existe um Convênio com este nome Cadastrado!";
+            else
+                erro = " Erro com o banco de dados " + ex.Message;
+            return erro;
         }
     }
 }

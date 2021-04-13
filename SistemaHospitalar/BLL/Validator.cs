@@ -166,5 +166,23 @@ namespace SistemaHospitalar.Models
 			}
 			return "";
 		}
+
+		public string ValidarNomeConvenio(string nomeConvenio)
+        {
+            if (nomeConvenio.Length < 3 || nomeConvenio.Length > 25)
+            {
+				return "Nome do convênio é inválido!\n";
+            }
+			return "";
+        }
+
+		public string ValidarDescontoConvenio(float descontoConvenio)
+        {
+            if (descontoConvenio < 0 || descontoConvenio > 100)
+            {
+				return "Desconto está inválido!\n";
+            }
+			return "";
+        }
 	}
 }
