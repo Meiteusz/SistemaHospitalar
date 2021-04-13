@@ -56,13 +56,13 @@ namespace SistemaHospitalar.DAL
         }
 
 
-        public void GetDadosConvenio(int p_IdConsulta)
+        public void GetDadosConvenio(int p_IdConvenio)
         {
             Convenios convenio = new Convenios();
 
-            SqlCommand command = new SqlCommand("select * from CONVENIOS where ID = @IdConsulta", conexao.Conectar());
+            SqlCommand command = new SqlCommand("select * from CONVENIOS where ID = @IdConvenio", conexao.Conectar());
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("IdConsulta" , p_IdConsulta);
+            command.Parameters.AddWithValue("@IdConvenio" , p_IdConvenio);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())

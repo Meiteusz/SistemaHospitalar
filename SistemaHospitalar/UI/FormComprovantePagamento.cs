@@ -20,9 +20,9 @@ namespace SistemaHospitalar.UI
             lblDataConsulta.Text = dataConsulta;
             lblNomeDoutor.Text = NomeDoutor;
             lblEspecialidadeDoutor.Text = especialidadeDoutor;
-            lblValorFinalConsulta.Text = "R$ " + valorFinalConsulta + ",00";
+            lblValorFinalConsulta.Text = "R$ " + valorFinalConsulta;
             lblNomeConvenio.Text = NomeConvenio;
-            lblDesconto.Text = DescontoConvenio;
+            lblDesconto.Text = DescontoConvenio + "%";
             lblValorConsulta.Text = ValorConsulta;
             lblValorDesconto.Text = ValorDesconto;
             lblValorFinal.Text = ValorFinal;

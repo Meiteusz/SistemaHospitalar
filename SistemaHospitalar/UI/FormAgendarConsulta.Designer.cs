@@ -98,6 +98,7 @@ namespace SistemaHospitalar.UI
             // 
             // dgvDoutores
             // 
+            this.dgvDoutores.AllowUserToAddRows = false;
             this.dgvDoutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoutores.Location = new System.Drawing.Point(26, 112);
             this.dgvDoutores.Name = "dgvDoutores";

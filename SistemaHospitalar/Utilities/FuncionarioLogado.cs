@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.Entities;
+﻿using SistemaHospitalar.DAL;
+using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 
 namespace SistemaHospitalar.Utilities
@@ -16,8 +17,6 @@ namespace SistemaHospitalar.Utilities
                 DoutorLogado = funcionario as Doutores;
         }
 
-
-
         public static Consulta ConsultaSelecionada { get; private set; }
         public static void SetConsultaSelecionada(Consulta consulta)
         {
@@ -34,6 +33,14 @@ namespace SistemaHospitalar.Utilities
         public static void SetPacienteSelecionado(Paciente paciente)
         {
             PacienteSelecionado = paciente;
+        }
+
+        public static Doutores DoutorTemp { get; private set; }
+        public static void SetDoutorTemp(int DoutorID)
+        {
+            DalDoutores dalDoutores = new DalDoutores();
+
+            DoutorTemp = dalDoutores.GetDadosDoutorPeloID(DoutorID);
         }
     }
 }

@@ -46,8 +46,6 @@ namespace SistemaHospitalar.DAL
             return isLoginExistente;
         }
 
-
-
         //Cadastra um Doutor
         public string Insert(Doutores p_doutor, string p_confSenha)
         {
@@ -81,8 +79,6 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
-
         //Deleta um Doutor
         public string Delete(int p_Id)
         {
@@ -104,7 +100,6 @@ namespace SistemaHospitalar.DAL
                 conexao.Desconectar();
             }
         }
-
 
 
         //Atualiza as informações de um Doutor
@@ -134,9 +129,6 @@ namespace SistemaHospitalar.DAL
             }
         }
         
-
-
-
 
         //Pega todos os dados do doutor(a)
         public override void GetDadosFuncionarioLogado(SqlDataReader p_reader)
@@ -186,25 +178,30 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
-
-        //Pega o valor da consulta que o respectivo doutor(a) cobra
-        public static string PegarValorConsulta(int p_IdDoutor)
+        public Doutores GetDadosDoutorPeloID(int p_IdDoutor)
         {
-            string ValorConsulta = "";
-            SqlCommand command = new SqlCommand("select VALORCONSULTA from DOUTORES where id = @id", conexao.Conectar());
+            Doutores doutor = new Doutores();
+            SqlCommand command = new SqlCommand("select * from DOUTORES where ID = @IdDoutor", conexao.Conectar());
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@id", p_IdDoutor);
+            command.Parameters.AddWithValue("@IdDoutor", p_IdDoutor);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                ValorConsulta = reader["VALORCONSULTA"].ToString();
+                Enum.TryParse(reader["TURNO"].ToString(), out Turno TurnoConvertido);
+                Enum.TryParse(reader["ESPECIALIDADE"].ToString(), out Especialidades EspecialidadeConvertida);
+
+                doutor.Id = (int)reader["ID"];
+                doutor.Nome = reader["NOME"].ToString();
+                doutor.Celular = reader["CELULAR"].ToString();
+                doutor.Turno = TurnoConvertido;
+                doutor.Especialidade = EspecialidadeConvertida;
+                doutor.ValorConsulta = Convert.ToSingle(reader["VALORCONSULTA"]);
+                doutor.ValorExame = Convert.ToSingle(reader["VALOREXAME"]);
             }
             conexao.Desconectar();
-            return ValorConsulta;
+            return doutor;
         }
-
 
         //PESQUISAS
         public static DataTable MostrarDoutores()

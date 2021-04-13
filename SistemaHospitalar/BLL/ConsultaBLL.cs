@@ -1,18 +1,31 @@
 ﻿using SistemaHospitalar.DAL;
 using SistemaHospitalar.Entities;
+using SistemaHospitalar.Models;
 using System;
 using System.Data;
 
 namespace SistemaHospitalar.BLL
 {
-    class ConsultaBLL
+    class ConsultaBLL : Validator
     {
+        public float ValorConsulta { get; private set; }
+        public float ValorDesconto { get; private set; }
+        public float ValorFinalConsulta { get; private set; }
         DalConsultas dalConsultas = new DalConsultas();
 
         public bool isDataValida(Consulta consulta)
         {
-            return dalConsultas.isDataConsultaValido(consulta.DataConsulta, consulta.Paciente, consulta.Doutor);
+            if (ValidarDataConsulta(consulta.DataConsulta) && dalConsultas.isDataConsultaValido(consulta.DataConsulta, consulta.Paciente, consulta.Doutor))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+        
+        
         public string AgendarConsulta(Consulta consulta)
         {
             return dalConsultas.Insert(consulta);
@@ -23,27 +36,26 @@ namespace SistemaHospitalar.BLL
             return dalConsultas.Delete(IdConsulta);
         }
 
-
         public string ReagendarConsulta(DateTime dataConsulta, int IdConsulta)
         {
             return dalConsultas.UpdateDataConsulta(dataConsulta, IdConsulta);
         }
 
-
-
-        public void CalcularValorFinalConsulta()
+        public void SetValoresConsulta(float p_ValorConsulta, float p_ValorDescontoConvenio)
         {
-
-        }
-
-        public void CalcularValorDesconto()
-        {
-
+            ValorConsulta = p_ValorConsulta;
+            ValorDesconto = p_ValorConsulta * p_ValorDescontoConvenio;
+            ValorFinalConsulta = p_ValorConsulta - ValorDesconto;
         }
 
         public DataTable AgendaDoutor(int IdDoutor)
         {
             return dalConsultas.GetConsultasDoDoutor(IdDoutor);
+        }
+
+        public DataTable ConsultaHoje()
+        {
+            return dalConsultas.MostrarConsultasHoje();
         }
     }
 }

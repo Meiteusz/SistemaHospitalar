@@ -1,4 +1,5 @@
 ﻿using SistemaHospitalar.Entities;
+using System;
 using System.Text.RegularExpressions;
 
 namespace SistemaHospitalar.Models
@@ -183,6 +184,16 @@ namespace SistemaHospitalar.Models
 				return "Desconto está inválido!\n";
             }
 			return "";
+        }
+
+		public bool ValidarDataConsulta(DateTime dateTime)
+        {
+            if (dateTime <= DateTime.Now || dateTime.DayOfWeek.Equals(DayOfWeek.Saturday) ||dateTime.DayOfWeek.Equals(DayOfWeek.Sunday) || dateTime.Hour > 23 || 
+				dateTime.Hour < 7 || dateTime.Minute != 0 && dateTime.Minute != 30)
+            {
+				return false;
+			}
+			return true;
         }
 	}
 }

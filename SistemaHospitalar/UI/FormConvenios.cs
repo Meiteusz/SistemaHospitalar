@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
 using SistemaHospitalar.Entities;
 using System.Windows.Forms;
 
@@ -16,12 +17,13 @@ namespace SistemaHospitalar.UI
         private int ID { get; set; }
         private string Nome { get; set; }
 
+        ConveniosBLL conveniosBLL = new ConveniosBLL();
+
         private void btnCadastrarConvenio_Click(object sender, System.EventArgs e)
         {
-            DalConvenios dalConvenios = new DalConvenios();
             Convenios convenios = new Convenios(txtNomeConvenio.Text, float.Parse(txtDescontoConvenio.Text) / 100);
 
-            MessageBox.Show(dalConvenios.CadastrarConvenio(convenios));
+            MessageBox.Show(conveniosBLL.CadastrarConvenio(convenios));
             dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
         }
 
@@ -38,8 +40,7 @@ namespace SistemaHospitalar.UI
             if (MessageBox.Show("Deseja realmente deletar o Convênio " + Nome + "?", "Deletar Convênio", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                DalConvenios dalConvenios = new DalConvenios();
-                MessageBox.Show(dalConvenios.DeletarConvenio(ID));
+                MessageBox.Show(conveniosBLL.DeletarConvenio(ID));
                 dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
             }
         }

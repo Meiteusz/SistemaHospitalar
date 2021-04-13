@@ -100,6 +100,22 @@ namespace SistemaHospitalar.DAL
             }
         }
 
+        public int GetConvenioDoPaciente(int p_pacienteId)
+        {
+            int IdConvenio = 0;
+            SqlCommand command = new SqlCommand("select CONVENIOID from PACIENTES where ID = @id", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", p_pacienteId);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                IdConvenio = (int)reader["CONVENIOID"];
+            }
+            conexao.Desconectar();
+            return IdConvenio;
+        }
+
         public static DataTable MostrarConsultas()
         {
             command.CommandText = "select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
@@ -111,7 +127,7 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
-        public static DataTable MostrarConsultasHoje()
+        public DataTable MostrarConsultasHoje()
         {
             command.CommandText = "select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
                 "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta, CONVENIOS.NOME as " +

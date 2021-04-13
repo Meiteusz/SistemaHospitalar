@@ -37,7 +37,6 @@ namespace SistemaHospitalar.Models
 
         }
 
-
         public string Delete(int p_Id)
         {
             command.Parameters.Clear();
@@ -59,9 +58,6 @@ namespace SistemaHospitalar.Models
             }
         }
 
-
-
-
         public void GetDadosPaciente(int p_IdPaciente, string p_CpfPaciente)
         {
             Paciente paciente = new Paciente();
@@ -76,6 +72,7 @@ namespace SistemaHospitalar.Models
             {
                 Enum.TryParse(reader["GENERO"].ToString(), out Genero generoConvertido);
 
+                paciente.Id = (int)reader["ID"];
                 paciente.Nome = reader["NOME"].ToString();
                 paciente.Cpf = reader["CPF"].ToString();
                 paciente.Celular = reader["CELULAR"].ToString();
@@ -84,22 +81,6 @@ namespace SistemaHospitalar.Models
             }
             conexao.Desconectar();
             FuncionarioLogado.SetPacienteSelecionado(paciente);
-        }
-
-        public int GetConvenioDoPaciente(int p_pacienteId)
-        {
-            int IdConvenio = 0;
-            SqlCommand command = new SqlCommand("select CONVENIOID from PACIENTES where ID = @id", conexao.Conectar());
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@id", p_pacienteId);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                IdConvenio = (int)reader["CONVENIOID"];
-            }
-            conexao.Desconectar();
-            return IdConvenio;
         }
 
         public int GetIdConvenioPeloNome(string p_nomeConvenio)

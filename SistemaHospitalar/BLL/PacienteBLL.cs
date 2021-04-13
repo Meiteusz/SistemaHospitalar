@@ -1,4 +1,5 @@
-﻿using SistemaHospitalar.Models;
+﻿using SistemaHospitalar.DAL;
+using SistemaHospitalar.Models;
 using System.Collections;
 
 namespace SistemaHospitalar.BLL
@@ -26,9 +27,9 @@ namespace SistemaHospitalar.BLL
             return dalPacientes.Delete(idPaciente);
         }
 
-        public int IndentificarConvenio(int idPaciente)
+        public void PegarDadosPaciente(int p_IdPaciente, string p_CpfPaciente)
         {
-            return dalPacientes.GetConvenioDoPaciente(idPaciente);
+            dalPacientes.GetDadosPaciente(p_IdPaciente, p_CpfPaciente);
         }
 
         public int PegarConvenioPeloNome(string NomeConvenio)
@@ -36,17 +37,10 @@ namespace SistemaHospitalar.BLL
             return dalPacientes.GetIdConvenioPeloNome(NomeConvenio);
         }
 
-        public string PegarPacientePeloCpf(string CpfPaciente)
-        {
-            return dalPacientes.GetPacientePeloCpf(CpfPaciente);
-        }
-
         public ArrayList MostrarCpfPacientes()
         {
             return dalPacientes.GetCpfPacientes();
         }
-
-
 
         public string ValidarPaciente(Paciente paciente)
         {

@@ -1,7 +1,6 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.DAL;
 using SistemaHospitalar.Entities;
-using SistemaHospitalar.Models;
+using SistemaHospitalar.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,108 +18,46 @@ namespace SistemaHospitalar.UI
             IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
             List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
             cmbEspecialidade.DataSource = valuesWithSpaces;
+            btnCadastrarConsulta.Enabled = false;
         }
 
         ConsultaBLL consultaBLL = new ConsultaBLL();
         PacienteBLL pacienteBLL = new PacienteBLL();
         DoutoresBLL doutoresBLL = new DoutoresBLL();
+        ConveniosBLL ConveniosBLL = new ConveniosBLL();
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             PesquisarDoutorDGV();
         }
 
-        public static int DoutorId { get; set; }
-        private string DoutorNome { get; set; }
-        private string EspecialidadeDoutor { get; set; }
-
-        private float ValorConsulta { get; set; }
-        private float ValorFinal { get; set; }
-        private float ValorDesconto { get; set; }
-
         private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DoutorId = (int)dgvDoutores.CurrentRow.Cells[0].Value;
-            DoutorNome = dgvDoutores.CurrentRow.Cells[1].Value.ToString();
-            txtNomeDoutor.Text = DoutorNome;
+            int IdDoutor = (int)dgvDoutores.CurrentRow.Cells[0].Value;
+            FuncionarioLogado.SetDoutorTemp(IdDoutor);
 
-            Enum.TryParse(dgvDoutores.CurrentRow.Cells[2].Value.ToString(), out Especialidades especialidadeConvertida);
-            EspecialidadeDoutor = especialidadeConvertida.ToString();
-
-            ValorConsulta = (float)dgvDoutores.CurrentRow.Cells[3].Value;
-            ValorConsulta = float.Parse(DalDoutores.PegarValorConsulta(DoutorId));
-            ValorFinal = ValorConsulta;
+            txtNomeDoutor.Text = FuncionarioLogado.DoutorTemp.Nome;
+            btnCadastrarConsulta.Enabled = true;
         }
-
 
         private void btnAgendarConsulta_Click(object sender, EventArgs e)
         {
-            ValorDesconto = ValorConsulta * float.Parse(DalConsultas.ValorDescontoConvenio(DalPacientes.Id));
-            ValorFinal -= ValorDesconto; //Desconto com respectivo convênio do Paciente
+            pacienteBLL.PegarDadosPaciente(0, cmbCpfPacientes.Text);
+            ConveniosBLL.PegarDadosConvenio(FuncionarioLogado.PacienteSelecionado.Convenio);
+            consultaBLL.SetValoresConsulta(FuncionarioLogado.DoutorTemp.ValorConsulta, FuncionarioLogado.ConvenioSelecionado.Desconto);
 
-            if (ValidarCamposConsulta().Equals(""))
+            Consulta consulta = new Consulta(FuncionarioLogado.PacienteSelecionado.Id, FuncionarioLogado.DoutorTemp.Id, dtpDataConsulta.Value, consultaBLL.ValorFinalConsulta);
+
+            if (consultaBLL.isDataValida(consulta))
             {
-                Consulta consulta = new Consulta(DalPacientes.Id, DoutorId, dtpDataConsulta.Value, ValorFinal);
-
-                if (consultaBLL.isDataValida(consulta))
-                {
-                    MessageBox.Show(consultaBLL.AgendarConsulta(consulta));
-                    AbrirComprovanteDePagamento();
-                }
-                else
-                {
-                    MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!\nVerifique tambem se a data/horário é válida!");
-                }
-
+                MessageBox.Show(consultaBLL.AgendarConsulta(consulta));
+                AbrirComprovanteDePagamento();
             }
             else
             {
-                MessageBox.Show(ValidarCamposConsulta());
+                MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!\nVerifique tambem se a data/horário é válida!");
             }
         }
-
-
-
-
-
-
-        private string ValidarCamposConsulta()
-        {
-            string msg = "";
-            if (txtNomeDoutor.Text.Equals(""))
-            {
-                msg = "Selecione o doutor que irá fazer a consulta!";
-            }
-            else if (dtpDataConsulta.Value <= DateTime.Now || dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Saturday) ||
-                dtpDataConsulta.Value.DayOfWeek.Equals(DayOfWeek.Sunday) || dtpDataConsulta.Value.Hour > 23 || dtpDataConsulta.Value.Hour < 7 ||
-                dtpDataConsulta.Value.Minute != 0 && dtpDataConsulta.Value.Minute != 30)
-            {
-                msg = "Data ou Horário inválidos!";
-            }
-            return msg;
-        }
-
-        private float DescontoConvenio { get; set; }
-        private string PegarNomeConvenio()
-        {
-            string NomeConvenio = "";
-            NomeConvenio = DalConvenios.IndentificarNomeConvenio(DalConvenios.IndentificarConvenio(DalPacientes.Id));
-            DescontoConvenio = float.Parse(DalConvenios.DescontoConvenio) * 100;
-            return NomeConvenio;
-        }
-
-        private void AbrirComprovanteDePagamento()
-        {
-            FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
-            Hide();
-            formComprovantePagamento.MostrarDadosConsultas(lblNomePaciente.Text, cmbCpfPacientes.Text, dtpDataConsulta.Value.ToString("dd/MM/yyyy HH:mm tt"),
-                DoutorNome, EspecialidadeDoutor, ValorFinal.ToString(), PegarNomeConvenio(), DescontoConvenio.ToString() + "%", ValorConsulta.ToString(), ValorDesconto.ToString(), ValorFinal.ToString());
-
-            formComprovantePagamento.ShowDialog();
-            Close();
-        }
-
-
 
         private void FormCadastroConsulta_Load(object sender, EventArgs e)
         {
@@ -129,15 +66,13 @@ namespace SistemaHospitalar.UI
             cmbCpfPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
+
         private void cmbCpfPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblNomePaciente.Text = DalPacientes.IdentificarPaciente(cmbCpfPacientes.Text);
+            pacienteBLL.PegarDadosPaciente(0, cmbCpfPacientes.Text);
+            lblNomePaciente.Text = FuncionarioLogado.PacienteSelecionado.Nome;
         }
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            FormConsultas formConsultas = new FormConsultas();
-            Base.AbrirFormDesejado(this, formConsultas);
-        }
+
         private void cbAgendaDoutor_CheckedChanged(object sender, EventArgs e)
         {
             if (cbAgendaDoutor.Checked)
@@ -150,7 +85,6 @@ namespace SistemaHospitalar.UI
                 else
                 {
                     MostrarAgendaDoutorDGV();
-
                 }
             }
             else
@@ -159,17 +93,33 @@ namespace SistemaHospitalar.UI
             }
         }
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormConsultas formConsultas = new FormConsultas();
+            Base.AbrirFormDesejado(this, formConsultas);
+        }
 
 
+        private void AbrirComprovanteDePagamento()
+        {
+            FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
+            Hide();
+            formComprovantePagamento.MostrarDadosConsultas(lblNomePaciente.Text, cmbCpfPacientes.Text, dtpDataConsulta.Value.ToString("dd/MM/yyyy HH:mm tt"),
+                FuncionarioLogado.DoutorTemp.Nome, FuncionarioLogado.DoutorTemp.Especialidade.ToString(), consultaBLL.ValorFinalConsulta.ToString(), FuncionarioLogado.ConvenioSelecionado.Nome,
+                (FuncionarioLogado.ConvenioSelecionado.Desconto * 100).ToString(), consultaBLL.ValorConsulta.ToString(), consultaBLL.ValorDesconto.ToString(), consultaBLL.ValorFinalConsulta.ToString());
+
+            formComprovantePagamento.ShowDialog();
+            Close();
+        }
+        
         private void PesquisarDoutorDGV()
         {
             dgvDoutores.DataSource = doutoresBLL.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);
-            dgvDoutores.Columns["Nome"].Width = 185;
         }
 
         private void MostrarAgendaDoutorDGV()
         {
-            dgvDoutores.DataSource = consultaBLL.AgendaDoutor(DoutorId);
+            dgvDoutores.DataSource = consultaBLL.AgendaDoutor(FuncionarioLogado.DoutorTemp.Id);
             dgvDoutores.Columns["NomePaciente"].Width = 185;
             dgvDoutores.Columns["DATACONSULTA"].Width = 200;
         }

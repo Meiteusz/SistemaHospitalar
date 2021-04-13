@@ -8,8 +8,8 @@ namespace SistemaHospitalar.BLL
     class DoutoresBLL : Validator
     {
         DalDoutores dalDoutores = new DalDoutores();
-
         public string OutPut { get; private set; }
+
         public string LogarDoutor(Doutores doutor)
         {
             if (dalDoutores.isLoginValido(doutor))
@@ -61,21 +61,19 @@ namespace SistemaHospitalar.BLL
             return dalDoutores.UpdateValores(valorConsulta, valorExame);
         }
 
-        public Doutores PegarDadosDoutorTEMP(Doutores doutores)
-        {
-            return 
-        }
-
-        public Doutores SetarDadosDoutorTEMP(Doutores doutores)
-        {
-            Doutores doutor = new Doutores();
-            doutor
-        }
-
         public DataTable PesquisarEspecialidade(Especialidades especialidade)
         {
-            return dalDoutores.GetEspecialidades(especialidade);
+            DataTable dt = new DataTable();
+            if (especialidade.Equals(Especialidades.Selecione))
+            {
+                return dt;
+            }
+            else
+            {
+                return dalDoutores.GetEspecialidades(especialidade);
+            }
         }
+
 
         public string ValidarDoutor(Doutores doutores, string confSenha)
         {

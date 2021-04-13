@@ -28,24 +28,6 @@ namespace SistemaHospitalar.Views
             MessageBox.Show(pacienteBLL.CadastrarPaciente(paciente));
         }
 
-        private void LimparTextBox()
-        {
-            Action<Control.ControlCollection> func = null;
-
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                    if (control is TextBox)
-                        (control as TextBox).Clear();
-                    else
-                        func(control.Controls);
-            };
-            cmbGeneroPaciente.SelectedIndex = 0;
-            cmbConvenios.SelectedItem = "Nenhum";
-            mtbCpfPaciente.Text = "";
-            mtbCelularPaciente.Text = "";
-            func(Controls);
-        }
         private void mtbCpfPaciente_Click(object sender, EventArgs e)
         {
             if (mtbCpfPaciente.Text.Equals("   .   .   -"))
@@ -62,7 +44,7 @@ namespace SistemaHospitalar.Views
         }
         private void btnApagar_Click(object sender, System.EventArgs e)
         {
-            LimparTextBox();
+            Base.LimparTxtEtc();
         }
         private void btnVoltar_Click(object sender, EventArgs e)
         {

@@ -16,6 +16,8 @@ namespace SistemaHospitalar.UI
             rbTodas.Checked = true; ;
         }
 
+        ConsultaBLL consultaBLL = new ConsultaBLL();
+
         private void rbTodas_CheckedChanged_1(object sender, System.EventArgs e)
         {
             dgvConsultas.DataSource = DalConsultas.MostrarConsultas();
@@ -23,7 +25,7 @@ namespace SistemaHospitalar.UI
 
         private void rbDataHoje_CheckedChanged_1(object sender, System.EventArgs e)
         {
-            dgvConsultas.DataSource = DalConsultas.MostrarConsultasHoje();
+            dgvConsultas.DataSource = consultaBLL.ConsultaHoje();
         }
 
         private void btnAgendarConsulta_Click(object sender, System.EventArgs e)
@@ -40,10 +42,9 @@ namespace SistemaHospitalar.UI
             }
             else
             {
-                DalConsultas dalConsultas = new DalConsultas();
                 if (MessageBox.Show("Deseja realmente deletar esta Consulta?", "Deleção de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    MessageBox.Show(dalConsultas.DeletarConsulta(FuncionarioLogado.ConsultaSelecionada.Id));
+                    MessageBox.Show(consultaBLL.DeletarConsulta(FuncionarioLogado.ConsultaSelecionada.Id));
                     dgvConsultas.DataSource = DalConsultas.MostrarConsultas();
                 }
             }
