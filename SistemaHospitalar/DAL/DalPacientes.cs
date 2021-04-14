@@ -139,5 +139,23 @@ namespace SistemaHospitalar.Models
             adapter.Fill(dt);
             return dt;
         }
+
+        public ArrayList MostrarCpfPacientesInternados()
+        {
+            ArrayList pacientes = new ArrayList();
+            adapter = new SqlDataAdapter(
+                "select CPF from PACIENTES where ID IN " +
+                "(select PACIENTEID from INTERNACAO)"
+                , conexao.Conectar());
+            dt = new DataTable();
+            adapter.Fill(dt);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                pacientes.Add(item["CPF"].ToString());
+            }
+            conexao.Desconectar();
+            return pacientes;
+        }
     }
 }

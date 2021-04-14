@@ -45,5 +45,11 @@ namespace SistemaHospitalar
             FormLogin formLogin = new FormLogin();
             Base.AbrirFormDesejado(this, formLogin);
         }
+
+        private void btnVisitas_Click(object sender, System.EventArgs e)
+        {
+            FormVisitas formVisitas = new FormVisitas();
+            Base.AbrirFormDesejado(this, formVisitas);
+        }
     }
 }

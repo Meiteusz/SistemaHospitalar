@@ -64,8 +64,6 @@ namespace SistemaHospitalar.UI
             cmbCpfPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-
-        
         
         private void cmbCpfPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {

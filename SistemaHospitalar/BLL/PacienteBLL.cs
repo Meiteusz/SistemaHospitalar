@@ -52,6 +52,10 @@ namespace SistemaHospitalar.BLL
             return dalPacientes.PesquisaDePacientes(NomePaciente);
         }
 
+        public ArrayList MostrarCpfPacientesInternados()
+        {
+            return dalPacientes.MostrarCpfPacientesInternados();
+        }
 
         public string ValidarPaciente(Paciente paciente)
         {

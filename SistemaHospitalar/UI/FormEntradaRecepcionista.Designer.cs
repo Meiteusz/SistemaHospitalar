@@ -90,6 +90,7 @@ namespace SistemaHospitalar
             this.btnVisitas.TabIndex = 6;
             this.btnVisitas.Text = "Visitas";
             this.btnVisitas.UseVisualStyleBackColor = true;
+            this.btnVisitas.Click += new System.EventHandler(this.btnVisitas_Click);
             // 
             // btnEncerrarSessão
             // 
