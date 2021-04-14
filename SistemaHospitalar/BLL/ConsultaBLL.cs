@@ -25,7 +25,7 @@ namespace SistemaHospitalar.BLL
             }
         }
         
-        
+       
         public string AgendarConsulta(Consulta consulta)
         {
             return dalConsultas.Insert(consulta);

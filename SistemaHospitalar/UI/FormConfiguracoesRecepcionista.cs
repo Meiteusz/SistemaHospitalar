@@ -17,6 +17,17 @@ namespace SistemaHospitalar.Views
 
         RecepcionistaBLL recepcionistaBLL = new RecepcionistaBLL();
 
+        private void btnAtualizarInformacoes_Click(object sender, System.EventArgs e)
+        {
+            Recepcionista recepcionista = new Recepcionista(txtNomeRecepcionista.Text, txtEmailRecepcionista.Text, txtMaskedCelularRecepcionista.Text, (Turno)cmbTurnoRecepcionista.SelectedIndex, txtSenhaRecepcionista.Text);
+
+            if (MessageBox.Show(recepcionistaBLL.MsgAtualizarInformacoes, "Alterar Informações", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                MessageBox.Show(recepcionistaBLL.AtualizarRecepcionista(recepcionista, txtRepetirSenhaRecepcionista.Text));
+            }
+        }
+
+
         private void txtMaskedCelularRecepcionista_Click(object sender, EventArgs e)
         {
             if (txtMaskedCelularRecepcionista.Text.Equals("(  )      -"))
@@ -27,16 +38,7 @@ namespace SistemaHospitalar.Views
 
         private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbMostrarSenha.Checked)
-            {
-                txtSenhaRecepcionista.UseSystemPasswordChar = false;
-                txtRepetirSenhaRecepcionista.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtSenhaRecepcionista.UseSystemPasswordChar = true;
-                txtRepetirSenhaRecepcionista.UseSystemPasswordChar = true;
-            }
+            Base.MostrarSenha(cbMostrarSenha, txtSenhaRecepcionista, txtRepetirSenhaRecepcionista);
         }
 
         private void FormConfiguracoes_Load(object sender, EventArgs e)
@@ -52,17 +54,6 @@ namespace SistemaHospitalar.Views
         {
             FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
             Base.AbrirFormDesejado(this, formEntradaRecepcionista);
-        }
-
-        //Atualiza as informações logada como Recepcionista
-        private void btnAtualizarInformacoes_Click(object sender, System.EventArgs e)
-        {
-            Recepcionista recepcionista = new Recepcionista(txtNomeRecepcionista.Text, txtEmailRecepcionista.Text, txtMaskedCelularRecepcionista.Text, (Turno)cmbTurnoRecepcionista.SelectedIndex, txtSenhaRecepcionista.Text);
-
-            if (MessageBox.Show(recepcionistaBLL.MsgAtualizarInformacoes, "Alterar Informações", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                MessageBox.Show(recepcionistaBLL.AtualizarRecepcionista(recepcionista, txtRepetirSenhaRecepcionista.Text));
-            }
         }
     }
 }

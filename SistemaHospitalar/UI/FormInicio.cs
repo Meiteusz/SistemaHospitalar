@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaHospitalar.BLL;
+using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.Views
@@ -14,17 +15,13 @@ namespace SistemaHospitalar.Views
         private void btnVisitante_Click(object sender, EventArgs e)
         {
             FormVisitante formVisitante = new FormVisitante();
-            Hide();
-            formVisitante.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formVisitante);
         }
 
         private void btnFuncionario_Click(object sender, EventArgs e)
         {
             FormLogin formLogin = new FormLogin();
-            Hide();
-            formLogin.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formLogin);
         }
     }
 }

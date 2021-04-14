@@ -99,7 +99,6 @@ namespace SistemaHospitalar.UI
             Base.AbrirFormDesejado(this, formConsultas);
         }
 
-
         private void AbrirComprovanteDePagamento()
         {
             FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();

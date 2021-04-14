@@ -20,7 +20,6 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
             rbRecepcionista.Checked = true;
             cmbTurno.DataSource = Enum.GetValues(typeof(Turno));
-
             IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
             List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
              cmbEspecialidade.DataSource = valuesWithSpaces;
@@ -55,17 +54,13 @@ namespace SistemaHospitalar.UI
         private void btnCadastrarRecepcionista_Click(object sender, EventArgs e)
         {
             FormCadastroRecepcionista formCadastroRecepcionista = new FormCadastroRecepcionista();
-            Hide();
-            formCadastroRecepcionista.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formCadastroRecepcionista);
         }
 
         private void btnCadastrarDoutor_Click(object sender, EventArgs e)
         {
             FormCadastroDoutor formCadastroDoutor = new FormCadastroDoutor();
-            Hide();
-            formCadastroDoutor.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formCadastroDoutor);
         }
 
         private void rbNome_CheckedChanged(object sender, EventArgs e)

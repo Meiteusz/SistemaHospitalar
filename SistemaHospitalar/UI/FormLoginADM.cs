@@ -1,4 +1,4 @@
-﻿using SistemaHospitalar.DAL;
+﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.UI;
 using System.Windows.Forms;
@@ -12,26 +12,23 @@ namespace SistemaHospitalar.Views
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
 
-
             txtUsuario.Text = "admin";
             txtSenha.Text = "admin";
         }
 
         private void btnLogin_Click(object sender, System.EventArgs e)
         {
-            DalADM dalAdm = new DalADM();
-            ADM adm = new ADM(txtUsuario.Text, txtSenha.Text) ;
-            
-            if (dalAdm.isAcessoValido(adm))
+            AdmBLL admBLL = new AdmBLL();
+            ADM adm = new ADM(txtUsuario.Text, txtSenha.Text);
+
+            if (admBLL.LogarADM(adm).Equals(string.Empty))
             {
                 FormEntradaADM formEntradaADM = new FormEntradaADM();
-                Hide();
-                formEntradaADM.ShowDialog();
-                Close();
+                Base.AbrirFormDesejado(this, formEntradaADM);
             }
             else
             {
-                MessageBox.Show(dalAdm.OutPut);
+                MessageBox.Show(admBLL.OutPut);
             }
         }
     }

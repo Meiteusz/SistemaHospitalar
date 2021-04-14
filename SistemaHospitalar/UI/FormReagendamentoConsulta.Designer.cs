@@ -33,7 +33,6 @@ namespace SistemaHospitalar.UI
             this.btnReagendar = new System.Windows.Forms.Button();
             this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblCpfPaciente = new System.Windows.Forms.Label();
             this.lblNomePaciente = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +73,6 @@ namespace SistemaHospitalar.UI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblCpfPaciente);
             this.groupBox1.Controls.Add(this.lblNomePaciente);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpDataConsulta);
@@ -84,21 +82,11 @@ namespace SistemaHospitalar.UI
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
-            // lblCpfPaciente
-            // 
-            this.lblCpfPaciente.AutoSize = true;
-            this.lblCpfPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpfPaciente.Location = new System.Drawing.Point(182, 59);
-            this.lblCpfPaciente.Name = "lblCpfPaciente";
-            this.lblCpfPaciente.Size = new System.Drawing.Size(121, 20);
-            this.lblCpfPaciente.TabIndex = 18;
-            this.lblCpfPaciente.Text = "000.000.000-00";
-            // 
             // lblNomePaciente
             // 
             this.lblNomePaciente.AutoSize = true;
             this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(184, 30);
+            this.lblNomePaciente.Location = new System.Drawing.Point(184, 55);
             this.lblNomePaciente.Name = "lblNomePaciente";
             this.lblNomePaciente.Size = new System.Drawing.Size(117, 20);
             this.lblNomePaciente.TabIndex = 17;
@@ -125,7 +113,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnReagendar;
         private System.Windows.Forms.DateTimePicker dtpDataConsulta;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblCpfPaciente;
         private System.Windows.Forms.Label lblNomePaciente;
     }
 }

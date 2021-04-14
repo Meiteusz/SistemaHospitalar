@@ -1,6 +1,7 @@
 ﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.DAL;
 using SistemaHospitalar.Entities;
+using SistemaHospitalar.Utilities;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -14,9 +15,6 @@ namespace SistemaHospitalar.UI
             dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
         }
 
-        private int ID { get; set; }
-        private string Nome { get; set; }
-
         ConveniosBLL conveniosBLL = new ConveniosBLL();
 
         private void btnCadastrarConvenio_Click(object sender, System.EventArgs e)
@@ -27,23 +25,6 @@ namespace SistemaHospitalar.UI
             dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
         }
 
-        private bool isLinhaSelecionada()
-        {
-            bool isSelecionada = true;
-            if (dgvConvenios.SelectedRows.Count != 1 || Nome.Equals("Nenhum"))
-                isSelecionada = false;
-            return isSelecionada;
-        }
-
-        private void DeletarConvenio()
-        {
-            if (MessageBox.Show("Deseja realmente deletar o Convênio " + Nome + "?", "Deletar Convênio", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                MessageBox.Show(conveniosBLL.DeletarConvenio(ID));
-                dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
-            }
-        }
 
         private void btnDeletarConvenio_Click(object sender, System.EventArgs e)
         {
@@ -53,10 +34,27 @@ namespace SistemaHospitalar.UI
                 MessageBox.Show("Selecione um Convênio!");
         }
 
+        
+        private bool isLinhaSelecionada()
+        {
+            bool isSelecionada = true;
+            if (dgvConvenios.SelectedRows.Count != 1 || FuncionarioLogado.ConvenioSelecionado.Nome.Equals("Nenhum"))
+                isSelecionada = false;
+            return isSelecionada;
+        }
+        private void DeletarConvenio()
+        {
+            if (MessageBox.Show("Deseja realmente deletar o Convênio " + FuncionarioLogado.ConvenioSelecionado.Nome + "?", "Deletar Convênio", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                MessageBox.Show(conveniosBLL.DeletarConvenio(FuncionarioLogado.ConvenioSelecionado.Id));
+                dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
+            }
+        }
+
         private void dgvConvenios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            ID = (int)dgvConvenios.SelectedRows[0].Cells[0].Value;
-            Nome = dgvConvenios.SelectedRows[0].Cells[1].Value.ToString();
+            conveniosBLL.PegarDadosConvenio((int)dgvConvenios.CurrentRow.Cells[0].Value);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.Control;
 
 namespace SistemaHospitalar.BLL
 {
@@ -12,7 +13,7 @@ namespace SistemaHospitalar.BLL
             formAtual.Close();
         }
 
-        public static void LimparTxtEtc()
+        public static void LimparTxtEtc(ControlCollection Controls)
         {
             Action<Control.ControlCollection> func = null;
             func = (controls) =>
@@ -31,17 +32,27 @@ namespace SistemaHospitalar.BLL
                     {
                         (control as ComboBox).SelectedIndex = 0;
                     }
-                    //if (c is ComboBox)
-                    //{
-                    //    (c as ComboBox).SelectedItem = "Nenhum";
-                    //}
                     else
                     {
                         func(control.Controls);
                     }
                 }
-            func(controls);
             };
+            func(Controls);
+        }
+
+        public static void MostrarSenha(Control cb, Control txtPass, Control txtRepeat)
+        {
+            if ((cb as CheckBox).Checked)
+            {
+                (txtPass as TextBox).UseSystemPasswordChar = false;
+                (txtRepeat as TextBox).UseSystemPasswordChar = false;
+            }
+            else
+            {
+                (txtPass as TextBox).UseSystemPasswordChar = true;
+                (txtRepeat as TextBox).UseSystemPasswordChar = true;
+            }
         }
     }
 }

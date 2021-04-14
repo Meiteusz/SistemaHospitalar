@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaHospitalar.BLL;
+using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -14,17 +15,13 @@ namespace SistemaHospitalar.UI
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
             FormFuncionarios formFuncionarios = new FormFuncionarios();
-            Hide();
-            formFuncionarios.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formFuncionarios);
         }
 
         private void btnConvenios_Click(object sender, EventArgs e)
         {
             FormConvenios formConvenios = new FormConvenios();
-            Hide();
-            formConvenios.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formConvenios);
         }
     }
 }

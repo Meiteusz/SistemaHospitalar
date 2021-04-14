@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.Views;
 using System;
@@ -29,7 +28,7 @@ namespace SistemaHospitalar.UI
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             if (txtPesquisaNome.Text.Equals(""))
-                    dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
+                dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
             else
                 dgvPacientes.DataSource = DalPacientes.PesquisarPaciente(txtPesquisaNome.Text);
         }
@@ -60,7 +59,7 @@ namespace SistemaHospitalar.UI
             else
             {
                 string msgDeleçaoPaciente = "Deseja realmente deletar o paciente " + Nome + "?";
-                
+
                 if (MessageBox.Show(msgDeleçaoPaciente, "Deleção de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     MessageBox.Show(pacienteBLL.DeletarPaciente(Id));

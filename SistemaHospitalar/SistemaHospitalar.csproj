@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\AdmBLL.cs" />
     <Compile Include="BLL\ConsultaBLL.cs" />
     <Compile Include="BLL\ConveniosBLL.cs" />
     <Compile Include="Utilities\Base.cs" />

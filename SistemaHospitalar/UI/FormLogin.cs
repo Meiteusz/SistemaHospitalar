@@ -41,11 +41,9 @@ namespace SistemaHospitalar
             {
                 if (doutoresBLL.LogarDoutor(doutor).Equals(string.Empty))
                 {
-                    Hide();
-                    MessageBox.Show("Doutor(a) logado com sucesso!\n\t" + FuncionarioLogado.DoutorLogado.Nome);
                     FormEntradaDoutores formEntradaDoutor = new FormEntradaDoutores();
-                    formEntradaDoutor.ShowDialog();
-                    Close();
+                    MessageBox.Show("Doutor(a) logado com sucesso!\n\t" + FuncionarioLogado.DoutorLogado.Nome);
+                    Base.AbrirFormDesejado(this, formEntradaDoutor);
                 }
                 else
                 {
@@ -56,11 +54,9 @@ namespace SistemaHospitalar
             {
                 if (recepcionistaBLL.LogarRecepcionista(recepionista).Equals(string.Empty))
                 {
-                    Hide();
-                    MessageBox.Show("Recepcionista logado com sucesso!\n\t" + FuncionarioLogado.RecepcionistaLogada.Nome);
                     FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
-                    formEntradaRecepcionista.ShowDialog();
-                    Close();
+                    MessageBox.Show("Recepcionista logado com sucesso!\n\t" + FuncionarioLogado.RecepcionistaLogada.Nome);
+                    Base.AbrirFormDesejado(this, formEntradaRecepcionista);
                 }
                 else
                 {
@@ -82,10 +78,7 @@ namespace SistemaHospitalar
 
         private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbMostrarSenha.Checked)
-                txtSenha.UseSystemPasswordChar = false;
-            else
-                txtSenha.UseSystemPasswordChar = true;
+            Base.MostrarSenha(cbMostrarSenha, txtSenha, txtSenha);
         }
     }
 }

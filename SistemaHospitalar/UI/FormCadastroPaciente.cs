@@ -42,9 +42,11 @@ namespace SistemaHospitalar.Views
                 mtbCelularPaciente.SelectionStart = mtbCelularPaciente.SelectionLength = 0;
             }
         }
+       
         private void btnApagar_Click(object sender, System.EventArgs e)
         {
-            Base.LimparTxtEtc();
+            Base.LimparTxtEtc(Controls);
+            cmbConvenios.SelectedItem = "Nenhum";
         }
         private void btnVoltar_Click(object sender, EventArgs e)
         {

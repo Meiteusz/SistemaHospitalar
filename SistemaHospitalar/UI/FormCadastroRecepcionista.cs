@@ -18,44 +18,14 @@ namespace SistemaHospitalar.Views
 
         RecepcionistaBLL recepcionistaBLL = new RecepcionistaBLL();
 
-        //Limpa todas as TextBox
-        private void ClearTextBoxes()
+        private void btnCadastrarRecepcionista_Click(object sender, System.EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
+            Recepcionista recepcionista = new Recepcionista(txtNomeRecepcionista.Text, MtbCpfRecepcionista.Text, MtbCelularRecepcionista.Text,
+            (Turno)cmbTurnoRecepcionista.SelectedIndex, (Genero)cmbGeneroRecepcionista.SelectedIndex, txtEmailRecepcionista.Text, txtSenhaRecepcionista.Text);
 
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                    if (control is TextBox)
-                        (control as TextBox).Clear();
-                    else
-                        func(control.Controls);
-            };
-            cmbGeneroRecepcionista.SelectedIndex = 0;
-            cmbTurnoRecepcionista.SelectedIndex = 0;
-            MtbCpfRecepcionista.Text = "";
-            MtbCelularRecepcionista.Text = "";
-            func(Controls);
+            MessageBox.Show(recepcionistaBLL.CadastrarRecepcionista(recepcionista, txtRepitaSenhaRecepcionista.Text));
         }
 
-        private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbMostrarSenha.Checked)
-            {
-                txtSenhaRecepcionista.UseSystemPasswordChar = false;
-                txtRepitaSenhaRecepcionista.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtSenhaRecepcionista.UseSystemPasswordChar = true;
-                txtRepitaSenhaRecepcionista.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            ClearTextBoxes();
-        }
 
         private void txtMaskedCpfRecepcionista_Click(object sender, EventArgs e)
         {
@@ -72,14 +42,15 @@ namespace SistemaHospitalar.Views
                 MtbCelularRecepcionista.SelectionStart = MtbCelularRecepcionista.SelectionLength = 0;
             }
         }
-
-        //Cadastra um novo recepcionista
-        private void btnCadastrarRecepcionista_Click(object sender, System.EventArgs e)
+        
+        private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
-            Recepcionista recepcionista = new Recepcionista(txtNomeRecepcionista.Text, MtbCpfRecepcionista.Text, MtbCelularRecepcionista.Text,
-            (Turno)cmbTurnoRecepcionista.SelectedIndex, (Genero)cmbGeneroRecepcionista.SelectedIndex, txtEmailRecepcionista.Text, txtSenhaRecepcionista.Text);
-
-            MessageBox.Show(recepcionistaBLL.CadastrarRecepcionista(recepcionista, txtRepitaSenhaRecepcionista.Text));
+            Base.MostrarSenha(cbMostrarSenha, txtSenhaRecepcionista, txtRepitaSenhaRecepcionista);
+        }
+        
+        private void btnApagar_Click(object sender, EventArgs e)
+        {
+            Base.LimparTxtEtc(Controls);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

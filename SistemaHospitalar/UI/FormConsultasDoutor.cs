@@ -38,9 +38,7 @@ namespace SistemaHospitalar.UI
         private void btnVoltar_Click(object sender, System.EventArgs e)
         {
             FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();
-            Hide();
-            formEntradaDoutores.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formEntradaDoutores);
         }
     }
 }

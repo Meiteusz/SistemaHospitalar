@@ -57,6 +57,7 @@ namespace SistemaHospitalar.UI
             this.cbMostrarSenha.TabIndex = 34;
             this.cbMostrarSenha.Text = "Mostrar Senha";
             this.cbMostrarSenha.UseVisualStyleBackColor = true;
+            this.cbMostrarSenha.CheckedChanged += new System.EventHandler(this.cbMostrarSenha_CheckedChanged);
             // 
             // txtMaskedCelularDoutor
             // 
@@ -66,6 +67,7 @@ namespace SistemaHospitalar.UI
             this.txtMaskedCelularDoutor.Name = "txtMaskedCelularDoutor";
             this.txtMaskedCelularDoutor.Size = new System.Drawing.Size(345, 26);
             this.txtMaskedCelularDoutor.TabIndex = 33;
+            this.txtMaskedCelularDoutor.Click += new System.EventHandler(this.txtMaskedCelularDoutor_Click);
             // 
             // cmbTurnoDoutor
             // 

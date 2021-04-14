@@ -8,6 +8,10 @@ namespace SistemaHospitalar.Utilities
     {
         public static Recepcionista RecepcionistaLogada { get; private set; }
         public static Doutores DoutorLogado { get; private set; }
+        public static Consulta ConsultaSelecionada { get; private set; }
+        public static Convenios ConvenioSelecionado { get; private set; }
+        public static Paciente PacienteSelecionado { get; private set; }
+        public static Doutores DoutorTemp { get; private set; }
 
         public static void SetFuncionarioLogado(object funcionario)
         {
@@ -17,25 +21,21 @@ namespace SistemaHospitalar.Utilities
                 DoutorLogado = funcionario as Doutores;
         }
 
-        public static Consulta ConsultaSelecionada { get; private set; }
         public static void SetConsultaSelecionada(Consulta consulta)
         {
             ConsultaSelecionada = consulta;
         }
 
-        public static Convenios ConvenioSelecionado { get; private set; }
         public static void SetConvenioSelecionado(Convenios convenio)
         {
             ConvenioSelecionado = convenio;
         }
 
-        public static Paciente PacienteSelecionado { get; private set; }
         public static void SetPacienteSelecionado(Paciente paciente)
         {
             PacienteSelecionado = paciente;
         }
 
-        public static Doutores DoutorTemp { get; private set; }
         public static void SetDoutorTemp(int DoutorID)
         {
             DalDoutores dalDoutores = new DalDoutores();

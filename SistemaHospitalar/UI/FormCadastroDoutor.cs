@@ -17,7 +17,6 @@ namespace SistemaHospitalar.Views
             StartPosition = FormStartPosition.CenterScreen;
             cmbTurnoDoutor.DataSource = Enum.GetValues(typeof(Turno));
             cmbGeneroDoutor.DataSource = Enum.GetValues(typeof(Genero));
-
             IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
             List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
             cmbEspecialidadeDoutor.DataSource = valuesWithSpaces;
@@ -25,44 +24,19 @@ namespace SistemaHospitalar.Views
 
         DoutoresBLL doutorBLL = new DoutoresBLL();
 
-        //Limpa todas as TextBox
-        private void ClearTextBoxes()
+        private void btnCadastrarDoutor_Click(object sender, EventArgs e)
         {
-            Action<Control.ControlCollection> func = null;
+            Doutores doutor = new Doutores(txtNomeDoutor.Text, txtEmailDoutor.Text, txtSenhaDoutor.Text, txtMaskedCpfDoutor.Text, (Turno)cmbTurnoDoutor.SelectedIndex,
+           (Genero)cmbGeneroDoutor.SelectedIndex, (Especialidades)cmbEspecialidadeDoutor.SelectedIndex, txtMaskedCelularDoutor.Text, (float)txtValorConsulta.Value, (float)txtValorExame.Value);
 
-            func = (controls) =>
-            {
-                foreach (Control control in controls)
-                    if (control is TextBox)
-                        (control as TextBox).Clear();
-                    else
-                        func(control.Controls);
-            };
-            cmbGeneroDoutor.SelectedIndex = 0;
-            cmbTurnoDoutor.SelectedIndex = 0;
-            cmbEspecialidadeDoutor.SelectedIndex = 0;
-            txtMaskedCpfDoutor.Text = "";
-            txtMaskedCelularDoutor.Text = "";
-            func(Controls);
+            MessageBox.Show(doutorBLL.CadastrarDoutor(doutor, txtRepitaSenhaDoutor.Text));
         }
+
+
 
         private void cbMostrarSenha_CheckedChanged(object sender, System.EventArgs e)
         {
-            if (cbMostrarSenha.Checked)
-            {
-                txtSenhaDoutor.UseSystemPasswordChar = false;
-                txtRepitaSenhaDoutor.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtSenhaDoutor.UseSystemPasswordChar = true;
-                txtRepitaSenhaDoutor.UseSystemPasswordChar = true;
-            }
-        }
-
-        private void btnApagar_Click(object sender, EventArgs e)
-        {
-            ClearTextBoxes();
+            Base.MostrarSenha(cbMostrarSenha, txtSenhaDoutor, txtRepitaSenhaDoutor);
         }
 
         private void txtMaskedCpfDoutor_Click(object sender, EventArgs e)
@@ -74,16 +48,13 @@ namespace SistemaHospitalar.Views
         {
             txtMaskedCelularDoutor.SelectionStart = txtMaskedCelularDoutor.SelectionLength = 0;
         }
-
-
-        private void btnCadastrarDoutor_Click(object sender, EventArgs e)
+        
+        private void btnApagar_Click(object sender, EventArgs e)
         {
-            Doutores doutor = new Doutores(txtNomeDoutor.Text, txtEmailDoutor.Text, txtSenhaDoutor.Text, txtMaskedCpfDoutor.Text, (Turno)cmbTurnoDoutor.SelectedIndex,
-           (Genero)cmbGeneroDoutor.SelectedIndex, (Especialidades)cmbEspecialidadeDoutor.SelectedIndex, txtMaskedCelularDoutor.Text, (float)txtValorConsulta.Value, (float)txtValorExame.Value);
-
-            MessageBox.Show(doutorBLL.CadastrarDoutor(doutor, txtRepitaSenhaDoutor.Text));
+            Base.LimparTxtEtc(Controls);
+            txtValorConsulta.Value = (decimal)0.00;
+            txtValorExame.Value = (decimal)0.00;
         }
-
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
