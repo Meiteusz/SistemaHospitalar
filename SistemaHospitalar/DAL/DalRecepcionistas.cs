@@ -6,7 +6,6 @@ namespace SistemaHospitalar.DAL
 {
     class DalRecepcionistas : DalComandos
     {
-        //Loga um Recepcionista
         public string OutPut { get; set; }
         public bool isLoginValido(Recepcionista recepcionista)
         {
@@ -43,8 +42,6 @@ namespace SistemaHospitalar.DAL
             return isLoginExistente;
         }
 
-
-        //Cadastra um Recepcionista
         public string Insert(Recepcionista p_recepcionista, string p_confSenha)
         {
             command.Parameters.Clear();
@@ -73,8 +70,6 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
-        //Deletar um Recepcionista
         public string Delete(int p_Id)
         {
             command.Parameters.Clear();
@@ -96,8 +91,6 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
-        //Atualiza as informações de um Recepcionista
         public string Update(Recepcionista recepcionista, string confSenha)
         {
             command.Parameters.Clear();
@@ -124,23 +117,21 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
-        public static DataTable MostrarRecepcionistas()
+        public DataTable TodasRecepcionistas()
         {
-            command.CommandText = "select * from RECEPCIONISTAS";
+            command.CommandText = "select NOME, CPF, TURNO, GENERO, CELULAR from RECEPCIONISTAS";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
             return dt;
         }
 
-
-        public static DataTable PesquisarRecepcionistas(string p_nome, Turno p_turno)
+        public DataTable PesquisaDeRecepcionistas(string p_nome, Turno p_turno)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@nome", p_nome);
             command.Parameters.AddWithValue("@turno", p_turno);
-            command.CommandText = "select * from RECEPCIONISTAS where Nome = @nome or Turno = @turno";
+            command.CommandText = "select NOME, CPF, TURNO, GENERO, CELULAR from RECEPCIONISTAS where Nome = @nome or Turno = @turno";
 
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();

@@ -25,7 +25,6 @@ namespace SistemaHospitalar.UI
             dgvConvenios.DataSource = DalConvenios.MostrarConveniosDGV();
         }
 
-
         private void btnDeletarConvenio_Click(object sender, System.EventArgs e)
         {
             if (isLinhaSelecionada())
@@ -33,7 +32,6 @@ namespace SistemaHospitalar.UI
             else
                 MessageBox.Show("Selecione um Convênio!");
         }
-
         
         private bool isLinhaSelecionada()
         {
@@ -55,6 +53,12 @@ namespace SistemaHospitalar.UI
         private void dgvConvenios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             conveniosBLL.PegarDadosConvenio((int)dgvConvenios.CurrentRow.Cells[0].Value);
+        }
+
+        private void BtnVoltar_Click(object sender, System.EventArgs e)
+        {
+            FormEntradaADM formEntradaADM = new FormEntradaADM();
+            Base.AbrirFormDesejado(this, formEntradaADM);
         }
     }
 }

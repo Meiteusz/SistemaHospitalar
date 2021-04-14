@@ -23,5 +23,11 @@ namespace SistemaHospitalar.UI
             FormConvenios formConvenios = new FormConvenios();
             Base.AbrirFormDesejado(this, formConvenios);
         }
+
+        private void btnEncerrarSessão_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            Base.AbrirFormDesejado(this, formLogin);
+        }
     }
 }

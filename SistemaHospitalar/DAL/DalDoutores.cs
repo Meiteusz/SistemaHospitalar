@@ -9,7 +9,6 @@ namespace SistemaHospitalar.DAL
 {
     class DalDoutores : DalComandos
     {
-        //Verifica se o login é existente
         public string OutPut { get; private set; }
         public bool isLoginValido(Doutores doutor)
         {
@@ -46,7 +45,6 @@ namespace SistemaHospitalar.DAL
             return isLoginExistente;
         }
 
-        //Cadastra um Doutor
         public string Insert(Doutores p_doutor, string p_confSenha)
         {
             command.Parameters.Clear();
@@ -79,7 +77,6 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-        //Deleta um Doutor
         public string Delete(int p_Id)
         {
             command.Parameters.Clear();
@@ -101,8 +98,6 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
-        //Atualiza as informações de um Doutor
         public string Update(Doutores p_doutores, string p_confSenha)
         {
             command.Parameters.Clear();
@@ -129,8 +124,6 @@ namespace SistemaHospitalar.DAL
             }
         }
         
-
-        //Pega todos os dados do doutor(a)
         public override void GetDadosFuncionarioLogado(SqlDataReader p_reader)
         {
             Doutores doutor = new Doutores();
@@ -153,8 +146,6 @@ namespace SistemaHospitalar.DAL
             FuncionarioLogado.SetFuncionarioLogado(doutor);
         }
 
-
-        //Atualiza os valores dos Doutores (consulta e exame)
         public string UpdateValores(float p_valorConsulta, float p_valorExame)
         {
             command.Parameters.Clear();
@@ -203,23 +194,22 @@ namespace SistemaHospitalar.DAL
             return doutor;
         }
 
-        //PESQUISAS
-        public static DataTable MostrarDoutores()
+        public DataTable TodosDoutores()
         {
-            command.CommandText = "select * from DOUTORES";
+            command.CommandText = "select NOME, CPF, TURNO, GENERO, CELULAR, ESPECIALIDADE, VALORCONSULTA, VALOREXAME from DOUTORES";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
             return dt;
         }
 
-        public static DataTable PesquisarDoutor(string p_nome, Turno p_turno, Especialidades p_especialidade)
+        public DataTable PesquisaDeDoutores(string p_nome, Turno p_turno, Especialidades p_especialidade)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@nome", p_nome);
             command.Parameters.AddWithValue("@turno", p_turno);
             command.Parameters.AddWithValue("@especialidade", p_especialidade);
-            command.CommandText = "select * from DOUTORES where Nome = @nome or Turno = @turno or Especialidade = @especialidade";
+            command.CommandText = "select NOME, CPF, TURNO, GENERO, CELULAR, ESPECIALIDADE, VALORCONSULTA, VALOREXAME from DOUTORES where Nome = @nome or Turno = @turno or Especialidade = @especialidade";
 
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();

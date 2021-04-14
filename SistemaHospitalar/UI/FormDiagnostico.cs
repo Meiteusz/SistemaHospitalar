@@ -10,7 +10,7 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            txtNomePaciente.Text = FuncionarioLogado.ConsultaSelecionada.NomePaciente;
+            //txtNomePaciente.Text = FuncionarioLogado.ConsultaSelecionada.NomePaciente;
         }
 
 

@@ -3,8 +3,6 @@ using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.Views
@@ -17,9 +15,7 @@ namespace SistemaHospitalar.Views
             StartPosition = FormStartPosition.CenterScreen;
             cmbTurnoDoutor.DataSource = Enum.GetValues(typeof(Turno));
             cmbGeneroDoutor.DataSource = Enum.GetValues(typeof(Genero));
-            IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
-            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
-            cmbEspecialidadeDoutor.DataSource = valuesWithSpaces;
+            cmbEspecialidadeDoutor.DataSource = Base.ReformularEspecialidades();
         }
 
         DoutoresBLL doutorBLL = new DoutoresBLL();
@@ -48,7 +44,7 @@ namespace SistemaHospitalar.Views
         {
             txtMaskedCelularDoutor.SelectionStart = txtMaskedCelularDoutor.SelectionLength = 0;
         }
-        
+
         private void btnApagar_Click(object sender, EventArgs e)
         {
             Base.LimparTxtEtc(Controls);

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SistemaHospitalar.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using static System.Windows.Forms.Control;
 
@@ -53,6 +56,13 @@ namespace SistemaHospitalar.BLL
                 (txtPass as TextBox).UseSystemPasswordChar = true;
                 (txtRepeat as TextBox).UseSystemPasswordChar = true;
             }
+        }
+
+        public static List<string> ReformularEspecialidades()
+        {
+            IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
+            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
+            return valuesWithSpaces;
         }
     }
 }

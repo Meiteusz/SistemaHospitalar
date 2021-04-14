@@ -1,5 +1,6 @@
 ﻿using SistemaHospitalar.DAL;
 using SistemaHospitalar.Models;
+using System.Data;
 
 namespace SistemaHospitalar.BLL
 {
@@ -54,6 +55,15 @@ namespace SistemaHospitalar.BLL
             }
         }
 
+        public DataTable MostrarRecepcionistas()
+        {
+            return dalRecepionistas.TodasRecepcionistas();
+        }
+
+        public DataTable PesquisarRecepcionistas(string NomeRecepcionistas, Turno TurnoRecepnionistas)
+        {
+            return dalRecepionistas.PesquisaDeRecepcionistas(NomeRecepcionistas, TurnoRecepnionistas);
+        }
 
 
         public string ValidarRecepcionista(Recepcionista recepcionista, string confSenha)

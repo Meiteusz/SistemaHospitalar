@@ -31,6 +31,7 @@ namespace SistemaHospitalar.UI
         {
             this.btnFuncionarios = new System.Windows.Forms.Button();
             this.btnConvenios = new System.Windows.Forms.Button();
+            this.btnEncerrarSessão = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFuncionarios
@@ -55,11 +56,23 @@ namespace SistemaHospitalar.UI
             this.btnConvenios.UseVisualStyleBackColor = true;
             this.btnConvenios.Click += new System.EventHandler(this.btnConvenios_Click);
             // 
+            // btnEncerrarSessão
+            // 
+            this.btnEncerrarSessão.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncerrarSessão.Location = new System.Drawing.Point(689, 387);
+            this.btnEncerrarSessão.Name = "btnEncerrarSessão";
+            this.btnEncerrarSessão.Size = new System.Drawing.Size(99, 51);
+            this.btnEncerrarSessão.TabIndex = 2;
+            this.btnEncerrarSessão.Text = "Encerrar Sessão";
+            this.btnEncerrarSessão.UseVisualStyleBackColor = true;
+            this.btnEncerrarSessão.Click += new System.EventHandler(this.btnEncerrarSessão_Click);
+            // 
             // FormEntradaADM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnEncerrarSessão);
             this.Controls.Add(this.btnConvenios);
             this.Controls.Add(this.btnFuncionarios);
             this.Name = "FormEntradaADM";
@@ -72,5 +85,6 @@ namespace SistemaHospitalar.UI
 
         private System.Windows.Forms.Button btnFuncionarios;
         private System.Windows.Forms.Button btnConvenios;
+        private System.Windows.Forms.Button btnEncerrarSessão;
     }
 }

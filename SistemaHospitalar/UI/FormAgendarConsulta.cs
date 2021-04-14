@@ -15,9 +15,7 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             dtpDataConsulta.Value = DateTime.Today;
-            IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
-            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
-            cmbEspecialidade.DataSource = valuesWithSpaces;
+            cmbEspecialidade.DataSource = Base.ReformularEspecialidades();
             btnCadastrarConsulta.Enabled = false;
         }
 
@@ -67,6 +65,8 @@ namespace SistemaHospitalar.UI
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
+        
+        
         private void cmbCpfPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             pacienteBLL.PegarDadosPaciente(0, cmbCpfPacientes.Text);
@@ -110,7 +110,7 @@ namespace SistemaHospitalar.UI
             formComprovantePagamento.ShowDialog();
             Close();
         }
-        
+
         private void PesquisarDoutorDGV()
         {
             dgvDoutores.DataSource = doutoresBLL.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);

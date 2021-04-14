@@ -1,5 +1,6 @@
 ﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.Models;
+using SistemaHospitalar.Utilities;
 using SistemaHospitalar.Views;
 using System;
 using System.Windows.Forms;
@@ -12,7 +13,7 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
+            dgvPacientes.DataSource = pacienteBLL.MostrarPacientes();
         }
 
         PacienteBLL pacienteBLL = new PacienteBLL();
@@ -20,35 +21,8 @@ namespace SistemaHospitalar.UI
         private void btnCadastroDePaciente_Click(object sender, EventArgs e)
         {
             FormCadastroPaciente formCadastroPaciente = new FormCadastroPaciente();
-            Hide();
-            formCadastroPaciente.ShowDialog();
-            Close();
+            Base.AbrirFormDesejado(this, formCadastroPaciente);
         }
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            if (txtPesquisaNome.Text.Equals(""))
-                dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
-            else
-                dgvPacientes.DataSource = DalPacientes.PesquisarPaciente(txtPesquisaNome.Text);
-        }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
-        {
-            FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
-            Hide();
-            formEntradaRecepcionista.ShowDialog();
-            Close();
-        }
-
-        private void rbNome_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisaNome.Visible = true;
-            txtPesquisaNome.Text = "";
-        }
-
-        private int Id { get; set; }
-        private string Nome { get; set; }
 
         private void btnDeletarPaciente_Click(object sender, EventArgs e)
         {
@@ -58,20 +32,40 @@ namespace SistemaHospitalar.UI
             }
             else
             {
-                string msgDeleçaoPaciente = "Deseja realmente deletar o paciente " + Nome + "?";
+                string msgDeleçaoPaciente = "Deseja realmente deletar o paciente " + FuncionarioLogado.PacienteSelecionado.Nome + "?";
 
                 if (MessageBox.Show(msgDeleçaoPaciente, "Deleção de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    MessageBox.Show(pacienteBLL.DeletarPaciente(Id));
-                    dgvPacientes.DataSource = DalPacientes.MostrarPacientesDGV();
+                    MessageBox.Show(pacienteBLL.DeletarPaciente(FuncionarioLogado.PacienteSelecionado.Id));
+                    dgvPacientes.DataSource = pacienteBLL.MostrarPacientes();
                 }
             }
         }
 
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (txtPesquisaNome.Text.Equals(string.Empty))
+                dgvPacientes.DataSource = pacienteBLL.MostrarPacientes();
+            else
+                dgvPacientes.DataSource = pacienteBLL.PesquisarPacientes(txtPesquisaNome.Text);
+        }
+
         private void dgvPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Id = (int)dgvPacientes.SelectedRows[0].Cells[0].Value;
-            Nome = dgvPacientes.SelectedRows[0].Cells[1].Value.ToString();
+            int IdPaciente = (int)dgvPacientes.CurrentRow.Cells[0].Value;
+            pacienteBLL.PegarDadosPaciente(IdPaciente, string.Empty);
+        }
+
+        private void rbNome_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisaNome.Visible = true;
+            txtPesquisaNome.Text = "";
+        }
+        
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
+            Base.AbrirFormDesejado(this, formEntradaRecepcionista);
         }
     }
 }

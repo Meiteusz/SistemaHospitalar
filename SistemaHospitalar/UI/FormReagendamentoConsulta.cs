@@ -12,8 +12,8 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            dtpDataConsulta.Value = FuncionarioLogado.ConsultaSelecionada.DataConsulta;
-            lblNomePaciente.Text = FuncionarioLogado.ConsultaSelecionada.NomePaciente;
+            dtpDataConsulta.Value = FuncionarioLogado.ConsultaTemp.DataConsulta;
+            lblNomePaciente.Text = FuncionarioLogado.PacienteSelecionado.Nome;
         }
 
         ConsultaBLL consultaBLL = new ConsultaBLL();
@@ -22,13 +22,12 @@ namespace SistemaHospitalar.UI
         {
             Consulta consulta = new Consulta();
             consulta.DataConsulta = dtpDataConsulta.Value;
-            consulta.Id = FuncionarioLogado.ConsultaSelecionada.Id;
-            consulta.Paciente = FuncionarioLogado.ConsultaSelecionada.Paciente;
-            consulta.Doutor = FuncionarioLogado.ConsultaSelecionada.Doutor;
+            consulta.Paciente = FuncionarioLogado.ConsultaTemp.Paciente;
+            consulta.Doutor = FuncionarioLogado.ConsultaTemp.Doutor;
 
             if (consultaBLL.isDataValida(consulta))
             {
-                MessageBox.Show(consultaBLL.ReagendarConsulta(dtpDataConsulta.Value, FuncionarioLogado.ConsultaSelecionada.Id));
+                MessageBox.Show(consultaBLL.ReagendarConsulta(dtpDataConsulta.Value, FuncionarioLogado.ConsultaTemp.Id));
                 FormConsultas formConsultas = new FormConsultas();
                 Base.AbrirFormDesejado(this, formConsultas);
             }
@@ -36,6 +35,12 @@ namespace SistemaHospitalar.UI
             {
                 MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!\nVerifique tambem se a data/horário é válida!");
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            FormConsultas formConsultas = new FormConsultas();
+            Base.AbrirFormDesejado(this, formConsultas);
         }
     }
 }

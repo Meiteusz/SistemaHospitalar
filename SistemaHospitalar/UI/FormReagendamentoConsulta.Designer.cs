@@ -34,6 +34,7 @@ namespace SistemaHospitalar.UI
             this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblNomePaciente = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@ namespace SistemaHospitalar.UI
             // btnReagendar
             // 
             this.btnReagendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReagendar.Location = new System.Drawing.Point(210, 181);
+            this.btnReagendar.Location = new System.Drawing.Point(162, 184);
             this.btnReagendar.Name = "btnReagendar";
             this.btnReagendar.Size = new System.Drawing.Size(116, 48);
             this.btnReagendar.TabIndex = 1;
@@ -67,7 +68,7 @@ namespace SistemaHospitalar.UI
             this.dtpDataConsulta.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.dtpDataConsulta.MinDate = new System.DateTime(2021, 3, 31, 0, 0, 0, 0);
             this.dtpDataConsulta.Name = "dtpDataConsulta";
-            this.dtpDataConsulta.Size = new System.Drawing.Size(239, 27);
+            this.dtpDataConsulta.Size = new System.Drawing.Size(252, 27);
             this.dtpDataConsulta.TabIndex = 16;
             this.dtpDataConsulta.Value = new System.DateTime(2021, 3, 31, 0, 0, 0, 0);
             // 
@@ -92,11 +93,23 @@ namespace SistemaHospitalar.UI
             this.lblNomePaciente.TabIndex = 17;
             this.lblNomePaciente.Text = "Nome Paciente";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(298, 184);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(116, 48);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FormReagendamentoConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 244);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnReagendar);
             this.Name = "FormReagendamentoConsulta";
@@ -114,5 +127,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.DateTimePicker dtpDataConsulta;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblNomePaciente;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

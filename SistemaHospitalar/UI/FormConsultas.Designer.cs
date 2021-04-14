@@ -34,12 +34,12 @@ namespace SistemaHospitalar.UI
             this.dgvConsultas = new System.Windows.Forms.DataGridView();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnDeletarConsulta = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpFiltrosConsultas = new System.Windows.Forms.GroupBox();
             this.rbTodas = new System.Windows.Forms.RadioButton();
             this.rbDataHoje = new System.Windows.Forms.RadioButton();
             btnReagendarConsulta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gpFiltrosConsultas.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReagendarConsulta
@@ -97,16 +97,16 @@ namespace SistemaHospitalar.UI
             this.btnDeletarConsulta.UseVisualStyleBackColor = true;
             this.btnDeletarConsulta.Click += new System.EventHandler(this.btnDeletarConsulta_Click);
             // 
-            // groupBox1
+            // gpFiltrosConsultas
             // 
-            this.groupBox1.Controls.Add(this.rbTodas);
-            this.groupBox1.Controls.Add(this.rbDataHoje);
-            this.groupBox1.Location = new System.Drawing.Point(113, 35);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(740, 63);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Mostrar Consultas:";
+            this.gpFiltrosConsultas.Controls.Add(this.rbTodas);
+            this.gpFiltrosConsultas.Controls.Add(this.rbDataHoje);
+            this.gpFiltrosConsultas.Location = new System.Drawing.Point(113, 35);
+            this.gpFiltrosConsultas.Name = "gpFiltrosConsultas";
+            this.gpFiltrosConsultas.Size = new System.Drawing.Size(740, 63);
+            this.gpFiltrosConsultas.TabIndex = 6;
+            this.gpFiltrosConsultas.TabStop = false;
+            this.gpFiltrosConsultas.Text = "Mostrar Consultas:";
             // 
             // rbTodas
             // 
@@ -118,7 +118,7 @@ namespace SistemaHospitalar.UI
             this.rbTodas.TabStop = true;
             this.rbTodas.Text = "Todas";
             this.rbTodas.UseVisualStyleBackColor = true;
-            this.rbTodas.CheckedChanged += new System.EventHandler(this.rbTodas_CheckedChanged_1);
+            this.rbTodas.CheckedChanged += new System.EventHandler(this.rbTodas_CheckedChanged);
             // 
             // rbDataHoje
             // 
@@ -130,14 +130,14 @@ namespace SistemaHospitalar.UI
             this.rbDataHoje.TabStop = true;
             this.rbDataHoje.Text = "Hoje";
             this.rbDataHoje.UseVisualStyleBackColor = true;
-            this.rbDataHoje.CheckedChanged += new System.EventHandler(this.rbDataHoje_CheckedChanged_1);
+            this.rbDataHoje.CheckedChanged += new System.EventHandler(this.rbDataHoje_CheckedChanged);
             // 
             // FormConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 580);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpFiltrosConsultas);
             this.Controls.Add(btnReagendarConsulta);
             this.Controls.Add(this.btnDeletarConsulta);
             this.Controls.Add(this.btnVoltar);
@@ -146,8 +146,8 @@ namespace SistemaHospitalar.UI
             this.Name = "FormConsultas";
             this.Text = "FormConsultas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpFiltrosConsultas.ResumeLayout(false);
+            this.gpFiltrosConsultas.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -158,7 +158,7 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.DataGridView dgvConsultas;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnDeletarConsulta;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpFiltrosConsultas;
         private System.Windows.Forms.RadioButton rbTodas;
         private System.Windows.Forms.RadioButton rbDataHoje;
     }

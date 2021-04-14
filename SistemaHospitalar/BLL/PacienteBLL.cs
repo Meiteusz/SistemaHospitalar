@@ -1,6 +1,6 @@
-﻿using SistemaHospitalar.DAL;
-using SistemaHospitalar.Models;
+﻿using SistemaHospitalar.Models;
 using System.Collections;
+using System.Data;
 
 namespace SistemaHospitalar.BLL
 {
@@ -41,6 +41,17 @@ namespace SistemaHospitalar.BLL
         {
             return dalPacientes.GetCpfPacientes();
         }
+
+        public DataTable MostrarPacientes()
+        {
+            return dalPacientes.TodosPacientes();
+        }
+
+        public DataTable PesquisarPacientes(string NomePaciente)
+        {
+            return dalPacientes.PesquisaDePacientes(NomePaciente);
+        }
+
 
         public string ValidarPaciente(Paciente paciente)
         {

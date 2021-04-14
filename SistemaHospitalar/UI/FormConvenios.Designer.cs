@@ -36,6 +36,7 @@ namespace SistemaHospitalar.UI
             this.dgvConvenios = new System.Windows.Forms.DataGridView();
             this.txtDescontoConvenio = new System.Windows.Forms.TextBox();
             this.btnDeletarConvenio = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConvenios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@ namespace SistemaHospitalar.UI
             // btnCadastrarConvenio
             // 
             this.btnCadastrarConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarConvenio.Location = new System.Drawing.Point(525, 366);
+            this.btnCadastrarConvenio.Location = new System.Drawing.Point(514, 351);
             this.btnCadastrarConvenio.Name = "btnCadastrarConvenio";
             this.btnCadastrarConvenio.Size = new System.Drawing.Size(161, 61);
             this.btnCadastrarConvenio.TabIndex = 1;
@@ -81,9 +82,9 @@ namespace SistemaHospitalar.UI
             // dgvConvenios
             // 
             this.dgvConvenios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConvenios.Location = new System.Drawing.Point(50, 32);
+            this.dgvConvenios.Location = new System.Drawing.Point(12, 83);
             this.dgvConvenios.Name = "dgvConvenios";
-            this.dgvConvenios.Size = new System.Drawing.Size(347, 284);
+            this.dgvConvenios.Size = new System.Drawing.Size(421, 233);
             this.dgvConvenios.TabIndex = 6;
             this.dgvConvenios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConvenios_CellClick);
             // 
@@ -98,7 +99,7 @@ namespace SistemaHospitalar.UI
             // btnDeletarConvenio
             // 
             this.btnDeletarConvenio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletarConvenio.Location = new System.Drawing.Point(152, 366);
+            this.btnDeletarConvenio.Location = new System.Drawing.Point(140, 351);
             this.btnDeletarConvenio.Name = "btnDeletarConvenio";
             this.btnDeletarConvenio.Size = new System.Drawing.Size(161, 61);
             this.btnDeletarConvenio.TabIndex = 9;
@@ -106,11 +107,23 @@ namespace SistemaHospitalar.UI
             this.btnDeletarConvenio.UseVisualStyleBackColor = true;
             this.btnDeletarConvenio.Click += new System.EventHandler(this.btnDeletarConvenio_Click);
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(117, 47);
+            this.btnVoltar.TabIndex = 10;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
+            // 
             // FormConvenios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnDeletarConvenio);
             this.Controls.Add(this.txtDescontoConvenio);
             this.Controls.Add(this.dgvConvenios);
@@ -135,5 +148,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.DataGridView dgvConvenios;
         private System.Windows.Forms.TextBox txtDescontoConvenio;
         private System.Windows.Forms.Button btnDeletarConvenio;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

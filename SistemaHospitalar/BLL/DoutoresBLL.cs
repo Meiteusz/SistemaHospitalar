@@ -61,6 +61,11 @@ namespace SistemaHospitalar.BLL
             return dalDoutores.UpdateValores(valorConsulta, valorExame);
         }
 
+        public DataTable MostrarDoutores()
+        {
+            return dalDoutores.TodosDoutores();
+        }
+
         public DataTable PesquisarEspecialidade(Especialidades especialidade)
         {
             DataTable dt = new DataTable();
@@ -72,6 +77,11 @@ namespace SistemaHospitalar.BLL
             {
                 return dalDoutores.GetEspecialidades(especialidade);
             }
+        }
+
+        public DataTable PesquisarDoutores(string NomeDoutor, Turno TurnoDoutor, Especialidades EspecialidadeDoutor)
+        {
+            return dalDoutores.PesquisaDeDoutores(NomeDoutor ,TurnoDoutor, EspecialidadeDoutor);
         }
 
 

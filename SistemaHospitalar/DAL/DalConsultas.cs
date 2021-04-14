@@ -7,7 +7,7 @@ namespace SistemaHospitalar.DAL
 {
     class DalConsultas : DalComandos
     {
-        public  bool isDataConsultaValido(DateTime p_dataConsulta, int p_idPaciente, int p_idDoutor)
+        public bool isDataConsultaValido(DateTime p_dataConsulta, int p_idPaciente, int p_idDoutor)
         {
             bool isValido = true;
 
@@ -29,7 +29,7 @@ namespace SistemaHospitalar.DAL
             conexao.Desconectar();
             return isValido;
         }
-        
+
         public string Insert(Consulta p_consulta)
         {
             command.Parameters.Clear();
@@ -100,6 +100,26 @@ namespace SistemaHospitalar.DAL
             }
         }
 
+        public Consulta GetDadosConsultaPeloId(int p_IdConsulta)
+        {
+            Consulta consulta = new Consulta();
+            SqlCommand command = new SqlCommand("select * from CONSULTAS where ID = @IdConsulta", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@IdConsulta", p_IdConsulta);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                consulta.Id = (int)reader["ID"];
+                consulta.Paciente = (int)reader["PACIENTEID"];
+                consulta.Doutor = (int)reader["DOUTORID"];
+                consulta.DataConsulta = Convert.ToDateTime(reader["DATACONSULTA"]);
+                consulta.Preco = Convert.ToSingle(reader["PRECO"]);
+            }
+            conexao.Desconectar();
+            return consulta;
+        }
+
         public int GetConvenioDoPaciente(int p_pacienteId)
         {
             int IdConvenio = 0;
@@ -116,7 +136,7 @@ namespace SistemaHospitalar.DAL
             return IdConvenio;
         }
 
-        public static DataTable MostrarConsultas()
+        public DataTable MostrarConsultas()
         {
             command.CommandText = "select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, " +
                 "FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') as DataHorarioConsulta, FORMAT(CONSULTAS.PRECO, 'c', 'pt-br') as ValorConsulta, CONVENIOS.NOME as Convênio_Nome " +

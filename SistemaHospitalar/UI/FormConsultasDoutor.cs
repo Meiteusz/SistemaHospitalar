@@ -1,6 +1,5 @@
 ﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.DAL;
-using SistemaHospitalar.Entities;
 using SistemaHospitalar.Utilities;
 using System.Windows.Forms;
 
@@ -30,9 +29,9 @@ namespace SistemaHospitalar.UI
 
         private void dgvConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Consulta consulta = new Consulta();
-            consulta.NomePaciente = dgvConsultas.CurrentRow.Cells[1].Value.ToString();
-            FuncionarioLogado.SetConsultaSelecionada(consulta);
+            int IdConsulta = (int)dgvConsultas.CurrentRow.Cells[0].Value;
+
+            FuncionarioLogado.SetConsultaTemp(IdConsulta);
         }
 
         private void btnVoltar_Click(object sender, System.EventArgs e)

@@ -103,16 +103,6 @@ namespace SistemaHospitalar.Models
             return IdConvenio;
         }
 
-        public static DataTable MostrarPacientesDGV()
-        {
-            command.CommandText = "select PACIENTES.ID, PACIENTES.NOME, PACIENTES.CPF, PACIENTES.CELULAR, PACIENTES.GENERO, CONVENIOS.NOME as CONVENIO " +
-                "from PACIENTES inner join CONVENIOS ON CONVENIOS.ID = PACIENTES.CONVENIOID";
-            adapter = new SqlDataAdapter(command);
-            dt = new DataTable();
-            adapter.Fill(dt);
-            return dt;
-        }
-
         public ArrayList GetCpfPacientes()
         {
             ArrayList pacientes = new ArrayList();
@@ -128,7 +118,17 @@ namespace SistemaHospitalar.Models
             return pacientes;
         }
 
-        public static DataTable PesquisarPaciente(string p_nome)
+        public DataTable TodosPacientes()
+        {
+            command.CommandText = "select PACIENTES.ID, PACIENTES.NOME, PACIENTES.CPF, PACIENTES.CELULAR, PACIENTES.GENERO, CONVENIOS.NOME as CONVENIO " +
+                "from PACIENTES inner join CONVENIOS ON CONVENIOS.ID = PACIENTES.CONVENIOID";
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable PesquisaDePacientes(string p_nome)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@nome", p_nome);
