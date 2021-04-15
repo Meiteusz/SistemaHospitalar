@@ -50,15 +50,21 @@
     <Compile Include="BLL\AdmBLL.cs" />
     <Compile Include="BLL\ConsultaBLL.cs" />
     <Compile Include="BLL\ConveniosBLL.cs" />
+    <Compile Include="BLL\ExamesBLL.cs" />
+    <Compile Include="BLL\InternacaoBLL.cs" />
     <Compile Include="BLL\VisitantesBLL.cs" />
+    <Compile Include="DAL\DalExames.cs" />
+    <Compile Include="DAL\DalInternacao.cs" />
     <Compile Include="DAL\DalVisitantes.cs" />
+    <Compile Include="Entities\Exame.cs" />
+    <Compile Include="Entities\Internacao.cs" />
     <Compile Include="UI\FormVisitas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\FormVisitas.Designer.cs">
       <DependentUpon>FormVisitas.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Utilities\Base.cs" />
+    <Compile Include="Utilities\Base.cs" />
     <Compile Include="BLL\DoutoresBLL.cs" />
     <Compile Include="BLL\PacienteBLL.cs" />
     <Compile Include="BLL\RecepcionistaBLL.cs" />
@@ -217,7 +223,7 @@
     <Compile Include="UI\FormVisitante.Designer.cs">
       <DependentUpon>FormVisitante.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Utilities\FuncionarioLogado.cs" />
+    <Compile Include="Utilities\FuncionarioLogado.cs" />
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
     </EmbeddedResource>

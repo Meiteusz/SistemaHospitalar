@@ -84,3 +84,4 @@ D:\C#\Hospital\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.c
 D:\C#\Hospital\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.exe
 D:\C#\Hospital\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.pdb
 D:\C#\Hospital\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormVisitas.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormVisitas.resources
