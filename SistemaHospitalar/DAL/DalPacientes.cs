@@ -145,7 +145,7 @@ namespace SistemaHospitalar.Models
             ArrayList pacientes = new ArrayList();
             adapter = new SqlDataAdapter(
                 "select CPF from PACIENTES where ID IN " +
-                "(select PACIENTEID from INTERNACAO)"
+                "(select PACIENTEID from INTERNACAO)" 
                 , conexao.Conectar());
             dt = new DataTable();
             adapter.Fill(dt);
