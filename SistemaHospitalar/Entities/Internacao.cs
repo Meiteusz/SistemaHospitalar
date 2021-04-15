@@ -13,8 +13,10 @@ namespace SistemaHospitalar.Entities
         public DateTime DataEntrada { get; set; }
         public DateTime? DataSaida { get; set; }
         public float Preco { get; set; }
+        public DateTime DataUltimaAtualizacao { get; set; }
 
-        public Internacao(int p_pacienteId, int p_doutorId, string p_descricao, string p_tipoInternacao, int p_quartoId, DateTime p_dataEntrada, DateTime? p_dataSaida, float p_preco)
+        public Internacao(int p_pacienteId, int p_doutorId, string p_descricao, string p_tipoInternacao, int p_quartoId, DateTime p_dataEntrada, DateTime? p_dataSaida, 
+            float p_preco, DateTime p_dataUltimaAtualizacao)
         {
             PacienteId = p_pacienteId;
             DoutorId = p_doutorId;
@@ -24,6 +26,7 @@ namespace SistemaHospitalar.Entities
             DataEntrada = p_dataEntrada;
             DataSaida = p_dataSaida;
             Preco = p_preco;
+            DataUltimaAtualizacao = p_dataUltimaAtualizacao;
         }
     }
 }

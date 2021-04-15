@@ -34,7 +34,6 @@ namespace SistemaHospitalar.UI
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.txtPesquisaNome = new System.Windows.Forms.TextBox();
-            this.btnMensagemPaciente = new System.Windows.Forms.Button();
             this.btnDeletarPaciente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             this.SuspendLayout();
@@ -90,20 +89,8 @@ namespace SistemaHospitalar.UI
             this.txtPesquisaNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPesquisaNome.Location = new System.Drawing.Point(12, 18);
             this.txtPesquisaNome.Name = "txtPesquisaNome";
-            this.txtPesquisaNome.Size = new System.Drawing.Size(281, 26);
+            this.txtPesquisaNome.Size = new System.Drawing.Size(463, 26);
             this.txtPesquisaNome.TabIndex = 7;
-            // 
-            // btnMensagemPaciente
-            // 
-            this.btnMensagemPaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMensagemPaciente.Location = new System.Drawing.Point(575, 201);
-            this.btnMensagemPaciente.Name = "btnMensagemPaciente";
-            this.btnMensagemPaciente.Size = new System.Drawing.Size(193, 55);
-            this.btnMensagemPaciente.TabIndex = 13;
-            this.btnMensagemPaciente.Text = "Mensagens aos Pacientes";
-            this.btnMensagemPaciente.UseVisualStyleBackColor = true;
             // 
             // btnDeletarPaciente
             // 
@@ -124,7 +111,6 @@ namespace SistemaHospitalar.UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDeletarPaciente);
-            this.Controls.Add(this.btnMensagemPaciente);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisaNome);
             this.Controls.Add(this.btnVoltar);
@@ -145,7 +131,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.TextBox txtPesquisaNome;
-        private System.Windows.Forms.Button btnMensagemPaciente;
         private System.Windows.Forms.Button btnDeletarPaciente;
     }
 }

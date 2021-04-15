@@ -35,6 +35,10 @@ namespace SistemaHospitalar.BLL
                     {
                         (control as ComboBox).SelectedIndex = 0;
                     }
+                    if (control is RichTextBox)
+                    {
+                        (control as RichTextBox).Clear();
+                    }
                     else
                     {
                         func(control.Controls);
@@ -64,5 +68,13 @@ namespace SistemaHospitalar.BLL
             List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
             return valuesWithSpaces;
         }
+
+        public static List<string> ReformularTipoInternacao()
+        {
+            IEnumerable<TipoInternacao> values = Enum.GetValues(typeof(TipoInternacao)).Cast<TipoInternacao>();
+            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
+            return valuesWithSpaces;
+        }
+
     }
 }

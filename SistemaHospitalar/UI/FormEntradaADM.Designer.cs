@@ -32,12 +32,13 @@ namespace SistemaHospitalar.UI
             this.btnFuncionarios = new System.Windows.Forms.Button();
             this.btnConvenios = new System.Windows.Forms.Button();
             this.btnEncerrarSessão = new System.Windows.Forms.Button();
+            this.btnQuartos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnFuncionarios
             // 
             this.btnFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFuncionarios.Location = new System.Drawing.Point(130, 164);
+            this.btnFuncionarios.Location = new System.Drawing.Point(93, 176);
             this.btnFuncionarios.Name = "btnFuncionarios";
             this.btnFuncionarios.Size = new System.Drawing.Size(176, 93);
             this.btnFuncionarios.TabIndex = 0;
@@ -48,7 +49,7 @@ namespace SistemaHospitalar.UI
             // btnConvenios
             // 
             this.btnConvenios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConvenios.Location = new System.Drawing.Point(491, 164);
+            this.btnConvenios.Location = new System.Drawing.Point(309, 176);
             this.btnConvenios.Name = "btnConvenios";
             this.btnConvenios.Size = new System.Drawing.Size(176, 93);
             this.btnConvenios.TabIndex = 1;
@@ -67,11 +68,23 @@ namespace SistemaHospitalar.UI
             this.btnEncerrarSessão.UseVisualStyleBackColor = true;
             this.btnEncerrarSessão.Click += new System.EventHandler(this.btnEncerrarSessão_Click);
             // 
+            // btnQuartos
+            // 
+            this.btnQuartos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuartos.Location = new System.Drawing.Point(527, 176);
+            this.btnQuartos.Name = "btnQuartos";
+            this.btnQuartos.Size = new System.Drawing.Size(176, 93);
+            this.btnQuartos.TabIndex = 3;
+            this.btnQuartos.Text = "Quartos";
+            this.btnQuartos.UseVisualStyleBackColor = true;
+            this.btnQuartos.Click += new System.EventHandler(this.btnQuartos_Click);
+            // 
             // FormEntradaADM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnQuartos);
             this.Controls.Add(this.btnEncerrarSessão);
             this.Controls.Add(this.btnConvenios);
             this.Controls.Add(this.btnFuncionarios);
@@ -86,5 +99,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnFuncionarios;
         private System.Windows.Forms.Button btnConvenios;
         private System.Windows.Forms.Button btnEncerrarSessão;
+        private System.Windows.Forms.Button btnQuartos;
     }
 }

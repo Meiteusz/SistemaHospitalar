@@ -16,8 +16,9 @@ namespace SistemaHospitalar.DAL
             command.Parameters.AddWithValue("@DATAENTRADA", p_internacao.DataEntrada);
             command.Parameters.AddWithValue("@DATASAIDA", null);
             command.Parameters.AddWithValue("@PRECO", p_internacao.Preco);
+            command.Parameters.AddWithValue("@DATAULTIMAATUALIZACAO", p_internacao.DataUltimaAtualizacao);
 
-            command.CommandText = "insert into INTERNACAO values(@PACIENTEID, @DOUTORID, @DESCRICAO, @TIPOINTERNACAO, @QUARTOID, @DATAENTRADA, @DATASAIDA, @PRECO)";
+            command.CommandText = "insert into INTERNACAO values(@PACIENTEID, @DOUTORID, @DESCRICAO, @TIPOINTERNACAO, @QUARTOID, @DATAENTRADA, @DATASAIDA, @PRECO, @DATAULTIMAATUALIZACAO)";
 
             try
             {

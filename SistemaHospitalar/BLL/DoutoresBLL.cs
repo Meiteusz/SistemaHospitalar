@@ -45,7 +45,7 @@ namespace SistemaHospitalar.BLL
         public string AtualizarDoutor(Doutores doutor, string confSenha)
         {
             MensagemErro = ValidarAlteracoesDoutor(doutor, confSenha);
-            
+
             if (MensagemErro.Equals(string.Empty))
             {
                 return dalDoutores.Update(doutor, confSenha);
@@ -66,7 +66,7 @@ namespace SistemaHospitalar.BLL
             return dalDoutores.TodosDoutores();
         }
 
-        public DataTable PesquisarEspecialidade(Especialidades especialidade)
+        public DataTable MostrarDoutoresConsulta(Especialidades especialidade)
         {
             DataTable dt = new DataTable();
             if (especialidade.Equals(Especialidades.Selecione))
@@ -75,13 +75,18 @@ namespace SistemaHospitalar.BLL
             }
             else
             {
-                return dalDoutores.GetEspecialidades(especialidade);
+                return dalDoutores.GetDoutoresConsulta(especialidade);
             }
+        }
+
+        public DataTable MostrarDoutoresInternacao(Especialidades especialidade)
+        {
+            return dalDoutores.GetDoutoresInternacao(especialidade);
         }
 
         public DataTable PesquisarDoutores(string NomeDoutor, Turno TurnoDoutor, Especialidades EspecialidadeDoutor)
         {
-            return dalDoutores.PesquisaDeDoutores(NomeDoutor ,TurnoDoutor, EspecialidadeDoutor);
+            return dalDoutores.PesquisaDeDoutores(NomeDoutor, TurnoDoutor, EspecialidadeDoutor);
         }
 
 

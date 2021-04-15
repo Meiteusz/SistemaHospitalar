@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,12 +53,27 @@
     <Compile Include="BLL\ConveniosBLL.cs" />
     <Compile Include="BLL\ExamesBLL.cs" />
     <Compile Include="BLL\InternacaoBLL.cs" />
+    <Compile Include="BLL\QuartosBLL.cs" />
     <Compile Include="BLL\VisitantesBLL.cs" />
     <Compile Include="DAL\DalExames.cs" />
     <Compile Include="DAL\DalInternacao.cs" />
+    <Compile Include="DAL\DalQuartos.cs" />
     <Compile Include="DAL\DalVisitantes.cs" />
     <Compile Include="Entities\Exame.cs" />
     <Compile Include="Entities\Internacao.cs" />
+    <Compile Include="Entities\Quartos.cs" />
+    <Compile Include="UI\FormInternacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormInternacao.Designer.cs">
+      <DependentUpon>FormInternacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormQuartos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormQuartos.Designer.cs">
+      <DependentUpon>FormQuartos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormVisitas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,12 +97,12 @@
     <Compile Include="Entities\Consulta.cs" />
     <Compile Include="Entities\Convenios.cs" />
     <Compile Include="Entities\Doutores.cs" />
-    <Compile Include="Entities\Especialidades.cs" />
-    <Compile Include="Entities\Genero.cs" />
-    <Compile Include="Entities\Gravidade.cs" />
+    <Compile Include="Entities\Enumeradores\Especialidades.cs" />
+    <Compile Include="Entities\Enumeradores\Genero.cs" />
+    <Compile Include="Entities\Enumeradores\TipoInternacao.cs" />
     <Compile Include="Entities\Paciente.cs" />
     <Compile Include="Entities\Recepcionista.cs" />
-    <Compile Include="Entities\Turno.cs" />
+    <Compile Include="Entities\Enumeradores\Turno.cs" />
     <Compile Include="Entities\Usuarios.cs" />
     <Compile Include="Entities\Visitante.cs" />
     <Compile Include="UI\FormDiagnostico.cs">
@@ -173,12 +189,6 @@
     <Compile Include="UI\FormCadastroDoutor.Designer.cs">
       <DependentUpon>FormCadastroDoutor.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormInicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FormInicio.Designer.cs">
-      <DependentUpon>FormInicio.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,12 +227,6 @@
     <Compile Include="UI\FormConsultasDoutor.Designer.cs">
       <DependentUpon>FormConsultasDoutor.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormVisitante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FormVisitante.Designer.cs">
-      <DependentUpon>FormVisitante.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\FuncionarioLogado.cs" />
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
@@ -257,6 +261,9 @@
     <EmbeddedResource Include="UI\FormEntradaDoutores.resx">
       <DependentUpon>FormEntradaDoutores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormInternacao.resx">
+      <DependentUpon>FormInternacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormLoginADM.resx">
       <DependentUpon>FormLoginADM.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,9 +272,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormCadastroPaciente.resx">
       <DependentUpon>FormCadastroPaciente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormInicio.resx">
-      <DependentUpon>FormInicio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -288,6 +292,9 @@
     <EmbeddedResource Include="UI\FormPacientes.resx">
       <DependentUpon>FormPacientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormQuartos.resx">
+      <DependentUpon>FormQuartos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormReagendamentoConsulta.resx">
       <DependentUpon>FormReagendamentoConsulta.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,9 +303,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormConsultasDoutor.resx">
       <DependentUpon>FormConsultasDoutor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormVisitante.resx">
-      <DependentUpon>FormVisitante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormVisitas.resx">
       <DependentUpon>FormVisitas.cs</DependentUpon>
@@ -382,5 +386,6 @@
   <ItemGroup>
     <None Include="Resources\email1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

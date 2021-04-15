@@ -123,7 +123,7 @@ namespace SistemaHospitalar.DAL
                 conexao.Desconectar();
             }
         }
-        
+
         public override void GetDadosFuncionarioLogado(SqlDataReader p_reader)
         {
             Doutores doutor = new Doutores();
@@ -217,11 +217,23 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
-        public DataTable GetEspecialidades(Especialidades p_especialidade)
+        public DataTable GetDoutoresConsulta(Especialidades p_especialidade)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@especialidade", p_especialidade);
             command.CommandText = "select ID, NOME, ESPECIALIDADE, VALORCONSULTA from DOUTORES where ESPECIALIDADE = @especialidade";
+
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable GetDoutoresInternacao(Especialidades p_especialidade)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@especialidade", p_especialidade);
+            command.CommandText = "select ID, NOME, ESPECIALIDADE, CPF from DOUTORES where ESPECIALIDADE = @especialidade";
 
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();

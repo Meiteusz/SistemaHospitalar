@@ -1,6 +1,4 @@
-﻿using SistemaHospitalar.UI;
-using SistemaHospitalar.Views;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar
@@ -15,7 +13,7 @@ namespace SistemaHospitalar
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormInicio());
+            Application.Run(new FormLogin());
         }
     }
 }

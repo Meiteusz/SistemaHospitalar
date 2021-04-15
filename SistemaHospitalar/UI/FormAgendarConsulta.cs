@@ -2,8 +2,6 @@
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -59,12 +57,12 @@ namespace SistemaHospitalar.UI
 
         private void FormCadastroConsulta_Load(object sender, EventArgs e)
         {
-            cmbCpfPacientes.DisplayMember = "NOME";
+            //cmbCpfPacientes.DisplayMember = "NOME";
             cmbCpfPacientes.DataSource = pacienteBLL.MostrarCpfPacientes();
             cmbCpfPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
-        
+
         private void cmbCpfPacientes_SelectedIndexChanged(object sender, EventArgs e)
         {
             pacienteBLL.PegarDadosPaciente(0, cmbCpfPacientes.Text);
@@ -111,7 +109,7 @@ namespace SistemaHospitalar.UI
 
         private void PesquisarDoutorDGV()
         {
-            dgvDoutores.DataSource = doutoresBLL.PesquisarEspecialidade((Especialidades)cmbEspecialidade.SelectedIndex);
+            dgvDoutores.DataSource = doutoresBLL.MostrarDoutoresConsulta((Especialidades)cmbEspecialidade.SelectedIndex);
         }
 
         private void MostrarAgendaDoutorDGV()

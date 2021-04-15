@@ -118,6 +118,24 @@ namespace SistemaHospitalar.Models
             return pacientes;
         }
 
+        public ArrayList MostrarCpfPacientesInternados()
+        {
+            ArrayList pacientes = new ArrayList();
+            adapter = new SqlDataAdapter(
+                "select CPF from PACIENTES where ID IN " +
+                "(select PACIENTEID from INTERNACAO)" 
+                , conexao.Conectar());
+            dt = new DataTable();
+            adapter.Fill(dt);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                pacientes.Add(item["CPF"].ToString());
+            }
+            conexao.Desconectar();
+            return pacientes;
+        }
+        
         public DataTable TodosPacientes()
         {
             command.CommandText = "select PACIENTES.ID, PACIENTES.NOME, PACIENTES.CPF, PACIENTES.CELULAR, PACIENTES.GENERO, CONVENIOS.NOME as CONVENIO " +
@@ -140,22 +158,5 @@ namespace SistemaHospitalar.Models
             return dt;
         }
 
-        public ArrayList MostrarCpfPacientesInternados()
-        {
-            ArrayList pacientes = new ArrayList();
-            adapter = new SqlDataAdapter(
-                "select CPF from PACIENTES where ID IN " +
-                "(select PACIENTEID from INTERNACAO)" 
-                , conexao.Conectar());
-            dt = new DataTable();
-            adapter.Fill(dt);
-
-            foreach (DataRow item in dt.Rows)
-            {
-                pacientes.Add(item["CPF"].ToString());
-            }
-            conexao.Desconectar();
-            return pacientes;
-        }
     }
 }

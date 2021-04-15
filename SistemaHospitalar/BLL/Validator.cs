@@ -21,6 +21,7 @@ namespace SistemaHospitalar.Models
 		public string MensagemErro { get; set; }
 		public string MsgAtualizarInformacoes = "Deseja realmente atualizar as informações da sua conta?";
 
+
 		//Valida o CPF
 		#region ValidatorCPF
 		public static bool IsCpf(string cpf)
@@ -141,9 +142,9 @@ namespace SistemaHospitalar.Models
 			return "";
 		}
 
-		public string ValidarGravidade(Gravidade gravidade)
+		public string ValidarGravidade(TipoInternacao gravidade)
         {
-			if (gravidade.Equals(Gravidade.Selecione))
+			if (gravidade.Equals(TipoInternacao.Selecione))
 			{
 				return "Selecione uma Gravidade\n";
 			}
@@ -194,6 +195,15 @@ namespace SistemaHospitalar.Models
 				return false;
 			}
 			return true;
+        }
+
+		public string ValidarNumeroQuarto(int numeroQuarto)
+        {
+            if (numeroQuarto.Equals(0) || numeroQuarto.Equals(""))
+            {
+				return "Numero do quarto inválido";
+            }
+			return "";
         }
 	}
 }

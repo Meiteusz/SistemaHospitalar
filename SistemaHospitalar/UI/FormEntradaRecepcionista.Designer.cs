@@ -35,6 +35,7 @@ namespace SistemaHospitalar
             this.btnConsultas = new System.Windows.Forms.Button();
             this.btnVisitas = new System.Windows.Forms.Button();
             this.btnEncerrarSessão = new System.Windows.Forms.Button();
+            this.btnInternacao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConfiguracoesRecepcionista
@@ -52,7 +53,7 @@ namespace SistemaHospitalar
             // btnPacientes
             // 
             this.btnPacientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPacientes.Location = new System.Drawing.Point(128, 178);
+            this.btnPacientes.Location = new System.Drawing.Point(62, 172);
             this.btnPacientes.Name = "btnPacientes";
             this.btnPacientes.Size = new System.Drawing.Size(144, 85);
             this.btnPacientes.TabIndex = 2;
@@ -73,7 +74,7 @@ namespace SistemaHospitalar
             // btnConsultas
             // 
             this.btnConsultas.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultas.Location = new System.Drawing.Point(308, 178);
+            this.btnConsultas.Location = new System.Drawing.Point(242, 172);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Size = new System.Drawing.Size(144, 85);
             this.btnConsultas.TabIndex = 4;
@@ -84,7 +85,7 @@ namespace SistemaHospitalar
             // btnVisitas
             // 
             this.btnVisitas.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisitas.Location = new System.Drawing.Point(489, 178);
+            this.btnVisitas.Location = new System.Drawing.Point(423, 172);
             this.btnVisitas.Name = "btnVisitas";
             this.btnVisitas.Size = new System.Drawing.Size(144, 85);
             this.btnVisitas.TabIndex = 6;
@@ -103,11 +104,23 @@ namespace SistemaHospitalar
             this.btnEncerrarSessão.UseVisualStyleBackColor = true;
             this.btnEncerrarSessão.Click += new System.EventHandler(this.btnEncerrarSessão_Click);
             // 
+            // btnInternacao
+            // 
+            this.btnInternacao.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInternacao.Location = new System.Drawing.Point(600, 172);
+            this.btnInternacao.Name = "btnInternacao";
+            this.btnInternacao.Size = new System.Drawing.Size(144, 85);
+            this.btnInternacao.TabIndex = 8;
+            this.btnInternacao.Text = "Internação";
+            this.btnInternacao.UseVisualStyleBackColor = true;
+            this.btnInternacao.Click += new System.EventHandler(this.btnInternacao_Click);
+            // 
             // FormEntradaRecepcionista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnInternacao);
             this.Controls.Add(this.btnEncerrarSessão);
             this.Controls.Add(this.btnVisitas);
             this.Controls.Add(this.btnConsultas);
@@ -128,5 +141,6 @@ namespace SistemaHospitalar
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnVisitas;
         private System.Windows.Forms.Button btnEncerrarSessão;
+        private System.Windows.Forms.Button btnInternacao;
     }
 }

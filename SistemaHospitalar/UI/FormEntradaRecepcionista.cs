@@ -51,5 +51,11 @@ namespace SistemaHospitalar
             FormVisitas formVisitas = new FormVisitas();
             Base.AbrirFormDesejado(this, formVisitas);
         }
+
+        private void btnInternacao_Click(object sender, System.EventArgs e)
+        {
+            FormInternacao formInternacao = new FormInternacao();
+            Base.AbrirFormDesejado(this, formInternacao);
+        }
     }
 }

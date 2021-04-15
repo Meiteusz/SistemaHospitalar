@@ -29,5 +29,11 @@ namespace SistemaHospitalar.UI
             FormLogin formLogin = new FormLogin();
             Base.AbrirFormDesejado(this, formLogin);
         }
+
+        private void btnQuartos_Click(object sender, EventArgs e)
+        {
+            FormQuartos formQuartos = new FormQuartos();
+            Base.AbrirFormDesejado(this, formQuartos);
+        }
     }
 }

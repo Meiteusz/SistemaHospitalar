@@ -32,12 +32,10 @@ D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHo
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormLoginADM.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormCadastroRecepcionista.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormCadastroPaciente.resources
-D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormInicio.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.FormLogin.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Properties.Resources.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.FormEntradaRecepcionista.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormPacientes.resources
-D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.Views.FormVisitante.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.csproj.GenerateResource.cache
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.csproj.CoreCompileInputs.cache
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.exe
@@ -85,3 +83,5 @@ D:\C#\Hospital\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.e
 D:\C#\Hospital\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.pdb
 D:\C#\Hospital\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormVisitas.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormVisitas.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormQuartos.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormInternacao.resources
