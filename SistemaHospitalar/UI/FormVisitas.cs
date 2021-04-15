@@ -1,12 +1,5 @@
 ﻿using SistemaHospitalar.BLL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -23,7 +16,7 @@ namespace SistemaHospitalar.UI
 
         private void btnAgendarVisita_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void FormVisitas_Load(object sender, EventArgs e)
