@@ -5,6 +5,8 @@ namespace SistemaHospitalar.DAL
 {
     public class DalInternacao : DalComandos
     {
+        DalQuartos dalQuartos = new DalQuartos();
+
         public string Insert(Internacao p_internacao)
         {
             command.Parameters.Clear();
@@ -14,16 +16,15 @@ namespace SistemaHospitalar.DAL
             command.Parameters.AddWithValue("@TIPOINTERNACAO", p_internacao.TipoInternacao);
             command.Parameters.AddWithValue("@QUARTOID", p_internacao.QuartoId);
             command.Parameters.AddWithValue("@DATAENTRADA", p_internacao.DataEntrada);
-            command.Parameters.AddWithValue("@DATASAIDA", null);
-            command.Parameters.AddWithValue("@PRECO", p_internacao.Preco);
             command.Parameters.AddWithValue("@DATAULTIMAATUALIZACAO", p_internacao.DataUltimaAtualizacao);
 
-            command.CommandText = "insert into INTERNACAO values(@PACIENTEID, @DOUTORID, @DESCRICAO, @TIPOINTERNACAO, @QUARTOID, @DATAENTRADA, @DATASAIDA, @PRECO, @DATAULTIMAATUALIZACAO)";
+            command.CommandText = "insert into INTERNACAO (PACIENTEID, DOUTORID, DESCRICAO, TIPOINTERNACAO, QUARTOID, DATAENTRADA, DATAULTIMAATUALIZACAO) values(@PACIENTEID, @DOUTORID, @DESCRICAO, @TIPOINTERNACAO, @QUARTOID, @DATAENTRADA, @DATAULTIMAATUALIZACAO)";
 
             try
             {
                 command.Connection = conexao.Conectar();
                 command.ExecuteNonQuery();
+                dalQuartos.Update(p_internacao.QuartoId);
                 return "Paciente foi internado com sucesso";
             }
             catch (SqlException ex)
@@ -35,7 +36,5 @@ namespace SistemaHospitalar.DAL
                 conexao.Desconectar();
             }
         }
-
-        
     }
 }

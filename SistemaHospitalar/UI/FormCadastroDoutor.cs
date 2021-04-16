@@ -28,8 +28,6 @@ namespace SistemaHospitalar.Views
             MessageBox.Show(doutorBLL.CadastrarDoutor(doutor, txtRepitaSenhaDoutor.Text));
         }
 
-
-
         private void cbMostrarSenha_CheckedChanged(object sender, System.EventArgs e)
         {
             Base.MostrarSenha(cbMostrarSenha, txtSenhaDoutor, txtRepitaSenhaDoutor);

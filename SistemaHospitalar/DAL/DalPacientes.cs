@@ -83,6 +83,30 @@ namespace SistemaHospitalar.Models
             FuncionarioLogado.SetPacienteSelecionado(paciente);
         }
 
+        public Paciente GetPacienteByCpf(string p_CpfPaciente)
+        {
+            Paciente paciente = new Paciente();
+
+            SqlCommand command = new SqlCommand("select * from PACIENTES where CPF = @Cpf", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@Cpf", p_CpfPaciente);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Enum.TryParse(reader["GENERO"].ToString(), out Genero generoConvertido);
+
+                paciente.Id = (int)reader["ID"];
+                paciente.Nome = reader["NOME"].ToString();
+                paciente.Cpf = reader["CPF"].ToString();
+                paciente.Celular = reader["CELULAR"].ToString();
+                paciente.Genero = generoConvertido;
+                paciente.Convenio = (int)reader["CONVENIOID"];
+            }
+            conexao.Desconectar();
+            return paciente;
+        }
+
         public int GetIdConvenioPeloNome(string p_nomeConvenio)
         {
             int IdConvenio = 0;

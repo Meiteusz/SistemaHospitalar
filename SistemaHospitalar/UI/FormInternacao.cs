@@ -12,18 +12,24 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            cmbTipoInternacao.DataSource = Base.ReformularTipoInternacao();
-            cmbEspecialidades.DataSource = Base.ReformularEspecialidades();
+            dtpDataEntradaInternacao.Value = DateTime.Today;
+            cmbTipoInternacao.DataSource = Enum.GetValues(typeof(TipoInternacao));
+            cmbEspecialidades.DataSource = Enum.GetValues(typeof(Especialidades));
             cmbQuartos.DataSource = quartosBLL.ListarQuartosDisponiveis();
+            btnCadastrarInternação.Enabled = false;
         }
 
+        InternacaoBLL internacaoBLL = new InternacaoBLL();
         PacienteBLL pacienteBLL = new PacienteBLL();
         DoutoresBLL doutoresBLL = new DoutoresBLL();
         QuartosBLL quartosBLL = new QuartosBLL();
 
         private void btnCadastrarInternação_Click(object sender, System.EventArgs e)
         {
+            Internacao internacao = new Internacao(FuncionarioLogado.PacienteSelecionado.Id, FuncionarioLogado.DoutorTemp.Id, rtbDescricao.Text,
+                (TipoInternacao)cmbTipoInternacao.SelectedIndex, Convert.ToInt32(cmbQuartos.Text), dtpDataEntradaInternacao.Value, DateTime.Now);
 
+            MessageBox.Show(internacaoBLL.CadastrarInternacao(internacao));
         }
 
         private void cmbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,6 +51,14 @@ namespace SistemaHospitalar.UI
             cmbPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
+        private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idDoutor = (int)dgvDoutores.CurrentRow.Cells[0].Value;
+            FuncionarioLogado.SetDoutorTemp(idDoutor);
+            txtNomeDoutor.Text = FuncionarioLogado.DoutorTemp.Nome;
+            btnCadastrarInternação.Enabled = true;
+        }
+
         private void btnLimpar_Click(object sender, System.EventArgs e)
         {
             Base.LimparTxtEtc(Controls);
@@ -56,6 +70,5 @@ namespace SistemaHospitalar.UI
             FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
             Base.AbrirFormDesejado(this, formEntradaRecepcionista);
         }
-
     }
 }

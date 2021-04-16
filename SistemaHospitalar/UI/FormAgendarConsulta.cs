@@ -13,7 +13,7 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             dtpDataConsulta.Value = DateTime.Today;
-            cmbEspecialidade.DataSource = Base.ReformularEspecialidades();
+            cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
             btnCadastrarConsulta.Enabled = false;
         }
 

@@ -32,6 +32,11 @@ namespace SistemaHospitalar.BLL
             dalPacientes.GetDadosPaciente(p_IdPaciente, p_CpfPaciente);
         }
 
+        public Paciente GetPacienteByCpf(string cpf)
+        {
+            return dalPacientes.GetPacienteByCpf(cpf);
+        }
+
         public int PegarConvenioPeloNome(string NomeConvenio)
         {
             return dalPacientes.GetIdConvenioPeloNome(NomeConvenio);

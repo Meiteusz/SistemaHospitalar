@@ -46,7 +46,7 @@ namespace SistemaHospitalar.UI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblNomePaciente = new System.Windows.Forms.Label();
             this.dgvDoutores = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNomeDoutor = new System.Windows.Forms.TextBox();
             this.cmbEspecialidades = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoutores)).BeginInit();
@@ -180,7 +180,7 @@ namespace SistemaHospitalar.UI
             this.btnCadastrarInternação.Name = "btnCadastrarInternação";
             this.btnCadastrarInternação.Size = new System.Drawing.Size(127, 58);
             this.btnCadastrarInternação.TabIndex = 13;
-            this.btnCadastrarInternação.Text = "Cadastrar internação";
+            this.btnCadastrarInternação.Text = "Internar";
             this.btnCadastrarInternação.UseVisualStyleBackColor = true;
             this.btnCadastrarInternação.Click += new System.EventHandler(this.btnCadastrarInternação_Click);
             // 
@@ -221,15 +221,16 @@ namespace SistemaHospitalar.UI
             this.dgvDoutores.Name = "dgvDoutores";
             this.dgvDoutores.Size = new System.Drawing.Size(445, 397);
             this.dgvDoutores.TabIndex = 16;
+            this.dgvDoutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoutores_CellClick);
             // 
-            // textBox1
+            // txtNomeDoutor
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(498, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(265, 27);
-            this.textBox1.TabIndex = 17;
+            this.txtNomeDoutor.Enabled = false;
+            this.txtNomeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeDoutor.Location = new System.Drawing.Point(498, 148);
+            this.txtNomeDoutor.Name = "txtNomeDoutor";
+            this.txtNomeDoutor.Size = new System.Drawing.Size(265, 27);
+            this.txtNomeDoutor.TabIndex = 17;
             // 
             // cmbEspecialidades
             // 
@@ -248,7 +249,7 @@ namespace SistemaHospitalar.UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 590);
             this.Controls.Add(this.cmbEspecialidades);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNomeDoutor);
             this.Controls.Add(this.dgvDoutores);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnVoltar);
@@ -295,7 +296,7 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblNomePaciente;
         private System.Windows.Forms.DataGridView dgvDoutores;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNomeDoutor;
         private System.Windows.Forms.ComboBox cmbEspecialidades;
     }
 }

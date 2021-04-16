@@ -24,6 +24,11 @@ namespace SistemaHospitalar.BLL
             }
         }
 
+        public void DesativarQuartoUsado(int IdQuarto)
+        {
+             dalQuartos.Update(IdQuarto);
+        }
+
         public DataTable MostrarQuartos()
         {
             return dalQuartos.TodosQuartos();

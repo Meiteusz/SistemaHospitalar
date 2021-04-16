@@ -53,6 +53,7 @@
     <Compile Include="BLL\ConveniosBLL.cs" />
     <Compile Include="BLL\ExamesBLL.cs" />
     <Compile Include="BLL\InternacaoBLL.cs" />
+    <Compile Include="BLL\PacienteBLL.cs" />
     <Compile Include="BLL\QuartosBLL.cs" />
     <Compile Include="BLL\VisitantesBLL.cs" />
     <Compile Include="DAL\DalExames.cs" />
@@ -62,6 +63,12 @@
     <Compile Include="Entities\Exame.cs" />
     <Compile Include="Entities\Internacao.cs" />
     <Compile Include="Entities\Quartos.cs" />
+    <Compile Include="UI\FormExame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormExame.Designer.cs">
+      <DependentUpon>FormExame.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormInternacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,7 +89,6 @@
     </Compile>
     <Compile Include="Utilities\Base.cs" />
     <Compile Include="BLL\DoutoresBLL.cs" />
-    <Compile Include="BLL\PacienteBLL.cs" />
     <Compile Include="BLL\RecepcionistaBLL.cs" />
     <Compile Include="DAL\Conexao.cs" />
     <Compile Include="DAL\DalADM.cs" />
@@ -386,6 +392,5 @@
   <ItemGroup>
     <None Include="Resources\email1.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
