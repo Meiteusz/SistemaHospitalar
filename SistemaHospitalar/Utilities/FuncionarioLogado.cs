@@ -11,7 +11,10 @@ namespace SistemaHospitalar.Utilities
         public static Convenios ConvenioSelecionado { get; private set; }
         public static Paciente PacienteSelecionado { get; private set; }
         public static Consulta ConsultaTemp { get; private set; }
+        public static Internacao InternacaoTemp { get; private set; }
         public static Doutores DoutorTemp { get; private set; }
+        public static ADM ADMatual { get; private set; }
+        public static float ValorDiarioInternacaoADM { get; private set; }
 
         public static void SetFuncionarioLogado(object funcionario)
         {
@@ -38,11 +41,28 @@ namespace SistemaHospitalar.Utilities
             ConsultaTemp = dalConsultas.GetDadosConsultaPeloId(ConsultaID);
         }
 
+        public static void SetInternacaoTemp(int InternacaoID)
+        {
+            DalInternacao dalInternacao = new DalInternacao();
+
+            InternacaoTemp = dalInternacao.GetDadosInternacaoById(InternacaoID);
+        }
+
         public static void SetDoutorTemp(int DoutorID)
         {
             DalDoutores dalDoutores = new DalDoutores();
 
             DoutorTemp = dalDoutores.GetDadosDoutorPeloID(DoutorID);
+        }
+
+        public static void SetADM(ADM adm)
+        {
+            ADMatual = adm;
+        }
+
+        public static void SetValorDiarioInternacaoADM(float valorInternacao)
+        {
+            ValorDiarioInternacaoADM = valorInternacao;
         }
     }
 }

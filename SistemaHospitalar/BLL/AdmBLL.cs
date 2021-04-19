@@ -20,5 +20,15 @@ namespace SistemaHospitalar.BLL
             }
             return OutPut;
         }
+
+        public string AtualizarValorDiarioInternacao(ADM adm)
+        {
+            return dalAdm.AtualizarValorInternacao(adm);
+        }
+
+        public void PegarValorDiarioInternacao()
+        {
+            dalAdm.GetValorDiarioAdmAtivo();
+        }
     }
 }

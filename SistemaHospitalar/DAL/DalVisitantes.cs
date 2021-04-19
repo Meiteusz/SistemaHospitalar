@@ -1,12 +1,7 @@
 ﻿using SistemaHospitalar.Models;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaHospitalar.DAL
 {
@@ -44,7 +39,7 @@ namespace SistemaHospitalar.DAL
             {
                 command.Connection = conexao.Conectar();
                 command.ExecuteNonQuery();
-                return "Visitante deletada com sucesso";
+                return "Visitante deletado com sucesso";
             }
             catch (SqlException ex)
             {
@@ -70,7 +65,7 @@ namespace SistemaHospitalar.DAL
             }
             catch (SqlException ex)
             {
-                return "Erro com o banco de dados" + ex.Message;
+                return MostrarTipoErro(ex);
             }
             finally
             {

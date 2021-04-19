@@ -36,6 +36,7 @@ namespace SistemaHospitalar.UI
             this.dtpDataVisita = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAgendarVisita = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cbVisitantes
@@ -43,7 +44,7 @@ namespace SistemaHospitalar.UI
             this.cbVisitantes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVisitantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVisitantes.FormattingEnabled = true;
-            this.cbVisitantes.Location = new System.Drawing.Point(27, 59);
+            this.cbVisitantes.Location = new System.Drawing.Point(338, 56);
             this.cbVisitantes.Name = "cbVisitantes";
             this.cbVisitantes.Size = new System.Drawing.Size(280, 28);
             this.cbVisitantes.TabIndex = 16;
@@ -53,7 +54,7 @@ namespace SistemaHospitalar.UI
             this.cbPacientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPacientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPacientes.FormattingEnabled = true;
-            this.cbPacientes.Location = new System.Drawing.Point(331, 59);
+            this.cbPacientes.Location = new System.Drawing.Point(338, 132);
             this.cbPacientes.Name = "cbPacientes";
             this.cbPacientes.Size = new System.Drawing.Size(280, 28);
             this.cbPacientes.TabIndex = 17;
@@ -62,7 +63,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 31);
+            this.label1.Location = new System.Drawing.Point(333, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 18;
@@ -72,7 +73,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(331, 31);
+            this.label2.Location = new System.Drawing.Point(338, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 25);
             this.label2.TabIndex = 19;
@@ -112,11 +113,23 @@ namespace SistemaHospitalar.UI
             this.btnAgendarVisita.UseVisualStyleBackColor = true;
             this.btnAgendarVisita.Click += new System.EventHandler(this.btnAgendarVisita_Click);
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(112, 35);
+            this.btnVoltar.TabIndex = 23;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // FormVisitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 243);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnAgendarVisita);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpDataVisita);
@@ -141,5 +154,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.DateTimePicker dtpDataVisita;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAgendarVisita;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

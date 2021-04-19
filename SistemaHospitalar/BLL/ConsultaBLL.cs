@@ -48,8 +48,6 @@ namespace SistemaHospitalar.BLL
             ValorFinalConsulta = p_ValorConsulta - ValorDesconto;
         }
 
-
-
         public DataTable AgendaDoutor(int IdDoutor)
         {
             return dalConsultas.GetConsultasDoDoutor(IdDoutor);
@@ -63,6 +61,11 @@ namespace SistemaHospitalar.BLL
         public DataTable ConsultasGeral()
         {
             return dalConsultas.MostrarConsultas();
+        }
+
+        public DataTable ConsultasDoutor(int IdDoutor)
+        {
+            return dalConsultas.MostrarConsultasParaDoutor(IdDoutor);
         }
     }
 }

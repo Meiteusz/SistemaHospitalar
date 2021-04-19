@@ -161,6 +161,7 @@ namespace SistemaHospitalar
             this.rbRecepcionista.TabIndex = 8;
             this.rbRecepcionista.TabStop = true;
             this.rbRecepcionista.UseVisualStyleBackColor = true;
+            this.rbRecepcionista.CheckedChanged += new System.EventHandler(this.rbRecepcionista_CheckedChanged);
             // 
             // rbDoutor
             // 
@@ -181,6 +182,7 @@ namespace SistemaHospitalar
             this.rbDoutor.TabIndex = 7;
             this.rbDoutor.TabStop = true;
             this.rbDoutor.UseVisualStyleBackColor = true;
+            this.rbDoutor.CheckedChanged += new System.EventHandler(this.rbDoutor_CheckedChanged);
             // 
             // btnADM
             // 

@@ -65,10 +65,10 @@ namespace SistemaHospitalar.UI
             // rtbDescricao
             // 
             this.rtbDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbDescricao.Location = new System.Drawing.Point(824, 109);
+            this.rtbDescricao.Location = new System.Drawing.Point(824, 148);
             this.rtbDescricao.MaxLength = 250;
             this.rtbDescricao.Name = "rtbDescricao";
-            this.rtbDescricao.Size = new System.Drawing.Size(408, 161);
+            this.rtbDescricao.Size = new System.Drawing.Size(408, 127);
             this.rtbDescricao.TabIndex = 2;
             this.rtbDescricao.Text = "";
             // 
@@ -94,12 +94,12 @@ namespace SistemaHospitalar.UI
             // 
             // dtpDataEntradaInternacao
             // 
-            this.dtpDataEntradaInternacao.CustomFormat = "dd/MM/yyyy HH:mm tt";
-            this.dtpDataEntradaInternacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataEntradaInternacao.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dtpDataEntradaInternacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataEntradaInternacao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataEntradaInternacao.Location = new System.Drawing.Point(500, 496);
             this.dtpDataEntradaInternacao.Name = "dtpDataEntradaInternacao";
-            this.dtpDataEntradaInternacao.Size = new System.Drawing.Size(264, 29);
+            this.dtpDataEntradaInternacao.Size = new System.Drawing.Size(264, 27);
             this.dtpDataEntradaInternacao.TabIndex = 5;
             // 
             // label1
@@ -126,7 +126,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(820, 86);
+            this.label3.Location = new System.Drawing.Point(820, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 8;
@@ -216,9 +216,11 @@ namespace SistemaHospitalar.UI
             // 
             // dgvDoutores
             // 
+            this.dgvDoutores.AllowUserToAddRows = false;
             this.dgvDoutores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoutores.Location = new System.Drawing.Point(16, 128);
             this.dgvDoutores.Name = "dgvDoutores";
+            this.dgvDoutores.ReadOnly = true;
             this.dgvDoutores.Size = new System.Drawing.Size(445, 397);
             this.dgvDoutores.TabIndex = 16;
             this.dgvDoutores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDoutores_CellClick);

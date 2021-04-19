@@ -12,7 +12,7 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            dtpDataEntradaInternacao.Value = DateTime.Today;
+            dtpDataEntradaInternacao.Value = DateTime.Now;
             cmbTipoInternacao.DataSource = Enum.GetValues(typeof(TipoInternacao));
             cmbEspecialidades.DataSource = Enum.GetValues(typeof(Especialidades));
             cmbQuartos.DataSource = quartosBLL.ListarQuartosDisponiveis();
@@ -46,7 +46,7 @@ namespace SistemaHospitalar.UI
 
         private void FormInternacao_Load(object sender, EventArgs e)
         {
-            cmbPacientes.DataSource = pacienteBLL.MostrarCpfPacientes();
+            cmbPacientes.DataSource = pacienteBLL.MostrarCpfPacientesNaoInternados();
             cmbPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
         }

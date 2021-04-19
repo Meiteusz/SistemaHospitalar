@@ -33,6 +33,12 @@ namespace SistemaHospitalar.UI
             this.btnConvenios = new System.Windows.Forms.Button();
             this.btnEncerrarSessão = new System.Windows.Forms.Button();
             this.btnQuartos = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDiariaInternacao = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAtualizarDiaria = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiariaInternacao)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnFuncionarios
@@ -60,9 +66,9 @@ namespace SistemaHospitalar.UI
             // btnEncerrarSessão
             // 
             this.btnEncerrarSessão.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncerrarSessão.Location = new System.Drawing.Point(689, 387);
+            this.btnEncerrarSessão.Location = new System.Drawing.Point(669, 379);
             this.btnEncerrarSessão.Name = "btnEncerrarSessão";
-            this.btnEncerrarSessão.Size = new System.Drawing.Size(99, 51);
+            this.btnEncerrarSessão.Size = new System.Drawing.Size(119, 59);
             this.btnEncerrarSessão.TabIndex = 2;
             this.btnEncerrarSessão.Text = "Encerrar Sessão";
             this.btnEncerrarSessão.UseVisualStyleBackColor = true;
@@ -79,17 +85,68 @@ namespace SistemaHospitalar.UI
             this.btnQuartos.UseVisualStyleBackColor = true;
             this.btnQuartos.Click += new System.EventHandler(this.btnQuartos_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(176, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 22);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Diária Internação";
+            // 
+            // txtDiariaInternacao
+            // 
+            this.txtDiariaInternacao.DecimalPlaces = 2;
+            this.txtDiariaInternacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiariaInternacao.Location = new System.Drawing.Point(328, 28);
+            this.txtDiariaInternacao.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.txtDiariaInternacao.Name = "txtDiariaInternacao";
+            this.txtDiariaInternacao.Size = new System.Drawing.Size(129, 27);
+            this.txtDiariaInternacao.TabIndex = 5;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnAtualizarDiaria);
+            this.groupBox1.Controls.Add(this.txtDiariaInternacao);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(776, 75);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Valor Internação";
+            // 
+            // btnAtualizarDiaria
+            // 
+            this.btnAtualizarDiaria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarDiaria.Location = new System.Drawing.Point(488, 22);
+            this.btnAtualizarDiaria.Name = "btnAtualizarDiaria";
+            this.btnAtualizarDiaria.Size = new System.Drawing.Size(125, 37);
+            this.btnAtualizarDiaria.TabIndex = 7;
+            this.btnAtualizarDiaria.Text = "Atualizar Diaria";
+            this.btnAtualizarDiaria.UseVisualStyleBackColor = true;
+            this.btnAtualizarDiaria.Click += new System.EventHandler(this.btnAtualizarDiaria_Click);
+            // 
             // FormEntradaADM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnQuartos);
             this.Controls.Add(this.btnEncerrarSessão);
             this.Controls.Add(this.btnConvenios);
             this.Controls.Add(this.btnFuncionarios);
             this.Name = "FormEntradaADM";
             this.Text = "FormEntradaADM";
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiariaInternacao)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -100,5 +157,9 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnConvenios;
         private System.Windows.Forms.Button btnEncerrarSessão;
         private System.Windows.Forms.Button btnQuartos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown txtDiariaInternacao;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAtualizarDiaria;
     }
 }

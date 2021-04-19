@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaHospitalar.UI
 {
-    partial class FormComprovantePagamento
+    partial class FormExtratoConsulta
     {
         /// <summary>
         /// Required designer variable.

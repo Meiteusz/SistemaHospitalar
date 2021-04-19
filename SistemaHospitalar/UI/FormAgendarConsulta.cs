@@ -97,7 +97,7 @@ namespace SistemaHospitalar.UI
 
         private void AbrirComprovanteDePagamento()
         {
-            FormComprovantePagamento formComprovantePagamento = new FormComprovantePagamento();
+            FormExtratoConsulta formComprovantePagamento = new FormExtratoConsulta();
             Hide();
             formComprovantePagamento.MostrarDadosConsultas(lblNomePaciente.Text, cmbCpfPacientes.Text, dtpDataConsulta.Value.ToString("dd/MM/yyyy HH:mm tt"),
                 FuncionarioLogado.DoutorTemp.Nome, FuncionarioLogado.DoutorTemp.Especialidade.ToString(), consultaBLL.ValorFinalConsulta.ToString(), FuncionarioLogado.ConvenioSelecionado.Nome,

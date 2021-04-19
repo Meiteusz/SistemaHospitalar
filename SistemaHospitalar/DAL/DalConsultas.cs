@@ -160,7 +160,7 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
-        public static DataTable MostrarConsultasParaDoutor(int p_IdDoutor)
+        public DataTable MostrarConsultasParaDoutor(int p_IdDoutor)
         {
             SqlCommand command = new SqlCommand("select CONSULTAS.ID, PACIENTES.NOME as Paciente_Nome, FORMAT(CONSULTAS.DATACONSULTA, 'dd/MM/yyyy HH:mm') " +
                 "as DataHorarioConsulta from CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID inner join DOUTORES on " +
@@ -172,9 +172,11 @@ namespace SistemaHospitalar.DAL
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
+            conexao.Desconectar();
             return dt;
         }
 
+        //Agenda do doutor
         public DataTable GetConsultasDoDoutor(int p_IdDoutor)
         {
             SqlCommand command = new SqlCommand("select PACIENTES.NOME as NomePaciente, FORMAT(CONSULTAS.DATACONSULTA , 'HH:mm') as DataConsulta FROM CONSULTAS " +
@@ -185,6 +187,7 @@ namespace SistemaHospitalar.DAL
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
+            conexao.Desconectar();
             return dt;
         }
 

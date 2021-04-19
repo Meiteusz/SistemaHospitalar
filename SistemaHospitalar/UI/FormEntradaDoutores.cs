@@ -37,5 +37,11 @@ namespace SistemaHospitalar.UI
             FormLogin formLogin = new FormLogin();
             Base.AbrirFormDesejado(this, formLogin);
         }
+
+        private void btnInternacoesDoutor_Click(object sender, System.EventArgs e)
+        {
+            FormInternacoesDoutor formInterncoesDoutor = new FormInternacoesDoutor();
+            Base.AbrirFormDesejado(this, formInterncoesDoutor);
+        }
     }
 }

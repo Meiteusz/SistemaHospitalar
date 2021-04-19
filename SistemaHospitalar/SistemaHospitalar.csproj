@@ -69,17 +69,35 @@
     <Compile Include="UI\FormExame.Designer.cs">
       <DependentUpon>FormExame.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormExtratoInternacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormExtratoInternacao.Designer.cs">
+      <DependentUpon>FormExtratoInternacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormInternacao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\FormInternacao.Designer.cs">
       <DependentUpon>FormInternacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormInternacoesDoutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormInternacoesDoutor.Designer.cs">
+      <DependentUpon>FormInternacoesDoutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormQuartos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\FormQuartos.Designer.cs">
       <DependentUpon>FormQuartos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormVerificarInternacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormVerificarInternacao.Designer.cs">
+      <DependentUpon>FormVerificarInternacao.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormVisitas.cs">
       <SubType>Form</SubType>
@@ -129,11 +147,11 @@
     <Compile Include="UI\FormAgendarConsulta.Designer.cs">
       <DependentUpon>FormAgendarConsulta.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormComprovantePagamento.cs">
+    <Compile Include="UI\FormExtratoConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormComprovantePagamento.Designer.cs">
-      <DependentUpon>FormComprovantePagamento.cs</DependentUpon>
+    <Compile Include="UI\FormExtratoConsulta.Designer.cs">
+      <DependentUpon>FormExtratoConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormConfiguracoesDoutores.cs">
       <SubType>Form</SubType>
@@ -237,6 +255,9 @@
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExtratoInternacao.resx">
+      <DependentUpon>FormExtratoInternacao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormFuncionarios.resx">
       <DependentUpon>FormFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,8 +267,8 @@
     <EmbeddedResource Include="UI\FormCadastroDoutor.resx">
       <DependentUpon>FormCadastroDoutor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormComprovantePagamento.resx">
-      <DependentUpon>FormComprovantePagamento.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormExtratoConsulta.resx">
+      <DependentUpon>FormExtratoConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormConfiguracoesDoutores.resx">
       <DependentUpon>FormConfiguracoesDoutores.cs</DependentUpon>
@@ -269,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormInternacao.resx">
       <DependentUpon>FormInternacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormInternacoesDoutor.resx">
+      <DependentUpon>FormInternacoesDoutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormLoginADM.resx">
       <DependentUpon>FormLoginADM.cs</DependentUpon>
@@ -309,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormConsultasDoutor.resx">
       <DependentUpon>FormConsultasDoutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormVerificarInternacao.resx">
+      <DependentUpon>FormVerificarInternacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormVisitas.resx">
       <DependentUpon>FormVisitas.cs</DependentUpon>

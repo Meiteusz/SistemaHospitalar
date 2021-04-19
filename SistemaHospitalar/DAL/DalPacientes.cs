@@ -159,7 +159,25 @@ namespace SistemaHospitalar.Models
             conexao.Desconectar();
             return pacientes;
         }
-        
+
+        public ArrayList MostrarCpfPacientesNaoInternados()
+        {
+            ArrayList pacientes = new ArrayList();
+            adapter = new SqlDataAdapter(
+                "select CPF from PACIENTES where ID NOT IN " +
+                "(select PACIENTEID from INTERNACAO)"
+                , conexao.Conectar());
+            dt = new DataTable();
+            adapter.Fill(dt);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                pacientes.Add(item["CPF"].ToString());
+            }
+            conexao.Desconectar();
+            return pacientes;
+        }
+
         public DataTable TodosPacientes()
         {
             command.CommandText = "select PACIENTES.ID, PACIENTES.NOME, PACIENTES.CPF, PACIENTES.CELULAR, PACIENTES.GENERO, CONVENIOS.NOME as CONVENIO " +
@@ -181,6 +199,5 @@ namespace SistemaHospitalar.Models
             adapter.Fill(dt);
             return dt;
         }
-
     }
 }

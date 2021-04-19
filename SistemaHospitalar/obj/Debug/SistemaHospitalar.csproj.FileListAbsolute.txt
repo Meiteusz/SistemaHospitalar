@@ -43,7 +43,6 @@ D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHo
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormConvenios.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormValores.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormAgendarConsulta.resources
-D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormComprovantePagamento.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormFuncionarios.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormEntradaADM.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormReagendamentoConsulta.resources
@@ -85,3 +84,6 @@ D:\C#\Hospital\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.U
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormVisitas.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormQuartos.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormInternacao.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormVerificarInternacao.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormInternacoesDoutor.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormExtratoConsulta.resources

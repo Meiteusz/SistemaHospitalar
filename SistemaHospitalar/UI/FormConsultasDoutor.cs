@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.DAL;
 using SistemaHospitalar.Utilities;
 using System.Windows.Forms;
 
@@ -11,8 +10,10 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            dgvConsultas.DataSource = DalConsultas.MostrarConsultasParaDoutor(FuncionarioLogado.DoutorLogado.Id);
+            dgvConsultas.DataSource = ConsultaBLL.ConsultasDoutor(FuncionarioLogado.DoutorLogado.Id);
         }
+
+        ConsultaBLL ConsultaBLL = new ConsultaBLL();
 
         private void btnFazerDiagnostico_Click(object sender, System.EventArgs e)
         {

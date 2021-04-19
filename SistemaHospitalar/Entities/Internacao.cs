@@ -15,6 +15,24 @@ namespace SistemaHospitalar.Entities
         public float Preco { get; set; }
         public DateTime DataUltimaAtualizacao { get; set; }
 
+        public Internacao() { }
+
+        public Internacao(int p_Id, string p_descricao, TipoInternacao p_tipoInternacao, int p_quartoId, DateTime p_dataUltimaAtualizacao)
+        {
+            Id = p_Id;
+            Descricao = p_descricao;
+            TipoInternacao = p_tipoInternacao;
+            QuartoId = p_quartoId;
+            DataUltimaAtualizacao = p_dataUltimaAtualizacao;
+        }
+
+        public Internacao(int p_Id, DateTime P_dataSaida, float p_preco)
+        {
+            Id = p_Id;
+            DataSaida = P_dataSaida;
+            Preco = p_preco;
+        }
+
         public Internacao(int p_pacienteId, int p_doutorId, string p_descricao, TipoInternacao p_tipoInternacao, int p_quartoId, DateTime p_dataEntrada, DateTime p_dataUltimaAtualizacao)
         {
             PacienteId = p_pacienteId;

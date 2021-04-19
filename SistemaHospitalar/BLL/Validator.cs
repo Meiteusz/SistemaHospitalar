@@ -142,11 +142,11 @@ namespace SistemaHospitalar.Models
 			return "";
 		}
 
-		public string ValidarGravidade(TipoInternacao gravidade)
+		public string ValidarTipoInternacao(TipoInternacao tipoInternacao)
         {
-			if (gravidade.Equals(TipoInternacao.Selecione))
+			if (tipoInternacao.Equals(TipoInternacao.Selecione))
 			{
-				return "Selecione uma Gravidade\n";
+				return "Selecione o tipo da internação\n";
 			}
 			return "";
 		}
@@ -202,6 +202,15 @@ namespace SistemaHospitalar.Models
             if (numeroQuarto.Equals(0) || numeroQuarto.Equals(""))
             {
 				return "Numero do quarto inválido";
+            }
+			return "";
+        }
+
+		public string ValidarDataEntradaInternacao(DateTime DataEntradaInternacao)
+        {
+            if (DataEntradaInternacao < DateTime.Now)
+            {
+				return "Data de entrada da internação inválida\n";
             }
 			return "";
         }

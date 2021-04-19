@@ -1,4 +1,6 @@
 ﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.Entities;
+using SistemaHospitalar.Utilities;
 using System;
 using System.Windows.Forms;
 
@@ -10,7 +12,10 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
+            txtDiariaInternacao.Value = (decimal)FuncionarioLogado.ADMatual.ValorDiarioInternacao;
         }
+
+        AdmBLL admBLL = new AdmBLL();
 
         private void btnFuncionarios_Click(object sender, EventArgs e)
         {
@@ -34,6 +39,13 @@ namespace SistemaHospitalar.UI
         {
             FormQuartos formQuartos = new FormQuartos();
             Base.AbrirFormDesejado(this, formQuartos);
+        }
+
+        private void btnAtualizarDiaria_Click(object sender, EventArgs e)
+        {
+            ADM adm = new ADM(FuncionarioLogado.ADMatual.Usuario, FuncionarioLogado.ADMatual.Senha, (float)txtDiariaInternacao.Value);
+
+            MessageBox.Show(admBLL.AtualizarValorDiarioInternacao(adm));
         }
     }
 }

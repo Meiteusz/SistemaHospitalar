@@ -9,6 +9,7 @@ namespace SistemaHospitalar.UI
         public FormVisitas()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         VisitantesBLL visitanteBLL = new VisitantesBLL();
@@ -28,6 +29,12 @@ namespace SistemaHospitalar.UI
             cbPacientes.DisplayMember = "CPF";
             cbPacientes.DataSource = pacienteBLL.MostrarCpfPacientesInternados();
             cbPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
+            Base.AbrirFormDesejado(this, formEntradaRecepcionista);
         }
     }
 }

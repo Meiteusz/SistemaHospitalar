@@ -31,11 +31,32 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-        public void Update(int p_IdQuarto)
+        public void UpdateOcuparQuarto(int p_IdQuarto)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@numeroQuarto", p_IdQuarto);
             command.CommandText = "update QUARTOS set DISPONIVEL = 0 where NUMEROQUARTO = @numeroQuarto";
+
+            try
+            {
+                command.Connection = conexao.Conectar();
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexao.Conectar();
+            }
+        }
+
+        public void UpdateDesocuparQuarto(int p_IdQuarto)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@numeroQuarto", p_IdQuarto);
+            command.CommandText = "update QUARTOS set DISPONIVEL = 1 where NUMEROQUARTO = @numeroQuarto";
 
             try
             {

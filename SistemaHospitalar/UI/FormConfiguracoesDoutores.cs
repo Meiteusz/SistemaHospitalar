@@ -27,7 +27,6 @@ namespace SistemaHospitalar.UI
             }
         }
 
-
         private void txtMaskedCelularDoutor_Click(object sender, EventArgs e)
         {
             if (txtMaskedCelularDoutor.Text.Equals("(  )      -"))

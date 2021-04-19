@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
 {
-    public partial class FormComprovantePagamento : Form
+    public partial class FormExtratoConsulta : Form
     {
-        public FormComprovantePagamento()
+        public FormExtratoConsulta()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
