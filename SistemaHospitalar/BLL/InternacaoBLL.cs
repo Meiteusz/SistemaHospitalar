@@ -12,6 +12,7 @@ namespace SistemaHospitalar.BLL
         public float ValorDiarioTotal { get; private set; }
         public float ValorDesconto { get; private set; }
         public float ValorFinalInternacao { get; private set; }
+        public int DiasDeInternacao { get; private set; }
         DalInternacao dalInternacao = new DalInternacao();
 
         public string CadastrarInternacao(Internacao internacao)
@@ -36,11 +37,12 @@ namespace SistemaHospitalar.BLL
             return MensagemErro;
         }
 
-        public void SetValoresInternacao(float p_valorDiarioTotal, float p_valorDesconto)
+        public void SetValoresInternacao(float p_valorDiarioTotal, float p_valorDesconto, int p_diasInternacao)
         {
             ValorDiarioTotal = p_valorDiarioTotal;
             ValorDesconto = p_valorDiarioTotal * p_valorDesconto;
             ValorFinalInternacao = p_valorDiarioTotal - ValorDesconto;
+            DiasDeInternacao = p_diasInternacao;
         }
         
         public string DarAlta(Internacao internacao)

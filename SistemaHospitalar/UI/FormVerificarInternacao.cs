@@ -33,13 +33,15 @@ namespace SistemaHospitalar.UI
 
         private void btnDarAltar_Click(object sender, System.EventArgs e)
         {
-            float ValorTotalInternacao = FuncionarioLogado.ValorDiarioInternacaoADM * Convert.ToInt32(DateTime.Now.Subtract(FuncionarioLogado.InternacaoTemp.DataEntrada).Days);
-            internacaoBLL.SetValoresInternacao(ValorTotalInternacao, FuncionarioLogado.ConvenioSelecionado.Desconto);
+            int DiasDeInternacao = Convert.ToInt32(DateTime.Now.Subtract(FuncionarioLogado.InternacaoTemp.DataEntrada).Days);
+            float ValorTotalInternacao = FuncionarioLogado.ValorDiarioInternacaoADM * DiasDeInternacao;
+            internacaoBLL.SetValoresInternacao(ValorTotalInternacao, FuncionarioLogado.ConvenioSelecionado.Desconto, DiasDeInternacao);
 
             Internacao internacao = new Internacao(FuncionarioLogado.InternacaoTemp.Id, DateTime.Now, internacaoBLL.ValorFinalInternacao);
             if (MessageBox.Show("Deseja dar alta para o paciente: " + FuncionarioLogado.PacienteSelecionado.Nome + "?", "Registrar Alta", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 MessageBox.Show(internacaoBLL.DarAlta(internacao));
+                AbrirExtratoInternacao();
             }
         }
 
@@ -63,6 +65,18 @@ namespace SistemaHospitalar.UI
         {
             FormInternacoesDoutor formInterncoesDoutor = new FormInternacoesDoutor();
             Base.AbrirFormDesejado(this, formInterncoesDoutor);
+        }
+
+        private void AbrirExtratoInternacao()
+        {
+            FormExtratoInternacao formExtratoInternacao = new FormExtratoInternacao();
+            Hide();
+            formExtratoInternacao.PreencherValoresInternacao(FuncionarioLogado.PacienteSelecionado.Nome, FuncionarioLogado.PacienteSelecionado.Cpf, FuncionarioLogado.ConvenioSelecionado.Nome,
+                FuncionarioLogado.ConvenioSelecionado.Desconto.ToString(), FuncionarioLogado.InternacaoTemp.DataEntrada.ToString("dd/MM/yyyy HH:mm"), FuncionarioLogado.DoutorLogado.Nome,
+                FuncionarioLogado.DoutorLogado.Especialidade.ToString(), FuncionarioLogado.ValorDiarioInternacaoADM.ToString(), internacaoBLL.DiasDeInternacao.ToString(),
+                internacaoBLL.ValorDiarioTotal.ToString(), internacaoBLL.ValorDesconto.ToString(), internacaoBLL.ValorFinalInternacao.ToString());
+            formExtratoInternacao.ShowDialog();
+            Close();
         }
 
         private void BloquearPacientesComAlta()

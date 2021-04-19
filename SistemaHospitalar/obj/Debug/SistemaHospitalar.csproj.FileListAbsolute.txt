@@ -87,3 +87,4 @@ D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHo
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormVerificarInternacao.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormInternacoesDoutor.resources
 D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormExtratoConsulta.resources
+D:\VisualStudioWorkbench\SistemaHospitalar\SistemaHospitalar\obj\Debug\SistemaHospitalar.UI.FormExtratoInternacao.resources

@@ -47,7 +47,7 @@ namespace SistemaHospitalar.UI
             if (consultaBLL.isDataValida(consulta))
             {
                 MessageBox.Show(consultaBLL.AgendarConsulta(consulta));
-                AbrirComprovanteDePagamento();
+                AbrirExtratoConsulta();
             }
             else
             {
@@ -57,7 +57,6 @@ namespace SistemaHospitalar.UI
 
         private void FormCadastroConsulta_Load(object sender, EventArgs e)
         {
-            //cmbCpfPacientes.DisplayMember = "NOME";
             cmbCpfPacientes.DataSource = pacienteBLL.MostrarCpfPacientes();
             cmbCpfPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -95,7 +94,7 @@ namespace SistemaHospitalar.UI
             Base.AbrirFormDesejado(this, formConsultas);
         }
 
-        private void AbrirComprovanteDePagamento()
+        private void AbrirExtratoConsulta()
         {
             FormExtratoConsulta formComprovantePagamento = new FormExtratoConsulta();
             Hide();
