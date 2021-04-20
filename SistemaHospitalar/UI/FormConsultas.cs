@@ -10,7 +10,8 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            rbTodas.Checked = true; ;
+            rbTodas.Checked = true;
+            btnAgendarExame.Enabled = false;
         }
 
         ConsultaBLL consultaBLL = new ConsultaBLL();
@@ -38,11 +39,19 @@ namespace SistemaHospitalar.UI
             }
         }
 
+        private void btnAgendarExame_Click(object sender, System.EventArgs e)
+        {
+            FormExame formExame = new FormExame();
+            Base.AbrirFormDesejado(this, formExame);
+        }
+
         private void dgvConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnAgendarExame.Enabled = true;
             int IdConsulta = (int)dgvConsultas.CurrentRow.Cells[0].Value;
 
             FuncionarioLogado.SetConsultaTemp(IdConsulta);
+            FuncionarioLogado.SetDoutorTemp(FuncionarioLogado.ConsultaTemp.Doutor);
             pacienteBLL.PegarDadosPaciente(FuncionarioLogado.ConsultaTemp.Paciente, string.Empty);
         }
 

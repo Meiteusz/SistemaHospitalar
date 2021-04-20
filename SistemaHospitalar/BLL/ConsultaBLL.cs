@@ -15,7 +15,7 @@ namespace SistemaHospitalar.BLL
 
         public bool isDataValida(Consulta consulta)
         {
-            if (ValidarDataConsulta(consulta.DataConsulta) && dalConsultas.isDataConsultaValido(consulta.DataConsulta, consulta.Paciente, consulta.Doutor))
+            if (ValidarDataConsultaExame(consulta.DataConsulta) && dalConsultas.isDataConsultaValido(consulta.DataConsulta, consulta.Paciente, consulta.Doutor))
             {
                 return true;
             }

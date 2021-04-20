@@ -104,9 +104,9 @@ namespace SistemaHospitalar.DAL
         public Internacao GetDadosInternacaoById(int p_IdInternacao)
         {
             Internacao internacao = new Internacao();
-            SqlCommand command = new SqlCommand("select * from INTERNACAO where ID = @p_IdInternacao", conexao.Conectar());
+            SqlCommand command = new SqlCommand("select * from INTERNACAO where ID = @IdInternacao", conexao.Conectar());
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@p_IdInternacao", p_IdInternacao);
+            command.Parameters.AddWithValue("@IdInternacao", p_IdInternacao);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
@@ -120,12 +120,32 @@ namespace SistemaHospitalar.DAL
                 internacao.TipoInternacao = TipoInternacaoConvertido;
                 internacao.QuartoId = (int)reader["QUARTOID"];
                 internacao.DataEntrada = Convert.ToDateTime(reader["DATAENTRADA"]);
-                //internacao.DataSaida = Convert.ToDateTime(reader["DATASAIDA"]);
-                //internacao.Preco = Convert.ToSingle(reader["PRECO"]);
                 internacao.DataUltimaAtualizacao = Convert.ToDateTime(reader["DATAULTIMAATUALIZACAO"]);
             }
             conexao.Desconectar();
             return internacao;
+        }
+
+        public bool isDataSaidaNull(int p_IdInternacao)
+        {
+            string dataSaida = string.Empty;
+            SqlCommand command = new SqlCommand("select DATASAIDA from INTERNACAO where ID = @IdInternacao", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@IdInternacao", p_IdInternacao);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                dataSaida = reader["DATASAIDA"].ToString();
+            }
+            conexao.Desconectar();
+            if (dataSaida.Equals(string.Empty))
+            {
+                return true;
+            }
+            else
+            { 
+                return false;
+            }
         }
 
         public DataTable MostrarTodasInternacoes()

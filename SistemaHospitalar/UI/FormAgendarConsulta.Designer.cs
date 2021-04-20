@@ -211,9 +211,9 @@ namespace SistemaHospitalar.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 616);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cbAgendaDoutor);
             this.Controls.Add(this.btnVoltar);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnCadastrarConsulta);
             this.Controls.Add(this.cmbEspecialidade);

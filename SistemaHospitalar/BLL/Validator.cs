@@ -187,7 +187,7 @@ namespace SistemaHospitalar.Models
 			return "";
         }
 
-		public bool ValidarDataConsulta(DateTime dateTime)
+		public bool ValidarDataConsultaExame(DateTime dateTime)
         {
             if (dateTime <= DateTime.Now || dateTime.DayOfWeek.Equals(DayOfWeek.Saturday) ||dateTime.DayOfWeek.Equals(DayOfWeek.Sunday) || dateTime.Hour > 23 || 
 				dateTime.Hour < 7 || dateTime.Minute != 0 && dateTime.Minute != 30)
@@ -208,7 +208,7 @@ namespace SistemaHospitalar.Models
 
 		public string ValidarDataEntradaInternacao(DateTime DataEntradaInternacao)
         {
-            if (DataEntradaInternacao < DateTime.Now)
+            if (DataEntradaInternacao < DateTime.Today)
             {
 				return "Data de entrada da internação inválida\n";
             }

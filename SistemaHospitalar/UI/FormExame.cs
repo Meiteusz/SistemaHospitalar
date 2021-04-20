@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.Entities;
+using SistemaHospitalar.Utilities;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -15,6 +10,33 @@ namespace SistemaHospitalar.UI
         public FormExame()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+            lblNomePaciente.Text = FuncionarioLogado.PacienteSelecionado.Nome;
+            lblCpfPaciente.Text = FuncionarioLogado.PacienteSelecionado.Cpf;
+            lblNomeDoutor.Text = FuncionarioLogado.DoutorTemp.Nome;
+            lblEspecialidadeDoutor.Text = FuncionarioLogado.DoutorTemp.Especialidade.ToString();
+        }
+
+        ExamesBLL examesBLL = new ExamesBLL();
+
+        private void btnAgendarExame_Click(object sender, System.EventArgs e)
+        {
+            Exame exame = new Exame(FuncionarioLogado.ConsultaTemp.Id, dtpDataExame.Value, FuncionarioLogado.DoutorTemp.ValorExame, txtTipoExame.Text);
+
+            if (examesBLL.isDataExameValido(exame))
+            {
+                MessageBox.Show(examesBLL.AgendarExame(exame));
+            }
+            else
+            {
+                MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta ou exame neste Dia/Horario!\nVerifique tambem se a data/horário é válida!");
+            }
+        }
+
+        private void btnVoltar_Click(object sender, System.EventArgs e)
+        {
+            FormConsultas formConsultas = new FormConsultas();
+            Base.AbrirFormDesejado(this, formConsultas);
         }
     }
 }

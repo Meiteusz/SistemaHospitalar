@@ -255,6 +255,9 @@
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExame.resx">
+      <DependentUpon>FormExame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExtratoInternacao.resx">
       <DependentUpon>FormExtratoInternacao.cs</DependentUpon>
     </EmbeddedResource>

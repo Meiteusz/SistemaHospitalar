@@ -15,7 +15,7 @@ namespace SistemaHospitalar.UI
             cmbEstadoInternacao.DataSource = Enum.GetValues(typeof(TipoInternacao));
             cmbQuarto.DataSource = quartosBLL.ListarQuartosDisponiveis();
             lblPrecoDiarioInternacao.Text = FuncionarioLogado.ValorDiarioInternacaoADM.ToString();
-            //BloquearPacientesComAlta();
+            BloquearPacientesComAlta();
         }
 
         QuartosBLL quartosBLL = new QuartosBLL();
@@ -72,8 +72,8 @@ namespace SistemaHospitalar.UI
             FormExtratoInternacao formExtratoInternacao = new FormExtratoInternacao();
             Hide();
             formExtratoInternacao.PreencherValoresInternacao(FuncionarioLogado.PacienteSelecionado.Nome, FuncionarioLogado.PacienteSelecionado.Cpf, FuncionarioLogado.ConvenioSelecionado.Nome,
-                FuncionarioLogado.ConvenioSelecionado.Desconto.ToString(), FuncionarioLogado.InternacaoTemp.DataEntrada.ToString("dd/MM/yyyy HH:mm"), FuncionarioLogado.DoutorLogado.Nome,
-                FuncionarioLogado.DoutorLogado.Especialidade.ToString(), FuncionarioLogado.ValorDiarioInternacaoADM.ToString(), internacaoBLL.DiasDeInternacao.ToString(),
+                (FuncionarioLogado.ConvenioSelecionado.Desconto * 100).ToString(), FuncionarioLogado.InternacaoTemp.DataEntrada.ToString("dd/MM/yyyy HH:mm"), DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
+                FuncionarioLogado.InternacaoTemp.QuartoId.ToString(), FuncionarioLogado.DoutorLogado.Nome, FuncionarioLogado.DoutorLogado.Especialidade.ToString(), FuncionarioLogado.ValorDiarioInternacaoADM.ToString(), internacaoBLL.DiasDeInternacao.ToString(),
                 internacaoBLL.ValorDiarioTotal.ToString(), internacaoBLL.ValorDesconto.ToString(), internacaoBLL.ValorFinalInternacao.ToString());
             formExtratoInternacao.ShowDialog();
             Close();
@@ -81,9 +81,9 @@ namespace SistemaHospitalar.UI
 
         private void BloquearPacientesComAlta()
         {
-            if (!FuncionarioLogado.InternacaoTemp.DataSaida.Equals(DateTime.MinValue))
+            if (!internacaoBLL.isDataSaidaNull(FuncionarioLogado.InternacaoTemp.Id))
             {
-                rtbDescricao.Enabled = false;
+                rtbDescricao.ReadOnly = true;
                 btnLimparRtb.Enabled = false;
                 btnDarAltar.Enabled = false;
                 btnAtualizarInternacao.Enabled = false;

@@ -27,15 +27,6 @@ namespace SistemaHospitalar.UI
             PesquisarDoutorDGV();
         }
 
-        private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int IdDoutor = (int)dgvDoutores.CurrentRow.Cells[0].Value;
-            FuncionarioLogado.SetDoutorTemp(IdDoutor);
-
-            txtNomeDoutor.Text = FuncionarioLogado.DoutorTemp.Nome;
-            btnCadastrarConsulta.Enabled = true;
-        }
-
         private void btnAgendarConsulta_Click(object sender, EventArgs e)
         {
             pacienteBLL.PegarDadosPaciente(0, cmbCpfPacientes.Text);
@@ -53,6 +44,15 @@ namespace SistemaHospitalar.UI
             {
                 MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!\nVerifique tambem se a data/horário é válida!");
             }
+        }
+        
+        private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int IdDoutor = (int)dgvDoutores.CurrentRow.Cells[0].Value;
+            FuncionarioLogado.SetDoutorTemp(IdDoutor);
+
+            txtNomeDoutor.Text = FuncionarioLogado.DoutorTemp.Nome;
+            btnCadastrarConsulta.Enabled = true;
         }
 
         private void FormCadastroConsulta_Load(object sender, EventArgs e)

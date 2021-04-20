@@ -57,6 +57,11 @@ namespace SistemaHospitalar.BLL
             }
         }
 
+        public bool isDataSaidaNull(int IdInternacao)
+        {
+            return dalInternacao.isDataSaidaNull(IdInternacao);
+        }
+
         public DataTable TodasInternacoes()
         {
             return dalInternacao.MostrarTodasInternacoes();

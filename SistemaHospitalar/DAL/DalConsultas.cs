@@ -176,8 +176,7 @@ namespace SistemaHospitalar.DAL
             return dt;
         }
 
-        //Agenda do doutor
-        public DataTable GetConsultasDoDoutor(int p_IdDoutor)
+        public DataTable GetConsultasDoDoutor(int p_IdDoutor)//Agenda do doutor
         {
             SqlCommand command = new SqlCommand("select PACIENTES.NOME as NomePaciente, FORMAT(CONSULTAS.DATACONSULTA , 'HH:mm') as DataConsulta FROM CONSULTAS " +
                 "inner join PACIENTES on PACIENTEID = PACIENTES.ID WHERE DOUTORID = @IdDoutor and CONVERT(DATE, CONSULTAS.DATACONSULTA) = Convert(date, getdate()); ", conexao.Conectar());

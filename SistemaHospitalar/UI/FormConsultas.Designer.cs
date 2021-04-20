@@ -37,6 +37,7 @@ namespace SistemaHospitalar.UI
             this.gpFiltrosConsultas = new System.Windows.Forms.GroupBox();
             this.rbTodas = new System.Windows.Forms.RadioButton();
             this.rbDataHoje = new System.Windows.Forms.RadioButton();
+            this.btnAgendarExame = new System.Windows.Forms.Button();
             btnReagendarConsulta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.gpFiltrosConsultas.SuspendLayout();
@@ -44,10 +45,9 @@ namespace SistemaHospitalar.UI
             // 
             // btnReagendarConsulta
             // 
-            btnReagendarConsulta.BackColor = System.Drawing.Color.Aquamarine;
-            btnReagendarConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnReagendarConsulta.BackColor = System.Drawing.Color.LightCoral;
             btnReagendarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnReagendarConsulta.Location = new System.Drawing.Point(503, 487);
+            btnReagendarConsulta.Location = new System.Drawing.Point(766, 213);
             btnReagendarConsulta.Name = "btnReagendarConsulta";
             btnReagendarConsulta.Size = new System.Drawing.Size(161, 57);
             btnReagendarConsulta.TabIndex = 4;
@@ -58,7 +58,7 @@ namespace SistemaHospitalar.UI
             // btnAgendarConsulta
             // 
             this.btnAgendarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendarConsulta.Location = new System.Drawing.Point(305, 487);
+            this.btnAgendarConsulta.Location = new System.Drawing.Point(766, 114);
             this.btnAgendarConsulta.Name = "btnAgendarConsulta";
             this.btnAgendarConsulta.Size = new System.Drawing.Size(161, 57);
             this.btnAgendarConsulta.TabIndex = 0;
@@ -69,16 +69,16 @@ namespace SistemaHospitalar.UI
             // dgvConsultas
             // 
             this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultas.Location = new System.Drawing.Point(110, 104);
+            this.dgvConsultas.Location = new System.Drawing.Point(71, 114);
             this.dgvConsultas.Name = "dgvConsultas";
-            this.dgvConsultas.Size = new System.Drawing.Size(743, 338);
+            this.dgvConsultas.Size = new System.Drawing.Size(646, 338);
             this.dgvConsultas.TabIndex = 1;
             this.dgvConsultas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellClick);
             // 
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(110, 487);
+            this.btnVoltar.Location = new System.Drawing.Point(71, 487);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(161, 57);
             this.btnVoltar.TabIndex = 2;
@@ -89,7 +89,7 @@ namespace SistemaHospitalar.UI
             // btnDeletarConsulta
             // 
             this.btnDeletarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletarConsulta.Location = new System.Drawing.Point(692, 487);
+            this.btnDeletarConsulta.Location = new System.Drawing.Point(556, 487);
             this.btnDeletarConsulta.Name = "btnDeletarConsulta";
             this.btnDeletarConsulta.Size = new System.Drawing.Size(161, 57);
             this.btnDeletarConsulta.TabIndex = 3;
@@ -101,9 +101,9 @@ namespace SistemaHospitalar.UI
             // 
             this.gpFiltrosConsultas.Controls.Add(this.rbTodas);
             this.gpFiltrosConsultas.Controls.Add(this.rbDataHoje);
-            this.gpFiltrosConsultas.Location = new System.Drawing.Point(113, 35);
+            this.gpFiltrosConsultas.Location = new System.Drawing.Point(74, 45);
             this.gpFiltrosConsultas.Name = "gpFiltrosConsultas";
-            this.gpFiltrosConsultas.Size = new System.Drawing.Size(740, 63);
+            this.gpFiltrosConsultas.Size = new System.Drawing.Size(643, 63);
             this.gpFiltrosConsultas.TabIndex = 6;
             this.gpFiltrosConsultas.TabStop = false;
             this.gpFiltrosConsultas.Text = "Mostrar Consultas:";
@@ -132,11 +132,24 @@ namespace SistemaHospitalar.UI
             this.rbDataHoje.UseVisualStyleBackColor = true;
             this.rbDataHoje.CheckedChanged += new System.EventHandler(this.rbDataHoje_CheckedChanged);
             // 
+            // btnAgendarExame
+            // 
+            this.btnAgendarExame.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnAgendarExame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgendarExame.Location = new System.Drawing.Point(766, 317);
+            this.btnAgendarExame.Name = "btnAgendarExame";
+            this.btnAgendarExame.Size = new System.Drawing.Size(161, 57);
+            this.btnAgendarExame.TabIndex = 7;
+            this.btnAgendarExame.Text = "Agendar Exame";
+            this.btnAgendarExame.UseVisualStyleBackColor = false;
+            this.btnAgendarExame.Click += new System.EventHandler(this.btnAgendarExame_Click);
+            // 
             // FormConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 580);
+            this.Controls.Add(this.btnAgendarExame);
             this.Controls.Add(this.gpFiltrosConsultas);
             this.Controls.Add(btnReagendarConsulta);
             this.Controls.Add(this.btnDeletarConsulta);
@@ -161,5 +174,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.GroupBox gpFiltrosConsultas;
         private System.Windows.Forms.RadioButton rbTodas;
         private System.Windows.Forms.RadioButton rbDataHoje;
+        private System.Windows.Forms.Button btnAgendarExame;
     }
 }
