@@ -45,7 +45,6 @@ namespace SistemaHospitalar.UI
             this.dgvInternacoesDoutor.Size = new System.Drawing.Size(1045, 363);
             this.dgvInternacoesDoutor.TabIndex = 0;
             this.dgvInternacoesDoutor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInternacoesDoutor_CellClick);
-            this.dgvInternacoesDoutor.DoubleClick += new System.EventHandler(this.dgvInternacoesDoutor_DoubleClick);
             // 
             // btnVerificarInternacao
             // 

@@ -36,6 +36,7 @@ namespace SistemaHospitalar.UI
             this.btnConsultas = new System.Windows.Forms.Button();
             this.brnEncerrarSessão = new System.Windows.Forms.Button();
             this.btnInternacoesDoutor = new System.Windows.Forms.Button();
+            this.btnExames = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConfiguracoes
@@ -64,7 +65,7 @@ namespace SistemaHospitalar.UI
             // 
             this.btnValores.BackColor = System.Drawing.Color.Transparent;
             this.btnValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValores.Location = new System.Drawing.Point(652, 95);
+            this.btnValores.Location = new System.Drawing.Point(17, 12);
             this.btnValores.Name = "btnValores";
             this.btnValores.Size = new System.Drawing.Size(136, 65);
             this.btnValores.TabIndex = 3;
@@ -86,7 +87,7 @@ namespace SistemaHospitalar.UI
             // 
             this.btnConsultas.BackColor = System.Drawing.Color.Transparent;
             this.btnConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultas.Location = new System.Drawing.Point(168, 216);
+            this.btnConsultas.Location = new System.Drawing.Point(95, 196);
             this.btnConsultas.Name = "btnConsultas";
             this.btnConsultas.Size = new System.Drawing.Size(136, 76);
             this.btnConsultas.TabIndex = 5;
@@ -110,7 +111,7 @@ namespace SistemaHospitalar.UI
             // 
             this.btnInternacoesDoutor.BackColor = System.Drawing.Color.Transparent;
             this.btnInternacoesDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInternacoesDoutor.Location = new System.Drawing.Point(431, 216);
+            this.btnInternacoesDoutor.Location = new System.Drawing.Point(321, 196);
             this.btnInternacoesDoutor.Name = "btnInternacoesDoutor";
             this.btnInternacoesDoutor.Size = new System.Drawing.Size(136, 76);
             this.btnInternacoesDoutor.TabIndex = 7;
@@ -118,11 +119,24 @@ namespace SistemaHospitalar.UI
             this.btnInternacoesDoutor.UseVisualStyleBackColor = false;
             this.btnInternacoesDoutor.Click += new System.EventHandler(this.btnInternacoesDoutor_Click);
             // 
+            // btnExames
+            // 
+            this.btnExames.BackColor = System.Drawing.Color.Transparent;
+            this.btnExames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExames.Location = new System.Drawing.Point(551, 196);
+            this.btnExames.Name = "btnExames";
+            this.btnExames.Size = new System.Drawing.Size(136, 76);
+            this.btnExames.TabIndex = 8;
+            this.btnExames.Text = "Exames";
+            this.btnExames.UseVisualStyleBackColor = false;
+            this.btnExames.Click += new System.EventHandler(this.btnExames_Click);
+            // 
             // FormEntradaDoutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExames);
             this.Controls.Add(this.btnInternacoesDoutor);
             this.Controls.Add(this.brnEncerrarSessão);
             this.Controls.Add(this.btnConsultas);
@@ -146,5 +160,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button brnEncerrarSessão;
         private System.Windows.Forms.Button btnInternacoesDoutor;
+        private System.Windows.Forms.Button btnExames;
     }
 }

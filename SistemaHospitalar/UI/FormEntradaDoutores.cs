@@ -14,6 +14,24 @@ namespace SistemaHospitalar.UI
             lblEspecialidadeDoutor.Text = "Especialidade: " + FuncionarioLogado.DoutorLogado.Especialidade;
         }
 
+        private void btnConsultas_Click(object sender, System.EventArgs e)
+        {
+            FormConsultasDoutor formViewConsultas = new FormConsultasDoutor();
+            Base.AbrirFormDesejado(this, formViewConsultas);
+        }
+
+        private void btnInternacoesDoutor_Click(object sender, System.EventArgs e)
+        {
+            FormInternacoesDoutor formInterncoesDoutor = new FormInternacoesDoutor();
+            Base.AbrirFormDesejado(this, formInterncoesDoutor);
+        }
+
+        private void btnExames_Click(object sender, System.EventArgs e)
+        {
+            FormExamesDoutor formExamesDoutor = new FormExamesDoutor();
+            Base.AbrirFormDesejado(this, formExamesDoutor);
+        }
+
         private void btnConfiguracoes_Click(object sender, System.EventArgs e)
         {
             FormConfiguracoesDoutores formConfiguracoesDoutores = new FormConfiguracoesDoutores();
@@ -26,22 +44,10 @@ namespace SistemaHospitalar.UI
             Base.AbrirFormDesejado(this, formValores);
         }
 
-        private void btnConsultas_Click(object sender, System.EventArgs e)
-        {
-            FormConsultasDoutor formViewConsultas = new FormConsultasDoutor();
-            Base.AbrirFormDesejado(this, formViewConsultas);
-        }
-
         private void brnEncerrarSessão_Click(object sender, System.EventArgs e)
         {
             FormLogin formLogin = new FormLogin();
             Base.AbrirFormDesejado(this, formLogin);
-        }
-
-        private void btnInternacoesDoutor_Click(object sender, System.EventArgs e)
-        {
-            FormInternacoesDoutor formInterncoesDoutor = new FormInternacoesDoutor();
-            Base.AbrirFormDesejado(this, formInterncoesDoutor);
         }
     }
 }

@@ -8,7 +8,8 @@ namespace SistemaHospitalar.Models
 
         public Conexao()
         {
-            con.ConnectionString = "Data Source=.;Initial Catalog=SistemaHospitalar;Integrated Security=True";
+            // MultipleActiveResultSets=true -> comando deve ser usado na connectionString
+            con.ConnectionString = "Data Source=.;Initial Catalog=SistemaHospitalar;Integrated Security=True; MultipleActiveResultSets=true";
             //con.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\arthu\Documents\HospitalDB2.mdf;Integrated Security=True;Connect Timeout=30";
         }
 

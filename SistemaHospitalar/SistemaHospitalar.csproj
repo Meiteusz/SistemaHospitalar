@@ -60,15 +60,40 @@
     <Compile Include="DAL\DalInternacao.cs" />
     <Compile Include="DAL\DalQuartos.cs" />
     <Compile Include="DAL\DalVisitas.cs" />
+    <Compile Include="Entities\Diagnostico.cs" />
     <Compile Include="Entities\Exame.cs" />
     <Compile Include="Entities\Internacao.cs" />
     <Compile Include="Entities\Quartos.cs" />
     <Compile Include="Entities\Visita.cs" />
+    <Compile Include="UI\FormDescricaoDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormDescricaoDiagnostico.Designer.cs">
+      <DependentUpon>FormDescricaoDiagnostico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormDiagnostico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormDiagnostico.Designer.cs">
+      <DependentUpon>FormDiagnostico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormDiagnosticosDoExame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormDiagnosticosDoExame.Designer.cs">
+      <DependentUpon>FormDiagnosticosDoExame.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormExame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\FormExame.Designer.cs">
       <DependentUpon>FormExame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormExamesDoutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormExamesDoutor.Designer.cs">
+      <DependentUpon>FormExamesDoutor.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormExtratoInternacao.cs">
       <SubType>Form</SubType>
@@ -136,11 +161,11 @@
     <Compile Include="Entities\Enumeradores\Turno.cs" />
     <Compile Include="Entities\Usuarios.cs" />
     <Compile Include="Entities\Visitante.cs" />
-    <Compile Include="UI\FormDiagnostico.cs">
+    <Compile Include="UI\FormDiagnosticoConsultaDELETAR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormDiagnostico.Designer.cs">
-      <DependentUpon>FormDiagnostico.cs</DependentUpon>
+    <Compile Include="UI\FormDiagnosticoConsultaDELETAR.Designer.cs">
+      <DependentUpon>FormDiagnosticoConsultaDELETAR.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormFuncionarios.cs">
       <SubType>Form</SubType>
@@ -259,11 +284,23 @@
       <DependentUpon>FormConsultasDoutor.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\FuncionarioLogado.cs" />
+    <EmbeddedResource Include="UI\FormDescricaoDiagnostico.resx">
+      <DependentUpon>FormDescricaoDiagnostico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormDiagnosticoConsultaDELETAR.resx">
+      <DependentUpon>FormDiagnosticoConsultaDELETAR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormDiagnosticosDoExame.resx">
+      <DependentUpon>FormDiagnosticosDoExame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExame.resx">
       <DependentUpon>FormExame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExamesDoutor.resx">
+      <DependentUpon>FormExamesDoutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExtratoInternacao.resx">
       <DependentUpon>FormExtratoInternacao.cs</DependentUpon>

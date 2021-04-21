@@ -23,7 +23,7 @@ namespace SistemaHospitalar.UI
             }
             else
             {
-                FormDiagnostico formDiagnostico = new FormDiagnostico();
+                FormDiagnosticoConsultaDELETAR formDiagnostico = new FormDiagnosticoConsultaDELETAR();
                 Base.AbrirFormDesejado(this, formDiagnostico);
             }
         }

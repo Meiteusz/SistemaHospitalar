@@ -10,6 +10,8 @@ namespace SistemaHospitalar.Entities
         public float Preco { get; set; }
         public string TipoExame { get; set; }
 
+        public Exame() { }
+
         public Exame(int p_consultaId, DateTime p_dataExame, float p_preco, string p_tipoExame)
         {
             ConsultaId = p_consultaId;

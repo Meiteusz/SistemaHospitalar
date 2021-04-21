@@ -29,79 +29,71 @@ namespace SistemaHospitalar.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDiagnostico));
+            this.txtDescricaoDiagnostico = new System.Windows.Forms.RichTextBox();
+            this.btnPronto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNomePaciente = new System.Windows.Forms.TextBox();
-            this.rtbDescricao = new System.Windows.Forms.RichTextBox();
-            this.btnFazerDiagnostico = new System.Windows.Forms.Button();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // txtDescricaoDiagnostico
+            // 
+            this.txtDescricaoDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricaoDiagnostico.Location = new System.Drawing.Point(52, 52);
+            this.txtDescricaoDiagnostico.MaxLength = 500;
+            this.txtDescricaoDiagnostico.Name = "txtDescricaoDiagnostico";
+            this.txtDescricaoDiagnostico.Size = new System.Drawing.Size(535, 237);
+            this.txtDescricaoDiagnostico.TabIndex = 0;
+            this.txtDescricaoDiagnostico.Text = "";
+            // 
+            // btnPronto
+            // 
+            this.btnPronto.BackColor = System.Drawing.Color.Green;
+            this.btnPronto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPronto.ForeColor = System.Drawing.Color.White;
+            this.btnPronto.Location = new System.Drawing.Point(431, 312);
+            this.btnPronto.Name = "btnPronto";
+            this.btnPronto.Size = new System.Drawing.Size(156, 56);
+            this.btnPronto.TabIndex = 3;
+            this.btnPronto.Text = "PRONTO";
+            this.btnPronto.UseVisualStyleBackColor = false;
+            this.btnPronto.Click += new System.EventHandler(this.btnPronto_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(260, 30);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(48, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(268, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Diagnostico";
+            this.label1.Size = new System.Drawing.Size(109, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Diagnóstico:";
             // 
-            // txtNomePaciente
+            // btnCancelar
             // 
-            this.txtNomePaciente.Enabled = false;
-            this.txtNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomePaciente.Location = new System.Drawing.Point(228, 130);
-            this.txtNomePaciente.Name = "txtNomePaciente";
-            this.txtNomePaciente.Size = new System.Drawing.Size(330, 30);
-            this.txtNomePaciente.TabIndex = 1;
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(52, 312);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(156, 56);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // rtbDescricao
-            // 
-            this.rtbDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbDescricao.Location = new System.Drawing.Point(99, 198);
-            this.rtbDescricao.MaxLength = 600;
-            this.rtbDescricao.Name = "rtbDescricao";
-            this.rtbDescricao.Size = new System.Drawing.Size(594, 223);
-            this.rtbDescricao.TabIndex = 2;
-            this.rtbDescricao.Text = "";
-            // 
-            // btnFazerDiagnostico
-            // 
-            this.btnFazerDiagnostico.Location = new System.Drawing.Point(653, 119);
-            this.btnFazerDiagnostico.Name = "btnFazerDiagnostico";
-            this.btnFazerDiagnostico.Size = new System.Drawing.Size(113, 59);
-            this.btnFazerDiagnostico.TabIndex = 3;
-            this.btnFazerDiagnostico.Text = "Fazer Diagnostico";
-            this.btnFazerDiagnostico.UseVisualStyleBackColor = true;
-            this.btnFazerDiagnostico.Click += new System.EventHandler(this.btnFazerDiagnostico_Click);
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // FormDiagnostico
+            // FormDiagnosticos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnFazerDiagnostico);
-            this.Controls.Add(this.rtbDescricao);
-            this.Controls.Add(this.txtNomePaciente);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(652, 393);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label1);
-            this.Name = "FormDiagnostico";
-            this.Text = "FormDiagnostico";
+            this.Controls.Add(this.btnPronto);
+            this.Controls.Add(this.txtDescricaoDiagnostico);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "FormDiagnosticos";
+            this.Text = "FormDiagnosticos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,11 +101,9 @@ namespace SistemaHospitalar.UI
 
         #endregion
 
+        private System.Windows.Forms.RichTextBox txtDescricaoDiagnostico;
+        private System.Windows.Forms.Button btnPronto;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNomePaciente;
-        private System.Windows.Forms.RichTextBox rtbDescricao;
-        private System.Windows.Forms.Button btnFazerDiagnostico;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

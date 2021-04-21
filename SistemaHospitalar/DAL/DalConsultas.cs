@@ -100,7 +100,7 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-        public Consulta GetDadosConsultaPeloId(int p_IdConsulta)
+        public Consulta GetDadosConsultaById(int p_IdConsulta)
         {
             Consulta consulta = new Consulta();
             SqlCommand command = new SqlCommand("select * from CONSULTAS where ID = @IdConsulta", conexao.Conectar());

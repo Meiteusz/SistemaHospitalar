@@ -1,7 +1,7 @@
 ﻿using SistemaHospitalar.DAL;
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
-using SistemaHospitalar.Utilities;
+using System.Data;
 
 namespace SistemaHospitalar.BLL
 {
@@ -12,7 +12,7 @@ namespace SistemaHospitalar.BLL
 
         public bool isDataExameValido(Exame exame)
         {
-            if (ValidarDataConsultaExame(exame.DataExame) && dalConsultas.isDataConsultaValido(FuncionarioLogado.ConsultaTemp.DataConsulta, FuncionarioLogado.ConsultaTemp.Paciente, FuncionarioLogado.ConsultaTemp.Doutor))
+            if (ValidarDataConsultaExame(exame.DataExame)) //&& dalConsultas.isDataConsultaValido(FuncionarioLogado.ConsultaTemp.DataConsulta, FuncionarioLogado.ConsultaTemp.Paciente, FuncionarioLogado.ConsultaTemp.Doutor))
             {
                 return true;
             }
@@ -24,7 +24,32 @@ namespace SistemaHospitalar.BLL
 
         public string AgendarExame(Exame exame)
         {
-            return dalExames.Insert(exame);
+            return dalExames.InsertExame(exame);
+        }
+
+        public string CadastrarDiagnosticoExame(Diagnostico diagnostico)
+        {
+            return dalExames.InsertDiagnostico(diagnostico);
+        }
+
+        public string DeletarDiagnostico(int IdDiagnostico)
+        {
+            return dalExames.DeleteDiagnostico(IdDiagnostico);
+        }
+
+        public bool isDiagnosticoExistente(int IdExame)
+        {
+            return dalExames.isDiagnosticoExistente(IdExame);
+        }
+
+        public DataTable MostrarExamesDoutor(int IdDoutor)
+        {
+            return dalExames.TodosExamesDoDoutor(IdDoutor);
+        }
+
+        public DataTable MostrarDiagnosticosExame(int IdExame)
+        {
+            return dalExames.DiagnosticosExame(IdExame);
         }
     }
 }

@@ -27,12 +27,6 @@ namespace SistemaHospitalar.UI
             Base.AbrirFormDesejado(this, formVerificarInternacao);
         }
 
-        private void dgvInternacoesDoutor_DoubleClick(object sender, EventArgs e)
-        {
-            FormVerificarInternacao formVerificarInternacao = new FormVerificarInternacao();
-            Base.AbrirFormDesejado(this, formVerificarInternacao);
-        }
-
         private void dgvInternacoesDoutor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnVerificarInternacao.Enabled = true;
