@@ -17,7 +17,7 @@ namespace SistemaHospitalar.UI
             rbRecepcionista.Checked = true;
 
             cmbTurno.DataSource = Enum.GetValues(typeof(Turno));
-            cmbEspecialidade.DataSource = Base.ReformularEspecialidades();
+            cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
 
             btnDeletarFuncionario.Enabled = false;
             dgvFuncionarios.Columns["Turno"].Width = 70;

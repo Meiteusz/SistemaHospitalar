@@ -67,7 +67,7 @@ namespace SistemaHospitalar.BLL
             return dalPacientes.MostrarCpfPacientesNaoInternados();
         }
 
-        public string ValidarPaciente(Paciente paciente)
+        private string ValidarPaciente(Paciente paciente)
         {
             return ValidarNome(paciente.Nome) + ValidarCpf(paciente.Cpf) + ValidarCelular(paciente.Celular) + ValidarGenero(paciente.Genero);
         }

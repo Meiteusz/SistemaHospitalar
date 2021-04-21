@@ -29,10 +29,10 @@ namespace SistemaHospitalar.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtMaskedCelularDoutor = new System.Windows.Forms.MaskedTextBox();
+            this.MtbCelularDoutor = new System.Windows.Forms.MaskedTextBox();
             this.btnApagar = new System.Windows.Forms.Button();
             this.cbMostrarSenha = new System.Windows.Forms.CheckBox();
-            this.txtMaskedCpfDoutor = new System.Windows.Forms.MaskedTextBox();
+            this.MtbCpfDoutor = new System.Windows.Forms.MaskedTextBox();
             this.cmbGeneroDoutor = new System.Windows.Forms.ComboBox();
             this.cmbTurnoDoutor = new System.Windows.Forms.ComboBox();
             this.btnCadastrarDoutor = new System.Windows.Forms.Button();
@@ -69,16 +69,16 @@ namespace SistemaHospitalar.Views
             ((System.ComponentModel.ISupportInitialize)(this.txtValorConsulta)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtMaskedCelularDoutor
+            // MtbCelularDoutor
             // 
-            this.txtMaskedCelularDoutor.BeepOnError = true;
-            this.txtMaskedCelularDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaskedCelularDoutor.Location = new System.Drawing.Point(32, 142);
-            this.txtMaskedCelularDoutor.Mask = "(00) 00000-0000";
-            this.txtMaskedCelularDoutor.Name = "txtMaskedCelularDoutor";
-            this.txtMaskedCelularDoutor.Size = new System.Drawing.Size(336, 30);
-            this.txtMaskedCelularDoutor.TabIndex = 49;
-            this.txtMaskedCelularDoutor.Click += new System.EventHandler(this.txtMaskedCelularDoutor_Click);
+            this.MtbCelularDoutor.BeepOnError = true;
+            this.MtbCelularDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MtbCelularDoutor.Location = new System.Drawing.Point(32, 142);
+            this.MtbCelularDoutor.Mask = "(00) 00000-0000";
+            this.MtbCelularDoutor.Name = "MtbCelularDoutor";
+            this.MtbCelularDoutor.Size = new System.Drawing.Size(336, 30);
+            this.MtbCelularDoutor.TabIndex = 49;
+            this.MtbCelularDoutor.Click += new System.EventHandler(this.txtMaskedCelularDoutor_Click);
             // 
             // btnApagar
             // 
@@ -103,16 +103,16 @@ namespace SistemaHospitalar.Views
             this.cbMostrarSenha.UseVisualStyleBackColor = true;
             this.cbMostrarSenha.CheckedChanged += new System.EventHandler(this.cbMostrarSenha_CheckedChanged);
             // 
-            // txtMaskedCpfDoutor
+            // MtbCpfDoutor
             // 
-            this.txtMaskedCpfDoutor.BeepOnError = true;
-            this.txtMaskedCpfDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaskedCpfDoutor.Location = new System.Drawing.Point(33, 140);
-            this.txtMaskedCpfDoutor.Mask = "000.000.000-00";
-            this.txtMaskedCpfDoutor.Name = "txtMaskedCpfDoutor";
-            this.txtMaskedCpfDoutor.Size = new System.Drawing.Size(336, 30);
-            this.txtMaskedCpfDoutor.TabIndex = 46;
-            this.txtMaskedCpfDoutor.Click += new System.EventHandler(this.txtMaskedCpfDoutor_Click);
+            this.MtbCpfDoutor.BeepOnError = true;
+            this.MtbCpfDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MtbCpfDoutor.Location = new System.Drawing.Point(33, 140);
+            this.MtbCpfDoutor.Mask = "000.000.000-00";
+            this.MtbCpfDoutor.Name = "MtbCpfDoutor";
+            this.MtbCpfDoutor.Size = new System.Drawing.Size(336, 30);
+            this.MtbCpfDoutor.TabIndex = 46;
+            this.MtbCpfDoutor.Click += new System.EventHandler(this.txtMaskedCpfDoutor_Click);
             // 
             // cmbGeneroDoutor
             // 
@@ -299,7 +299,7 @@ namespace SistemaHospitalar.Views
             this.groupBox1.Controls.Add(this.cmbTurnoDoutor);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtMaskedCpfDoutor);
+            this.groupBox1.Controls.Add(this.MtbCpfDoutor);
             this.groupBox1.Controls.Add(this.txtNomeDoutor);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(30, 62);
@@ -327,7 +327,7 @@ namespace SistemaHospitalar.Views
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtMaskedCelularDoutor);
+            this.groupBox3.Controls.Add(this.MtbCelularDoutor);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.cmbGeneroDoutor);
@@ -451,10 +451,10 @@ namespace SistemaHospitalar.Views
 
         #endregion
 
-        private System.Windows.Forms.MaskedTextBox txtMaskedCelularDoutor;
+        private System.Windows.Forms.MaskedTextBox MtbCelularDoutor;
         private System.Windows.Forms.Button btnApagar;
         private System.Windows.Forms.CheckBox cbMostrarSenha;
-        private System.Windows.Forms.MaskedTextBox txtMaskedCpfDoutor;
+        private System.Windows.Forms.MaskedTextBox MtbCpfDoutor;
         private System.Windows.Forms.ComboBox cmbGeneroDoutor;
         private System.Windows.Forms.ComboBox cmbTurnoDoutor;
         private System.Windows.Forms.Button btnCadastrarDoutor;

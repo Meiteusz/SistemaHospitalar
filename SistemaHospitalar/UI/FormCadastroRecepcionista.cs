@@ -26,21 +26,14 @@ namespace SistemaHospitalar.Views
             MessageBox.Show(recepcionistaBLL.CadastrarRecepcionista(recepcionista, txtRepitaSenhaRecepcionista.Text));
         }
 
-
         private void txtMaskedCpfRecepcionista_Click(object sender, EventArgs e)
         {
-            if (MtbCpfRecepcionista.Text.Equals("   .   .   -"))
-            {
-                MtbCpfRecepcionista.SelectionStart = MtbCpfRecepcionista.SelectionLength = 0;
-            }
+            Base.SelectionLength(MtbCpfRecepcionista);
         }
 
         private void txtMaskedCelularRecepcionista_Click(object sender, EventArgs e)
         {
-            if (MtbCelularRecepcionista.Text.Equals("(  )      -"))
-            {
-                MtbCelularRecepcionista.SelectionStart = MtbCelularRecepcionista.SelectionLength = 0;
-            }
+            Base.SelectionLength(MtbCelularRecepcionista);
         }
         
         private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)

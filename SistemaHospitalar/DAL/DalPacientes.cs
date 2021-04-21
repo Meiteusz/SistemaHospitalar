@@ -145,10 +145,8 @@ namespace SistemaHospitalar.Models
         public ArrayList MostrarCpfPacientesInternados()
         {
             ArrayList pacientes = new ArrayList();
-            adapter = new SqlDataAdapter(
-                "select CPF from PACIENTES where ID IN " +
-                "(select PACIENTEID from INTERNACAO)" 
-                , conexao.Conectar());
+            adapter = new SqlDataAdapter("select CPF from PACIENTES where ID IN (select PACIENTEID from INTERNACAO where " +
+                "INTERNACAO.DATASAIDA is null)", conexao.Conectar());
             dt = new DataTable();
             adapter.Fill(dt);
 

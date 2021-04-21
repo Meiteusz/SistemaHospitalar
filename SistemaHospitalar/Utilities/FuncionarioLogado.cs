@@ -10,6 +10,7 @@ namespace SistemaHospitalar.Utilities
         public static Doutores DoutorLogado { get; private set; }
         public static Convenios ConvenioSelecionado { get; private set; }
         public static Paciente PacienteSelecionado { get; private set; }
+        public static Visitante VisitanteSelecionado { get; private set; }
         public static Consulta ConsultaTemp { get; private set; }
         public static Internacao InternacaoTemp { get; private set; }
         public static Doutores DoutorTemp { get; private set; }
@@ -32,6 +33,11 @@ namespace SistemaHospitalar.Utilities
         public static void SetPacienteSelecionado(Paciente paciente)
         {
             PacienteSelecionado = paciente;
+        }
+
+        public static void SetVisitanteSelecionado(Visitante visitante)
+        {
+            VisitanteSelecionado = visitante;
         }
 
         public static void SetConsultaTemp(int ConsultaID)

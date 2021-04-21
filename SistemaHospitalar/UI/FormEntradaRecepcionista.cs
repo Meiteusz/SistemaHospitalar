@@ -16,10 +16,16 @@ namespace SistemaHospitalar
             lblNome.Text = "Bem vindo " + FuncionarioLogado.RecepcionistaLogada.Nome;
         }
 
-        private void btnConfiguracoesRecepcionista_Click(object sender, System.EventArgs e)
+        private void btnConsultas_Click(object sender, System.EventArgs e)
         {
-            FormConfiguracoesRecepcionista formConfiguracoesRecepcionista = new FormConfiguracoesRecepcionista();
-            Base.AbrirFormDesejado(this, formConfiguracoesRecepcionista);
+            FormConsultas formConsultas = new FormConsultas();
+            Base.AbrirFormDesejado(this, formConsultas);
+        }
+
+        private void btnInternacao_Click(object sender, System.EventArgs e)
+        {
+            FormInternacao formInternacao = new FormInternacao();
+            Base.AbrirFormDesejado(this, formInternacao);
         }
 
         private void btnPacientes_Click(object sender, System.EventArgs e)
@@ -28,34 +34,28 @@ namespace SistemaHospitalar
             Base.AbrirFormDesejado(this, formPacientes);
         }
 
-        private void btnConsultas_Click(object sender, System.EventArgs e)
-        {
-            FormConsultas formConsultas = new FormConsultas();
-            Base.AbrirFormDesejado(this, formConsultas);
-        }
-
-        private void btnConvenios_Click(object sender, System.EventArgs e)
-        {
-            FormConvenios formConvenios = new FormConvenios();
-            Base.AbrirFormDesejado(this, formConvenios);
-        }
-
-        private void btnEncerrarSessão_Click(object sender, System.EventArgs e)
-        {
-            FormLogin formLogin = new FormLogin();
-            Base.AbrirFormDesejado(this, formLogin);
-        }
-
         private void btnVisitas_Click(object sender, System.EventArgs e)
         {
             FormVisitas formVisitas = new FormVisitas();
             Base.AbrirFormDesejado(this, formVisitas);
         }
 
-        private void btnInternacao_Click(object sender, System.EventArgs e)
+        private void btnVisitantes_Click(object sender, System.EventArgs e)
         {
-            FormInternacao formInternacao = new FormInternacao();
-            Base.AbrirFormDesejado(this, formInternacao);
+            FormVisitantes formVisitantes = new FormVisitantes();
+            Base.AbrirFormDesejado(this, formVisitantes);
+        }
+
+        private void btnConfiguracoesRecepcionista_Click(object sender, System.EventArgs e)
+        {
+            FormConfiguracoesRecepcionista formConfiguracoesRecepcionista = new FormConfiguracoesRecepcionista();
+            Base.AbrirFormDesejado(this, formConfiguracoesRecepcionista);
+        }
+
+        private void btnEncerrarSessão_Click(object sender, System.EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            Base.AbrirFormDesejado(this, formLogin);
         }
     }
 }

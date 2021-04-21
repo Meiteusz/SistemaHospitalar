@@ -55,14 +55,15 @@
     <Compile Include="BLL\InternacaoBLL.cs" />
     <Compile Include="BLL\PacienteBLL.cs" />
     <Compile Include="BLL\QuartosBLL.cs" />
-    <Compile Include="BLL\VisitantesBLL.cs" />
+    <Compile Include="BLL\VisitasBLL.cs" />
     <Compile Include="DAL\DalExames.cs" />
     <Compile Include="DAL\DalInternacao.cs" />
     <Compile Include="DAL\DalQuartos.cs" />
-    <Compile Include="DAL\DalVisitantes.cs" />
+    <Compile Include="DAL\DalVisitas.cs" />
     <Compile Include="Entities\Exame.cs" />
     <Compile Include="Entities\Internacao.cs" />
     <Compile Include="Entities\Quartos.cs" />
+    <Compile Include="Entities\Visita.cs" />
     <Compile Include="UI\FormExame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +99,12 @@
     </Compile>
     <Compile Include="UI\FormVerificarInternacao.Designer.cs">
       <DependentUpon>FormVerificarInternacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormVisitantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormVisitantes.Designer.cs">
+      <DependentUpon>FormVisitantes.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormVisitas.cs">
       <SubType>Form</SubType>
@@ -339,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormVerificarInternacao.resx">
       <DependentUpon>FormVerificarInternacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormVisitantes.resx">
+      <DependentUpon>FormVisitantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormVisitas.resx">
       <DependentUpon>FormVisitas.cs</DependentUpon>

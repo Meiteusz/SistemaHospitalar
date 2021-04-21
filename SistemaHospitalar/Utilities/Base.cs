@@ -1,7 +1,4 @@
-﻿using SistemaHospitalar.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Windows.Forms;
 using static System.Windows.Forms.Control;
 
@@ -62,19 +59,30 @@ namespace SistemaHospitalar.BLL
             }
         }
 
-        public static List<string> ReformularEspecialidades()
+        public static void SelectionLength(Control control)
         {
-            IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
-            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
-            return valuesWithSpaces;
+            if (control is MaskedTextBox)
+            {
+                if ((control as MaskedTextBox).Text.Equals("   .   .   -") || (control as MaskedTextBox).Text.Equals("(  )      -"))
+                {
+                    (control as MaskedTextBox).SelectionStart = (control as MaskedTextBox).SelectionLength = 0;
+                }
+            }
         }
 
-        public static List<string> ReformularTipoInternacao()
-        {
-            IEnumerable<TipoInternacao> values = Enum.GetValues(typeof(TipoInternacao)).Cast<TipoInternacao>();
-            List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
-            return valuesWithSpaces;
-        }
+        //public static List<string> ReformularEspecialidades()
+        //{
+        //    IEnumerable<Especialidades> values = Enum.GetValues(typeof(Especialidades)).Cast<Especialidades>();
+        //    List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
+        //    return valuesWithSpaces;
+        //}
+
+        //public static List<string> ReformularTipoInternacao()
+        //{
+        //    IEnumerable<TipoInternacao> values = Enum.GetValues(typeof(TipoInternacao)).Cast<TipoInternacao>();
+        //    List<string> valuesWithSpaces = new List<string>(values.Select(v => v.ToString().Replace("_", " ")));
+        //    return valuesWithSpaces;
+        ////}
 
     }
 }

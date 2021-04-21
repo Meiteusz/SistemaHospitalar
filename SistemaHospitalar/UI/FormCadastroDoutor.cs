@@ -15,15 +15,15 @@ namespace SistemaHospitalar.Views
             StartPosition = FormStartPosition.CenterScreen;
             cmbTurnoDoutor.DataSource = Enum.GetValues(typeof(Turno));
             cmbGeneroDoutor.DataSource = Enum.GetValues(typeof(Genero));
-            cmbEspecialidadeDoutor.DataSource = Base.ReformularEspecialidades();
+            cmbEspecialidadeDoutor.DataSource = Enum.GetValues(typeof(Especialidades));
         }
 
         DoutoresBLL doutorBLL = new DoutoresBLL();
 
         private void btnCadastrarDoutor_Click(object sender, EventArgs e)
         {
-            Doutores doutor = new Doutores(txtNomeDoutor.Text, txtEmailDoutor.Text, txtSenhaDoutor.Text, txtMaskedCpfDoutor.Text, (Turno)cmbTurnoDoutor.SelectedIndex,
-           (Genero)cmbGeneroDoutor.SelectedIndex, (Especialidades)cmbEspecialidadeDoutor.SelectedIndex, txtMaskedCelularDoutor.Text, (float)txtValorConsulta.Value, (float)txtValorExame.Value);
+            Doutores doutor = new Doutores(txtNomeDoutor.Text, txtEmailDoutor.Text, txtSenhaDoutor.Text, MtbCpfDoutor.Text, (Turno)cmbTurnoDoutor.SelectedIndex,
+           (Genero)cmbGeneroDoutor.SelectedIndex, (Especialidades)cmbEspecialidadeDoutor.SelectedIndex, MtbCelularDoutor.Text, (float)txtValorConsulta.Value, (float)txtValorExame.Value);
 
             MessageBox.Show(doutorBLL.CadastrarDoutor(doutor, txtRepitaSenhaDoutor.Text));
         }
@@ -35,12 +35,12 @@ namespace SistemaHospitalar.Views
 
         private void txtMaskedCpfDoutor_Click(object sender, EventArgs e)
         {
-            txtMaskedCpfDoutor.SelectionStart = txtMaskedCpfDoutor.SelectionLength = 0;
+            Base.SelectionLength(MtbCpfDoutor);
         }
 
         private void txtMaskedCelularDoutor_Click(object sender, EventArgs e)
         {
-            txtMaskedCelularDoutor.SelectionStart = txtMaskedCelularDoutor.SelectionLength = 0;
+            Base.SelectionLength(MtbCelularDoutor);
         }
 
         private void btnApagar_Click(object sender, EventArgs e)

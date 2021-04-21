@@ -126,6 +126,22 @@ namespace SistemaHospitalar.DAL
             return internacao;
         }
 
+        public int GetIdInternacaoByIdPaciente(int p_IdPaciente)
+        {
+            int IdInternacao = 0;
+            SqlCommand command = new SqlCommand("select ID from INTERNACAO where PACIENTEID = @IdPaciente", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@IdPaciente", p_IdPaciente);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                IdInternacao = (int)reader["ID"];
+            }
+            conexao.Desconectar();
+            return IdInternacao;
+        }
+
         public bool isDataSaidaNull(int p_IdInternacao)
         {
             string dataSaida = string.Empty;
