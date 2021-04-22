@@ -1,4 +1,5 @@
 ﻿using SistemaHospitalar.BLL;
+using SistemaHospitalar.DAL;
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Utilities;
 using System;
@@ -29,12 +30,6 @@ namespace SistemaHospitalar.UI
             Base.AbrirFormDesejado(this, formConvenios);
         }
 
-        private void btnEncerrarSessão_Click(object sender, EventArgs e)
-        {
-            FormLogin formLogin = new FormLogin();
-            Base.AbrirFormDesejado(this, formLogin);
-        }
-
         private void btnQuartos_Click(object sender, EventArgs e)
         {
             FormQuartos formQuartos = new FormQuartos();
@@ -46,6 +41,22 @@ namespace SistemaHospitalar.UI
             ADM adm = new ADM(FuncionarioLogado.ADMatual.Usuario, FuncionarioLogado.ADMatual.Senha, (float)txtDiariaInternacao.Value);
 
             MessageBox.Show(admBLL.AtualizarValorDiarioInternacao(adm));
+        }
+
+        private void btnFazerBackup_Click(object sender, EventArgs e)
+        {
+            Backup backup = new Backup();
+
+            if (MessageBox.Show("Deseja fazer o Backup do Banco de Dados?", "BACKUP", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                MessageBox.Show(backup.Backupear(), DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
+            }
+        }
+
+        private void btnEncerrarSessão_Click(object sender, EventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            Base.AbrirFormDesejado(this, formLogin);
         }
     }
 }

@@ -1,13 +1,14 @@
 ﻿using SistemaHospitalar.BLL;
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Utilities;
+using System;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
 {
-    public partial class FormExame : Form
+    public partial class FormAgendarExame : Form
     {
-        public FormExame()
+        public FormAgendarExame()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -15,6 +16,7 @@ namespace SistemaHospitalar.UI
             lblCpfPaciente.Text = FuncionarioLogado.PacienteSelecionado.Cpf;
             lblNomeDoutor.Text = FuncionarioLogado.DoutorTemp.Nome;
             lblEspecialidadeDoutor.Text = FuncionarioLogado.DoutorTemp.Especialidade.ToString();
+            dtpDataExame.Value = DateTime.Today;
         }
 
         ExamesBLL examesBLL = new ExamesBLL();

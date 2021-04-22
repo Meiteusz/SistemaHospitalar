@@ -1,6 +1,7 @@
 ﻿using SistemaHospitalar.DAL;
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
+using SistemaHospitalar.Utilities;
 using System.Data;
 
 namespace SistemaHospitalar.BLL
@@ -12,7 +13,9 @@ namespace SistemaHospitalar.BLL
 
         public bool isDataExameValido(Exame exame)
         {
-            if (ValidarDataConsultaExame(exame.DataExame)) //&& dalConsultas.isDataConsultaValido(FuncionarioLogado.ConsultaTemp.DataConsulta, FuncionarioLogado.ConsultaTemp.Paciente, FuncionarioLogado.ConsultaTemp.Doutor))
+            if (ValidarDataConsultaExame(exame.DataExame) && dalConsultas.isDataConsultaValido(exame.DataExame,
+                FuncionarioLogado.ConsultaTemp.Paciente, FuncionarioLogado.ConsultaTemp.Doutor) && dalExames.isDataExameValido(exame.DataExame, 
+                FuncionarioLogado.ConsultaTemp.Paciente, FuncionarioLogado.ConsultaTemp.Doutor))
             {
                 return true;
             }

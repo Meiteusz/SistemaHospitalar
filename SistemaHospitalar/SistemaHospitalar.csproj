@@ -56,6 +56,7 @@
     <Compile Include="BLL\PacienteBLL.cs" />
     <Compile Include="BLL\QuartosBLL.cs" />
     <Compile Include="BLL\VisitasBLL.cs" />
+    <Compile Include="DAL\Backup.cs" />
     <Compile Include="DAL\DalExames.cs" />
     <Compile Include="DAL\DalInternacao.cs" />
     <Compile Include="DAL\DalQuartos.cs" />
@@ -83,11 +84,11 @@
     <Compile Include="UI\FormDiagnosticosDoExame.Designer.cs">
       <DependentUpon>FormDiagnosticosDoExame.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FormExame.cs">
+    <Compile Include="UI\FormAgendarExame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormExame.Designer.cs">
-      <DependentUpon>FormExame.cs</DependentUpon>
+    <Compile Include="UI\FormAgendarExame.Designer.cs">
+      <DependentUpon>FormAgendarExame.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormExamesDoutor.cs">
       <SubType>Form</SubType>
@@ -296,8 +297,8 @@
     <EmbeddedResource Include="UI\FormDiagnosticosDoExame.resx">
       <DependentUpon>FormDiagnosticosDoExame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormExame.resx">
-      <DependentUpon>FormExame.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormAgendarExame.resx">
+      <DependentUpon>FormAgendarExame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExamesDoutor.resx">
       <DependentUpon>FormExamesDoutor.cs</DependentUpon>

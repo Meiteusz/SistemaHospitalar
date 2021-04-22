@@ -1,7 +1,7 @@
 ﻿
 namespace SistemaHospitalar.UI
 {
-    partial class FormExame
+    partial class FormAgendarExame
     {
         /// <summary>
         /// Required designer variable.

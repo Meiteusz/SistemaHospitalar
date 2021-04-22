@@ -12,10 +12,12 @@ namespace SistemaHospitalar.BLL
         public float ValorDesconto { get; private set; }
         public float ValorFinalConsulta { get; private set; }
         DalConsultas dalConsultas = new DalConsultas();
+        DalExames dalExames = new DalExames();
 
         public bool isDataValida(Consulta consulta)
         {
-            if (ValidarDataConsultaExame(consulta.DataConsulta) && dalConsultas.isDataConsultaValido(consulta.DataConsulta, consulta.Paciente, consulta.Doutor))
+            if (ValidarDataConsultaExame(consulta.DataConsulta) && dalConsultas.isDataConsultaValido(consulta.DataConsulta, consulta.Paciente, consulta.Doutor) &&
+                dalExames.isDataExameValido(consulta.DataConsulta, consulta.Paciente, consulta.Doutor))
             {
                 return true;
             }

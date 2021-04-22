@@ -41,7 +41,7 @@ namespace SistemaHospitalar.UI
 
         private void btnAgendarExame_Click(object sender, System.EventArgs e)
         {
-            FormExame formExame = new FormExame();
+            FormAgendarExame formExame = new FormAgendarExame();
             Base.AbrirFormDesejado(this, formExame);
         }
 

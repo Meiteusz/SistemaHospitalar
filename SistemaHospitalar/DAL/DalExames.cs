@@ -7,6 +7,29 @@ namespace SistemaHospitalar.DAL
 {
     class DalExames : DalComandos
     {
+        public bool isDataExameValido(DateTime p_dataExame, int p_idPaciente, int p_idDoutor)
+        {
+            bool isValido = true;
+
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@dataExame", p_dataExame);
+            command.Parameters.AddWithValue("@idPaciente", p_idPaciente);
+            command.Parameters.AddWithValue("@idDoutor", p_idDoutor);
+
+            command.CommandText = "select CONSULTAS.PACIENTEID, CONSULTAS.DOUTORID, EXAMES.DATAEXAME from CONSULTAS inner join EXAMES on EXAMES.CONSULTAID = " +
+                "CONSULTAS.ID where EXAMES.DATAEXAME = @dataExame AND(CONSULTAS.PACIENTEID = @idPaciente OR CONSULTAS.DOUTORID = @idDoutor)";
+
+            command.Connection = conexao.Conectar();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                isValido = false;
+            }
+            conexao.Desconectar();
+            return isValido;
+        }
+
         public string InsertExame(Exame p_exame)
         {
             command.Parameters.Clear();
