@@ -29,6 +29,7 @@ namespace SistemaHospitalar.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCadastroDePaciente = new System.Windows.Forms.Button();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -40,12 +41,11 @@ namespace SistemaHospitalar.UI
             // 
             // btnCadastroDePaciente
             // 
-            this.btnCadastroDePaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCadastroDePaciente.Location = new System.Drawing.Point(575, 50);
+            this.btnCadastroDePaciente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCadastroDePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastroDePaciente.Location = new System.Drawing.Point(724, 491);
             this.btnCadastroDePaciente.Name = "btnCadastroDePaciente";
-            this.btnCadastroDePaciente.Size = new System.Drawing.Size(193, 55);
+            this.btnCadastroDePaciente.Size = new System.Drawing.Size(147, 73);
             this.btnCadastroDePaciente.TabIndex = 0;
             this.btnCadastroDePaciente.Text = "Cadastro de Pacientes";
             this.btnCadastroDePaciente.UseVisualStyleBackColor = true;
@@ -53,11 +53,17 @@ namespace SistemaHospitalar.UI
             // 
             // dgvPacientes
             // 
+            this.dgvPacientes.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dgvPacientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPacientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPacientes.Location = new System.Drawing.Point(12, 50);
+            this.dgvPacientes.EnableHeadersVisualStyles = false;
+            this.dgvPacientes.GridColor = System.Drawing.Color.Black;
+            this.dgvPacientes.Location = new System.Drawing.Point(100, 62);
             this.dgvPacientes.Name = "dgvPacientes";
             this.dgvPacientes.ReadOnly = true;
-            this.dgvPacientes.Size = new System.Drawing.Size(531, 394);
+            this.dgvPacientes.Size = new System.Drawing.Size(771, 394);
             this.dgvPacientes.TabIndex = 1;
             this.dgvPacientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellClick);
             // 
@@ -66,9 +72,10 @@ namespace SistemaHospitalar.UI
             this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVoltar.Location = new System.Drawing.Point(575, 383);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(100, 491);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(193, 55);
+            this.btnVoltar.Size = new System.Drawing.Size(147, 73);
             this.btnVoltar.TabIndex = 2;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -77,7 +84,7 @@ namespace SistemaHospitalar.UI
             // btnPesquisar
             // 
             this.btnPesquisar.Image = global::SistemaHospitalar.Properties.Resources.search_icon;
-            this.btnPesquisar.Location = new System.Drawing.Point(503, 12);
+            this.btnPesquisar.Location = new System.Drawing.Point(831, 18);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(40, 38);
             this.btnPesquisar.TabIndex = 8;
@@ -87,9 +94,9 @@ namespace SistemaHospitalar.UI
             // txtPesquisaNome
             // 
             this.txtPesquisaNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisaNome.Location = new System.Drawing.Point(12, 18);
+            this.txtPesquisaNome.Location = new System.Drawing.Point(100, 30);
             this.txtPesquisaNome.Name = "txtPesquisaNome";
-            this.txtPesquisaNome.Size = new System.Drawing.Size(463, 26);
+            this.txtPesquisaNome.Size = new System.Drawing.Size(324, 26);
             this.txtPesquisaNome.TabIndex = 7;
             // 
             // btnDeletarPaciente
@@ -97,9 +104,10 @@ namespace SistemaHospitalar.UI
             this.btnDeletarPaciente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeletarPaciente.Location = new System.Drawing.Point(575, 125);
+            this.btnDeletarPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletarPaciente.Location = new System.Drawing.Point(415, 491);
             this.btnDeletarPaciente.Name = "btnDeletarPaciente";
-            this.btnDeletarPaciente.Size = new System.Drawing.Size(193, 55);
+            this.btnDeletarPaciente.Size = new System.Drawing.Size(147, 73);
             this.btnDeletarPaciente.TabIndex = 14;
             this.btnDeletarPaciente.Text = "Deletar Pacientes";
             this.btnDeletarPaciente.UseVisualStyleBackColor = true;
@@ -109,7 +117,7 @@ namespace SistemaHospitalar.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(970, 597);
             this.Controls.Add(this.btnDeletarPaciente);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.txtPesquisaNome);
@@ -118,6 +126,7 @@ namespace SistemaHospitalar.UI
             this.Controls.Add(this.btnCadastroDePaciente);
             this.Name = "FormPacientes";
             this.Text = "FormPacientes";
+            this.Load += new System.EventHandler(this.FormPacientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -37,6 +37,15 @@ namespace SistemaHospitalar.UI
             ConveniosBLL.PegarDadosConvenio(FuncionarioLogado.PacienteSelecionado.Convenio);
         }
 
+        private void FormInternacoesDoutor_Load(object sender, EventArgs e)
+        {
+            dgvInternacoesDoutor.Columns["ID"].Width = 50;
+            dgvInternacoesDoutor.Columns["Paciente_Nome"].Width = 202;
+            dgvInternacoesDoutor.Columns["Tipo_Internacao"].Width = 110;
+            dgvInternacoesDoutor.Columns["Numero_Quarto"].Width = 110;
+            dgvInternacoesDoutor.Columns["Ultima_Atualizacao"].Width = 130;
+        }
+
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();

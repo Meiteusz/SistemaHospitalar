@@ -48,7 +48,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 74);
+            this.label1.Location = new System.Drawing.Point(33, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 25);
             this.label1.TabIndex = 17;
@@ -57,7 +57,7 @@ namespace SistemaHospitalar.Views
             // txtNomePaciente
             // 
             this.txtNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomePaciente.Location = new System.Drawing.Point(35, 102);
+            this.txtNomePaciente.Location = new System.Drawing.Point(38, 54);
             this.txtNomePaciente.Name = "txtNomePaciente";
             this.txtNomePaciente.Size = new System.Drawing.Size(336, 30);
             this.txtNomePaciente.TabIndex = 16;
@@ -66,7 +66,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(394, 71);
+            this.label5.Location = new System.Drawing.Point(397, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 25);
             this.label5.TabIndex = 32;
@@ -76,7 +76,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(394, 153);
+            this.label7.Location = new System.Drawing.Point(397, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 25);
             this.label7.TabIndex = 28;
@@ -86,7 +86,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 153);
+            this.label8.Location = new System.Drawing.Point(33, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 25);
             this.label8.TabIndex = 26;
@@ -95,9 +95,9 @@ namespace SistemaHospitalar.Views
             // btnCadastrarPaciente
             // 
             this.btnCadastrarPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarPaciente.Location = new System.Drawing.Point(36, 291);
+            this.btnCadastrarPaciente.Location = new System.Drawing.Point(591, 290);
             this.btnCadastrarPaciente.Name = "btnCadastrarPaciente";
-            this.btnCadastrarPaciente.Size = new System.Drawing.Size(125, 58);
+            this.btnCadastrarPaciente.Size = new System.Drawing.Size(147, 73);
             this.btnCadastrarPaciente.TabIndex = 41;
             this.btnCadastrarPaciente.Text = "Cadastrar Paciente";
             this.btnCadastrarPaciente.UseVisualStyleBackColor = true;
@@ -106,9 +106,9 @@ namespace SistemaHospitalar.Views
             // btnApagar
             // 
             this.btnApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApagar.Location = new System.Drawing.Point(193, 291);
+            this.btnApagar.Location = new System.Drawing.Point(402, 290);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(125, 58);
+            this.btnApagar.Size = new System.Drawing.Size(147, 73);
             this.btnApagar.TabIndex = 42;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@ namespace SistemaHospitalar.Views
             this.cmbGeneroPaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGeneroPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGeneroPaciente.FormattingEnabled = true;
-            this.cmbGeneroPaciente.Location = new System.Drawing.Point(399, 99);
+            this.cmbGeneroPaciente.Location = new System.Drawing.Point(402, 51);
             this.cmbGeneroPaciente.Name = "cmbGeneroPaciente";
             this.cmbGeneroPaciente.Size = new System.Drawing.Size(336, 33);
             this.cmbGeneroPaciente.TabIndex = 43;
@@ -127,7 +127,7 @@ namespace SistemaHospitalar.Views
             // mtbCpfPaciente
             // 
             this.mtbCpfPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbCpfPaciente.Location = new System.Drawing.Point(35, 181);
+            this.mtbCpfPaciente.Location = new System.Drawing.Point(38, 133);
             this.mtbCpfPaciente.Mask = "000.000.000-00";
             this.mtbCpfPaciente.Name = "mtbCpfPaciente";
             this.mtbCpfPaciente.Size = new System.Drawing.Size(336, 30);
@@ -137,7 +137,7 @@ namespace SistemaHospitalar.Views
             // mtbCelularPaciente
             // 
             this.mtbCelularPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbCelularPaciente.Location = new System.Drawing.Point(399, 181);
+            this.mtbCelularPaciente.Location = new System.Drawing.Point(402, 133);
             this.mtbCelularPaciente.Mask = "(00) 00000-0000";
             this.mtbCelularPaciente.Name = "mtbCelularPaciente";
             this.mtbCelularPaciente.Size = new System.Drawing.Size(336, 30);
@@ -147,9 +147,9 @@ namespace SistemaHospitalar.Views
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btnVoltar.Location = new System.Drawing.Point(38, 290);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(95, 38);
+            this.btnVoltar.Size = new System.Drawing.Size(147, 73);
             this.btnVoltar.TabIndex = 54;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@ namespace SistemaHospitalar.Views
             this.cmbConvenios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConvenios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbConvenios.FormattingEnabled = true;
-            this.cmbConvenios.Location = new System.Drawing.Point(399, 264);
+            this.cmbConvenios.Location = new System.Drawing.Point(402, 216);
             this.cmbConvenios.Name = "cmbConvenios";
             this.cmbConvenios.Size = new System.Drawing.Size(336, 33);
             this.cmbConvenios.TabIndex = 56;
@@ -169,7 +169,7 @@ namespace SistemaHospitalar.Views
             // 
             this.Convênio.AutoSize = true;
             this.Convênio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Convênio.Location = new System.Drawing.Point(394, 236);
+            this.Convênio.Location = new System.Drawing.Point(397, 188);
             this.Convênio.Name = "Convênio";
             this.Convênio.Size = new System.Drawing.Size(96, 25);
             this.Convênio.TabIndex = 55;

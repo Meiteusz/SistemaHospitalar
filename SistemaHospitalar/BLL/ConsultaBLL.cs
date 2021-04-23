@@ -33,11 +33,6 @@ namespace SistemaHospitalar.BLL
             return dalConsultas.Insert(consulta);
         }
 
-        public string DeletarConsulta(int IdConsulta)
-        {
-            return dalConsultas.Delete(IdConsulta);
-        }
-
         public string ReagendarConsulta(DateTime dataConsulta, int IdConsulta)
         {
             return dalConsultas.UpdateDataConsulta(dataConsulta, IdConsulta);
@@ -52,7 +47,7 @@ namespace SistemaHospitalar.BLL
 
         public DataTable AgendaDoutor(int IdDoutor)
         {
-            return dalConsultas.GetConsultasDoDoutor(IdDoutor);
+            return dalConsultas.GetConsultasExamesDoDoutor(IdDoutor);
         }
 
         public DataTable ConsultasHoje()

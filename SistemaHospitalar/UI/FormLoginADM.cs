@@ -11,9 +11,8 @@ namespace SistemaHospitalar.Views
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-
-            txtUsuario.Text = "admin";
-            txtSenha.Text = "admin";
+            //txtUsuario.Text = "admin";
+            //txtSenha.Text = "admin";
         }
 
         private void btnLogin_Click(object sender, System.EventArgs e)

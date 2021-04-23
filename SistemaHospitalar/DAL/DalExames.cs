@@ -158,8 +158,8 @@ namespace SistemaHospitalar.DAL
 
         public DataTable TodosExamesDoDoutor(int p_IdDoutor)
         {
-            SqlCommand command = new SqlCommand("select EXAMES.ID, PACIENTES.NOME as Nome_Paciente, FORMAT(EXAMES.DATAEXAME, 'dd/MM/yyyy HH:mm') as Data_Exame, " +
-                "FORMAT(EXAMES.PRECO, 'c', 'pt-br') as Preco_Exame, EXAMES.TIPOEXAME FROM CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID " +
+            SqlCommand command = new SqlCommand("select EXAMES.ID, PACIENTES.NOME as Paciente_Nome, FORMAT(EXAMES.DATAEXAME, 'dd/MM/yyyy HH:mm') as Data_Exame, " +
+                "FORMAT(EXAMES.PRECO, 'c', 'pt-br') as Exame_Preco, EXAMES.TIPOEXAME as Tipo_Exame FROM CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID " +
                 "inner join EXAMES on EXAMES.CONSULTAID = CONSULTAS.ID where CONSULTAS.DOUTORID = @IdDoutor", conexao.Conectar());
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@IdDoutor", p_IdDoutor);
@@ -169,10 +169,24 @@ namespace SistemaHospitalar.DAL
             conexao.Desconectar();
             return dt;
         }
-        
+
+        public DataTable TodosExamesDoDoutorHoje(int p_IdDoutor)
+        {
+            SqlCommand command = new SqlCommand("select EXAMES.ID, PACIENTES.NOME as Paciente_Nome, FORMAT(EXAMES.DATAEXAME, 'dd/MM/yyyy HH:mm') as Data_Exame, " +
+                "FORMAT(EXAMES.PRECO, 'c', 'pt-br') as Exame_Preco, EXAMES.TIPOEXAME as Tipo_Exame FROM CONSULTAS inner join PACIENTES on PACIENTES.ID = CONSULTAS.PACIENTEID " +
+                "inner join EXAMES on EXAMES.CONSULTAID = CONSULTAS.ID where CONSULTAS.DOUTORID = @IdDoutor and CONVERT(DATE, EXAMES.DATAEXAME) = Convert(date, getdate()) ", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@IdDoutor", p_IdDoutor);
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            conexao.Desconectar();
+            return dt;
+        }
+
         public DataTable DiagnosticosExame(int p_IdExame)
         {
-            SqlCommand command = new SqlCommand("select DIAGNOSTICOS.ID as ID_Diagnostico, EXAMES.ID as ID_Exame, DIAGNOSTICOS.DESCRICAO, " +
+            SqlCommand command = new SqlCommand("select DIAGNOSTICOS.ID as ID_Diagnostico, EXAMES.ID as ID_Exame, DIAGNOSTICOS.DESCRICAO as Descricao, " +
                 "FORMAT(DIAGNOSTICOS.DATADIAGNOSTICO, 'dd/MM/yyyy HH:mm') as Data_Diagnostico from DIAGNOSTICOS inner join EXAMES on EXAMES.ID = " +
                 "DIAGNOSTICOS.EXAMEID where EXAMEID = @IdExame", conexao.Conectar());
             command.Parameters.Clear();

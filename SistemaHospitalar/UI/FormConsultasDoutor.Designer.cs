@@ -29,9 +29,8 @@ namespace SistemaHospitalar.UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvConsultas = new System.Windows.Forms.DataGridView();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnFazerDiagnostico = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
@@ -40,35 +39,31 @@ namespace SistemaHospitalar.UI
             // dgvConsultas
             // 
             this.dgvConsultas.AllowUserToAddRows = false;
+            this.dgvConsultas.AllowUserToResizeColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConsultas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultas.Location = new System.Drawing.Point(112, 109);
+            this.dgvConsultas.EnableHeadersVisualStyles = false;
+            this.dgvConsultas.GridColor = System.Drawing.Color.Black;
+            this.dgvConsultas.Location = new System.Drawing.Point(83, 35);
             this.dgvConsultas.Name = "dgvConsultas";
-            this.dgvConsultas.Size = new System.Drawing.Size(542, 290);
+            this.dgvConsultas.ReadOnly = true;
+            this.dgvConsultas.Size = new System.Drawing.Size(464, 290);
             this.dgvConsultas.TabIndex = 0;
             this.dgvConsultas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultas_CellClick);
             // 
-            // txtPesquisa
-            // 
-            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.Location = new System.Drawing.Point(112, 77);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(259, 26);
-            this.txtPesquisa.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(573, 77);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnFazerDiagnostico
             // 
-            this.btnFazerDiagnostico.Location = new System.Drawing.Point(672, 109);
+            this.btnFazerDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFazerDiagnostico.Location = new System.Drawing.Point(400, 384);
             this.btnFazerDiagnostico.Name = "btnFazerDiagnostico";
-            this.btnFazerDiagnostico.Size = new System.Drawing.Size(162, 83);
+            this.btnFazerDiagnostico.Size = new System.Drawing.Size(147, 73);
             this.btnFazerDiagnostico.TabIndex = 6;
             this.btnFazerDiagnostico.Text = "Fazer Diagnóstico";
             this.btnFazerDiagnostico.UseVisualStyleBackColor = true;
@@ -76,9 +71,10 @@ namespace SistemaHospitalar.UI
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(83, 384);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(110, 49);
+            this.btnVoltar.Size = new System.Drawing.Size(147, 73);
             this.btnVoltar.TabIndex = 7;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -88,25 +84,21 @@ namespace SistemaHospitalar.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 507);
+            this.ClientSize = new System.Drawing.Size(649, 504);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnFazerDiagnostico);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvConsultas);
             this.Name = "FormConsultasDoutor";
             this.Text = "FormViewConsultas";
+            this.Load += new System.EventHandler(this.FormConsultasDoutor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dgvConsultas;
-        private System.Windows.Forms.TextBox txtPesquisa;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnFazerDiagnostico;
         private System.Windows.Forms.Button btnVoltar;
     }

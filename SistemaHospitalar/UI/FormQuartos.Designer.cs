@@ -47,17 +47,20 @@ namespace SistemaHospitalar.UI
             // 
             this.dgvQuartos.AllowUserToAddRows = false;
             this.dgvQuartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQuartos.Location = new System.Drawing.Point(12, 79);
+            this.dgvQuartos.EnableHeadersVisualStyles = false;
+            this.dgvQuartos.GridColor = System.Drawing.Color.Black;
+            this.dgvQuartos.Location = new System.Drawing.Point(36, 43);
             this.dgvQuartos.Name = "dgvQuartos";
             this.dgvQuartos.ReadOnly = true;
-            this.dgvQuartos.Size = new System.Drawing.Size(399, 351);
+            this.dgvQuartos.Size = new System.Drawing.Size(346, 351);
             this.dgvQuartos.TabIndex = 0;
             // 
             // btnCadastrarQuarto
             // 
-            this.btnCadastrarQuarto.Location = new System.Drawing.Point(580, 446);
+            this.btnCadastrarQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarQuarto.Location = new System.Drawing.Point(709, 410);
             this.btnCadastrarQuarto.Name = "btnCadastrarQuarto";
-            this.btnCadastrarQuarto.Size = new System.Drawing.Size(161, 59);
+            this.btnCadastrarQuarto.Size = new System.Drawing.Size(147, 73);
             this.btnCadastrarQuarto.TabIndex = 1;
             this.btnCadastrarQuarto.Text = "Cadastrar Quarto";
             this.btnCadastrarQuarto.UseVisualStyleBackColor = true;
@@ -66,7 +69,7 @@ namespace SistemaHospitalar.UI
             // txtNumeroQuarto
             // 
             this.txtNumeroQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroQuarto.Location = new System.Drawing.Point(695, 281);
+            this.txtNumeroQuarto.Location = new System.Drawing.Point(695, 225);
             this.txtNumeroQuarto.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -80,7 +83,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(529, 287);
+            this.label1.Location = new System.Drawing.Point(529, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 20);
             this.label1.TabIndex = 3;
@@ -90,7 +93,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(522, 79);
+            this.label2.Location = new System.Drawing.Point(522, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(270, 31);
             this.label2.TabIndex = 4;
@@ -100,19 +103,19 @@ namespace SistemaHospitalar.UI
             // 
             this.groupBox1.Controls.Add(this.rbQuartosDisponiveis);
             this.groupBox1.Controls.Add(this.rbTodosQuartos);
-            this.groupBox1.Location = new System.Drawing.Point(12, 446);
+            this.groupBox1.Location = new System.Drawing.Point(36, 424);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(399, 59);
+            this.groupBox1.Size = new System.Drawing.Size(346, 59);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
             // rbQuartosDisponiveis
             // 
             this.rbQuartosDisponiveis.AutoSize = true;
-            this.rbQuartosDisponiveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbQuartosDisponiveis.Location = new System.Drawing.Point(219, 22);
+            this.rbQuartosDisponiveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbQuartosDisponiveis.Location = new System.Drawing.Point(175, 22);
             this.rbQuartosDisponiveis.Name = "rbQuartosDisponiveis";
-            this.rbQuartosDisponiveis.Size = new System.Drawing.Size(151, 21);
+            this.rbQuartosDisponiveis.Size = new System.Drawing.Size(165, 24);
             this.rbQuartosDisponiveis.TabIndex = 1;
             this.rbQuartosDisponiveis.TabStop = true;
             this.rbQuartosDisponiveis.Text = "Quartos disponíveis";
@@ -122,10 +125,10 @@ namespace SistemaHospitalar.UI
             // rbTodosQuartos
             // 
             this.rbTodosQuartos.AutoSize = true;
-            this.rbTodosQuartos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTodosQuartos.Location = new System.Drawing.Point(52, 22);
+            this.rbTodosQuartos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTodosQuartos.Location = new System.Drawing.Point(6, 22);
             this.rbTodosQuartos.Name = "rbTodosQuartos";
-            this.rbTodosQuartos.Size = new System.Drawing.Size(118, 21);
+            this.rbTodosQuartos.Size = new System.Drawing.Size(129, 24);
             this.rbTodosQuartos.TabIndex = 0;
             this.rbTodosQuartos.TabStop = true;
             this.rbTodosQuartos.Text = "Todos quartos";
@@ -134,9 +137,10 @@ namespace SistemaHospitalar.UI
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(467, 410);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(131, 49);
+            this.btnVoltar.Size = new System.Drawing.Size(147, 73);
             this.btnVoltar.TabIndex = 6;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -156,6 +160,7 @@ namespace SistemaHospitalar.UI
             this.Controls.Add(this.dgvQuartos);
             this.Name = "FormQuartos";
             this.Text = "FormQuartos";
+            this.Load += new System.EventHandler(this.FormQuartos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuartos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNumeroQuarto)).EndInit();
             this.groupBox1.ResumeLayout(false);

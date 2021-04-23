@@ -68,15 +68,7 @@ namespace SistemaHospitalar.BLL
 
         public DataTable MostrarDoutoresConsulta(Especialidades especialidade)
         {
-            DataTable dt = new DataTable();
-            if (especialidade.Equals(Especialidades.Selecione))
-            {
-                return dt;
-            }
-            else
-            {
-                return dalDoutores.GetDoutoresConsulta(especialidade);
-            }
+            return dalDoutores.GetDoutoresConsulta(especialidade);
         }
 
         public DataTable MostrarDoutoresInternacao(Especialidades especialidade)

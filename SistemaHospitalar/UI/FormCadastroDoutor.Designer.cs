@@ -83,9 +83,9 @@ namespace SistemaHospitalar.Views
             // btnApagar
             // 
             this.btnApagar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApagar.Location = new System.Drawing.Point(471, 577);
+            this.btnApagar.Location = new System.Drawing.Point(493, 598);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(130, 55);
+            this.btnApagar.Size = new System.Drawing.Size(147, 73);
             this.btnApagar.TabIndex = 48;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = true;
@@ -139,9 +139,9 @@ namespace SistemaHospitalar.Views
             // btnCadastrarDoutor
             // 
             this.btnCadastrarDoutor.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrarDoutor.Location = new System.Drawing.Point(803, 578);
+            this.btnCadastrarDoutor.Location = new System.Drawing.Point(751, 598);
             this.btnCadastrarDoutor.Name = "btnCadastrarDoutor";
-            this.btnCadastrarDoutor.Size = new System.Drawing.Size(130, 55);
+            this.btnCadastrarDoutor.Size = new System.Drawing.Size(147, 73);
             this.btnCadastrarDoutor.TabIndex = 43;
             this.btnCadastrarDoutor.Text = "Cadastrar Doutor(a)";
             this.btnCadastrarDoutor.UseVisualStyleBackColor = true;
@@ -284,9 +284,9 @@ namespace SistemaHospitalar.Views
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(12, 12);
+            this.btnVoltar.Location = new System.Drawing.Point(30, 598);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(118, 39);
+            this.btnVoltar.Size = new System.Drawing.Size(147, 73);
             this.btnVoltar.TabIndex = 53;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -302,7 +302,7 @@ namespace SistemaHospitalar.Views
             this.groupBox1.Controls.Add(this.MtbCpfDoutor);
             this.groupBox1.Controls.Add(this.txtNomeDoutor);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(30, 62);
+            this.groupBox1.Location = new System.Drawing.Point(30, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(405, 366);
             this.groupBox1.TabIndex = 54;
@@ -331,7 +331,7 @@ namespace SistemaHospitalar.Views
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.cmbGeneroDoutor);
-            this.groupBox3.Location = new System.Drawing.Point(30, 447);
+            this.groupBox3.Location = new System.Drawing.Point(30, 384);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(405, 185);
             this.groupBox3.TabIndex = 56;
@@ -425,7 +425,7 @@ namespace SistemaHospitalar.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 644);
+            this.ClientSize = new System.Drawing.Size(945, 683);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

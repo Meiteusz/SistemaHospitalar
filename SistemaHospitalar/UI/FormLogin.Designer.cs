@@ -96,10 +96,10 @@ namespace SistemaHospitalar
             // 
             this.cbMostrarSenha.AutoSize = true;
             this.cbMostrarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMostrarSenha.Location = new System.Drawing.Point(279, 175);
+            this.cbMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMostrarSenha.Location = new System.Drawing.Point(266, 164);
             this.cbMostrarSenha.Name = "cbMostrarSenha";
-            this.cbMostrarSenha.Size = new System.Drawing.Size(120, 21);
+            this.cbMostrarSenha.Size = new System.Drawing.Size(133, 24);
             this.cbMostrarSenha.TabIndex = 6;
             this.cbMostrarSenha.Text = "Mostrar Senha";
             this.cbMostrarSenha.UseVisualStyleBackColor = true;
@@ -161,7 +161,6 @@ namespace SistemaHospitalar
             this.rbRecepcionista.TabIndex = 8;
             this.rbRecepcionista.TabStop = true;
             this.rbRecepcionista.UseVisualStyleBackColor = true;
-            this.rbRecepcionista.CheckedChanged += new System.EventHandler(this.rbRecepcionista_CheckedChanged);
             // 
             // rbDoutor
             // 
@@ -182,7 +181,6 @@ namespace SistemaHospitalar
             this.rbDoutor.TabIndex = 7;
             this.rbDoutor.TabStop = true;
             this.rbDoutor.UseVisualStyleBackColor = true;
-            this.rbDoutor.CheckedChanged += new System.EventHandler(this.rbDoutor_CheckedChanged);
             // 
             // btnADM
             // 

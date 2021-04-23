@@ -11,28 +11,29 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             dgvConsultas.DataSource = ConsultaBLL.ConsultasDoutor(FuncionarioLogado.DoutorLogado.Id);
+            btnFazerDiagnostico.Enabled = false;
         }
 
         ConsultaBLL ConsultaBLL = new ConsultaBLL();
 
         private void btnFazerDiagnostico_Click(object sender, System.EventArgs e)
         {
-            if (dgvConsultas.SelectedRows.Count != 1)
-            {
-                MessageBox.Show("Selecione a consulta para fazer o Diagnóstico!");
-            }
-            else
-            {
-                FormDiagnosticoConsultaDELETAR formDiagnostico = new FormDiagnosticoConsultaDELETAR();
-                Base.AbrirFormDesejado(this, formDiagnostico);
-            }
+            FormDiagnosticoDaConsulta formDiagnostico = new FormDiagnosticoDaConsulta();
+            Base.AbrirFormDesejado(this, formDiagnostico);
         }
 
         private void dgvConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnFazerDiagnostico.Enabled = true;
             int IdConsulta = (int)dgvConsultas.CurrentRow.Cells[0].Value;
-
             FuncionarioLogado.SetConsultaTemp(IdConsulta);
+        }
+
+        private void FormConsultasDoutor_Load(object sender, System.EventArgs e)
+        {
+            dgvConsultas.Columns["ID"].Width = 50;
+            dgvConsultas.Columns["Paciente_Nome"].Width = 250;
+            dgvConsultas.Columns["Data_Horario"].Width = 121;
         }
 
         private void btnVoltar_Click(object sender, System.EventArgs e)

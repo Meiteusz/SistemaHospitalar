@@ -14,18 +14,15 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
             dtpDataConsulta.Value = DateTime.Today;
             cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
+            dgvDoutores.DataSource = doutoresBLL.MostrarDoutoresConsulta(Especialidades.Selecione);
             btnCadastrarConsulta.Enabled = false;
+            cbAgendaDoutor.Enabled = false;
         }
 
         ConsultaBLL consultaBLL = new ConsultaBLL();
         PacienteBLL pacienteBLL = new PacienteBLL();
         DoutoresBLL doutoresBLL = new DoutoresBLL();
         ConveniosBLL ConveniosBLL = new ConveniosBLL();
-
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            PesquisarDoutorDGV();
-        }
 
         private void btnAgendarConsulta_Click(object sender, EventArgs e)
         {
@@ -42,12 +39,13 @@ namespace SistemaHospitalar.UI
             }
             else
             {
-                MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta neste Dia/Horario!\nVerifique tambem se a data/horário é válida!");
+                MessageBox.Show("Paciente/Doutor selecionado já está cadastrado em uma consulta/exame neste Horário.\nVerifique também se a data/horário é válida!", "Agendamento de consulta inválido");
             }
         }
-        
+
         private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            cbAgendaDoutor.Enabled = true;
             int IdDoutor = (int)dgvDoutores.CurrentRow.Cells[0].Value;
             FuncionarioLogado.SetDoutorTemp(IdDoutor);
 
@@ -57,6 +55,10 @@ namespace SistemaHospitalar.UI
 
         private void FormCadastroConsulta_Load(object sender, EventArgs e)
         {
+            dgvDoutores.Columns["ID"].Width = 50;
+            dgvDoutores.Columns["Doutor_Nome"].Width = 203;
+            dgvDoutores.Columns["Valor"].Width = 80;
+
             cmbCpfPacientes.DataSource = pacienteBLL.MostrarCpfPacientes();
             cmbCpfPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbCpfPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -72,20 +74,22 @@ namespace SistemaHospitalar.UI
         {
             if (cbAgendaDoutor.Checked)
             {
-                if (dgvDoutores.SelectedRows.Count != 1)
-                {
-                    MessageBox.Show("Selecione um Doutor(a)");
-                    cbAgendaDoutor.Checked = false;
-                }
-                else
-                {
-                    MostrarAgendaDoutorDGV();
-                }
+                FormAgendaDoutor formAgendaDoutor = new FormAgendaDoutor();
+                formAgendaDoutor.ShowDialog();
+                cbAgendaDoutor.Checked = false;
+                cbAgendaDoutor.Enabled = false;
             }
             else
             {
-                PesquisarDoutorDGV();
+                dgvDoutores.DataSource = doutoresBLL.MostrarDoutoresConsulta((Especialidades)cmbEspecialidade.SelectedIndex);
             }
+        }
+
+        private void cmbEspecialidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbAgendaDoutor.Enabled = false;
+            cbAgendaDoutor.Checked = false;
+            dgvDoutores.DataSource = doutoresBLL.MostrarDoutoresConsulta((Especialidades)cmbEspecialidade.SelectedIndex);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -104,18 +108,6 @@ namespace SistemaHospitalar.UI
 
             formComprovantePagamento.ShowDialog();
             Close();
-        }
-
-        private void PesquisarDoutorDGV()
-        {
-            dgvDoutores.DataSource = doutoresBLL.MostrarDoutoresConsulta((Especialidades)cmbEspecialidade.SelectedIndex);
-        }
-
-        private void MostrarAgendaDoutorDGV()
-        {
-            dgvDoutores.DataSource = consultaBLL.AgendaDoutor(FuncionarioLogado.DoutorTemp.Id);
-            dgvDoutores.Columns["NomePaciente"].Width = 185;
-            dgvDoutores.Columns["DATACONSULTA"].Width = 200;
         }
     }
 }

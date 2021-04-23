@@ -17,14 +17,14 @@ namespace SistemaHospitalar
 
             //LOGIN PARA TESTE
             #region Login Recepcionista
-            //txtEmail.Text = "rosanabnu@gmail.com";
-            //txtSenha.Text = "321ab";
+            //txtEmail.Text = "RecepcionistaTeste1@gmail.com";
+            //txtSenha.Text = "123a";
             //rbRecepcionista.Checked = true;
             #endregion
 
             #region Login Doutor(a)
-            //txtEmail.Text = "matheustexeirablu@gmail.com";
-            //txtSenha.Text = "debora14";
+            //txtEmail.Text = "DoutorTeste1@gmail.com";
+            //txtSenha.Text = "123a";
             //rbDoutor.Checked = true;
             #endregion
         }
@@ -79,18 +79,6 @@ namespace SistemaHospitalar
         private void cbMostrarSenha_CheckedChanged(object sender, EventArgs e)
         {
             Base.MostrarSenha(cbMostrarSenha, txtSenha, txtSenha);
-        }
-
-        private void rbDoutor_CheckedChanged(object sender, EventArgs e)
-        {
-            txtEmail.Text = "matheustexeirablu@gmail.com";
-            txtSenha.Text = "debora14";
-        }
-
-        private void rbRecepcionista_CheckedChanged(object sender, EventArgs e)
-        {
-            txtEmail.Text = "rosanabnu@gmail.com";
-            txtSenha.Text = "321ab";
         }
     }
 }

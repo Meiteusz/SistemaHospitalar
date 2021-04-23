@@ -15,7 +15,7 @@ namespace SistemaHospitalar.BLL
         {
             if (ValidarDataConsultaExame(exame.DataExame) && dalConsultas.isDataConsultaValido(exame.DataExame,
                 FuncionarioLogado.ConsultaTemp.Paciente, FuncionarioLogado.ConsultaTemp.Doutor) && dalExames.isDataExameValido(exame.DataExame, 
-                FuncionarioLogado.ConsultaTemp.Paciente, FuncionarioLogado.ConsultaTemp.Doutor))
+                FuncionarioLogado.ConsultaTemp.Paciente, FuncionarioLogado.ConsultaTemp.Doutor) && exame.DataExame > FuncionarioLogado.ConsultaTemp.DataConsulta)
             {
                 return true;
             }
@@ -48,6 +48,11 @@ namespace SistemaHospitalar.BLL
         public DataTable MostrarExamesDoutor(int IdDoutor)
         {
             return dalExames.TodosExamesDoDoutor(IdDoutor);
+        }
+
+        public DataTable MostrarExamesHojeDoutor(int IdDoutor)
+        {
+            return dalExames.TodosExamesDoDoutorHoje(IdDoutor);
         }
 
         public DataTable MostrarDiagnosticosExame(int IdExame)

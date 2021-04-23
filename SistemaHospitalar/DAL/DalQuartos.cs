@@ -75,7 +75,7 @@ namespace SistemaHospitalar.DAL
 
         public DataTable TodosQuartos()
         {
-            command.CommandText = "select * from QUARTOS";
+            command.CommandText = "select NUMEROQUARTO as Numero_Quarto, DISPONIVEL as isDisponivel from QUARTOS";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
@@ -84,7 +84,7 @@ namespace SistemaHospitalar.DAL
 
         public DataTable QuartosDisponiveis()
         {
-            command.CommandText = "select * from QUARTOS where DISPONIVEL = 1";
+            command.CommandText = "select NUMEROQUARTO as Numero_Quarto, DISPONIVEL as isDisponivel from QUARTOS where DISPONIVEL = 1";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

@@ -32,30 +32,6 @@ namespace SistemaHospitalar.DAL
             }
         }
 
-
-        public string Delete(int p_id)
-        {
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@id", p_id);
-            command.CommandText = "delete CONVENIOS where id = @id";
-
-            try
-            {
-                conexao.Conectar();
-                command.ExecuteNonQuery();
-                return "Convenio deletado com sucesso!";
-            }
-            catch (SqlException ex)
-            {
-                return MostrarTipoErro(ex);
-            }
-            finally
-            {
-                conexao.Desconectar();
-            }
-        }
-
-
         public void GetDadosConvenio(int p_IdConvenio)
         {
             Convenios convenio = new Convenios();
@@ -74,10 +50,9 @@ namespace SistemaHospitalar.DAL
             FuncionarioLogado.SetConvenioSelecionado(convenio);
         }
 
-
         public static DataTable MostrarConveniosDGV()
         {
-            command.CommandText = "select * from CONVENIOS";
+            command.CommandText = "select ID, NOME as Convênio_Nome, DESCONTO as Convênio_Desconto from CONVENIOS";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

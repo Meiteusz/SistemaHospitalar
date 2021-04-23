@@ -49,6 +49,7 @@ namespace SistemaHospitalar.UI
             // 
             this.btnPronto.BackColor = System.Drawing.Color.Green;
             this.btnPronto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPronto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPronto.ForeColor = System.Drawing.Color.White;
             this.btnPronto.Location = new System.Drawing.Point(431, 312);
             this.btnPronto.Name = "btnPronto";
@@ -72,6 +73,7 @@ namespace SistemaHospitalar.UI
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.DarkRed;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(52, 312);
             this.btnCancelar.Name = "btnCancelar";
@@ -81,7 +83,7 @@ namespace SistemaHospitalar.UI
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // FormDiagnosticos
+            // FormDiagnostico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,7 +94,7 @@ namespace SistemaHospitalar.UI
             this.Controls.Add(this.btnPronto);
             this.Controls.Add(this.txtDescricaoDiagnostico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormDiagnosticos";
+            this.Name = "FormDiagnostico";
             this.Text = "FormDiagnosticos";
             this.ResumeLayout(false);
             this.PerformLayout();

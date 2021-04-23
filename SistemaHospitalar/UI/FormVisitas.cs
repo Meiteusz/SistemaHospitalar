@@ -14,7 +14,6 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
             dtpDataVisita.Value = DateTime.Now;
             dgvVisitas.DataSource = visitasBLL.MostrarVisitas();
-            dgvVisitas.Columns["ID"].Width = 60;
         }
 
         VisitasBLL visitasBLL = new VisitasBLL();
@@ -31,6 +30,12 @@ namespace SistemaHospitalar.UI
 
         private void FormVisitas_Load(object sender, EventArgs e)
         {
+            dgvVisitas.Columns["ID"].Width = 50;
+            dgvVisitas.Columns["Nome_Paciente"].Width = 200;
+            dgvVisitas.Columns["Nome_Visitante"].Width = 200;
+            dgvVisitas.Columns["Numero_Quarto"].Width = 110;
+            dgvVisitas.Columns["Data_Visita"].Width = 103;
+
             cmbVisitantes.DataSource = visitasBLL.MostrarCpfVisitantes();
             cmbVisitantes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbVisitantes.AutoCompleteSource = AutoCompleteSource.ListItems;

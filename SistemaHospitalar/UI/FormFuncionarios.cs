@@ -20,6 +20,7 @@ namespace SistemaHospitalar.UI
             cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
 
             btnDeletarFuncionario.Enabled = false;
+            dgvFuncionarios.Columns["NOME"].Width = 200;
             dgvFuncionarios.Columns["Turno"].Width = 70;
             dgvFuncionarios.Columns["Genero"].Width = 70;
         }

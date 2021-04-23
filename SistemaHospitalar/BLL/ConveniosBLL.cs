@@ -23,11 +23,6 @@ namespace SistemaHospitalar.BLL
             }
         }
 
-        public string DeletarConvenio(int idConvenio)
-        {
-            return dalConvenios.Delete(idConvenio);
-        }
-
         public void PegarDadosConvenio(int idConvenio)
         {
             dalConvenios.GetDadosConvenio(idConvenio);

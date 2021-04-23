@@ -31,7 +31,7 @@ namespace SistemaHospitalar.UI
             }
             else
             {
-                MessageBox.Show("O doutor(a) ou o paciente selecionado já está cadastrado em uma consulta ou exame neste Dia/Horario!\nVerifique tambem se a data/horário é válida!");
+                MessageBox.Show("Paciente/Doutor selecionado já está cadastrado em uma consulta/exame neste Horário.\nVerifique também se a data/horário é válida!", "Agendamento de exame inválido");
             }
         }
 

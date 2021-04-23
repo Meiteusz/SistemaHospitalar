@@ -178,8 +178,8 @@ namespace SistemaHospitalar.Models
 
         public DataTable TodosPacientes()
         {
-            command.CommandText = "select PACIENTES.ID, PACIENTES.NOME, PACIENTES.CPF, PACIENTES.CELULAR, PACIENTES.GENERO, CONVENIOS.NOME as CONVENIO " +
-                "from PACIENTES inner join CONVENIOS ON CONVENIOS.ID = PACIENTES.CONVENIOID";
+            command.CommandText = "select PACIENTES.ID, PACIENTES.NOME as Paciente_Nome, PACIENTES.CPF as Paciente_Cpf, PACIENTES.CELULAR as Paciente_Celular, " +
+                "PACIENTES.GENERO as Paciente_Genero, CONVENIOS.NOME as Convênio_Nome from PACIENTES inner join CONVENIOS ON CONVENIOS.ID = PACIENTES.CONVENIOID";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

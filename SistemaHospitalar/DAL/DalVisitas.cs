@@ -74,7 +74,7 @@ namespace SistemaHospitalar.DAL
 
         public DataTable TodosVisitantes()
         {
-            command.CommandText = "select * from VISITANTES";
+            command.CommandText = "select ID, NOME as Visitante_Nome, CPF as Visitante_Cpf from VISITANTES";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

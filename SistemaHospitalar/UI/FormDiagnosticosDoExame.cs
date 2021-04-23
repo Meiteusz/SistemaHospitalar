@@ -37,6 +37,13 @@ namespace SistemaHospitalar.UI
             FuncionarioLogado.SetDiagnosticoTemp(IdDiagnostico);
         }
 
+        private void FormDiagnosticosDoExame_Load(object sender, System.EventArgs e)
+        {
+            dgvDiagnosticosDoExame.Columns["ID_Diagnostico"].Width = 115;
+            dgvDiagnosticosDoExame.Columns["Descricao"].Width = 250;
+            dgvDiagnosticosDoExame.Columns["Data_Diagnostico"].Width = 122;
+        }
+
         private void btnVoltar_Click(object sender, System.EventArgs e)
         {
             FormExamesDoutor formExamesDoutor = new FormExamesDoutor();

@@ -14,6 +14,7 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
             dtpDataConsulta.Value = FuncionarioLogado.ConsultaTemp.DataConsulta;
             lblNomePaciente.Text = FuncionarioLogado.PacienteSelecionado.Nome;
+            lblCpfPaciente.Text = FuncionarioLogado.PacienteSelecionado.Cpf;
         }
 
         ConsultaBLL consultaBLL = new ConsultaBLL();

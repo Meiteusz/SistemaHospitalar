@@ -31,9 +31,9 @@ namespace SistemaHospitalar.UI
         {
             this.btnAgendarExame = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblNomePaciente = new System.Windows.Forms.Label();
             this.lblCpfPaciente = new System.Windows.Forms.Label();
+            this.lblNomePaciente = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblNomeDoutor = new System.Windows.Forms.Label();
             this.lblEspecialidadeDoutor = new System.Windows.Forms.Label();
             this.dtpDataExame = new System.Windows.Forms.DateTimePicker();
@@ -47,10 +47,11 @@ namespace SistemaHospitalar.UI
             // 
             // btnAgendarExame
             // 
-            this.btnAgendarExame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendarExame.Location = new System.Drawing.Point(713, 232);
+            this.btnAgendarExame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgendarExame.Location = new System.Drawing.Point(1070, 357);
+            this.btnAgendarExame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAgendarExame.Name = "btnAgendarExame";
-            this.btnAgendarExame.Size = new System.Drawing.Size(146, 56);
+            this.btnAgendarExame.Size = new System.Drawing.Size(219, 86);
             this.btnAgendarExame.TabIndex = 0;
             this.btnAgendarExame.Text = "Agendar Exame";
             this.btnAgendarExame.UseVisualStyleBackColor = true;
@@ -60,49 +61,56 @@ namespace SistemaHospitalar.UI
             // 
             this.groupBox1.Controls.Add(this.lblCpfPaciente);
             this.groupBox1.Controls.Add(this.lblNomePaciente);
-            this.groupBox1.Location = new System.Drawing.Point(29, 12);
+            this.groupBox1.Location = new System.Drawing.Point(44, 18);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(407, 69);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(610, 106);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Paciente";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.lblNomeDoutor);
-            this.groupBox2.Controls.Add(this.lblEspecialidadeDoutor);
-            this.groupBox2.Location = new System.Drawing.Point(452, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(407, 69);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Doutor(a)";
-            // 
-            // lblNomePaciente
-            // 
-            this.lblNomePaciente.AutoSize = true;
-            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(73, 33);
-            this.lblNomePaciente.Name = "lblNomePaciente";
-            this.lblNomePaciente.Size = new System.Drawing.Size(51, 20);
-            this.lblNomePaciente.TabIndex = 0;
-            this.lblNomePaciente.Text = "label1";
             // 
             // lblCpfPaciente
             // 
             this.lblCpfPaciente.AutoSize = true;
             this.lblCpfPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpfPaciente.Location = new System.Drawing.Point(249, 33);
+            this.lblCpfPaciente.Location = new System.Drawing.Point(374, 51);
+            this.lblCpfPaciente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCpfPaciente.Name = "lblCpfPaciente";
             this.lblCpfPaciente.Size = new System.Drawing.Size(51, 20);
             this.lblCpfPaciente.TabIndex = 1;
             this.lblCpfPaciente.Text = "label2";
             // 
+            // lblNomePaciente
+            // 
+            this.lblNomePaciente.AutoSize = true;
+            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePaciente.Location = new System.Drawing.Point(110, 51);
+            this.lblNomePaciente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomePaciente.Name = "lblNomePaciente";
+            this.lblNomePaciente.Size = new System.Drawing.Size(51, 20);
+            this.lblNomePaciente.TabIndex = 0;
+            this.lblNomePaciente.Text = "label1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.lblNomeDoutor);
+            this.groupBox2.Controls.Add(this.lblEspecialidadeDoutor);
+            this.groupBox2.Location = new System.Drawing.Point(678, 18);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(610, 106);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Doutor(a)";
+            // 
             // lblNomeDoutor
             // 
             this.lblNomeDoutor.AutoSize = true;
             this.lblNomeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeDoutor.Location = new System.Drawing.Point(73, 33);
+            this.lblNomeDoutor.Location = new System.Drawing.Point(110, 51);
+            this.lblNomeDoutor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeDoutor.Name = "lblNomeDoutor";
             this.lblNomeDoutor.Size = new System.Drawing.Size(51, 20);
             this.lblNomeDoutor.TabIndex = 2;
@@ -112,7 +120,8 @@ namespace SistemaHospitalar.UI
             // 
             this.lblEspecialidadeDoutor.AutoSize = true;
             this.lblEspecialidadeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecialidadeDoutor.Location = new System.Drawing.Point(249, 33);
+            this.lblEspecialidadeDoutor.Location = new System.Drawing.Point(374, 51);
+            this.lblEspecialidadeDoutor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEspecialidadeDoutor.Name = "lblEspecialidadeDoutor";
             this.lblEspecialidadeDoutor.Size = new System.Drawing.Size(51, 20);
             this.lblEspecialidadeDoutor.TabIndex = 3;
@@ -123,17 +132,19 @@ namespace SistemaHospitalar.UI
             this.dtpDataExame.CustomFormat = "dd/MM/yyyy HH:mm tt";
             this.dtpDataExame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataExame.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataExame.Location = new System.Drawing.Point(29, 154);
+            this.dtpDataExame.Location = new System.Drawing.Point(44, 237);
+            this.dtpDataExame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpDataExame.Name = "dtpDataExame";
-            this.dtpDataExame.Size = new System.Drawing.Size(289, 26);
+            this.dtpDataExame.Size = new System.Drawing.Size(432, 26);
             this.dtpDataExame.TabIndex = 3;
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(28, 232);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(42, 357);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(146, 56);
+            this.btnVoltar.Size = new System.Drawing.Size(219, 86);
             this.btnVoltar.TabIndex = 5;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -143,7 +154,8 @@ namespace SistemaHospitalar.UI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 131);
+            this.label5.Location = new System.Drawing.Point(38, 202);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 18);
             this.label5.TabIndex = 4;
@@ -153,7 +165,8 @@ namespace SistemaHospitalar.UI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(449, 133);
+            this.label6.Location = new System.Drawing.Point(674, 205);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 18);
             this.label6.TabIndex = 6;
@@ -162,17 +175,18 @@ namespace SistemaHospitalar.UI
             // txtTipoExame
             // 
             this.txtTipoExame.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoExame.Location = new System.Drawing.Point(452, 154);
+            this.txtTipoExame.Location = new System.Drawing.Point(678, 237);
+            this.txtTipoExame.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTipoExame.MaxLength = 50;
             this.txtTipoExame.Name = "txtTipoExame";
-            this.txtTipoExame.Size = new System.Drawing.Size(407, 26);
+            this.txtTipoExame.Size = new System.Drawing.Size(608, 26);
             this.txtTipoExame.TabIndex = 7;
             // 
-            // FormExame
+            // FormAgendarExame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 303);
+            this.ClientSize = new System.Drawing.Size(1329, 466);
             this.Controls.Add(this.txtTipoExame);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -181,7 +195,9 @@ namespace SistemaHospitalar.UI
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAgendarExame);
-            this.Name = "FormExame";
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "FormAgendarExame";
             this.Text = "FormExame";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

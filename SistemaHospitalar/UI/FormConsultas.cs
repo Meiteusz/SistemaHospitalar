@@ -12,6 +12,7 @@ namespace SistemaHospitalar.UI
             StartPosition = FormStartPosition.CenterScreen;
             rbTodas.Checked = true;
             btnAgendarExame.Enabled = false;
+            btnReagendarConsulta.Enabled = false;
         }
 
         ConsultaBLL consultaBLL = new ConsultaBLL();
@@ -23,22 +24,6 @@ namespace SistemaHospitalar.UI
             Base.AbrirFormDesejado(this, formCadastroConsulta);
         }
 
-        private void btnDeletarConsulta_Click(object sender, System.EventArgs e)
-        {
-            if (dgvConsultas.SelectedRows.Count != 1)
-            {
-                MessageBox.Show("Escolha uma Consulta para deletar!");
-            }
-            else
-            {
-                if (MessageBox.Show("Deseja realmente deletar esta Consulta?", "Deleção de Paciente", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    MessageBox.Show(consultaBLL.DeletarConsulta(FuncionarioLogado.ConsultaTemp.Id));
-                    dgvConsultas.DataSource = consultaBLL.ConsultasGeral();
-                }
-            }
-        }
-
         private void btnAgendarExame_Click(object sender, System.EventArgs e)
         {
             FormAgendarExame formExame = new FormAgendarExame();
@@ -48,6 +33,7 @@ namespace SistemaHospitalar.UI
         private void dgvConsultas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnAgendarExame.Enabled = true;
+            btnReagendarConsulta.Enabled = true;
             int IdConsulta = (int)dgvConsultas.CurrentRow.Cells[0].Value;
 
             FuncionarioLogado.SetConsultaTemp(IdConsulta);
@@ -57,16 +43,8 @@ namespace SistemaHospitalar.UI
 
         private void btnReagendarConsulta_Click(object sender, System.EventArgs e)
         {
-            if (dgvConsultas.SelectedRows.Count != 1)
-            {
-                MessageBox.Show("Selecione uma consulta para o reagendamento!");
-
-            }
-            else
-            {
-                FormReagendamentoConsulta formReagendamentoConsulta = new FormReagendamentoConsulta();
-                Base.AbrirFormDesejado(this, formReagendamentoConsulta);
-            }
+            FormReagendamentoConsulta formReagendamentoConsulta = new FormReagendamentoConsulta();
+            Base.AbrirFormDesejado(this, formReagendamentoConsulta);
         }
 
         private void rbTodas_CheckedChanged(object sender, System.EventArgs e)
@@ -77,6 +55,16 @@ namespace SistemaHospitalar.UI
         private void rbDataHoje_CheckedChanged(object sender, System.EventArgs e)
         {
             dgvConsultas.DataSource = consultaBLL.ConsultasHoje();
+        }
+
+        private void FormConsultas_Load(object sender, System.EventArgs e)
+        {
+            dgvConsultas.Columns["ID"].Width = 50;
+            dgvConsultas.Columns["Paciente_Nome"].Width = 200;
+            dgvConsultas.Columns["Doutor_Nome"].Width = 200;
+            dgvConsultas.Columns["Data_Horario"].Width = 110;
+            dgvConsultas.Columns["Valor"].Width = 80;
+            dgvConsultas.Columns["Convênio_Nome"].Width = 157;
         }
         
         private void btnVoltar_Click(object sender, System.EventArgs e)

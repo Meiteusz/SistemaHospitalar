@@ -42,10 +42,10 @@ namespace SistemaHospitalar
             // btnConfiguracoesRecepcionista
             // 
             this.btnConfiguracoesRecepcionista.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfiguracoesRecepcionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfiguracoesRecepcionista.Location = new System.Drawing.Point(652, 12);
+            this.btnConfiguracoesRecepcionista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracoesRecepcionista.Location = new System.Drawing.Point(641, 12);
             this.btnConfiguracoesRecepcionista.Name = "btnConfiguracoesRecepcionista";
-            this.btnConfiguracoesRecepcionista.Size = new System.Drawing.Size(136, 65);
+            this.btnConfiguracoesRecepcionista.Size = new System.Drawing.Size(147, 73);
             this.btnConfiguracoesRecepcionista.TabIndex = 0;
             this.btnConfiguracoesRecepcionista.Text = "Configurações da Conta";
             this.btnConfiguracoesRecepcionista.UseVisualStyleBackColor = false;
@@ -53,10 +53,10 @@ namespace SistemaHospitalar
             // 
             // btnPacientes
             // 
-            this.btnPacientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPacientes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPacientes.Location = new System.Drawing.Point(334, 191);
             this.btnPacientes.Name = "btnPacientes";
-            this.btnPacientes.Size = new System.Drawing.Size(129, 68);
+            this.btnPacientes.Size = new System.Drawing.Size(147, 73);
             this.btnPacientes.TabIndex = 2;
             this.btnPacientes.Text = "Pacientes";
             this.btnPacientes.UseVisualStyleBackColor = true;
@@ -67,17 +67,17 @@ namespace SistemaHospitalar
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblNome.Location = new System.Drawing.Point(191, 28);
+            this.lblNome.Location = new System.Drawing.Point(12, 23);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(0, 39);
             this.lblNome.TabIndex = 3;
             // 
             // btnConsultas
             // 
-            this.btnConsultas.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultas.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultas.Location = new System.Drawing.Point(24, 191);
             this.btnConsultas.Name = "btnConsultas";
-            this.btnConsultas.Size = new System.Drawing.Size(129, 68);
+            this.btnConsultas.Size = new System.Drawing.Size(147, 73);
             this.btnConsultas.TabIndex = 4;
             this.btnConsultas.Text = "Consultas";
             this.btnConsultas.UseVisualStyleBackColor = true;
@@ -85,10 +85,10 @@ namespace SistemaHospitalar
             // 
             // btnVisitas
             // 
-            this.btnVisitas.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisitas.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisitas.Location = new System.Drawing.Point(489, 191);
             this.btnVisitas.Name = "btnVisitas";
-            this.btnVisitas.Size = new System.Drawing.Size(129, 68);
+            this.btnVisitas.Size = new System.Drawing.Size(147, 73);
             this.btnVisitas.TabIndex = 6;
             this.btnVisitas.Text = "Visitas";
             this.btnVisitas.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@ namespace SistemaHospitalar
             // btnEncerrarSessão
             // 
             this.btnEncerrarSessão.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEncerrarSessão.Location = new System.Drawing.Point(666, 377);
+            this.btnEncerrarSessão.Location = new System.Drawing.Point(640, 352);
             this.btnEncerrarSessão.Name = "btnEncerrarSessão";
-            this.btnEncerrarSessão.Size = new System.Drawing.Size(122, 61);
+            this.btnEncerrarSessão.Size = new System.Drawing.Size(147, 73);
             this.btnEncerrarSessão.TabIndex = 7;
             this.btnEncerrarSessão.Text = "Encerrar Sessão";
             this.btnEncerrarSessão.UseVisualStyleBackColor = true;
@@ -107,10 +107,10 @@ namespace SistemaHospitalar
             // 
             // btnInternacao
             // 
-            this.btnInternacao.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInternacao.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInternacao.Location = new System.Drawing.Point(180, 191);
             this.btnInternacao.Name = "btnInternacao";
-            this.btnInternacao.Size = new System.Drawing.Size(129, 68);
+            this.btnInternacao.Size = new System.Drawing.Size(147, 73);
             this.btnInternacao.TabIndex = 8;
             this.btnInternacao.Text = "Internação";
             this.btnInternacao.UseVisualStyleBackColor = true;
@@ -118,10 +118,10 @@ namespace SistemaHospitalar
             // 
             // btnVisitantes
             // 
-            this.btnVisitantes.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisitantes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisitantes.Location = new System.Drawing.Point(640, 191);
             this.btnVisitantes.Name = "btnVisitantes";
-            this.btnVisitantes.Size = new System.Drawing.Size(129, 68);
+            this.btnVisitantes.Size = new System.Drawing.Size(147, 73);
             this.btnVisitantes.TabIndex = 9;
             this.btnVisitantes.Text = "Visitantes";
             this.btnVisitantes.UseVisualStyleBackColor = true;

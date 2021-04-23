@@ -33,6 +33,7 @@ namespace SistemaHospitalar.UI
             this.btnReagendar = new System.Windows.Forms.Button();
             this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCpfPaciente = new System.Windows.Forms.Label();
             this.lblNomePaciente = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -50,10 +51,10 @@ namespace SistemaHospitalar.UI
             // 
             // btnReagendar
             // 
-            this.btnReagendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReagendar.Location = new System.Drawing.Point(162, 184);
+            this.btnReagendar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReagendar.Location = new System.Drawing.Point(379, 198);
             this.btnReagendar.Name = "btnReagendar";
-            this.btnReagendar.Size = new System.Drawing.Size(116, 48);
+            this.btnReagendar.Size = new System.Drawing.Size(147, 73);
             this.btnReagendar.TabIndex = 1;
             this.btnReagendar.Text = "Reagendar";
             this.btnReagendar.UseVisualStyleBackColor = true;
@@ -74,6 +75,7 @@ namespace SistemaHospitalar.UI
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCpfPaciente);
             this.groupBox1.Controls.Add(this.lblNomePaciente);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpDataConsulta);
@@ -83,11 +85,21 @@ namespace SistemaHospitalar.UI
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
+            // lblCpfPaciente
+            // 
+            this.lblCpfPaciente.AutoSize = true;
+            this.lblCpfPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCpfPaciente.Location = new System.Drawing.Point(181, 63);
+            this.lblCpfPaciente.Name = "lblCpfPaciente";
+            this.lblCpfPaciente.Size = new System.Drawing.Size(117, 20);
+            this.lblCpfPaciente.TabIndex = 18;
+            this.lblCpfPaciente.Text = "Nome Paciente";
+            // 
             // lblNomePaciente
             // 
             this.lblNomePaciente.AutoSize = true;
             this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(184, 55);
+            this.lblNomePaciente.Location = new System.Drawing.Point(181, 26);
             this.lblNomePaciente.Name = "lblNomePaciente";
             this.lblNomePaciente.Size = new System.Drawing.Size(117, 20);
             this.lblNomePaciente.TabIndex = 17;
@@ -95,10 +107,10 @@ namespace SistemaHospitalar.UI
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(298, 184);
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(36, 198);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(116, 48);
+            this.btnCancelar.Size = new System.Drawing.Size(147, 73);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -108,7 +120,7 @@ namespace SistemaHospitalar.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 244);
+            this.ClientSize = new System.Drawing.Size(568, 283);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnReagendar);
@@ -128,5 +140,6 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblNomePaciente;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblCpfPaciente;
     }
 }

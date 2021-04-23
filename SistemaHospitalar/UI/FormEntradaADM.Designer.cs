@@ -47,7 +47,7 @@ namespace SistemaHospitalar.UI
             this.btnFuncionarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFuncionarios.Location = new System.Drawing.Point(93, 176);
             this.btnFuncionarios.Name = "btnFuncionarios";
-            this.btnFuncionarios.Size = new System.Drawing.Size(176, 93);
+            this.btnFuncionarios.Size = new System.Drawing.Size(147, 73);
             this.btnFuncionarios.TabIndex = 0;
             this.btnFuncionarios.Text = "Funcionários";
             this.btnFuncionarios.UseVisualStyleBackColor = true;
@@ -58,7 +58,7 @@ namespace SistemaHospitalar.UI
             this.btnConvenios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvenios.Location = new System.Drawing.Point(309, 176);
             this.btnConvenios.Name = "btnConvenios";
-            this.btnConvenios.Size = new System.Drawing.Size(176, 93);
+            this.btnConvenios.Size = new System.Drawing.Size(147, 73);
             this.btnConvenios.TabIndex = 1;
             this.btnConvenios.Text = "Convenios";
             this.btnConvenios.UseVisualStyleBackColor = true;
@@ -69,7 +69,7 @@ namespace SistemaHospitalar.UI
             this.btnEncerrarSessão.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEncerrarSessão.Location = new System.Drawing.Point(641, 371);
             this.btnEncerrarSessão.Name = "btnEncerrarSessão";
-            this.btnEncerrarSessão.Size = new System.Drawing.Size(147, 67);
+            this.btnEncerrarSessão.Size = new System.Drawing.Size(147, 73);
             this.btnEncerrarSessão.TabIndex = 2;
             this.btnEncerrarSessão.Text = "Encerrar Sessão";
             this.btnEncerrarSessão.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@ namespace SistemaHospitalar.UI
             this.btnQuartos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQuartos.Location = new System.Drawing.Point(527, 176);
             this.btnQuartos.Name = "btnQuartos";
-            this.btnQuartos.Size = new System.Drawing.Size(176, 93);
+            this.btnQuartos.Size = new System.Drawing.Size(147, 73);
             this.btnQuartos.TabIndex = 3;
             this.btnQuartos.Text = "Quartos";
             this.btnQuartos.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@ namespace SistemaHospitalar.UI
             this.btnFazerBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFazerBackup.Location = new System.Drawing.Point(12, 371);
             this.btnFazerBackup.Name = "btnFazerBackup";
-            this.btnFazerBackup.Size = new System.Drawing.Size(147, 67);
+            this.btnFazerBackup.Size = new System.Drawing.Size(147, 73);
             this.btnFazerBackup.TabIndex = 7;
             this.btnFazerBackup.Text = "Fazer Backup";
             this.btnFazerBackup.UseVisualStyleBackColor = true;

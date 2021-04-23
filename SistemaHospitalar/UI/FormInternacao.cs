@@ -46,6 +46,10 @@ namespace SistemaHospitalar.UI
 
         private void FormInternacao_Load(object sender, EventArgs e)
         {
+            dgvDoutores.Columns["ID"].Width = 50;
+            dgvDoutores.Columns["Doutor_Nome"].Width = 200;
+            dgvDoutores.Columns["Especialidade"].Width = 75;
+
             cmbPacientes.DataSource = pacienteBLL.MostrarCpfPacientesNaoInternados();
             cmbPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;

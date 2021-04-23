@@ -44,6 +44,23 @@ namespace SistemaHospitalar.UI
             Base.AbrirFormDesejado(this, formDiagnosticosDoExame);
         }
 
+        private void FormExamesDoutor_Load(object sender, System.EventArgs e)
+        {
+            dgvExames.Columns["ID"].Width = 50;
+            dgvExames.Columns["Paciente_Nome"].Width = 200;
+            dgvExames.Columns["Tipo_Exame"].Width = 251;
+        }
+
+        private void rbTodosExames_CheckedChanged(object sender, System.EventArgs e)
+        {
+            dgvExames.DataSource = examesBLL.MostrarExamesDoutor(FuncionarioLogado.DoutorLogado.Id);
+        }
+
+        private void rbExamesHoje_CheckedChanged(object sender, System.EventArgs e)
+        {
+            dgvExames.DataSource = examesBLL.MostrarExamesHojeDoutor(FuncionarioLogado.DoutorLogado.Id);
+        }
+
         private void btnVoltar_Click(object sender, System.EventArgs e)
         {
             FormEntradaDoutores formEntradaDoutores = new FormEntradaDoutores();

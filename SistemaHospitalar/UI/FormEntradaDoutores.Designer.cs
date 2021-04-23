@@ -42,10 +42,10 @@ namespace SistemaHospitalar.UI
             // btnConfiguracoes
             // 
             this.btnConfiguracoes.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfiguracoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfiguracoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfiguracoes.Location = new System.Drawing.Point(652, 12);
             this.btnConfiguracoes.Name = "btnConfiguracoes";
-            this.btnConfiguracoes.Size = new System.Drawing.Size(136, 65);
+            this.btnConfiguracoes.Size = new System.Drawing.Size(147, 73);
             this.btnConfiguracoes.TabIndex = 1;
             this.btnConfiguracoes.Text = "Configurações da Conta";
             this.btnConfiguracoes.UseVisualStyleBackColor = false;
@@ -56,7 +56,7 @@ namespace SistemaHospitalar.UI
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblNome.Location = new System.Drawing.Point(171, 19);
+            this.lblNome.Location = new System.Drawing.Point(25, 23);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(0, 39);
             this.lblNome.TabIndex = 2;
@@ -65,9 +65,9 @@ namespace SistemaHospitalar.UI
             // 
             this.btnValores.BackColor = System.Drawing.Color.Transparent;
             this.btnValores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnValores.Location = new System.Drawing.Point(17, 12);
+            this.btnValores.Location = new System.Drawing.Point(551, 196);
             this.btnValores.Name = "btnValores";
-            this.btnValores.Size = new System.Drawing.Size(136, 65);
+            this.btnValores.Size = new System.Drawing.Size(147, 73);
             this.btnValores.TabIndex = 3;
             this.btnValores.Text = "Valores";
             this.btnValores.UseVisualStyleBackColor = false;
@@ -89,7 +89,7 @@ namespace SistemaHospitalar.UI
             this.btnConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultas.Location = new System.Drawing.Point(95, 196);
             this.btnConsultas.Name = "btnConsultas";
-            this.btnConsultas.Size = new System.Drawing.Size(136, 76);
+            this.btnConsultas.Size = new System.Drawing.Size(147, 73);
             this.btnConsultas.TabIndex = 5;
             this.btnConsultas.Text = "Consultas";
             this.btnConsultas.UseVisualStyleBackColor = false;
@@ -101,7 +101,7 @@ namespace SistemaHospitalar.UI
             this.brnEncerrarSessão.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.brnEncerrarSessão.Location = new System.Drawing.Point(652, 373);
             this.brnEncerrarSessão.Name = "brnEncerrarSessão";
-            this.brnEncerrarSessão.Size = new System.Drawing.Size(136, 65);
+            this.brnEncerrarSessão.Size = new System.Drawing.Size(147, 73);
             this.brnEncerrarSessão.TabIndex = 6;
             this.brnEncerrarSessão.Text = "Encerrar Sessão";
             this.brnEncerrarSessão.UseVisualStyleBackColor = false;
@@ -113,7 +113,7 @@ namespace SistemaHospitalar.UI
             this.btnInternacoesDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInternacoesDoutor.Location = new System.Drawing.Point(321, 196);
             this.btnInternacoesDoutor.Name = "btnInternacoesDoutor";
-            this.btnInternacoesDoutor.Size = new System.Drawing.Size(136, 76);
+            this.btnInternacoesDoutor.Size = new System.Drawing.Size(147, 73);
             this.btnInternacoesDoutor.TabIndex = 7;
             this.btnInternacoesDoutor.Text = "Internações";
             this.btnInternacoesDoutor.UseVisualStyleBackColor = false;
@@ -123,9 +123,9 @@ namespace SistemaHospitalar.UI
             // 
             this.btnExames.BackColor = System.Drawing.Color.Transparent;
             this.btnExames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExames.Location = new System.Drawing.Point(551, 196);
+            this.btnExames.Location = new System.Drawing.Point(652, 91);
             this.btnExames.Name = "btnExames";
-            this.btnExames.Size = new System.Drawing.Size(136, 76);
+            this.btnExames.Size = new System.Drawing.Size(147, 73);
             this.btnExames.TabIndex = 8;
             this.btnExames.Text = "Exames";
             this.btnExames.UseVisualStyleBackColor = false;

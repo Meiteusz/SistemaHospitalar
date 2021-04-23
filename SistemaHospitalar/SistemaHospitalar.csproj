@@ -66,6 +66,12 @@
     <Compile Include="Entities\Internacao.cs" />
     <Compile Include="Entities\Quartos.cs" />
     <Compile Include="Entities\Visita.cs" />
+    <Compile Include="UI\FormAgendaDoutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormAgendaDoutor.Designer.cs">
+      <DependentUpon>FormAgendaDoutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormDescricaoDiagnostico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,11 +168,11 @@
     <Compile Include="Entities\Enumeradores\Turno.cs" />
     <Compile Include="Entities\Usuarios.cs" />
     <Compile Include="Entities\Visitante.cs" />
-    <Compile Include="UI\FormDiagnosticoConsultaDELETAR.cs">
+    <Compile Include="UI\FormDiagnosticoDaConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormDiagnosticoConsultaDELETAR.Designer.cs">
-      <DependentUpon>FormDiagnosticoConsultaDELETAR.cs</DependentUpon>
+    <Compile Include="UI\FormDiagnosticoDaConsulta.Designer.cs">
+      <DependentUpon>FormDiagnosticoDaConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormFuncionarios.cs">
       <SubType>Form</SubType>
@@ -285,11 +291,14 @@
       <DependentUpon>FormConsultasDoutor.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\FuncionarioLogado.cs" />
+    <EmbeddedResource Include="UI\FormAgendaDoutor.resx">
+      <DependentUpon>FormAgendaDoutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormDescricaoDiagnostico.resx">
       <DependentUpon>FormDescricaoDiagnostico.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\FormDiagnosticoConsultaDELETAR.resx">
-      <DependentUpon>FormDiagnosticoConsultaDELETAR.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormDiagnosticoDaConsulta.resx">
+      <DependentUpon>FormDiagnosticoDaConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormDiagnostico.resx">
       <DependentUpon>FormDiagnostico.cs</DependentUpon>

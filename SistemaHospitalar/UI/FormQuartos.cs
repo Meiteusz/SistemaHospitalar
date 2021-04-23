@@ -38,5 +38,11 @@ namespace SistemaHospitalar.UI
             FormEntradaADM formEntradaADM = new FormEntradaADM();
             Base.AbrirFormDesejado(this, formEntradaADM);
         }
+
+        private void FormQuartos_Load(object sender, EventArgs e)
+        {
+            dgvQuartos.Columns["Numero_Quarto"].Width = 151;
+            dgvQuartos.Columns["isDisponivel"].Width = 152;
+        }
     }
 }

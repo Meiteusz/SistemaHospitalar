@@ -12,8 +12,6 @@ namespace SistemaHospitalar.UI
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             dgvVisitantes.DataSource = visitasBLL.MostrarVisitantes();
-            dgvVisitantes.Columns["ID"].Width = 60;
-            dgvVisitantes.Columns["NOME"].Width = 190;
         }
 
         VisitasBLL visitasBLL = new VisitasBLL();
@@ -29,6 +27,12 @@ namespace SistemaHospitalar.UI
         private void txtCpfVisitante_Click(object sender, EventArgs e)
         {
             Base.SelectionLength(MtbCpfVisitante);
+        }
+
+        private void FormVisitantes_Load(object sender, EventArgs e)
+        {
+            dgvVisitantes.Columns["ID"].Width = 50;
+            dgvVisitantes.Columns["Visitante_Nome"].Width = 203;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

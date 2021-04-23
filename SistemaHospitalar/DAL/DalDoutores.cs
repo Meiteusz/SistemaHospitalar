@@ -221,7 +221,7 @@ namespace SistemaHospitalar.DAL
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@especialidade", p_especialidade);
-            command.CommandText = "select ID, NOME, ESPECIALIDADE, VALORCONSULTA from DOUTORES where ESPECIALIDADE = @especialidade";
+            command.CommandText = "select ID, NOME as Doutor_Nome, ESPECIALIDADE as Especialidade, VALORCONSULTA as Valor from DOUTORES where ESPECIALIDADE = @especialidade";
 
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
@@ -233,7 +233,7 @@ namespace SistemaHospitalar.DAL
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@especialidade", p_especialidade);
-            command.CommandText = "select ID, NOME, ESPECIALIDADE, CPF from DOUTORES where ESPECIALIDADE = @especialidade";
+            command.CommandText = "select ID, NOME as Doutor_Nome, ESPECIALIDADE as Especialidade, CPF as Cpf from DOUTORES where ESPECIALIDADE = @especialidade";
 
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
