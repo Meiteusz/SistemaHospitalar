@@ -1,4 +1,4 @@
-# SistemaHospitalar: :man_health_worker: :woman_health_worker:
+# SistemaHospitalar :man_health_worker: :woman_health_worker:
 
 
 ### Sistema Hospitalar criado com C# e Banco de Dados(SQL) onde as entidades responsáveis por usar são::arrow_down:
