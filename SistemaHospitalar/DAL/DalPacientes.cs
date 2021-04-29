@@ -4,11 +4,14 @@ using System;
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SistemaHospitalar.Models
 {
     public class DalPacientes : DalComandos
     {
+        AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+
         public string Insert(Paciente p_paciente)
         {
             command.Parameters.Clear();
@@ -142,6 +145,21 @@ namespace SistemaHospitalar.Models
             return pacientes;
         }
 
+        public AutoCompleteStringCollection GetNomesPacientes()
+        {
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            adapter = new SqlDataAdapter("select NOME from PACIENTES", conexao.Conectar());
+            dt = new DataTable();
+            adapter.Fill(dt);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                autoComplete.Add(item["NOME"].ToString());
+            }
+            conexao.Desconectar();
+            return autoComplete;
+        }
+
         public ArrayList MostrarCpfPacientesInternados()
         {
             ArrayList pacientes = new ArrayList();
@@ -186,11 +204,14 @@ namespace SistemaHospitalar.Models
             return dt;
         }
 
-        public DataTable PesquisaDePacientes(string p_nome)
+        public DataTable PesquisaDePacientes(string p_nomePaciente, string p_cpfPaciente)
         {
             command.Parameters.Clear();
-            command.Parameters.AddWithValue("@nome", p_nome);
-            command.CommandText = "select * from PACIENTES where Nome = @nome";
+            command.Parameters.AddWithValue("@nomePaciente", p_nomePaciente);
+            command.Parameters.AddWithValue("@cpfPaciente", p_cpfPaciente);
+            command.CommandText = "select PACIENTES.ID, PACIENTES.NOME as Paciente_Nome, PACIENTES.CPF as Paciente_Cpf, PACIENTES.CELULAR as Paciente_Celular, " +
+                "PACIENTES.GENERO as Paciente_Genero, CONVENIOS.NOME as Convênio_Nome from PACIENTES inner join CONVENIOS ON CONVENIOS.ID = PACIENTES.CONVENIOID" +
+                " where PACIENTES.NOME = @nomePaciente or PACIENTES.CPF = @cpfPaciente";
 
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();

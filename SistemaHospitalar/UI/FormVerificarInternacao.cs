@@ -23,11 +23,18 @@ namespace SistemaHospitalar.UI
 
         private void btnAtualizarInternacao_Click(object sender, System.EventArgs e)
         {
-            Internacao internacao = new Internacao(FuncionarioLogado.InternacaoTemp.Id, rtbDescricao.Text, (TipoInternacao)cmbEstadoInternacao.SelectedIndex, Convert.ToInt32(cmbQuarto.Text), DateTime.Now);
-
-            if (MessageBox.Show("Deseja atualizar os dados da internação?", "Data de alteração: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"), MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (string.IsNullOrWhiteSpace(cmbQuarto.Text))
             {
-                MessageBox.Show(internacaoBLL.AtualizarInternacao(internacao));
+                MessageBox.Show("Há valores inválidos");
+            }
+            else
+            {
+                Internacao internacao = new Internacao(FuncionarioLogado.InternacaoTemp.Id, rtbDescricao.Text, (TipoInternacao)cmbEstadoInternacao.SelectedIndex, Convert.ToInt32(cmbQuarto.Text), DateTime.Now);
+
+                if (MessageBox.Show("Deseja atualizar os dados da internação?", "Data de alteração: " + DateTime.Now.ToString("dd/MM/yyyy HH:mm"), MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    MessageBox.Show(internacaoBLL.AtualizarInternacao(internacao));
+                }
             }
         }
 

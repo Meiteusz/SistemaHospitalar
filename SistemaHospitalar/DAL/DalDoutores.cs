@@ -4,6 +4,7 @@ using SistemaHospitalar.Utilities;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SistemaHospitalar.DAL
 {
@@ -90,7 +91,7 @@ namespace SistemaHospitalar.DAL
             }
             catch (SqlException ex)
             {
-                return MostrarTipoErro(ex);
+                return "Verifique se há alguma ligação deste(a) doutor(a) com alguma Internação, Consulta, ou Exame antes de excluí-lo(a)!\n\n" + ex.Message;
             }
             finally
             {
@@ -196,7 +197,7 @@ namespace SistemaHospitalar.DAL
 
         public DataTable TodosDoutores()
         {
-            command.CommandText = "select NOME, CPF, TURNO, GENERO, CELULAR, ESPECIALIDADE, VALORCONSULTA, VALOREXAME from DOUTORES";
+            command.CommandText = "select ID, NOME, CPF, TURNO, GENERO, CELULAR, ESPECIALIDADE, VALORCONSULTA, VALOREXAME from DOUTORES";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

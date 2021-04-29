@@ -26,10 +26,17 @@ namespace SistemaHospitalar.UI
 
         private void btnCadastrarInternação_Click(object sender, System.EventArgs e)
         {
-            Internacao internacao = new Internacao(FuncionarioLogado.PacienteSelecionado.Id, FuncionarioLogado.DoutorTemp.Id, rtbDescricao.Text,
-                (TipoInternacao)cmbTipoInternacao.SelectedIndex, Convert.ToInt32(cmbQuartos.Text), dtpDataEntradaInternacao.Value, DateTime.Now);
+            if (cmbQuartos.Text.Equals(string.Empty) || cmbPacientes.Text.Equals(string.Empty))
+            {
+                MessageBox.Show("Há valores inválidos!");
+            }
+            else
+            {
+                Internacao internacao = new Internacao(FuncionarioLogado.PacienteSelecionado.Id, FuncionarioLogado.DoutorTemp.Id, rtbDescricao.Text,
+                    (TipoInternacao)cmbTipoInternacao.SelectedIndex, Convert.ToInt32(cmbQuartos.Text), dtpDataEntradaInternacao.Value, DateTime.Now);
 
-            MessageBox.Show(internacaoBLL.CadastrarInternacao(internacao));
+                MessageBox.Show(internacaoBLL.CadastrarInternacao(internacao));
+            }
         }
 
         private void cmbEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,7 +55,7 @@ namespace SistemaHospitalar.UI
         {
             dgvDoutores.Columns["ID"].Width = 50;
             dgvDoutores.Columns["Doutor_Nome"].Width = 200;
-            dgvDoutores.Columns["Especialidade"].Width = 75;
+            dgvDoutores.Columns["Especialidade"].Width = 95;
 
             cmbPacientes.DataSource = pacienteBLL.MostrarCpfPacientesNaoInternados();
             cmbPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;

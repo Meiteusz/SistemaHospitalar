@@ -10,8 +10,8 @@ namespace SistemaHospitalar.UI
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            lblNome.Text = "Bem vindo: " + FuncionarioLogado.DoutorLogado.Nome;
-            lblEspecialidadeDoutor.Text = "Especialidade: " + FuncionarioLogado.DoutorLogado.Especialidade;
+            lblNomeDoutor.Text = FuncionarioLogado.DoutorLogado.Nome;
+            lblEspecialidadeDoutor.Text = FuncionarioLogado.DoutorLogado.Especialidade.ToString();
         }
 
         private void btnConsultas_Click(object sender, System.EventArgs e)

@@ -59,6 +59,10 @@ namespace SistemaHospitalar.UI
 
         private void FormConsultas_Load(object sender, System.EventArgs e)
         {
+            txtNomePacientes.AutoCompleteCustomSource = pacienteBLL.MostrarNomesPacientes();
+            txtNomePacientes.AutoCompleteMode = AutoCompleteMode.Append;
+            txtNomePacientes.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
             dgvConsultas.Columns["ID"].Width = 50;
             dgvConsultas.Columns["Paciente_Nome"].Width = 200;
             dgvConsultas.Columns["Doutor_Nome"].Width = 200;
@@ -67,6 +71,18 @@ namespace SistemaHospitalar.UI
             dgvConsultas.Columns["Convênio_Nome"].Width = 157;
         }
         
+        private void txtNomePacientes_TextChanged(object sender, System.EventArgs e)
+        {
+            if (txtNomePacientes.Text.Equals(string.Empty))
+            {
+                dgvConsultas.DataSource = consultaBLL.ConsultasGeral();
+            }
+            else
+            {
+                dgvConsultas.DataSource = consultaBLL.PesquisarConsultaByNomePaciente(txtNomePacientes.Text);
+            }
+        }
+
         private void btnVoltar_Click(object sender, System.EventArgs e)
         {
             FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();

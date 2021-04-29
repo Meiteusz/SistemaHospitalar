@@ -40,6 +40,7 @@ namespace SistemaHospitalar.UI
             // 
             this.dgvConsultas.AllowUserToAddRows = false;
             this.dgvConsultas.AllowUserToResizeColumns = false;
+            this.dgvConsultas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -51,7 +52,7 @@ namespace SistemaHospitalar.UI
             this.dgvConsultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultas.EnableHeadersVisualStyles = false;
             this.dgvConsultas.GridColor = System.Drawing.Color.Black;
-            this.dgvConsultas.Location = new System.Drawing.Point(83, 35);
+            this.dgvConsultas.Location = new System.Drawing.Point(83, 47);
             this.dgvConsultas.Name = "dgvConsultas";
             this.dgvConsultas.ReadOnly = true;
             this.dgvConsultas.Size = new System.Drawing.Size(464, 290);
@@ -60,7 +61,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnFazerDiagnostico
             // 
-            this.btnFazerDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFazerDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFazerDiagnostico.Location = new System.Drawing.Point(400, 384);
             this.btnFazerDiagnostico.Name = "btnFazerDiagnostico";
             this.btnFazerDiagnostico.Size = new System.Drawing.Size(147, 73);
@@ -71,7 +72,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(83, 384);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(147, 73);
@@ -84,6 +85,7 @@ namespace SistemaHospitalar.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(649, 504);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnFazerDiagnostico);

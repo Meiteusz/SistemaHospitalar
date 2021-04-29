@@ -43,6 +43,10 @@ namespace SistemaHospitalar.UI
             cmbPacientes.DataSource = pacienteBLL.MostrarCpfPacientesInternados();
             cmbPacientes.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbPacientes.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            txtNomeVisitante.AutoCompleteCustomSource = visitasBLL.MostrarNomesVisitantes();
+            txtNomeVisitante.AutoCompleteMode = AutoCompleteMode.Append;
+            txtNomeVisitante.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void cbVisitantes_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,6 +59,24 @@ namespace SistemaHospitalar.UI
         {
             pacienteBLL.PegarDadosPaciente(0, cmbPacientes.Text);
             lblNomePaciente.Text = FuncionarioLogado.PacienteSelecionado.Nome;
+        }
+
+        private void txtNomeVisitante_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNomeVisitante.Text.Equals(string.Empty))
+            {
+                dgvVisitas.DataSource = visitasBLL.MostrarVisitas();
+            }
+            else
+            {
+                dgvVisitas.DataSource = visitasBLL.PesquisarVisitante(txtNomeVisitante.Text);
+            }
+        }
+
+        private void btnCadastrarVisitante_Click(object sender, EventArgs e)
+        {
+            FormVisitantes formVisitantes = new FormVisitantes();
+            Base.AbrirFormDesejado(this, formVisitantes);
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

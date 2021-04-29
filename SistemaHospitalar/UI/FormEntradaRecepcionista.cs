@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.DAL;
 using SistemaHospitalar.UI;
 using SistemaHospitalar.Utilities;
 using SistemaHospitalar.Views;
@@ -13,7 +12,7 @@ namespace SistemaHospitalar
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            lblNome.Text = "Bem vindo " + FuncionarioLogado.RecepcionistaLogada.Nome;
+            lblNomeRecepcionista.Text = FuncionarioLogado.RecepcionistaLogada.Nome;
         }
 
         private void btnConsultas_Click(object sender, System.EventArgs e)
@@ -24,8 +23,8 @@ namespace SistemaHospitalar
 
         private void btnInternacao_Click(object sender, System.EventArgs e)
         {
-            FormInternacao formInternacao = new FormInternacao();
-            Base.AbrirFormDesejado(this, formInternacao);
+            FormTodasInternacoes formTodasInternacoes = new FormTodasInternacoes();
+            Base.AbrirFormDesejado(this, formTodasInternacoes);
         }
 
         private void btnPacientes_Click(object sender, System.EventArgs e)
@@ -40,10 +39,16 @@ namespace SistemaHospitalar
             Base.AbrirFormDesejado(this, formVisitas);
         }
 
-        private void btnVisitantes_Click(object sender, System.EventArgs e)
+        private void btnExames_Click(object sender, System.EventArgs e)
         {
-            FormVisitantes formVisitantes = new FormVisitantes();
-            Base.AbrirFormDesejado(this, formVisitantes);
+            FormExames formExames = new FormExames();
+            Base.AbrirFormDesejado(this, formExames);
+        }
+
+        private void btnAgenda_Click(object sender, System.EventArgs e)
+        {
+            FormAgenda formAgenda = new FormAgenda();
+            Base.AbrirFormDesejado(this, formAgenda);
         }
 
         private void btnConfiguracoesRecepcionista_Click(object sender, System.EventArgs e)

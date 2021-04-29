@@ -4,6 +4,7 @@ using SistemaHospitalar.Utilities;
 using System.Collections;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SistemaHospitalar.DAL
 {
@@ -57,6 +58,21 @@ namespace SistemaHospitalar.DAL
             }
         }
 
+        public AutoCompleteStringCollection GetNomesVisitantes()
+        {
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            adapter = new SqlDataAdapter("select NOME from VISITANTES", conexao.Conectar());
+            dt = new DataTable();
+            adapter.Fill(dt);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                autoComplete.Add(item["NOME"].ToString());
+            }
+            conexao.Desconectar();
+            return autoComplete;
+        }
+
         public ArrayList GetCpfVisitantes()
         {
             ArrayList visitantes = new ArrayList();
@@ -92,6 +108,21 @@ namespace SistemaHospitalar.DAL
             adapter.Fill(dt);
             return dt;
         }
+
+        public DataTable PesquisarVisitante(string p_NomeVisitante)
+        {
+            SqlCommand command = new SqlCommand("select VISITAS.ID, PACIENTES.NOME as Nome_Paciente, PACIENTES.CPF as Cpf_Paciente, QUARTOID as Numero_Quarto, " +
+                    "FORMAT(VISITAS.DATAVISITA, 'dd/MM/yyyy HH:mm') as Data_Visita, VISITANTES.NOME as Nome_Visitante, VISITANTES.CPF as Cpf_Visitante from " +
+                    "INTERNACAO inner join VISITAS on VISITAS.INTERNACAOID = INTERNACAO.ID inner join PACIENTES on INTERNACAO.PACIENTEID = PACIENTES.ID inner join " +
+                    "VISITANTES on VISITAS.VISITANTEID = VISITANTES.ID where VISITANTES.NOME = @NomeVisitante", conexao.Conectar());
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@NomeVisitante", p_NomeVisitante);
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            conexao.Desconectar();
+            return dt;
+        } 
         
         public void GetDadosVisitante(int p_IdVisitante, string p_CpfVisitante)
         {

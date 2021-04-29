@@ -72,9 +72,19 @@ namespace SistemaHospitalar.BLL
             return dalInternacao.MostrarTodasInternacoes();
         }
 
+        public DataTable PesquisarInternacaoByNomePaciente(string NomePaciente, string CpfPaciente)
+        {
+            return dalInternacao.PesquisarInternacaoByNomePaciente(NomePaciente, CpfPaciente);
+        }
+
         public DataTable TodasInternacoesDoutor(int IdDoutor)
         {
             return dalInternacao.MostrarInternacoesParaDoutor(IdDoutor);
+        }
+
+        public DataTable PesquisarInternacaoDoutor(int IdDoutor, string NomePaciente, int NumeroQuarto)
+        {
+            return dalInternacao.PesquisarInternacaoDoutor(IdDoutor, NomePaciente, NumeroQuarto);
         }
     }
 }

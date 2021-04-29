@@ -39,7 +39,7 @@ namespace SistemaHospitalar.Views
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(136, 151);
+            this.txtSenha.Location = new System.Drawing.Point(134, 137);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(336, 30);
             this.txtSenha.TabIndex = 12;
@@ -49,7 +49,8 @@ namespace SistemaHospitalar.Views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(131, 123);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(129, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 25);
             this.label2.TabIndex = 11;
@@ -59,7 +60,8 @@ namespace SistemaHospitalar.Views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 55);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(129, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 25);
             this.label1.TabIndex = 9;
@@ -68,7 +70,7 @@ namespace SistemaHospitalar.Views
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(136, 83);
+            this.txtUsuario.Location = new System.Drawing.Point(134, 69);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(336, 30);
             this.txtUsuario.TabIndex = 8;
@@ -82,9 +84,9 @@ namespace SistemaHospitalar.Views
             this.btnLogin.ForeColor = System.Drawing.Color.Black;
             this.btnLogin.Image = global::SistemaHospitalar.Properties.Resources.Ok_icon;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnLogin.Location = new System.Drawing.Point(244, 210);
+            this.btnLogin.Location = new System.Drawing.Point(234, 195);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(108, 42);
+            this.btnLogin.Size = new System.Drawing.Size(126, 42);
             this.btnLogin.TabIndex = 13;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -95,6 +97,7 @@ namespace SistemaHospitalar.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(590, 264);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);

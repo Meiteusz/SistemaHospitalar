@@ -2,12 +2,16 @@
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using SistemaHospitalar.Utilities;
+using System;
 using System.Data;
 
 namespace SistemaHospitalar.BLL
 {
     class ExamesBLL : Validator
     {
+        public float ValorExame { get; private set; }
+        public float ValorDesconto { get; private set; }
+        public float ValorFinalExame { get; private set; }
         DalExames dalExames = new DalExames();
         DalConsultas dalConsultas = new DalConsultas();
 
@@ -30,6 +34,18 @@ namespace SistemaHospitalar.BLL
             return dalExames.InsertExame(exame);
         }
 
+        public string ReagendarExame(DateTime dataExame, int IdExame)
+        {
+            return dalExames.UpdateDataExame(dataExame, IdExame);
+        }
+
+        public void SetValoresExame(float p_ValorExame, float p_ValorDescontoConvenio)
+        {
+            ValorExame = p_ValorExame;
+            ValorDesconto = p_ValorExame * p_ValorDescontoConvenio;
+            ValorFinalExame = p_ValorExame - ValorDesconto;
+        }
+
         public string CadastrarDiagnosticoExame(Diagnostico diagnostico)
         {
             return dalExames.InsertDiagnostico(diagnostico);
@@ -45,6 +61,21 @@ namespace SistemaHospitalar.BLL
             return dalExames.isDiagnosticoExistente(IdExame);
         }
 
+        public DataTable PesquisarExamesByData(string DataExame)
+        {
+            return dalExames.PesquisarExamesByData(DataExame);
+        }
+
+        public DataTable MostrarExames()
+        {
+            return dalExames.MostrarExames();
+        }
+
+        public DataTable MostrarExamesHoje()
+        {
+            return dalExames.MostrarExamesHoje();
+        }
+
         public DataTable MostrarExamesDoutor(int IdDoutor)
         {
             return dalExames.TodosExamesDoDoutor(IdDoutor);
@@ -53,6 +84,16 @@ namespace SistemaHospitalar.BLL
         public DataTable MostrarExamesHojeDoutor(int IdDoutor)
         {
             return dalExames.TodosExamesDoDoutorHoje(IdDoutor);
+        }
+
+        public DataTable PesquisarExamesByNomePaciente(string NomePaciente)
+        {
+            return dalExames.PesquisarExamesByNomePaciente(NomePaciente);
+        }
+
+        public DataTable PesquisarExamesDoutorByNomePaciente(int IdDoutor, string NomePaciente)
+        {
+            return dalExames.PesquisarExamesDoutorByNomePaciente(IdDoutor, NomePaciente);
         }
 
         public DataTable MostrarDiagnosticosExame(int IdExame)

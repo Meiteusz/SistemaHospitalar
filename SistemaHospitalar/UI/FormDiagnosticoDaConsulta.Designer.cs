@@ -56,15 +56,17 @@ namespace SistemaHospitalar.UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(133, 37);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(87, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(519, 54);
+            this.label1.Size = new System.Drawing.Size(578, 62);
             this.label1.TabIndex = 0;
             this.label1.Text = "Diagnostico da consulta";
             // 
             // rtbDescricao
             // 
+            this.rtbDescricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.rtbDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbDescricao.Location = new System.Drawing.Point(34, 382);
             this.rtbDescricao.MaxLength = 600;
@@ -75,10 +77,10 @@ namespace SistemaHospitalar.UI
             // 
             // btnFazerDiagnostico
             // 
-            this.btnFazerDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFazerDiagnostico.Location = new System.Drawing.Point(298, 712);
+            this.btnFazerDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFazerDiagnostico.Location = new System.Drawing.Point(266, 722);
             this.btnFazerDiagnostico.Name = "btnFazerDiagnostico";
-            this.btnFazerDiagnostico.Size = new System.Drawing.Size(147, 73);
+            this.btnFazerDiagnostico.Size = new System.Drawing.Size(183, 73);
             this.btnFazerDiagnostico.TabIndex = 3;
             this.btnFazerDiagnostico.Text = "Fazer Diagnostico";
             this.btnFazerDiagnostico.UseVisualStyleBackColor = true;
@@ -101,30 +103,32 @@ namespace SistemaHospitalar.UI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(29, 336);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 25);
+            this.label2.Size = new System.Drawing.Size(155, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "Dia da consulta:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(46, 47);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 25);
+            this.label3.Size = new System.Drawing.Size(67, 22);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nome:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(423, 336);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(408, 336);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 25);
+            this.label5.Size = new System.Drawing.Size(172, 22);
             this.label5.TabIndex = 7;
             this.label5.Text = "Valor da consulta:";
             // 
@@ -134,7 +138,8 @@ namespace SistemaHospitalar.UI
             this.groupBox1.Controls.Add(this.lblNomePaciente);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(34, 106);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(688, 95);
@@ -145,30 +150,30 @@ namespace SistemaHospitalar.UI
             // lblCpfPaciente
             // 
             this.lblCpfPaciente.AutoSize = true;
-            this.lblCpfPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCpfPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCpfPaciente.Location = new System.Drawing.Point(466, 47);
             this.lblCpfPaciente.Name = "lblCpfPaciente";
-            this.lblCpfPaciente.Size = new System.Drawing.Size(119, 25);
+            this.lblCpfPaciente.Size = new System.Drawing.Size(108, 22);
             this.lblCpfPaciente.TabIndex = 8;
             this.lblCpfPaciente.Text = "CpfPaciente";
             // 
             // lblNomePaciente
             // 
             this.lblNomePaciente.AutoSize = true;
-            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomePaciente.Location = new System.Drawing.Point(112, 47);
             this.lblNomePaciente.Name = "lblNomePaciente";
-            this.lblNomePaciente.Size = new System.Drawing.Size(140, 25);
+            this.lblNomePaciente.Size = new System.Drawing.Size(127, 22);
             this.lblNomePaciente.TabIndex = 7;
             this.lblNomePaciente.Text = "NomePaciente";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(422, 47);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 25);
+            this.label6.Size = new System.Drawing.Size(47, 22);
             this.label6.TabIndex = 6;
             this.label6.Text = "Cpf:";
             // 
@@ -178,7 +183,8 @@ namespace SistemaHospitalar.UI
             this.groupBox2.Controls.Add(this.lblNomeDoutor);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(34, 207);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(688, 95);
@@ -189,10 +195,10 @@ namespace SistemaHospitalar.UI
             // lblCelularDoutor
             // 
             this.lblCelularDoutor.AutoSize = true;
-            this.lblCelularDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelularDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCelularDoutor.Location = new System.Drawing.Point(466, 45);
             this.lblCelularDoutor.Name = "lblCelularDoutor";
-            this.lblCelularDoutor.Size = new System.Drawing.Size(132, 25);
+            this.lblCelularDoutor.Size = new System.Drawing.Size(121, 22);
             this.lblCelularDoutor.TabIndex = 9;
             this.lblCelularDoutor.Text = "CelularDoutor";
             this.lblCelularDoutor.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -200,50 +206,52 @@ namespace SistemaHospitalar.UI
             // lblNomeDoutor
             // 
             this.lblNomeDoutor.AutoSize = true;
-            this.lblNomeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeDoutor.Location = new System.Drawing.Point(112, 45);
             this.lblNomeDoutor.Name = "lblNomeDoutor";
-            this.lblNomeDoutor.Size = new System.Drawing.Size(122, 25);
+            this.lblNomeDoutor.Size = new System.Drawing.Size(111, 22);
             this.lblNomeDoutor.TabIndex = 9;
             this.lblNomeDoutor.Text = "NomeDoutor";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(391, 45);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 25);
+            this.label8.Size = new System.Drawing.Size(80, 22);
             this.label8.TabIndex = 7;
             this.label8.Text = "Celular:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(46, 45);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 25);
+            this.label7.Size = new System.Drawing.Size(67, 22);
             this.label7.TabIndex = 7;
             this.label7.Text = "Nome:";
             // 
             // lblDiaConsulta
             // 
             this.lblDiaConsulta.AutoSize = true;
-            this.lblDiaConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaConsulta.ForeColor = System.Drawing.Color.Black;
             this.lblDiaConsulta.Location = new System.Drawing.Point(187, 336);
             this.lblDiaConsulta.Name = "lblDiaConsulta";
-            this.lblDiaConsulta.Size = new System.Drawing.Size(152, 25);
+            this.lblDiaConsulta.Size = new System.Drawing.Size(139, 22);
             this.lblDiaConsulta.TabIndex = 10;
             this.lblDiaConsulta.Text = "Dia da consulta:";
             // 
             // lblValorConsulta
             // 
             this.lblValorConsulta.AutoSize = true;
-            this.lblValorConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorConsulta.ForeColor = System.Drawing.Color.Black;
             this.lblValorConsulta.Location = new System.Drawing.Point(586, 336);
             this.lblValorConsulta.Name = "lblValorConsulta";
-            this.lblValorConsulta.Size = new System.Drawing.Size(136, 25);
+            this.lblValorConsulta.Size = new System.Drawing.Size(123, 22);
             this.lblValorConsulta.TabIndex = 11;
             this.lblValorConsulta.Text = "ValorConsulta";
             // 
@@ -251,6 +259,7 @@ namespace SistemaHospitalar.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(754, 807);
             this.Controls.Add(this.lblValorConsulta);
             this.Controls.Add(this.lblDiaConsulta);

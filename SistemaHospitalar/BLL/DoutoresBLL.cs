@@ -2,6 +2,7 @@
 using SistemaHospitalar.Entities;
 using SistemaHospitalar.Models;
 using System.Data;
+using System.Windows.Forms;
 
 namespace SistemaHospitalar.BLL
 {
@@ -80,7 +81,6 @@ namespace SistemaHospitalar.BLL
         {
             return dalDoutores.PesquisaDeDoutores(NomeDoutor, TurnoDoutor, EspecialidadeDoutor);
         }
-
 
         public string ValidarDoutor(Doutores doutores, string confSenha)
         {

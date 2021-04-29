@@ -46,6 +46,7 @@ namespace SistemaHospitalar.UI
             // dgvQuartos
             // 
             this.dgvQuartos.AllowUserToAddRows = false;
+            this.dgvQuartos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvQuartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvQuartos.EnableHeadersVisualStyles = false;
             this.dgvQuartos.GridColor = System.Drawing.Color.Black;
@@ -57,7 +58,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnCadastrarQuarto
             // 
-            this.btnCadastrarQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarQuarto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarQuarto.Location = new System.Drawing.Point(709, 410);
             this.btnCadastrarQuarto.Name = "btnCadastrarQuarto";
             this.btnCadastrarQuarto.Size = new System.Drawing.Size(147, 73);
@@ -83,6 +84,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(529, 231);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(140, 20);
@@ -93,6 +95,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(522, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(270, 31);
@@ -113,6 +116,7 @@ namespace SistemaHospitalar.UI
             // 
             this.rbQuartosDisponiveis.AutoSize = true;
             this.rbQuartosDisponiveis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbQuartosDisponiveis.ForeColor = System.Drawing.Color.White;
             this.rbQuartosDisponiveis.Location = new System.Drawing.Point(175, 22);
             this.rbQuartosDisponiveis.Name = "rbQuartosDisponiveis";
             this.rbQuartosDisponiveis.Size = new System.Drawing.Size(165, 24);
@@ -126,6 +130,7 @@ namespace SistemaHospitalar.UI
             // 
             this.rbTodosQuartos.AutoSize = true;
             this.rbTodosQuartos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTodosQuartos.ForeColor = System.Drawing.Color.White;
             this.rbTodosQuartos.Location = new System.Drawing.Point(6, 22);
             this.rbTodosQuartos.Name = "rbTodosQuartos";
             this.rbTodosQuartos.Size = new System.Drawing.Size(129, 24);
@@ -137,7 +142,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(467, 410);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(147, 73);
@@ -150,6 +155,7 @@ namespace SistemaHospitalar.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(892, 517);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.groupBox1);

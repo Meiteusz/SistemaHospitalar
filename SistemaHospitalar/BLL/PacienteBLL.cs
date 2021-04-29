@@ -1,6 +1,7 @@
 ﻿using SistemaHospitalar.Models;
 using System.Collections;
 using System.Data;
+using System.Windows.Forms;
 
 namespace SistemaHospitalar.BLL
 {
@@ -47,14 +48,19 @@ namespace SistemaHospitalar.BLL
             return dalPacientes.GetCpfPacientes();
         }
 
+        public AutoCompleteStringCollection MostrarNomesPacientes()
+        {
+            return dalPacientes.GetNomesPacientes();
+        }
+
         public DataTable MostrarPacientes()
         {
             return dalPacientes.TodosPacientes();
         }
 
-        public DataTable PesquisarPacientes(string NomePaciente)
+        public DataTable PesquisarPacientes(string NomePaciente, string CpfPaciente)
         {
-            return dalPacientes.PesquisaDePacientes(NomePaciente);
+            return dalPacientes.PesquisaDePacientes(NomePaciente, CpfPaciente);
         }
 
         public ArrayList MostrarCpfPacientesInternados()

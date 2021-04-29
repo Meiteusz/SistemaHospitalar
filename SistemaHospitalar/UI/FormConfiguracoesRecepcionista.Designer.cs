@@ -51,7 +51,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(263, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(371, 39);
@@ -68,7 +68,8 @@ namespace SistemaHospitalar.Views
             // 
             // btnAtualizarInformacoes
             // 
-            this.btnAtualizarInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarInformacoes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizarInformacoes.ForeColor = System.Drawing.Color.Black;
             this.btnAtualizarInformacoes.Location = new System.Drawing.Point(633, 428);
             this.btnAtualizarInformacoes.Name = "btnAtualizarInformacoes";
             this.btnAtualizarInformacoes.Size = new System.Drawing.Size(198, 65);
@@ -81,6 +82,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(34, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 20);
@@ -91,6 +93,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(33, 239);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 20);
@@ -109,6 +112,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(36, 341);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 20);
@@ -119,6 +123,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(482, 239);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 20);
@@ -138,6 +143,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(483, 341);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 20);
@@ -157,6 +163,7 @@ namespace SistemaHospitalar.Views
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(483, 144);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(50, 20);
@@ -187,6 +194,7 @@ namespace SistemaHospitalar.Views
             // 
             this.cbMostrarSenha.AutoSize = true;
             this.cbMostrarSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMostrarSenha.ForeColor = System.Drawing.Color.White;
             this.cbMostrarSenha.Location = new System.Drawing.Point(693, 315);
             this.cbMostrarSenha.Name = "cbMostrarSenha";
             this.cbMostrarSenha.Size = new System.Drawing.Size(133, 24);
@@ -197,7 +205,8 @@ namespace SistemaHospitalar.Views
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.Color.Black;
             this.btnVoltar.Location = new System.Drawing.Point(37, 428);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(198, 65);
@@ -210,6 +219,7 @@ namespace SistemaHospitalar.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(872, 526);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.cbMostrarSenha);

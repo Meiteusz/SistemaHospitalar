@@ -166,10 +166,24 @@ namespace SistemaHospitalar.DAL
 
         public DataTable MostrarTodasInternacoes()
         {
-            command.CommandText = "select PACIENTES.NOME as Paciente_Nome, DOUTORES.NOME as Doutor_Nome, INTERNACAO.DESCRICAO, INTERNACAO.TIPOINTERNACAO as " +
-                "Tipo_Internacao,  INTERNACAO.QUARTOID as Numero_Quarto, FORMAT(INTERNACAO.DATAENTRADA, 'dd/MM/yyyy HH:mm') as Data_Entrada, FORMAT(INTERNACAO.DATASAIDA, " +
-                "'dd/MM/yyyy HH:mm') as Data_Saida, INTERNACAO.PRECO, FORMAT(INTERNACAO.DATAULTIMAATUALIZACAO, 'dd/MM/yyyy HH:mm') as Ultima_Atualizacao from " +
-                "INTERNACAO inner join PACIENTES on PACIENTES.ID = PACIENTEID inner join DOUTORES on DOUTORES.ID = DOUTORID";
+            command.CommandText = "Select PACIENTES.NOME as Paciente_Nome, PACIENTES.CPF as Paciente_Cpf, DOUTORES.NOME as Doutor_Nome, INTERNACAO.TIPOINTERNACAO as Tipo_Internacao, " +
+                "INTERNACAO.QUARTOID as Numero_Quarto, FORMAT(INTERNACAO.DATAENTRADA, 'dd/MM/yyyy HH:mm') as Data_Entrada from INTERNACAO inner join PACIENTES on PACIENTES.ID = INTERNACAO.PACIENTEID " +
+                "inner join DOUTORES on DOUTORES.ID = INTERNACAO.DOUTORID where INTERNACAO.DATASAIDA is null";
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+
+        public DataTable PesquisarInternacaoByNomePaciente(string p_NomePaciente, string p_CpfPaciente)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@NomePaciente", p_NomePaciente);
+            command.Parameters.AddWithValue("@CpfPaciente", p_CpfPaciente);
+            command.CommandText = "Select PACIENTES.NOME as Paciente_Nome, PACIENTES.CPF as Paciente_Cpf, DOUTORES.NOME as Doutor_Nome, INTERNACAO.TIPOINTERNACAO as Tipo_Internacao, " +
+                "INTERNACAO.QUARTOID as Numero_Quarto, FORMAT(INTERNACAO.DATAENTRADA, 'dd/MM/yyyy HH:mm') as Data_Entrada from INTERNACAO inner join PACIENTES on PACIENTES.ID = INTERNACAO.PACIENTEID " +
+                "inner join DOUTORES on DOUTORES.ID = INTERNACAO.DOUTORID where INTERNACAO.DATASAIDA is null and PACIENTES.NOME = @NomePaciente or PACIENTES.CPF = @CpfPaciente";
+
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);
@@ -186,6 +200,25 @@ namespace SistemaHospitalar.DAL
 
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@IdDoutor", p_IdDoutor);
+            adapter = new SqlDataAdapter(command);
+            dt = new DataTable();
+            adapter.Fill(dt);
+            conexao.Desconectar();
+            return dt;
+        }
+
+        public DataTable PesquisarInternacaoDoutor(int p_IdDoutor, string p_NomePaciente, int p_NumeroQuarto)
+        {
+            SqlCommand command = new SqlCommand("select INTERNACAO.ID, PACIENTES.NOME as Paciente_Nome, INTERNACAO.DESCRICAO as Descricao, INTERNACAO.TIPOINTERNACAO as " +
+                 "Tipo_Internacao, INTERNACAO.QUARTOID as Numero_Quarto, FORMAT(INTERNACAO.DATAENTRADA, 'dd/MM/yyyy HH:mm') as Data_Entrada, " +
+                 "FORMAT(INTERNACAO.DATASAIDA, 'dd/MM/yyyy HH:mm') as Data_Saida, FORMAT(INTERNACAO.PRECO, 'c', 'pt-br') as Preço_Total, " +
+                 "FORMAT(INTERNACAO.DATAULTIMAATUALIZACAO, 'dd/MM/yyyy HH:mm') as Ultima_Atualizacao from INTERNACAO inner join PACIENTES on " +
+                 "PACIENTES.ID = PACIENTEID where DOUTORID = @IdDoutor and PACIENTES.NOME = @NomePaciente or INTERNACAO.QUARTOID = @NumeroQuarto", conexao.Conectar());
+
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@IdDoutor", p_IdDoutor);
+            command.Parameters.AddWithValue("@NomePaciente", p_NomePaciente);
+            command.Parameters.AddWithValue("@NumeroQuarto", p_NumeroQuarto);
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

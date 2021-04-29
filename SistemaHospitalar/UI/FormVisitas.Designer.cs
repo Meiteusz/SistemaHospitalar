@@ -43,6 +43,9 @@ namespace SistemaHospitalar.UI
             this.lblNomeVisitante = new System.Windows.Forms.Label();
             this.lblNomePaciente = new System.Windows.Forms.Label();
             this.dgvVisitas = new System.Windows.Forms.DataGridView();
+            this.txtNomeVisitante = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnCadastrarVisitante = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +53,7 @@ namespace SistemaHospitalar.UI
             // 
             this.cmbVisitantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbVisitantes.FormattingEnabled = true;
-            this.cmbVisitantes.Location = new System.Drawing.Point(941, 179);
+            this.cmbVisitantes.Location = new System.Drawing.Point(939, 233);
             this.cmbVisitantes.Name = "cmbVisitantes";
             this.cmbVisitantes.Size = new System.Drawing.Size(225, 28);
             this.cmbVisitantes.TabIndex = 16;
@@ -60,7 +63,7 @@ namespace SistemaHospitalar.UI
             // 
             this.cmbPacientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPacientes.FormattingEnabled = true;
-            this.cmbPacientes.Location = new System.Drawing.Point(941, 48);
+            this.cmbPacientes.Location = new System.Drawing.Point(939, 102);
             this.cmbPacientes.Name = "cmbPacientes";
             this.cmbPacientes.Size = new System.Drawing.Size(225, 28);
             this.cmbPacientes.TabIndex = 17;
@@ -70,7 +73,8 @@ namespace SistemaHospitalar.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(937, 154);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(935, 208);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 22);
             this.label1.TabIndex = 18;
@@ -80,7 +84,8 @@ namespace SistemaHospitalar.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(937, 23);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(935, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 22);
             this.label2.TabIndex = 19;
@@ -91,7 +96,7 @@ namespace SistemaHospitalar.UI
             this.dtpDataVisita.CustomFormat = "dd/MM/yyyy HH:mm tt";
             this.dtpDataVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataVisita.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataVisita.Location = new System.Drawing.Point(941, 305);
+            this.dtpDataVisita.Location = new System.Drawing.Point(939, 359);
             this.dtpDataVisita.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.dtpDataVisita.MinDate = new System.DateTime(2021, 3, 18, 16, 54, 53, 0);
             this.dtpDataVisita.Name = "dtpDataVisita";
@@ -103,7 +108,8 @@ namespace SistemaHospitalar.UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(938, 280);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(936, 334);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 22);
             this.label3.TabIndex = 21;
@@ -111,8 +117,8 @@ namespace SistemaHospitalar.UI
             // 
             // btnAgendarVisita
             // 
-            this.btnAgendarVisita.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgendarVisita.Location = new System.Drawing.Point(788, 404);
+            this.btnAgendarVisita.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgendarVisita.Location = new System.Drawing.Point(786, 465);
             this.btnAgendarVisita.Name = "btnAgendarVisita";
             this.btnAgendarVisita.Size = new System.Drawing.Size(147, 73);
             this.btnAgendarVisita.TabIndex = 22;
@@ -122,8 +128,8 @@ namespace SistemaHospitalar.UI
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVoltar.Location = new System.Drawing.Point(29, 404);
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(29, 465);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(147, 73);
             this.btnVoltar.TabIndex = 23;
@@ -135,7 +141,8 @@ namespace SistemaHospitalar.UI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(937, 210);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(934, 264);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 22);
             this.label4.TabIndex = 24;
@@ -145,7 +152,8 @@ namespace SistemaHospitalar.UI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(938, 80);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(935, 134);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 22);
             this.label5.TabIndex = 25;
@@ -155,21 +163,21 @@ namespace SistemaHospitalar.UI
             // 
             this.lblNomeVisitante.AutoSize = true;
             this.lblNomeVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeVisitante.Location = new System.Drawing.Point(1004, 212);
+            this.lblNomeVisitante.ForeColor = System.Drawing.Color.White;
+            this.lblNomeVisitante.Location = new System.Drawing.Point(996, 266);
             this.lblNomeVisitante.Name = "lblNomeVisitante";
-            this.lblNomeVisitante.Size = new System.Drawing.Size(113, 20);
+            this.lblNomeVisitante.Size = new System.Drawing.Size(0, 20);
             this.lblNomeVisitante.TabIndex = 26;
-            this.lblNomeVisitante.Text = "NomeVisitante";
             // 
             // lblNomePaciente
             // 
             this.lblNomePaciente.AutoSize = true;
             this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomePaciente.Location = new System.Drawing.Point(1005, 82);
+            this.lblNomePaciente.ForeColor = System.Drawing.Color.White;
+            this.lblNomePaciente.Location = new System.Drawing.Point(997, 136);
             this.lblNomePaciente.Name = "lblNomePaciente";
-            this.lblNomePaciente.Size = new System.Drawing.Size(113, 20);
+            this.lblNomePaciente.Size = new System.Drawing.Size(0, 20);
             this.lblNomePaciente.TabIndex = 27;
-            this.lblNomePaciente.Text = "NomePaciente";
             // 
             // dgvVisitas
             // 
@@ -185,17 +193,52 @@ namespace SistemaHospitalar.UI
             this.dgvVisitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisitas.EnableHeadersVisualStyles = false;
             this.dgvVisitas.GridColor = System.Drawing.Color.Black;
-            this.dgvVisitas.Location = new System.Drawing.Point(29, 23);
+            this.dgvVisitas.Location = new System.Drawing.Point(27, 77);
             this.dgvVisitas.Name = "dgvVisitas";
             this.dgvVisitas.ReadOnly = true;
             this.dgvVisitas.Size = new System.Drawing.Size(906, 309);
             this.dgvVisitas.TabIndex = 28;
             // 
+            // txtNomeVisitante
+            // 
+            this.txtNomeVisitante.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeVisitante.Location = new System.Drawing.Point(27, 47);
+            this.txtNomeVisitante.Name = "txtNomeVisitante";
+            this.txtNomeVisitante.Size = new System.Drawing.Size(343, 26);
+            this.txtNomeVisitante.TabIndex = 29;
+            this.txtNomeVisitante.TextChanged += new System.EventHandler(this.txtNomeVisitante_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(23, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(214, 20);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Pesquisar visitante por Nome";
+            // 
+            // btnCadastrarVisitante
+            // 
+            this.btnCadastrarVisitante.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarVisitante.Location = new System.Drawing.Point(426, 465);
+            this.btnCadastrarVisitante.Name = "btnCadastrarVisitante";
+            this.btnCadastrarVisitante.Size = new System.Drawing.Size(147, 73);
+            this.btnCadastrarVisitante.TabIndex = 32;
+            this.btnCadastrarVisitante.Text = "Cadastrar Visitante";
+            this.btnCadastrarVisitante.UseVisualStyleBackColor = true;
+            this.btnCadastrarVisitante.Click += new System.EventHandler(this.btnCadastrarVisitante_Click);
+            // 
             // FormVisitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 507);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(1267, 576);
+            this.Controls.Add(this.btnCadastrarVisitante);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtNomeVisitante);
             this.Controls.Add(this.dgvVisitas);
             this.Controls.Add(this.lblNomePaciente);
             this.Controls.Add(this.lblNomeVisitante);
@@ -233,5 +276,8 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.Label lblNomeVisitante;
         private System.Windows.Forms.Label lblNomePaciente;
         private System.Windows.Forms.DataGridView dgvVisitas;
+        private System.Windows.Forms.TextBox txtNomeVisitante;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnCadastrarVisitante;
     }
 }

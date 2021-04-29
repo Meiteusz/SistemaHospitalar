@@ -119,7 +119,7 @@ namespace SistemaHospitalar.DAL
 
         public DataTable TodasRecepcionistas()
         {
-            command.CommandText = "select NOME, CPF, TURNO, GENERO, CELULAR from RECEPCIONISTAS";
+            command.CommandText = "select ID, NOME, CPF, TURNO, GENERO, CELULAR from RECEPCIONISTAS";
             adapter = new SqlDataAdapter(command);
             dt = new DataTable();
             adapter.Fill(dt);

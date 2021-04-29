@@ -42,7 +42,7 @@ namespace SistemaHospitalar
                 if (doutoresBLL.LogarDoutor(doutor).Equals(string.Empty))
                 {
                     FormEntradaDoutores formEntradaDoutor = new FormEntradaDoutores();
-                    MessageBox.Show("Doutor(a) logado com sucesso!\n\t" + FuncionarioLogado.DoutorLogado.Nome);
+                    MessageBox.Show("Bem vindo(a) " + FuncionarioLogado.DoutorLogado.Nome, "Doutor(a) logado com sucesso!");
                     Base.AbrirFormDesejado(this, formEntradaDoutor);
                 }
                 else
@@ -55,7 +55,7 @@ namespace SistemaHospitalar
                 if (recepcionistaBLL.LogarRecepcionista(recepionista).Equals(string.Empty))
                 {
                     FormEntradaRecepcionista formEntradaRecepcionista = new FormEntradaRecepcionista();
-                    MessageBox.Show("Recepcionista logado com sucesso!\n\t" + FuncionarioLogado.RecepcionistaLogada.Nome);
+                    MessageBox.Show("Bem vindo(a) " + FuncionarioLogado.RecepcionistaLogada.Nome, "Recepcionista logado com sucesso!");
                     Base.AbrirFormDesejado(this, formEntradaRecepcionista);
                 }
                 else

@@ -42,6 +42,7 @@ namespace SistemaHospitalar.UI
             this.dgvDiagnosticosDoExame.AllowUserToAddRows = false;
             this.dgvDiagnosticosDoExame.AllowUserToResizeColumns = false;
             this.dgvDiagnosticosDoExame.AllowUserToResizeRows = false;
+            this.dgvDiagnosticosDoExame.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -62,7 +63,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(113, 364);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(147, 73);
@@ -73,7 +74,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnDeletarDiagnostico
             // 
-            this.btnDeletarDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletarDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletarDiagnostico.Location = new System.Drawing.Point(359, 364);
             this.btnDeletarDiagnostico.Name = "btnDeletarDiagnostico";
             this.btnDeletarDiagnostico.Size = new System.Drawing.Size(147, 73);
@@ -84,7 +85,7 @@ namespace SistemaHospitalar.UI
             // 
             // btnVerDescricao
             // 
-            this.btnVerDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerDescricao.Location = new System.Drawing.Point(592, 364);
             this.btnVerDescricao.Name = "btnVerDescricao";
             this.btnVerDescricao.Size = new System.Drawing.Size(147, 73);
@@ -97,6 +98,7 @@ namespace SistemaHospitalar.UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(849, 499);
             this.Controls.Add(this.btnVerDescricao);
             this.Controls.Add(this.btnDeletarDiagnostico);

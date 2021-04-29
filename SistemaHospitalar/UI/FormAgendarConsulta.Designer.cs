@@ -43,7 +43,6 @@ namespace SistemaHospitalar.UI
             this.dtpDataConsulta = new System.Windows.Forms.DateTimePicker();
             this.lblNome = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.cbAgendaDoutor = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoutores)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +50,9 @@ namespace SistemaHospitalar.UI
             // cmbCpfPacientes
             // 
             this.cmbCpfPacientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCpfPacientes.Location = new System.Drawing.Point(114, 61);
+            this.cmbCpfPacientes.Location = new System.Drawing.Point(107, 61);
             this.cmbCpfPacientes.Name = "cmbCpfPacientes";
-            this.cmbCpfPacientes.Size = new System.Drawing.Size(278, 28);
+            this.cmbCpfPacientes.Size = new System.Drawing.Size(285, 28);
             this.cmbCpfPacientes.TabIndex = 0;
             this.cmbCpfPacientes.SelectedIndexChanged += new System.EventHandler(this.cmbCpfPacientes_SelectedIndexChanged);
             // 
@@ -61,7 +60,8 @@ namespace SistemaHospitalar.UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 38);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(103, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 20);
             this.label1.TabIndex = 1;
@@ -71,6 +71,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(103, 257);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(133, 20);
@@ -81,6 +82,7 @@ namespace SistemaHospitalar.UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(63, 440);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
@@ -99,6 +101,7 @@ namespace SistemaHospitalar.UI
             // dgvDoutores
             // 
             this.dgvDoutores.AllowUserToAddRows = false;
+            this.dgvDoutores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -125,13 +128,13 @@ namespace SistemaHospitalar.UI
             this.cmbEspecialidade.FormattingEnabled = true;
             this.cmbEspecialidade.Location = new System.Drawing.Point(67, 47);
             this.cmbEspecialidade.Name = "cmbEspecialidade";
-            this.cmbEspecialidade.Size = new System.Drawing.Size(264, 28);
+            this.cmbEspecialidade.Size = new System.Drawing.Size(372, 28);
             this.cmbEspecialidade.TabIndex = 10;
             this.cmbEspecialidade.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidade_SelectedIndexChanged);
             // 
             // btnCadastrarConsulta
             // 
-            this.btnCadastrarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarConsulta.Location = new System.Drawing.Point(974, 546);
             this.btnCadastrarConsulta.Name = "btnCadastrarConsulta";
             this.btnCadastrarConsulta.Size = new System.Drawing.Size(147, 73);
@@ -158,6 +161,7 @@ namespace SistemaHospitalar.UI
             // 
             this.lblNomePaciente.AutoSize = true;
             this.lblNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomePaciente.ForeColor = System.Drawing.Color.White;
             this.lblNomePaciente.Location = new System.Drawing.Point(171, 172);
             this.lblNomePaciente.Name = "lblNomePaciente";
             this.lblNomePaciente.Size = new System.Drawing.Size(0, 20);
@@ -179,16 +183,17 @@ namespace SistemaHospitalar.UI
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(110, 171);
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.ForeColor = System.Drawing.Color.White;
+            this.lblNome.Location = new System.Drawing.Point(103, 172);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(55, 20);
+            this.lblNome.Size = new System.Drawing.Size(60, 20);
             this.lblNome.TabIndex = 13;
             this.lblNome.Text = "Nome:";
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(67, 546);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(147, 73);
@@ -197,25 +202,13 @@ namespace SistemaHospitalar.UI
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
-            // cbAgendaDoutor
-            // 
-            this.cbAgendaDoutor.AutoSize = true;
-            this.cbAgendaDoutor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbAgendaDoutor.Location = new System.Drawing.Point(471, 51);
-            this.cbAgendaDoutor.Name = "cbAgendaDoutor";
-            this.cbAgendaDoutor.Size = new System.Drawing.Size(137, 24);
-            this.cbAgendaDoutor.TabIndex = 16;
-            this.cbAgendaDoutor.Text = "Agenda Doutor";
-            this.cbAgendaDoutor.UseVisualStyleBackColor = true;
-            this.cbAgendaDoutor.CheckedChanged += new System.EventHandler(this.cbAgendaDoutor_CheckedChanged);
-            // 
             // FormAgendarConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1190, 657);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.cbAgendaDoutor);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnCadastrarConsulta);
             this.Controls.Add(this.cmbEspecialidade);
@@ -248,6 +241,5 @@ namespace SistemaHospitalar.UI
         private System.Windows.Forms.DateTimePicker dtpDataConsulta;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Label lblNomePaciente;
-        private System.Windows.Forms.CheckBox cbAgendaDoutor;
     }
 }

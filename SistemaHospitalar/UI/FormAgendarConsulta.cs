@@ -16,18 +16,17 @@ namespace SistemaHospitalar.UI
             cmbEspecialidade.DataSource = Enum.GetValues(typeof(Especialidades));
             dgvDoutores.DataSource = doutoresBLL.MostrarDoutoresConsulta(Especialidades.Selecione);
             btnCadastrarConsulta.Enabled = false;
-            cbAgendaDoutor.Enabled = false;
         }
 
         ConsultaBLL consultaBLL = new ConsultaBLL();
         PacienteBLL pacienteBLL = new PacienteBLL();
         DoutoresBLL doutoresBLL = new DoutoresBLL();
-        ConveniosBLL ConveniosBLL = new ConveniosBLL();
+        ConveniosBLL conveniosBLL = new ConveniosBLL();
 
         private void btnAgendarConsulta_Click(object sender, EventArgs e)
         {
             pacienteBLL.PegarDadosPaciente(0, cmbCpfPacientes.Text);
-            ConveniosBLL.PegarDadosConvenio(FuncionarioLogado.PacienteSelecionado.Convenio);
+            conveniosBLL.PegarDadosConvenio(FuncionarioLogado.PacienteSelecionado.Convenio);
             consultaBLL.SetValoresConsulta(FuncionarioLogado.DoutorTemp.ValorConsulta, FuncionarioLogado.ConvenioSelecionado.Desconto);
 
             Consulta consulta = new Consulta(FuncionarioLogado.PacienteSelecionado.Id, FuncionarioLogado.DoutorTemp.Id, dtpDataConsulta.Value, consultaBLL.ValorFinalConsulta);
@@ -45,7 +44,6 @@ namespace SistemaHospitalar.UI
 
         private void dgvDoutores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbAgendaDoutor.Enabled = true;
             int IdDoutor = (int)dgvDoutores.CurrentRow.Cells[0].Value;
             FuncionarioLogado.SetDoutorTemp(IdDoutor);
 
@@ -70,25 +68,8 @@ namespace SistemaHospitalar.UI
             lblNomePaciente.Text = FuncionarioLogado.PacienteSelecionado.Nome;
         }
 
-        private void cbAgendaDoutor_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbAgendaDoutor.Checked)
-            {
-                FormAgendaDoutor formAgendaDoutor = new FormAgendaDoutor();
-                formAgendaDoutor.ShowDialog();
-                cbAgendaDoutor.Checked = false;
-                cbAgendaDoutor.Enabled = false;
-            }
-            else
-            {
-                dgvDoutores.DataSource = doutoresBLL.MostrarDoutoresConsulta((Especialidades)cmbEspecialidade.SelectedIndex);
-            }
-        }
-
         private void cmbEspecialidade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbAgendaDoutor.Enabled = false;
-            cbAgendaDoutor.Checked = false;
             dgvDoutores.DataSource = doutoresBLL.MostrarDoutoresConsulta((Especialidades)cmbEspecialidade.SelectedIndex);
         }
 

@@ -1,5 +1,4 @@
 ﻿using SistemaHospitalar.BLL;
-using SistemaHospitalar.Models;
 using SistemaHospitalar.Utilities;
 using SistemaHospitalar.Views;
 using System;
@@ -36,14 +35,6 @@ namespace SistemaHospitalar.UI
             }
         }
 
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            if (txtPesquisaNome.Text.Equals(string.Empty))
-                dgvPacientes.DataSource = pacienteBLL.MostrarPacientes();
-            else
-                dgvPacientes.DataSource = pacienteBLL.PesquisarPacientes(txtPesquisaNome.Text);
-        }
-
         private void dgvPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnDeletarPaciente.Enabled = true;
@@ -51,20 +42,30 @@ namespace SistemaHospitalar.UI
             pacienteBLL.PegarDadosPaciente(IdPaciente, string.Empty);
         }
 
-        private void rbNome_CheckedChanged(object sender, EventArgs e)
-        {
-            txtPesquisaNome.Visible = true;
-            txtPesquisaNome.Text = "";
-        }
-
         private void FormPacientes_Load(object sender, EventArgs e)
         {
+            txtPesquisaNome.AutoCompleteCustomSource = pacienteBLL.MostrarNomesPacientes();
+            txtPesquisaNome.AutoCompleteMode = AutoCompleteMode.Append;
+            txtPesquisaNome.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
             dgvPacientes.Columns["ID"].Width = 50;
             dgvPacientes.Columns["Paciente_Nome"].Width = 200;
             dgvPacientes.Columns["Paciente_Celular"].Width = 110;
             dgvPacientes.Columns["Paciente_Cpf"].Width = 100;
             dgvPacientes.Columns["Paciente_Genero"].Width = 110;
             dgvPacientes.Columns["Convênio_Nome"].Width = 158;
+        }
+
+        private void txtPesquisaNome_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPesquisaNome.Text.Equals(string.Empty))
+            {
+                dgvPacientes.DataSource = pacienteBLL.MostrarPacientes();
+            }
+            else
+            {
+                dgvPacientes.DataSource = pacienteBLL.PesquisarPacientes(txtPesquisaNome.Text, txtPesquisaNome.Text);
+            }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

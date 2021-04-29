@@ -21,6 +21,7 @@ namespace SistemaHospitalar.UI
             Quartos quarto = new Quartos((int)txtNumeroQuarto.Value, true);
 
             MessageBox.Show(quartosBLL.CadastrarQuarto(quarto));
+            dgvQuartos.DataSource = quartosBLL.MostrarQuartos();
         }
 
         private void rbTodosQuartos_CheckedChanged(object sender, EventArgs e)

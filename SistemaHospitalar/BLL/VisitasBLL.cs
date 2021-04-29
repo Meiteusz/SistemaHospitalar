@@ -4,6 +4,7 @@ using SistemaHospitalar.Models;
 using System;
 using System.Collections;
 using System.Data;
+using System.Windows.Forms;
 
 namespace SistemaHospitalar.BLL
 {
@@ -42,6 +43,11 @@ namespace SistemaHospitalar.BLL
             return dalVisitas.GetCpfVisitantes();
         }
 
+        public AutoCompleteStringCollection MostrarNomesVisitantes()
+        {
+            return dalVisitas.GetNomesVisitantes();
+        }
+
         public DataTable MostrarVisitantes()
         {
             return dalVisitas.TodosVisitantes();
@@ -50,6 +56,11 @@ namespace SistemaHospitalar.BLL
         public DataTable MostrarVisitas()
         {
             return dalVisitas.TodasVisitas();
+        }
+
+        public DataTable PesquisarVisitante(string NomeVisitante)
+        {
+            return dalVisitas.PesquisarVisitante(NomeVisitante);
         }
 
         public void PegarDadosVisitante(int IdVisitante, string CpfVisitante)

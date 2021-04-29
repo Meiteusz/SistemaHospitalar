@@ -4,6 +4,7 @@ using SistemaHospitalar.Models;
 using SistemaHospitalar.Utilities;
 using SistemaHospitalar.Views;
 using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace SistemaHospitalar.UI
@@ -62,7 +63,7 @@ namespace SistemaHospitalar.UI
         private void btnDeletarFuncionario_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente deletar a conta deste(a) funcionionário?", "Deletar Funcionário(a)", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning) == DialogResult.Yes)
+                    MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 if (rbRecepcionista.Checked)
                 {

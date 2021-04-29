@@ -66,11 +66,11 @@
     <Compile Include="Entities\Internacao.cs" />
     <Compile Include="Entities\Quartos.cs" />
     <Compile Include="Entities\Visita.cs" />
-    <Compile Include="UI\FormAgendaDoutor.cs">
+    <Compile Include="UI\FormAgenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\FormAgendaDoutor.Designer.cs">
-      <DependentUpon>FormAgendaDoutor.cs</DependentUpon>
+    <Compile Include="UI\FormAgenda.Designer.cs">
+      <DependentUpon>FormAgenda.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormDescricaoDiagnostico.cs">
       <SubType>Form</SubType>
@@ -96,11 +96,23 @@
     <Compile Include="UI\FormAgendarExame.Designer.cs">
       <DependentUpon>FormAgendarExame.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\FormExames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormExames.Designer.cs">
+      <DependentUpon>FormExames.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\FormExamesDoutor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\FormExamesDoutor.Designer.cs">
       <DependentUpon>FormExamesDoutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormExtratoExames.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormExtratoExames.Designer.cs">
+      <DependentUpon>FormExtratoExames.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormExtratoInternacao.cs">
       <SubType>Form</SubType>
@@ -125,6 +137,18 @@
     </Compile>
     <Compile Include="UI\FormQuartos.Designer.cs">
       <DependentUpon>FormQuartos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormReagendamentoExame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormReagendamentoExame.Designer.cs">
+      <DependentUpon>FormReagendamentoExame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FormTodasInternacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormTodasInternacoes.Designer.cs">
+      <DependentUpon>FormTodasInternacoes.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FormVerificarInternacao.cs">
       <SubType>Form</SubType>
@@ -291,8 +315,8 @@
       <DependentUpon>FormConsultasDoutor.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\FuncionarioLogado.cs" />
-    <EmbeddedResource Include="UI\FormAgendaDoutor.resx">
-      <DependentUpon>FormAgendaDoutor.cs</DependentUpon>
+    <EmbeddedResource Include="UI\FormAgenda.resx">
+      <DependentUpon>FormAgenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormDescricaoDiagnostico.resx">
       <DependentUpon>FormDescricaoDiagnostico.cs</DependentUpon>
@@ -309,8 +333,14 @@
     <EmbeddedResource Include="UI\FormAgendarExame.resx">
       <DependentUpon>FormAgendarExame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExames.resx">
+      <DependentUpon>FormExames.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExamesDoutor.resx">
       <DependentUpon>FormExamesDoutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormExtratoExames.resx">
+      <DependentUpon>FormExtratoExames.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormExtratoInternacao.resx">
       <DependentUpon>FormExtratoInternacao.cs</DependentUpon>
@@ -384,6 +414,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormReagendamentoConsulta.resx">
       <DependentUpon>FormReagendamentoConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormReagendamentoExame.resx">
+      <DependentUpon>FormReagendamentoExame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormTodasInternacoes.resx">
+      <DependentUpon>FormTodasInternacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FormValores.resx">
       <DependentUpon>FormValores.cs</DependentUpon>
@@ -478,6 +514,120 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\email1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-consultas %281%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-consultas %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-consultas %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-consultas %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MON_Icones_Cirurgia-1024x1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\754554.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2714742 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\307612 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient-icon-18 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance-cross-hospital-icon-113.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance-cross-hospital-icon-114.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance-cross-hospital-icon-11 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\599f39542bb8fb00016961cc_icon-home-exames %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6162987_dinheiro-benefit-icon-hd-png-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cost-effective-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance-cross-hospital-icon-115.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ambulance-cross-hospital-icon-11 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Email-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlock-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\af6816ec67ec51da6b275a4aa08d236c-iacute-cone-de-cadeado-by-vexels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6714428_preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hospital-medical-signal-of-a-cross-in-a-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7-512 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EmailATT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlockATT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\307612 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionariosIcon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backupIcon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conveniosIcon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quartosIcon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctorIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctorIcon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recepcionistIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5027870-128 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed %281%29 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoutIcon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agendaIcon %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
